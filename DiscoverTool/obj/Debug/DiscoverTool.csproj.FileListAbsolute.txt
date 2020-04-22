@@ -1,0 +1,7 @@
+H:\Git\Surgit-NetworkManager\DiscoverTool\obj\Debug\DiscoverTool.csprojAssemblyReference.cache
+H:\Git\Surgit-NetworkManager\DiscoverTool\obj\Debug\DiscoverTool.csproj.CoreCompileInputs.cache
+H:\Git\Surgit-NetworkManager\DiscoverTool\bin\Debug\DiscoverTool.exe.config
+H:\Git\Surgit-NetworkManager\DiscoverTool\bin\Debug\DiscoverTool.exe
+H:\Git\Surgit-NetworkManager\DiscoverTool\bin\Debug\DiscoverTool.pdb
+H:\Git\Surgit-NetworkManager\DiscoverTool\obj\Debug\DiscoverTool.exe
+H:\Git\Surgit-NetworkManager\DiscoverTool\obj\Debug\DiscoverTool.pdb

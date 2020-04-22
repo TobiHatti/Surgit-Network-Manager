@@ -29,5 +29,15 @@ namespace Surgit_NetworkManager
 
             this.rbcRibbonMenu.TitleFont = new Font("Calibri", 11);
         }
+
+        private void BtnDiscover_Click(object sender, EventArgs e)
+        {
+            DiscoverDialog discover = new DiscoverDialog();
+
+            if(discover.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+        }
     }
 }

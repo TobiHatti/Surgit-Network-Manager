@@ -39,3 +39,4 @@ H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\bin\Debug\Syncfusion.XlsIO.Ba
 H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\bin\Debug\Syncfusion.DataSource.WinForms.xml
 H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\bin\Debug\Syncfusion.GridCommon.WinForms.xml
 H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Debug\Surgit_NetworkManager.SurgitMain.resources
+H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Debug\Surgit_NetworkManager.DiscoverDialog.resources

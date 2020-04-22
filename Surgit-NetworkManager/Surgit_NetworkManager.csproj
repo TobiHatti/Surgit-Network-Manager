@@ -55,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DiscoverDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DiscoverDialog.Designer.cs">
+      <DependentUpon>DiscoverDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="SurgitMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +69,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DiscoverDialog.resx">
+      <DependentUpon>DiscoverDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SurgitMain.resx">
       <DependentUpon>SurgitMain.cs</DependentUpon>
     </EmbeddedResource>
