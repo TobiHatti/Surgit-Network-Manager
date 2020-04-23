@@ -16,12 +16,18 @@ namespace Surgit_NetworkManager
 {
     public partial class DiscoverDialog : SfForm
     {
+        public List<NetDevice> DiscoveredDevices = new List<NetDevice>();
+
+
+
         public DiscoverDialog()
         {
             InitializeComponent();
-        }
 
-        private Thread discoveryThread = null;
+#if DEBUG
+            btnFinishDiscover.Enabled = true;
+#endif
+        }
 
         private void BtnStartDiscovery_Click(object sender, EventArgs e)
         {
@@ -52,6 +58,7 @@ namespace Surgit_NetworkManager
 
                 if(ipStartParts[0] == ipEndParts[0] && ipStartParts[1] == ipEndParts[1] && ipStartParts[2] == ipEndParts[2])
                 {
+                    
                     new Thread(delegate () {
                         Discover(ipStartParts, ipEndParts);
                     }).Start();
@@ -66,6 +73,7 @@ namespace Surgit_NetworkManager
 
         private void Discover(string[] ipStartParts, string[] ipEndParts)
         {
+            DiscoveredDevices.Clear();
             txbDiscoveryOutput.Text = "";
 
             int deviceCount = 0;
@@ -74,9 +82,11 @@ namespace Surgit_NetworkManager
 
             rangeSize = Convert.ToInt32(ipEndParts[3]) - Convert.ToInt32(ipStartParts[3]);
 
+#if !DEBUG
             prbDiscoveryProgress.Value = 0;
             prbDiscoveryProgress.Minimum = 0;
             prbDiscoveryProgress.Maximum = rangeSize;
+#endif
 
             if (chbPingCheck.Checked)
             {
@@ -105,15 +115,11 @@ namespace Surgit_NetworkManager
                         prbDiscoveryProgress.Value++;
                 }
             }
-
-            
-
-            
-
+#if !DEBUG
             txbDiscoveryOutput.Text += "Starting discovery..." + Environment.NewLine;
             txbDiscoveryOutput.SelectionStart = txbDiscoveryOutput.TextLength;
             txbDiscoveryOutput.ScrollToCaret();
-
+#endif
             // Start the discovery
             for (int i = Convert.ToInt32(ipStartParts[3]); i <= Convert.ToInt32(ipEndParts[3]); i++)
             {
@@ -125,20 +131,36 @@ namespace Surgit_NetworkManager
                 {
                     currentHostname = GetMachineNameFromIPAddress(currentIP);
 
-                    deviceCount++;
+                    NetDevice ntd = new NetDevice
+                    {
+                        IPv4 = currentIP,
+                        MAC = currentMAC,
+                        Hostname = currentHostname
+                    };
 
+                    if (!string.IsNullOrEmpty(currentHostname)) ntd.Name = "Device-" + currentHostname;
+                    else ntd.Name = "Device-" + currentMAC;
+
+                    DiscoveredDevices.Add(ntd);
+
+                    deviceCount++;
+#if !DEBUG
                     txbDiscoveryOutput.Text += "Found device at " + currentIP + " (" + currentHostname + ")" + Environment.NewLine;
                     txbDiscoveryOutput.SelectionStart = txbDiscoveryOutput.TextLength;
                     txbDiscoveryOutput.ScrollToCaret();
+#endif
                 }
 
+#if !DEBUG
                 if(prbDiscoveryProgress.Value < prbDiscoveryProgress.Maximum)
                     prbDiscoveryProgress.Value++;
+#endif
             }
-
+#if !DEBUG
             prbDiscoveryProgress.Value = rangeSize;
 
             btnFinishDiscover.Enabled = true;
+#endif
             MessageBox.Show("Discovery finished!" + Environment.NewLine + $"Found a total of {deviceCount} devices.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
