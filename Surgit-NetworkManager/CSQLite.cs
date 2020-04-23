@@ -12,31 +12,51 @@ namespace Surgit_NetworkManager
         private string conStr = null;
 
         public SQLiteConnection connection = null;
-        public SQLiteCommand cmd = null;
 
         public CSQLite(string pDBPath)
         {
             conStr = $@"URI=file:{pDBPath}";
             connection = new SQLiteConnection(conStr);
-            cmd = new SQLiteCommand(connection);
+        }
+
+        public bool ConnectionTest()
+        {
+            try
+            {
+                using(SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM Devices", connection))
+                {
+                    connection.Open();
+                    cmd.ExecuteReader();
+                    connection.Close();
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
+            }   
         }
 
         #region ExecuteNonQuery
 
         public void ExecuteNonQuery(string pQuery)
         {
-            cmd.CommandText = pQuery;
-            connection.Open();
-            cmd.ExecuteNonQuery();
-            connection.Close();
+            using (SQLiteCommand cmd = new SQLiteCommand(pQuery, connection))
+            {
+                connection.Open();
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
         }
         public void ExecuteNonQuery(string pQuery, params object[] values)
         {
-            cmd.CommandText = pQuery;
-            foreach (object parameter in values) cmd.Parameters.AddWithValue("", parameter);
-            connection.Open();
-            cmd.ExecuteNonQuery();
-            connection.Close();
+            using (SQLiteCommand cmd = new SQLiteCommand(pQuery, connection))
+            {
+                foreach (object parameter in values) cmd.Parameters.AddWithValue("", parameter);
+                connection.Open();
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
         }
 
         #endregion
@@ -45,40 +65,49 @@ namespace Surgit_NetworkManager
 
         public object ExecuteScalar(string pQuery)
         {
-            cmd.CommandText = pQuery;
-            connection.Open();
-            object o = cmd.ExecuteScalar();
-            connection.Close();
-            return o;
+            using (SQLiteCommand cmd = new SQLiteCommand(pQuery, connection))
+            {
+                connection.Open();
+                object o = cmd.ExecuteScalar();
+                connection.Close();
+                return o;
+            }
+            
         }
 
         public object ExecuteScalar(string pQuery, params object[] values)
         {
-            cmd.CommandText = pQuery;
-            foreach (object parameter in values) cmd.Parameters.AddWithValue("", parameter);
-            connection.Open();
-            object retval = cmd.ExecuteScalar();
-            connection.Close();
-            return retval;
+            using (SQLiteCommand cmd = new SQLiteCommand(pQuery, connection))
+            {
+                foreach (object parameter in values) cmd.Parameters.AddWithValue("", parameter);
+                connection.Open();
+                object retval = cmd.ExecuteScalar();
+                connection.Close();
+                return retval;
+            }
         }
 
         public DataType ExecuteScalar<DataType>(string pQuery)
         {
-            cmd.CommandText = pQuery;
-            connection.Open();
-            object retval = cmd.ExecuteScalar();
-            connection.Close();
-            return (DataType)Convert.ChangeType(retval, typeof(DataType));
+            using (SQLiteCommand cmd = new SQLiteCommand(pQuery, connection))
+            {
+                connection.Open();
+                object retval = cmd.ExecuteScalar();
+                connection.Close();
+                return (DataType)Convert.ChangeType(retval, typeof(DataType));
+            }
         }
 
         public DataType ExecuteScalar<DataType>(string pQuery, params object[] values)
         {
-            cmd.CommandText = pQuery;
-            foreach (object parameter in values) cmd.Parameters.AddWithValue("", parameter);
-            connection.Open();
-            object retval = cmd.ExecuteScalar();
-            connection.Close();
-            return (DataType)Convert.ChangeType(retval, typeof(DataType));
+            using (SQLiteCommand cmd = new SQLiteCommand(pQuery, connection))
+            {
+                foreach (object parameter in values) cmd.Parameters.AddWithValue("", parameter);
+                connection.Open();
+                object retval = cmd.ExecuteScalar();
+                connection.Close();
+                return (DataType)Convert.ChangeType(retval, typeof(DataType));
+            }
         }
 
         #endregion
@@ -88,13 +117,13 @@ namespace Surgit_NetworkManager
 
         public SQLiteDataReader ExecuteQuery(string pQuery)
         {
-            cmd.CommandText = pQuery;
+            SQLiteCommand cmd = new SQLiteCommand(pQuery, connection);
             return cmd.ExecuteReader();
         }
 
         public SQLiteDataReader ExecuteQuery(string pQuery, params object[] values)
         {
-            cmd.CommandText = pQuery;
+            SQLiteCommand cmd = new SQLiteCommand(pQuery, connection);
             foreach (object parameter in values) cmd.Parameters.AddWithValue("", parameter);
             return cmd.ExecuteReader();
         }

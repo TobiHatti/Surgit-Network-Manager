@@ -40,6 +40,7 @@
             this.prbDiscoveryProgress = new System.Windows.Forms.ProgressBar();
             this.chbPingCheck = new System.Windows.Forms.CheckBox();
             this.ttpPingCheck = new System.Windows.Forms.ToolTip(this.components);
+            this.bgwDiscovery = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // txbDiscoveryStart
@@ -130,6 +131,13 @@
             this.ttpPingCheck.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.ttpPingCheck.ToolTipTitle = "Ping Check";
             // 
+            // bgwDiscovery
+            // 
+            this.bgwDiscovery.WorkerReportsProgress = true;
+            this.bgwDiscovery.WorkerSupportsCancellation = true;
+            this.bgwDiscovery.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwDiscovery_DoWork);
+            this.bgwDiscovery.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwDiscovery_RunWorkerCompleted);
+            // 
             // DiscoverDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
@@ -150,6 +158,7 @@
             this.MaximizeBox = false;
             this.Name = "DiscoverDialog";
             this.Text = "Discover";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DiscoverDialog_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,5 +176,6 @@
         private System.Windows.Forms.ProgressBar prbDiscoveryProgress;
         private System.Windows.Forms.CheckBox chbPingCheck;
         private System.Windows.Forms.ToolTip ttpPingCheck;
+        private System.ComponentModel.BackgroundWorker bgwDiscovery;
     }
 }

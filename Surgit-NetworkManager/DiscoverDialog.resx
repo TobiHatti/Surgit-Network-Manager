@@ -125,4 +125,7 @@
 selected range, after which it is saved in the ARP-Cache. Use this if the 
 discovery returns none or not all devices in the network.</value>
   </data>
+  <metadata name="bgwDiscovery.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>141, 17</value>
+  </metadata>
 </root>

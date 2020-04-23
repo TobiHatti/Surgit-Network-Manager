@@ -18,7 +18,8 @@ namespace Surgit_NetworkManager
     {
         public List<NetDevice> DiscoveredDevices = new List<NetDevice>();
 
-
+        string[] ipStartParts = null;
+        string[] ipEndParts = null;
 
         public DiscoverDialog()
         {
@@ -53,15 +54,15 @@ namespace Surgit_NetworkManager
             // Check if the start and end IPs are in the same subnet and that they are in a class C subnet
             if(ipStartValid && ipEndValid)
             {
-                string[] ipStartParts = txbDiscoveryStart.Text.Split('.');
-                string[] ipEndParts = txbDiscoveryEnd.Text.Split('.');
+                ipStartParts = txbDiscoveryStart.Text.Split('.');
+                ipEndParts = txbDiscoveryEnd.Text.Split('.');
 
                 if(ipStartParts[0] == ipEndParts[0] && ipStartParts[1] == ipEndParts[1] && ipStartParts[2] == ipEndParts[2])
                 {
-                    
-                    new Thread(delegate () {
-                        Discover(ipStartParts, ipEndParts);
-                    }).Start();
+                    if(!bgwDiscovery.IsBusy)
+                    {
+                        bgwDiscovery.RunWorkerAsync();
+                    }
                 }
                 else
                 {
@@ -71,7 +72,7 @@ namespace Surgit_NetworkManager
             }
         }
 
-        private void Discover(string[] ipStartParts, string[] ipEndParts)
+        private void Discover()
         {
             DiscoveredDevices.Clear();
             txbDiscoveryOutput.Text = "";
@@ -135,11 +136,11 @@ namespace Surgit_NetworkManager
                     {
                         IPv4 = currentIP,
                         MAC = currentMAC,
-                        Hostname = currentHostname
+                        Hostname = currentHostname,
+                        Name = "Device-" + currentMAC
                     };
 
-                    if (!string.IsNullOrEmpty(currentHostname)) ntd.Name = "Device-" + currentHostname;
-                    else ntd.Name = "Device-" + currentMAC;
+                    
 
                     DiscoveredDevices.Add(ntd);
 
@@ -229,6 +230,25 @@ namespace Surgit_NetworkManager
         {
             this.DialogResult = DialogResult.OK;
             this.Close();
+        }
+
+        private void DiscoverDialog_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (bgwDiscovery.WorkerSupportsCancellation)
+            {
+                // Cancel the asynchronous operation.
+                bgwDiscovery.CancelAsync();
+            }
+        }
+
+        private void bgwDiscovery_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Discover();
+        }
+
+        private void bgwDiscovery_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
         }
     }
 }
