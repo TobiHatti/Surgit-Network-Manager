@@ -5,6 +5,7 @@ using System.Drawing;
 using System.IO;
 using System.Net;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -22,7 +23,7 @@ namespace Surgit_NetworkManager
 
             if (!sql.ConnectionTest()) throw new Exception("Could not connect to DB");
 
-            //ltvDevices.LargeImageList = NetDevice.GetImageList();
+           
             grvDevices.LargeImageList = NetDevice.GetImageList();
 
             ApplyFormStyle();
@@ -41,6 +42,7 @@ namespace Surgit_NetworkManager
 
         private void UpdateDeviceList()
         {
+            grvDevices.GroupViewItems.Clear();
             sql.connection.Open();
             using(SQLiteDataReader reader = sql.ExecuteQuery("SELECT * FROM Devices"))
             {
@@ -52,6 +54,19 @@ namespace Surgit_NetworkManager
                 }
             }
             sql.connection.Close();
+        }
+
+        private string ReadableString(string pInput)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            for (int i = 0; i < pInput.Length; i++)
+            {
+                if (pInput[i] == '_' || (char.IsLetter(pInput[i]) && ((i != 0 && (char.IsLower(pInput[i - 1]) && char.IsUpper(pInput[i]))) || (i != pInput.Length - 1 && (char.IsUpper(pInput[i]) && char.IsLower(pInput[i + 1])))))) sb.Append(" ");
+                if (pInput[i] != '_') sb.Append(pInput[i]);
+            }
+
+            return sb.ToString();
         }
 
         private void BtnDiscover_Click(object sender, EventArgs e)
@@ -82,8 +97,42 @@ namespace Surgit_NetworkManager
             UpdateDeviceList();
         }
 
+        private int selectedIndex = 0;
+        private bool skipNextIndexCheck = false;
         private void grvDevices_GroupViewItemSelected(object sender, EventArgs e)
         {
+            if(skipNextIndexCheck)
+            {
+                skipNextIndexCheck = false;
+                return;
+            }
+
+
+            if (btnSaveChanges.Enabled)
+            {
+                DialogResult qResponse = MessageBox.Show($"Do you want to save the changes you made to \"{txbDeviceName.Text}\"?", "Save Changes", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+
+                if(qResponse == DialogResult.Cancel)
+                {
+                    skipNextIndexCheck = true;
+                    grvDevices.SelectedItem = selectedIndex;
+                    return;
+                }
+
+                if(qResponse == DialogResult.Yes)
+                {
+                    SaveChanges();
+                }
+            }
+
+            txbDeviceName.Enabled = true;
+            txbDeviceDescription.Enabled = true;
+            btnChangeDeviceType.Enabled = true;
+            btnSaveChanges.Enabled = false;
+            btnDiscardChanges.Enabled = false;
+            selectedIndex = grvDevices.SelectedItem;
+
+
             sql.connection.Open();
 
             using (SQLiteDataReader reader = sql.ExecuteQuery($"SELECT * FROM Devices WHERE Name = '{grvDevices.GroupViewItems[grvDevices.SelectedItem].Text}'"))
@@ -91,7 +140,7 @@ namespace Surgit_NetworkManager
                 while(reader.Read())
                 {
                     txbDeviceName.Text = Convert.ToString(reader["Name"]);
-                    btnChangeDeviceType.Text = Convert.ToString(reader["DeviceType"]) + " (click to change)";
+                    btnChangeDeviceType.Text = ReadableString(Convert.ToString(reader["DeviceType"])) + " (click to change)";
                     txbDeviceDescription.Text = Convert.ToString(reader["Description"]);
                     txbDeviceLastSeen.Text = Convert.ToDateTime(reader["LastSeen"]).ToLongDateString();
 
@@ -99,6 +148,10 @@ namespace Surgit_NetworkManager
                     txbDeviceIPv4.Text = Convert.ToString(reader["IP4Address"]);
                     txbDeviceIPv6.Text = Convert.ToString(reader["IP6Address"]);
                     txbDeviceMac.Text = Convert.ToString(reader["MACAddress"]);
+
+                    newDeviceType = Convert.ToString(reader["DeviceType"]);
+
+                    txbDeviceManufacturer.Text = "";
 
                     try 
                     {
@@ -112,5 +165,55 @@ namespace Surgit_NetworkManager
             sql.connection.Close();
         }
 
+        private void txbDeviceName_KeyDown(object sender, KeyEventArgs e)
+        {
+            btnSaveChanges.Enabled = true;
+            btnDiscardChanges.Enabled = true;
+        }
+
+        private void txbDeviceDescription_KeyDown(object sender, KeyEventArgs e)
+        {
+            btnSaveChanges.Enabled = true;
+            btnDiscardChanges.Enabled = true;
+        }
+
+        private string newDeviceType = null;
+        private void btnChangeDeviceType_Click(object sender, EventArgs e)
+        {
+            DeviceTypeSelector devSelect = new DeviceTypeSelector();
+
+            if(devSelect.ShowDialog() == DialogResult.OK)
+            {
+                btnChangeDeviceType.Text = devSelect.SelectedDeviceType + " (click to change)";
+                newDeviceType = devSelect.SelectedDeviceType.Replace(" ", "");
+
+                btnSaveChanges.Enabled = true;
+                btnDiscardChanges.Enabled = true;
+            }
+        }
+
+        private void btnSaveChanges_Click(object sender, EventArgs e)
+        {
+            SaveChanges();
+        }
+
+        private void SaveChanges()
+        {
+            if (sql.ExecuteScalar<int>($"SELECT COUNT(*) FROM Devices WHERE Name = '{txbDeviceName.Text}' AND MACAddress != '{txbDeviceMac.Text}'") == 0)
+            {
+                btnSaveChanges.Enabled = false;
+                btnDiscardChanges.Enabled = false;
+                sql.ExecuteNonQuery($"UPDATE Devices SET Name = '{txbDeviceName.Text}', Description = '{txbDeviceDescription.Text}', DeviceType = '{newDeviceType}' WHERE MACAddress = '{txbDeviceMac.Text}'");
+            }
+            else MessageBox.Show("The entered Device-Name already exitst. Please enter a unique name for each device!", "Name duplicate", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            UpdateDeviceList();
+        }
+
+        private void btnDiscardChanges_Click(object sender, EventArgs e)
+        {
+            btnSaveChanges.Enabled = false;
+            btnDiscardChanges.Enabled = false;
+        }
     }
 }

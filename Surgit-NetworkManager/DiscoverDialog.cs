@@ -236,7 +236,6 @@ namespace Surgit_NetworkManager
         {
             if (bgwDiscovery.WorkerSupportsCancellation)
             {
-                // Cancel the asynchronous operation.
                 bgwDiscovery.CancelAsync();
             }
         }
@@ -246,9 +245,15 @@ namespace Surgit_NetworkManager
             Discover();
         }
 
-        private void bgwDiscovery_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
+            if (bgwDiscovery.WorkerSupportsCancellation)
+            {
+                bgwDiscovery.CancelAsync();
+            }
 
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }

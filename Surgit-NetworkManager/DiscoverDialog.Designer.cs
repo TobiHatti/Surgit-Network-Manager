@@ -41,6 +41,7 @@
             this.chbPingCheck = new System.Windows.Forms.CheckBox();
             this.ttpPingCheck = new System.Windows.Forms.ToolTip(this.components);
             this.bgwDiscovery = new System.ComponentModel.BackgroundWorker();
+            this.btnCancel = new Syncfusion.WinForms.Controls.SfButton();
             this.SuspendLayout();
             // 
             // txbDiscoveryStart
@@ -88,24 +89,34 @@
             // btnStartDiscovery
             // 
             this.btnStartDiscovery.AccessibleName = "Button";
-            this.btnStartDiscovery.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.btnStartDiscovery.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnStartDiscovery.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStartDiscovery.ForeColor = System.Drawing.Color.White;
             this.btnStartDiscovery.Location = new System.Drawing.Point(290, 39);
             this.btnStartDiscovery.Name = "btnStartDiscovery";
             this.btnStartDiscovery.Size = new System.Drawing.Size(117, 27);
+            this.btnStartDiscovery.Style.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnStartDiscovery.Style.ForeColor = System.Drawing.Color.White;
             this.btnStartDiscovery.TabIndex = 2;
             this.btnStartDiscovery.Text = "Start Discovery";
+            this.btnStartDiscovery.UseVisualStyleBackColor = false;
             this.btnStartDiscovery.Click += new System.EventHandler(this.BtnStartDiscovery_Click);
             // 
             // btnFinishDiscover
             // 
             this.btnFinishDiscover.AccessibleName = "Button";
+            this.btnFinishDiscover.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnFinishDiscover.Enabled = false;
-            this.btnFinishDiscover.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.btnFinishDiscover.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinishDiscover.ForeColor = System.Drawing.Color.White;
             this.btnFinishDiscover.Location = new System.Drawing.Point(311, 326);
             this.btnFinishDiscover.Name = "btnFinishDiscover";
             this.btnFinishDiscover.Size = new System.Drawing.Size(96, 29);
+            this.btnFinishDiscover.Style.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnFinishDiscover.Style.ForeColor = System.Drawing.Color.White;
             this.btnFinishDiscover.TabIndex = 3;
             this.btnFinishDiscover.Text = "Finish";
+            this.btnFinishDiscover.UseVisualStyleBackColor = false;
             this.btnFinishDiscover.Click += new System.EventHandler(this.BtnFinishDiscover_Click);
             // 
             // prbDiscoveryProgress
@@ -136,13 +147,29 @@
             this.bgwDiscovery.WorkerReportsProgress = true;
             this.bgwDiscovery.WorkerSupportsCancellation = true;
             this.bgwDiscovery.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwDiscovery_DoWork);
-            this.bgwDiscovery.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwDiscovery_RunWorkerCompleted);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.AccessibleName = "Button";
+            this.btnCancel.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnCancel.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Location = new System.Drawing.Point(6, 326);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(96, 29);
+            this.btnCancel.Style.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnCancel.Style.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.TabIndex = 7;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // DiscoverDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(412, 360);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.chbPingCheck);
             this.Controls.Add(this.prbDiscoveryProgress);
             this.Controls.Add(this.btnFinishDiscover);
@@ -177,5 +204,6 @@
         private System.Windows.Forms.CheckBox chbPingCheck;
         private System.Windows.Forms.ToolTip ttpPingCheck;
         private System.ComponentModel.BackgroundWorker bgwDiscovery;
+        private Syncfusion.WinForms.Controls.SfButton btnCancel;
     }
 }

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Surgit_NetworkManager", "Su
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscoverTool", "DiscoverTool\DiscoverTool.csproj", "{15BAEF44-CF04-4F7B-A17D-E387A9AD3FC9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringSplitterTest", "StringSplitterTest\StringSplitterTest.csproj", "{924CE69F-5A7F-43EA-BA3F-C0993A78F589}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{15BAEF44-CF04-4F7B-A17D-E387A9AD3FC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15BAEF44-CF04-4F7B-A17D-E387A9AD3FC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15BAEF44-CF04-4F7B-A17D-E387A9AD3FC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{924CE69F-5A7F-43EA-BA3F-C0993A78F589}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{924CE69F-5A7F-43EA-BA3F-C0993A78F589}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{924CE69F-5A7F-43EA-BA3F-C0993A78F589}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{924CE69F-5A7F-43EA-BA3F-C0993A78F589}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

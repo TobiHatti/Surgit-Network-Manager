@@ -45,3 +45,4 @@ H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\bin\Debug\x64\sqlite3.dll
 H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\bin\Debug\System.Data.SQLite.dll
 H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\bin\Debug\System.Data.SQLite.xml
 H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\bin\Debug\System.Data.SQLite.dll.config
+H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Debug\Surgit_NetworkManager.DeviceTypeSelector.resources

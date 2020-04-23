@@ -63,6 +63,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CSQLite.cs" />
+    <Compile Include="DeviceTypeSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeviceTypeSelector.Designer.cs">
+      <DependentUpon>DeviceTypeSelector.cs</DependentUpon>
+    </Compile>
     <Compile Include="DiscoverDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DeviceTypeSelector.resx">
+      <DependentUpon>DeviceTypeSelector.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DiscoverDialog.resx">
       <DependentUpon>DiscoverDialog.cs</DependentUpon>
     </EmbeddedResource>

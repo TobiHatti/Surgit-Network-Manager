@@ -45,3 +45,4 @@ H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Release\Surgit_NetworkMan
 H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Release\Surgit_NetworkManager.csproj.CopyComplete
 H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Release\Surgit_NetworkManager.exe
 H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Release\Surgit_NetworkManager.pdb
+H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Release\Surgit_NetworkManager.DeviceTypeSelector.resources

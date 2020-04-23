@@ -46,16 +46,19 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txbDeviceHostname = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txbDeviceManufacturer = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnDiscardChanges = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnSaveChanges = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnChangeDeviceType = new Syncfusion.WinForms.Controls.SfButton();
             this.txbDeviceDescription = new System.Windows.Forms.TextBox();
             this.txbDeviceLastSeen = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.grvDevices = new Syncfusion.Windows.Forms.Tools.GroupView();
-            this.txbDeviceManufacturer = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnChangeDeviceType = new Syncfusion.WinForms.Controls.SfButton();
+            this.toolStripTabItem3 = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
             ((System.ComponentModel.ISupportInitialize)(this.rbcRibbonMenu)).BeginInit();
             this.rbcRibbonMenu.SuspendLayout();
             this.toolStripTabItem1.Panel.SuspendLayout();
@@ -70,6 +73,7 @@
             this.rbcRibbonMenu.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbcRibbonMenu.Header.AddMainItem(toolStripTabItem1);
             this.rbcRibbonMenu.Header.AddMainItem(toolStripTabItem2);
+            this.rbcRibbonMenu.Header.AddMainItem(toolStripTabItem3);
             this.rbcRibbonMenu.Location = new System.Drawing.Point(1, 0);
             this.rbcRibbonMenu.Margin = new System.Windows.Forms.Padding(4);
             this.rbcRibbonMenu.MenuButtonFont = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -89,7 +93,7 @@
             this.rbcRibbonMenu.RibbonStyle = Syncfusion.Windows.Forms.Tools.RibbonStyle.Office2016;
             this.rbcRibbonMenu.SelectedTab = this.toolStripTabItem1;
             this.rbcRibbonMenu.ShowRibbonDisplayOptionButton = true;
-            this.rbcRibbonMenu.Size = new System.Drawing.Size(913, 155);
+            this.rbcRibbonMenu.Size = new System.Drawing.Size(1002, 161);
             this.rbcRibbonMenu.SystemText.QuickAccessDialogDropDownName = "Start menu";
             this.rbcRibbonMenu.SystemText.RenameDisplayLabelText = "&Display Name:";
             this.rbcRibbonMenu.TabIndex = 1;
@@ -129,7 +133,7 @@
             this.toolStripEx1.Office12Mode = false;
             this.toolStripEx1.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.toolStripEx1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripEx1.Size = new System.Drawing.Size(78, 86);
+            this.toolStripEx1.Size = new System.Drawing.Size(78, 92);
             this.toolStripEx1.TabIndex = 0;
             // 
             // btnDiscover
@@ -137,7 +141,7 @@
             this.btnDiscover.Image = ((System.Drawing.Image)(resources.GetObject("btnDiscover.Image")));
             this.btnDiscover.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDiscover.Name = "btnDiscover";
-            this.btnDiscover.Size = new System.Drawing.Size(69, 64);
+            this.btnDiscover.Size = new System.Drawing.Size(69, 70);
             this.btnDiscover.Text = "Discover";
             this.btnDiscover.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnDiscover.Click += new System.EventHandler(this.BtnDiscover_Click);
@@ -161,10 +165,12 @@
             // 
             // txbDeviceName
             // 
+            this.txbDeviceName.Enabled = false;
             this.txbDeviceName.Location = new System.Drawing.Point(112, 26);
             this.txbDeviceName.Name = "txbDeviceName";
             this.txbDeviceName.Size = new System.Drawing.Size(246, 27);
             this.txbDeviceName.TabIndex = 4;
+            this.txbDeviceName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbDeviceName_KeyDown);
             // 
             // label2
             // 
@@ -264,7 +270,7 @@
             this.groupBox1.Controls.Add(this.txbDeviceIPv6);
             this.groupBox1.Controls.Add(this.txbDeviceIPv4);
             this.groupBox1.Controls.Add(this.txbDeviceHostname);
-            this.groupBox1.Location = new System.Drawing.Point(10, 408);
+            this.groupBox1.Location = new System.Drawing.Point(10, 452);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(8);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(364, 191);
@@ -272,8 +278,27 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Network information";
             // 
+            // txbDeviceManufacturer
+            // 
+            this.txbDeviceManufacturer.Location = new System.Drawing.Point(116, 158);
+            this.txbDeviceManufacturer.Name = "txbDeviceManufacturer";
+            this.txbDeviceManufacturer.ReadOnly = true;
+            this.txbDeviceManufacturer.Size = new System.Drawing.Size(242, 27);
+            this.txbDeviceManufacturer.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 161);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(104, 19);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Manufacturer:";
+            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnDiscardChanges);
+            this.groupBox2.Controls.Add(this.btnSaveChanges);
             this.groupBox2.Controls.Add(this.btnChangeDeviceType);
             this.groupBox2.Controls.Add(this.txbDeviceDescription);
             this.groupBox2.Controls.Add(this.txbDeviceLastSeen);
@@ -285,18 +310,69 @@
             this.groupBox2.Location = new System.Drawing.Point(10, 162);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(8);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(364, 230);
+            this.groupBox2.Size = new System.Drawing.Size(364, 274);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Device information";
             // 
+            // btnDiscardChanges
+            // 
+            this.btnDiscardChanges.AccessibleName = "Button";
+            this.btnDiscardChanges.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnDiscardChanges.Enabled = false;
+            this.btnDiscardChanges.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDiscardChanges.ForeColor = System.Drawing.Color.White;
+            this.btnDiscardChanges.Location = new System.Drawing.Point(48, 234);
+            this.btnDiscardChanges.Name = "btnDiscardChanges";
+            this.btnDiscardChanges.Size = new System.Drawing.Size(131, 34);
+            this.btnDiscardChanges.Style.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnDiscardChanges.Style.ForeColor = System.Drawing.Color.White;
+            this.btnDiscardChanges.TabIndex = 14;
+            this.btnDiscardChanges.Text = "Discard Changes";
+            this.btnDiscardChanges.UseVisualStyleBackColor = false;
+            this.btnDiscardChanges.Click += new System.EventHandler(this.btnDiscardChanges_Click);
+            // 
+            // btnSaveChanges
+            // 
+            this.btnSaveChanges.AccessibleName = "Button";
+            this.btnSaveChanges.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnSaveChanges.Enabled = false;
+            this.btnSaveChanges.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveChanges.ForeColor = System.Drawing.Color.White;
+            this.btnSaveChanges.Location = new System.Drawing.Point(185, 234);
+            this.btnSaveChanges.Name = "btnSaveChanges";
+            this.btnSaveChanges.Size = new System.Drawing.Size(131, 34);
+            this.btnSaveChanges.Style.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnSaveChanges.Style.ForeColor = System.Drawing.Color.White;
+            this.btnSaveChanges.TabIndex = 14;
+            this.btnSaveChanges.Text = "Save Changes";
+            this.btnSaveChanges.UseVisualStyleBackColor = false;
+            this.btnSaveChanges.Click += new System.EventHandler(this.btnSaveChanges_Click);
+            // 
+            // btnChangeDeviceType
+            // 
+            this.btnChangeDeviceType.AccessibleName = "Button";
+            this.btnChangeDeviceType.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnChangeDeviceType.Enabled = false;
+            this.btnChangeDeviceType.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangeDeviceType.Location = new System.Drawing.Point(112, 59);
+            this.btnChangeDeviceType.Name = "btnChangeDeviceType";
+            this.btnChangeDeviceType.Size = new System.Drawing.Size(246, 27);
+            this.btnChangeDeviceType.Style.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnChangeDeviceType.TabIndex = 13;
+            this.btnChangeDeviceType.Text = "Device Type";
+            this.btnChangeDeviceType.UseVisualStyleBackColor = false;
+            this.btnChangeDeviceType.Click += new System.EventHandler(this.btnChangeDeviceType_Click);
+            // 
             // txbDeviceDescription
             // 
+            this.txbDeviceDescription.Enabled = false;
             this.txbDeviceDescription.Location = new System.Drawing.Point(112, 92);
             this.txbDeviceDescription.Multiline = true;
             this.txbDeviceDescription.Name = "txbDeviceDescription";
             this.txbDeviceDescription.Size = new System.Drawing.Size(246, 99);
             this.txbDeviceDescription.TabIndex = 12;
+            this.txbDeviceDescription.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbDeviceDescription_KeyDown);
             // 
             // txbDeviceLastSeen
             // 
@@ -330,17 +406,17 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.grvDevices);
-            this.groupBox3.Location = new System.Drawing.Point(390, 163);
+            this.groupBox3.Location = new System.Drawing.Point(390, 169);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(8);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(511, 463);
+            this.groupBox3.Size = new System.Drawing.Size(600, 553);
             this.groupBox3.TabIndex = 15;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Devices";
             // 
             // grvDevices
             // 
-            this.grvDevices.BeforeTouchSize = new System.Drawing.Size(505, 437);
+            this.grvDevices.BeforeTouchSize = new System.Drawing.Size(594, 527);
             this.grvDevices.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.grvDevices.ButtonView = true;
             this.grvDevices.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -352,7 +428,7 @@
             this.grvDevices.Location = new System.Drawing.Point(3, 23);
             this.grvDevices.Name = "grvDevices";
             this.grvDevices.ShowFlowViewItemText = true;
-            this.grvDevices.Size = new System.Drawing.Size(505, 437);
+            this.grvDevices.Size = new System.Drawing.Size(594, 527);
             this.grvDevices.TabIndex = 14;
             this.grvDevices.Text = "groupView1";
             this.grvDevices.TextSpacing = 30;
@@ -360,39 +436,27 @@
             this.grvDevices.ThemesEnabled = true;
             this.grvDevices.GroupViewItemSelected += new System.EventHandler(this.grvDevices_GroupViewItemSelected);
             // 
-            // txbDeviceManufacturer
+            // toolStripTabItem3
             // 
-            this.txbDeviceManufacturer.Location = new System.Drawing.Point(116, 158);
-            this.txbDeviceManufacturer.Name = "txbDeviceManufacturer";
-            this.txbDeviceManufacturer.ReadOnly = true;
-            this.txbDeviceManufacturer.Size = new System.Drawing.Size(242, 27);
-            this.txbDeviceManufacturer.TabIndex = 4;
+            this.toolStripTabItem3.Name = "toolStripTabItem3";
             // 
-            // label1
+            // rbcRibbonMenu.ribbonPanel3
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 161);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 19);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Manufacturer:";
-            // 
-            // btnChangeDeviceType
-            // 
-            this.btnChangeDeviceType.AccessibleName = "Button";
-            this.btnChangeDeviceType.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.btnChangeDeviceType.Location = new System.Drawing.Point(112, 59);
-            this.btnChangeDeviceType.Name = "btnChangeDeviceType";
-            this.btnChangeDeviceType.Size = new System.Drawing.Size(246, 27);
-            this.btnChangeDeviceType.TabIndex = 13;
-            this.btnChangeDeviceType.Text = "Device Type";
+            this.toolStripTabItem3.Panel.Name = "ribbonPanel3";
+            this.toolStripTabItem3.Panel.ScrollPosition = 0;
+            this.toolStripTabItem3.Panel.TabIndex = 4;
+            this.toolStripTabItem3.Panel.Text = "Remote Management";
+            this.toolStripTabItem3.Position = 2;
+            this.toolStripTabItem3.Size = new System.Drawing.Size(168, 30);
+            this.toolStripTabItem3.Tag = "3";
+            this.toolStripTabItem3.Text = "Remote Management";
             // 
             // SurgitMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(911, 635);
+            this.ClientSize = new System.Drawing.Size(1000, 731);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -447,6 +511,9 @@
         private System.Windows.Forms.TextBox txbDeviceManufacturer;
         private System.Windows.Forms.Label label1;
         private Syncfusion.WinForms.Controls.SfButton btnChangeDeviceType;
+        private Syncfusion.WinForms.Controls.SfButton btnDiscardChanges;
+        private Syncfusion.WinForms.Controls.SfButton btnSaveChanges;
+        private Syncfusion.Windows.Forms.Tools.ToolStripTabItem toolStripTabItem3;
     }
 }
 
