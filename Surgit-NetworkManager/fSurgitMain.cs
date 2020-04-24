@@ -203,7 +203,7 @@ namespace Surgit_NetworkManager
                     txbDeviceName.Text = Convert.ToString(reader["Name"]);
                     btnChangeDeviceType.Text = SurgitManager.ReadableString(Convert.ToString(reader["DeviceType"])) + " (click to change)";
                     txbDeviceDescription.Text = Convert.ToString(reader["Description"]);
-                    txbDeviceLastSeen.Text = Convert.ToDateTime(reader["LastSeen"]).ToLongDateString();
+                    txbDeviceLastSeen.Text = Convert.ToDateTime(reader["LastSeen"]).ToString("d. MMMM yyyy, H:mm:ss");
 
                     txbDeviceHostname.Text = Convert.ToString(reader["Hostname"]);
                     txbDeviceIPv4.Text = Convert.ToString(reader["IP4Address"]);
@@ -294,7 +294,19 @@ namespace Surgit_NetworkManager
 
         private void btnDiscoverSelf_Click(object sender, EventArgs e)
         {
-
+            DiscoverLocal locDiscover = new DiscoverLocal();
+            if(locDiscover.ShowDialog() == DialogResult.OK)
+            {
+                sql.connection.Open();
+                if (sql.ExecuteScalar<int>($"SELECT COUNT(*) FROM Devices WHERE MACAddress = '{locDiscover.MAC}'") == 0)
+                {
+                    sql.ExecuteNonQuery($"INSERT INTO Devices (MACAddress, IP4Address, IP6Address, Hostname, Name, DeviceType, LastSeen, LastPowerState) VALUES ('{locDiscover.MAC}','{locDiscover.IPv4}','{locDiscover.IPv6}','{locDiscover.Hostname}','Device-{locDiscover.MAC}','{DeviceType.UnknownDevice}','{DateTime.Now:yyyy-MM-dd H:mm:ss}','1')");
+                }
+                else MessageBox.Show("The selected Device already exists. Please select another interface.", "Duplicate MAC-Addresses", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                sql.connection.Close();
+                UpdateDeviceList();
+            }
+            
         }
 
         private void bgwCheckPowerState_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e) => SurgitManager.PowerStateCheck(txbIPRangeStart.Text, txbIPRangeEnd.Text, bgwCheckPowerState);

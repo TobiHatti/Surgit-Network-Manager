@@ -47,3 +47,4 @@ H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Release\Surgit_NetworkMan
 H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Release\Surgit_NetworkManager.pdb
 H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Release\Surgit_NetworkManager.DeviceTypeSelector.resources
 H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Release\Surgit_NetworkManager.UpdateEntries.resources
+H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Release\Surgit_NetworkManager.DiscoverLocal.resources

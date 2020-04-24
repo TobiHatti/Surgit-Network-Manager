@@ -186,6 +186,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "DiscoverDialog";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Discover";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DiscoverDialog_FormClosing);
             this.Load += new System.EventHandler(this.DiscoverDialog_Load);
