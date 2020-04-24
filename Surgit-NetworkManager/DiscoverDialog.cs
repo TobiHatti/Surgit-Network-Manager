@@ -125,12 +125,12 @@ namespace Surgit_NetworkManager
             for (int i = Convert.ToInt32(ipStartParts[3]); i <= Convert.ToInt32(ipEndParts[3]); i++)
             {
                 string currentIP = ipStartParts[0] + "." + ipStartParts[1] + "." + ipStartParts[2] + "." + i.ToString();
-                string currentMAC = GetMacAddress(currentIP);
+                string currentMAC = NetExplore.GetMacAddress(currentIP);
                 string currentHostname = string.Empty;
 
                 if (!string.IsNullOrEmpty(currentMAC))
                 {
-                    currentHostname = GetMachineNameFromIPAddress(currentIP);
+                    currentHostname = NetExplore.GetMachineNameFromIPAddress(currentIP);
 
                     NetDevice ntd = new NetDevice
                     {
@@ -164,68 +164,7 @@ namespace Surgit_NetworkManager
 #endif
             MessageBox.Show("Discovery finished!" + Environment.NewLine + $"Found a total of {deviceCount} devices.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-
-
-        private string GetMachineNameFromIPAddress(string ipAdress)
-        {
-            string machineName = string.Empty;
-            try
-            {
-                IPHostEntry hostEntry = Dns.GetHostEntry(ipAdress);
-
-                machineName = hostEntry.HostName;
-            }
-            catch (Exception ex)
-            {
-                // Machine not found...
-            }
-            return machineName;
-        }
-
-        public string GetMacAddress(string ip)
-        {
-            var macIpPairs = GetAllMacAddressesAndIppairs();
-            int index = macIpPairs.FindIndex(x => x.IpAddress == ip);
-            if (index >= 0)
-            {
-                return macIpPairs[index].MacAddress.ToUpper();
-            }
-            else
-            {
-                return null;
-            }
-        }
-
-        public List<MacIpPair> GetAllMacAddressesAndIppairs()
-        {
-            List<MacIpPair> mip = new List<MacIpPair>();
-            System.Diagnostics.Process pProcess = new System.Diagnostics.Process();
-            pProcess.StartInfo.FileName = "arp";
-            pProcess.StartInfo.Arguments = "-a ";
-            pProcess.StartInfo.UseShellExecute = false;
-            pProcess.StartInfo.RedirectStandardOutput = true;
-            pProcess.StartInfo.CreateNoWindow = true;
-            pProcess.Start();
-            string cmdOutput = pProcess.StandardOutput.ReadToEnd();
-            string pattern = @"(?<ip>([0-9]{1,3}\.?){4})\s*(?<mac>([a-f0-9]{2}-?){6})";
-
-            foreach (Match m in Regex.Matches(cmdOutput, pattern, RegexOptions.IgnoreCase))
-            {
-                mip.Add(new MacIpPair()
-                {
-                    MacAddress = m.Groups["mac"].Value,
-                    IpAddress = m.Groups["ip"].Value
-                });
-            }
-
-            return mip;
-        }
-        public struct MacIpPair
-        {
-            public string MacAddress;
-            public string IpAddress;
-        }
-
+        
         private void BtnFinishDiscover_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;

@@ -55,49 +55,21 @@ namespace Surgit_NetworkManager
     {
         public static ImageList GetImageList()
         {
-            string deviceIconBasePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"Surgit\DeviceIcons");
+            string deviceIconBasePathON = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"Surgit\DeviceIconsON");
+            string deviceIconBasePathOFF = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"Surgit\DeviceIconsOFF");
+            string deviceIconBasePathRAW = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"Surgit\DeviceIconsRAW");
 
             ImageList imgList = new ImageList();
             imgList.ImageSize = new Size(64, 64);
             imgList.ColorDepth = ColorDepth.Depth32Bit;
 
-            imgList.Images.Add(DeviceType.AccessPoint.ToString(), new Icon(Path.Combine(deviceIconBasePath, "AccessPoint.ico")));
-            imgList.Images.Add(DeviceType.AllInOnePC.ToString(), new Icon(Path.Combine(deviceIconBasePath, "AllInOnePC.ico")));
-            imgList.Images.Add(DeviceType.DesktopPC.ToString(), new Icon(Path.Combine(deviceIconBasePath, "Desktop.ico")));
-            imgList.Images.Add(DeviceType.DevelopmentDevice.ToString(), new Icon(Path.Combine(deviceIconBasePath, "DevelopmentDevice.ico")));
-            imgList.Images.Add(DeviceType.Fax.ToString(), new Icon(Path.Combine(deviceIconBasePath, "Fax.ico")));
-            imgList.Images.Add(DeviceType.GameConsole.ToString(), new Icon(Path.Combine(deviceIconBasePath, "GameConsole.ico")));
-            imgList.Images.Add(DeviceType.HealthEquipment.ToString(), new Icon(Path.Combine(deviceIconBasePath, "HealthEquipment.ico")));
-            imgList.Images.Add(DeviceType.Intercom.ToString(), new Icon(Path.Combine(deviceIconBasePath, "Intercom.ico")));
-            imgList.Images.Add(DeviceType.IoTDevice.ToString(), new Icon(Path.Combine(deviceIconBasePath, "IoTDevice.ico")));
-            imgList.Images.Add(DeviceType.IPCamera.ToString(), new Icon(Path.Combine(deviceIconBasePath, "IPCamera.ico")));
-            imgList.Images.Add(DeviceType.IPRadio.ToString(), new Icon(Path.Combine(deviceIconBasePath, "IPRadio.ico")));
-            imgList.Images.Add(DeviceType.IPSetTopBox.ToString(), new Icon(Path.Combine(deviceIconBasePath, "IPSetTopBox.ico")));
-            imgList.Images.Add(DeviceType.IPSoundSystem.ToString(), new Icon(Path.Combine(deviceIconBasePath, "IPSoundSystem.ico")));
-            imgList.Images.Add(DeviceType.IPTV.ToString(), new Icon(Path.Combine(deviceIconBasePath, "IPTV.ico")));
-            imgList.Images.Add(DeviceType.MultiPrinter.ToString(), new Icon(Path.Combine(deviceIconBasePath, "MultiPrinter.ico")));
-            imgList.Images.Add(DeviceType.NAS.ToString(), new Icon(Path.Combine(deviceIconBasePath, "NAS.ico")));
-            imgList.Images.Add(DeviceType.Notebook.ToString(), new Icon(Path.Combine(deviceIconBasePath, "Notebook.ico")));
-            imgList.Images.Add(DeviceType.Organizer.ToString(), new Icon(Path.Combine(deviceIconBasePath, "Organizer.ico")));
-            imgList.Images.Add(DeviceType.PLC.ToString(), new Icon(Path.Combine(deviceIconBasePath, "PLC.ico")));
-            imgList.Images.Add(DeviceType.POSTerminal.ToString(), new Icon(Path.Combine(deviceIconBasePath, "POSTerminal.ico")));
-            imgList.Images.Add(DeviceType.Printer.ToString(), new Icon(Path.Combine(deviceIconBasePath, "Printer.ico")));
-            imgList.Images.Add(DeviceType.Printer3D.ToString(), new Icon(Path.Combine(deviceIconBasePath, "Printer3D.ico")));
-            imgList.Images.Add(DeviceType.Projector.ToString(), new Icon(Path.Combine(deviceIconBasePath, "Projector.ico")));
-            imgList.Images.Add(DeviceType.Router.ToString(), new Icon(Path.Combine(deviceIconBasePath, "Router.ico")));
-            imgList.Images.Add(DeviceType.Scanner.ToString(), new Icon(Path.Combine(deviceIconBasePath, "Scanner.ico")));
-            imgList.Images.Add(DeviceType.SecuritySystem.ToString(), new Icon(Path.Combine(deviceIconBasePath, "SecuritySystem.ico")));
-            imgList.Images.Add(DeviceType.Server.ToString(), new Icon(Path.Combine(deviceIconBasePath, "Server.ico")));
-            imgList.Images.Add(DeviceType.Smartphone.ToString(), new Icon(Path.Combine(deviceIconBasePath, "Smartphone.ico")));
-            imgList.Images.Add(DeviceType.Switch.ToString(), new Icon(Path.Combine(deviceIconBasePath, "Switch.ico")));
-            imgList.Images.Add(DeviceType.Tablet.ToString(), new Icon(Path.Combine(deviceIconBasePath, "Tablet.ico")));
-            imgList.Images.Add(DeviceType.TabletComputer.ToString(), new Icon(Path.Combine(deviceIconBasePath, "TabletComputer.ico")));
-            imgList.Images.Add(DeviceType.UnknownDevice.ToString(), new Icon(Path.Combine(deviceIconBasePath, "UnknownDevice.ico")));
-            imgList.Images.Add(DeviceType.UPS.ToString(), new Icon(Path.Combine(deviceIconBasePath, "UPS.ico")));
-            imgList.Images.Add(DeviceType.VirtualMachine.ToString(), new Icon(Path.Combine(deviceIconBasePath, "VirtualMachine.ico")));
-            imgList.Images.Add(DeviceType.VoIP.ToString(), new Icon(Path.Combine(deviceIconBasePath, "VoIP.ico")));
-            imgList.Images.Add(DeviceType.VRHeadset.ToString(), new Icon(Path.Combine(deviceIconBasePath, "VRHeadset.ico")));
-            imgList.Images.Add(DeviceType.WirelessRouter.ToString(), new Icon(Path.Combine(deviceIconBasePath, "WirelessRouter.ico")));
+            var values = Enum.GetValues(typeof(DeviceType)).Cast<DeviceType>();
+            foreach(DeviceType device in values)
+            {
+                imgList.Images.Add(device.ToString() + "_ON", new Icon(Path.Combine(deviceIconBasePathON, $"{device.ToString()}.ico")));
+                imgList.Images.Add(device.ToString() + "_OFF", new Icon(Path.Combine(deviceIconBasePathOFF, $"{device.ToString()}.ico")));
+                imgList.Images.Add(device.ToString() + "_RAW", new Icon(Path.Combine(deviceIconBasePathRAW, $"{device.ToString()}.ico")));
+            }
 
             return imgList;
         }

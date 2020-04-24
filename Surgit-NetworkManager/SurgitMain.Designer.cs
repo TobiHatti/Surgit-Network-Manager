@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SurgitMain));
             this.rbcRibbonMenu = new Syncfusion.Windows.Forms.Tools.RibbonControlAdv();
             this.toolStripTabItem1 = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
@@ -59,6 +60,20 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.grvDevices = new Syncfusion.Windows.Forms.Tools.GroupView();
             this.toolStripTabItem3 = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
+            this.bgwCheckPowerState = new System.ComponentModel.BackgroundWorker();
+            this.tmrStartPowerCheck = new System.Windows.Forms.Timer(this.components);
+            this.toolStripEx2 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
+            this.txbIPRangeStart = new System.Windows.Forms.ToolStripTextBox();
+            this.txbIPRangeEnd = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.lblProgressReport = new System.Windows.Forms.Label();
+            this.cbxSortBy = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cbxSortOrder = new System.Windows.Forms.ComboBox();
+            this.lblDeviceCount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.rbcRibbonMenu)).BeginInit();
             this.rbcRibbonMenu.SuspendLayout();
             this.toolStripTabItem1.Panel.SuspendLayout();
@@ -66,6 +81,7 @@
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.toolStripEx2.SuspendLayout();
             this.SuspendLayout();
             // 
             // rbcRibbonMenu
@@ -107,6 +123,7 @@
             // 
             // rbcRibbonMenu.ribbonPanel1
             // 
+            this.toolStripTabItem1.Panel.Controls.Add(this.toolStripEx2);
             this.toolStripTabItem1.Panel.Controls.Add(this.toolStripEx1);
             this.toolStripTabItem1.Panel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.toolStripTabItem1.Panel.Name = "ribbonPanel1";
@@ -127,14 +144,16 @@
             this.toolStripEx1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStripEx1.Image = null;
             this.toolStripEx1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnDiscover});
-            this.toolStripEx1.Location = new System.Drawing.Point(0, 1);
+            this.btnDiscover,
+            this.toolStripButton1});
+            this.toolStripEx1.Location = new System.Drawing.Point(424, 1);
             this.toolStripEx1.Name = "toolStripEx1";
             this.toolStripEx1.Office12Mode = false;
             this.toolStripEx1.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.toolStripEx1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripEx1.Size = new System.Drawing.Size(78, 92);
+            this.toolStripEx1.Size = new System.Drawing.Size(141, 92);
             this.toolStripEx1.TabIndex = 0;
+            this.toolStripEx1.Text = "Network Discovery";
             // 
             // btnDiscover
             // 
@@ -405,30 +424,36 @@
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.lblDeviceCount);
+            this.groupBox3.Controls.Add(this.label9);
+            this.groupBox3.Controls.Add(this.cbxSortOrder);
+            this.groupBox3.Controls.Add(this.cbxSortBy);
             this.groupBox3.Controls.Add(this.grvDevices);
             this.groupBox3.Location = new System.Drawing.Point(390, 169);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(8);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(600, 553);
+            this.groupBox3.Size = new System.Drawing.Size(600, 511);
             this.groupBox3.TabIndex = 15;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Devices";
             // 
             // grvDevices
             // 
-            this.grvDevices.BeforeTouchSize = new System.Drawing.Size(594, 527);
+            this.grvDevices.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grvDevices.BeforeTouchSize = new System.Drawing.Size(594, 456);
             this.grvDevices.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.grvDevices.ButtonView = true;
-            this.grvDevices.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grvDevices.FlatLook = true;
             this.grvDevices.FlowView = true;
             this.grvDevices.FlowViewItemTextLength = 140;
             this.grvDevices.IntegratedScrolling = true;
             this.grvDevices.ItemXSpacing = 2;
-            this.grvDevices.Location = new System.Drawing.Point(3, 23);
+            this.grvDevices.Location = new System.Drawing.Point(3, 52);
             this.grvDevices.Name = "grvDevices";
             this.grvDevices.ShowFlowViewItemText = true;
-            this.grvDevices.Size = new System.Drawing.Size(594, 527);
+            this.grvDevices.Size = new System.Drawing.Size(594, 456);
             this.grvDevices.TabIndex = 14;
             this.grvDevices.Text = "groupView1";
             this.grvDevices.TextSpacing = 30;
@@ -451,12 +476,148 @@
             this.toolStripTabItem3.Tag = "3";
             this.toolStripTabItem3.Text = "Remote Management";
             // 
+            // bgwCheckPowerState
+            // 
+            this.bgwCheckPowerState.WorkerSupportsCancellation = true;
+            this.bgwCheckPowerState.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwCheckPowerState_DoWork);
+            // 
+            // tmrStartPowerCheck
+            // 
+            this.tmrStartPowerCheck.Enabled = true;
+            this.tmrStartPowerCheck.Interval = 15000;
+            this.tmrStartPowerCheck.Tick += new System.EventHandler(this.tmrStartPowerCheck_Tick);
+            // 
+            // toolStripEx2
+            // 
+            this.toolStripEx2.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStripEx2.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripEx2.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.toolStripEx2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStripEx2.Image = null;
+            this.toolStripEx2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabel1,
+            this.txbIPRangeStart,
+            this.toolStripSeparator1,
+            this.toolStripLabel2,
+            this.txbIPRangeEnd});
+            this.toolStripEx2.Location = new System.Drawing.Point(0, 1);
+            this.toolStripEx2.Name = "toolStripEx2";
+            this.toolStripEx2.Office12Mode = false;
+            this.toolStripEx2.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.toolStripEx2.Size = new System.Drawing.Size(422, 92);
+            this.toolStripEx2.TabIndex = 1;
+            this.toolStripEx2.Text = "IP Address Range";
+            // 
+            // txbIPRangeStart
+            // 
+            this.txbIPRangeStart.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txbIPRangeStart.Name = "txbIPRangeStart";
+            this.txbIPRangeStart.Size = new System.Drawing.Size(100, 73);
+            this.txbIPRangeStart.Text = "10.0.0.1";
+            // 
+            // txbIPRangeEnd
+            // 
+            this.txbIPRangeEnd.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txbIPRangeEnd.Name = "txbIPRangeEnd";
+            this.txbIPRangeEnd.Size = new System.Drawing.Size(100, 73);
+            this.txbIPRangeEnd.Text = "10.0.0.254";
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(105, 70);
+            this.toolStripLabel1.Text = "IP Range Start:";
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(98, 70);
+            this.toolStripLabel2.Text = "IP Range End:";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 73);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(63, 70);
+            this.toolStripButton1.Text = "Refresh";
+            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // lblProgressReport
+            // 
+            this.lblProgressReport.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblProgressReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(198)))));
+            this.lblProgressReport.ForeColor = System.Drawing.Color.White;
+            this.lblProgressReport.Location = new System.Drawing.Point(1, 688);
+            this.lblProgressReport.Name = "lblProgressReport";
+            this.lblProgressReport.Padding = new System.Windows.Forms.Padding(0, 0, 15, 0);
+            this.lblProgressReport.Size = new System.Drawing.Size(1002, 32);
+            this.lblProgressReport.TabIndex = 16;
+            this.lblProgressReport.Text = "Surgit Network Manager";
+            this.lblProgressReport.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // cbxSortBy
+            // 
+            this.cbxSortBy.FormattingEnabled = true;
+            this.cbxSortBy.Items.AddRange(new object[] {
+            "Name",
+            "IP-Address",
+            "MAC-Address",
+            "Last seen",
+            "Power-State, Name",
+            "Power-State, IP-Address",
+            "Power-State, MAC-Address",
+            "Power-State, Last seen"});
+            this.cbxSortBy.Location = new System.Drawing.Point(330, 19);
+            this.cbxSortBy.Name = "cbxSortBy";
+            this.cbxSortBy.Size = new System.Drawing.Size(221, 27);
+            this.cbxSortBy.TabIndex = 15;
+            this.cbxSortBy.SelectedIndexChanged += new System.EventHandler(this.cbxSortBy_SelectedIndexChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(266, 22);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(58, 19);
+            this.label9.TabIndex = 16;
+            this.label9.Text = "Sort by:";
+            // 
+            // cbxSortOrder
+            // 
+            this.cbxSortOrder.FormattingEnabled = true;
+            this.cbxSortOrder.Items.AddRange(new object[] {
+            "▲",
+            "▼"});
+            this.cbxSortOrder.Location = new System.Drawing.Point(557, 19);
+            this.cbxSortOrder.Name = "cbxSortOrder";
+            this.cbxSortOrder.Size = new System.Drawing.Size(37, 27);
+            this.cbxSortOrder.TabIndex = 15;
+            this.cbxSortOrder.SelectedIndexChanged += new System.EventHandler(this.cbxSortOrder_SelectedIndexChanged);
+            // 
+            // lblDeviceCount
+            // 
+            this.lblDeviceCount.AutoSize = true;
+            this.lblDeviceCount.Location = new System.Drawing.Point(6, 22);
+            this.lblDeviceCount.Name = "lblDeviceCount";
+            this.lblDeviceCount.Size = new System.Drawing.Size(145, 19);
+            this.lblDeviceCount.TabIndex = 17;
+            this.lblDeviceCount.Text = "0 Devices Registered";
+            // 
             // SurgitMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1000, 731);
+            this.ClientSize = new System.Drawing.Size(1000, 721);
+            this.Controls.Add(this.lblProgressReport);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -467,6 +628,7 @@
             this.Padding = new System.Windows.Forms.Padding(1, 0, 1, 1);
             this.ShowApplicationIcon = false;
             this.Text = "Surgit Network Manager";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SurgitMain_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.rbcRibbonMenu)).EndInit();
             this.rbcRibbonMenu.ResumeLayout(false);
             this.rbcRibbonMenu.PerformLayout();
@@ -479,6 +641,9 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.toolStripEx2.ResumeLayout(false);
+            this.toolStripEx2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -514,6 +679,20 @@
         private Syncfusion.WinForms.Controls.SfButton btnDiscardChanges;
         private Syncfusion.WinForms.Controls.SfButton btnSaveChanges;
         private Syncfusion.Windows.Forms.Tools.ToolStripTabItem toolStripTabItem3;
+        private System.ComponentModel.BackgroundWorker bgwCheckPowerState;
+        private System.Windows.Forms.Timer tmrStartPowerCheck;
+        private Syncfusion.Windows.Forms.Tools.ToolStripEx toolStripEx2;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripTextBox txbIPRangeStart;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
+        private System.Windows.Forms.ToolStripTextBox txbIPRangeEnd;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.Label lblProgressReport;
+        private System.Windows.Forms.Label lblDeviceCount;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cbxSortOrder;
+        private System.Windows.Forms.ComboBox cbxSortBy;
     }
 }
 

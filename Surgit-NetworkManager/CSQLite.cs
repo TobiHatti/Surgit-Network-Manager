@@ -23,13 +23,9 @@ namespace Surgit_NetworkManager
         {
             try
             {
-                using(SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM Devices", connection))
-                {
-                    connection.Open();
-                    cmd.ExecuteReader();
-                    connection.Close();
-                    return true;
-                }
+                connection.Open();
+                connection.Close();
+                return true;
             }
             catch
             {
@@ -43,12 +39,30 @@ namespace Surgit_NetworkManager
         {
             using (SQLiteCommand cmd = new SQLiteCommand(pQuery, connection))
             {
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public void ExecuteNonQueryA(string pQuery)
+        {
+            using (SQLiteCommand cmd = new SQLiteCommand(pQuery, connection))
+            {
                 connection.Open();
                 cmd.ExecuteNonQuery();
                 connection.Close();
             }
         }
+
         public void ExecuteNonQuery(string pQuery, params object[] values)
+        {
+            using (SQLiteCommand cmd = new SQLiteCommand(pQuery, connection))
+            {
+                foreach (object parameter in values) cmd.Parameters.AddWithValue("", parameter);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public void ExecuteNonQueryA(string pQuery, params object[] values)
         {
             using (SQLiteCommand cmd = new SQLiteCommand(pQuery, connection))
             {
@@ -67,15 +81,35 @@ namespace Surgit_NetworkManager
         {
             using (SQLiteCommand cmd = new SQLiteCommand(pQuery, connection))
             {
-                connection.Open();
                 object o = cmd.ExecuteScalar();
-                connection.Close();
                 return o;
             }
             
         }
 
+        public object ExecuteScalarA(string pQuery)
+        {
+            using (SQLiteCommand cmd = new SQLiteCommand(pQuery, connection))
+            {
+                connection.Open();
+                object o = cmd.ExecuteScalar();
+                connection.Close();
+                return o;
+            }
+
+        }
+
         public object ExecuteScalar(string pQuery, params object[] values)
+        {
+            using (SQLiteCommand cmd = new SQLiteCommand(pQuery, connection))
+            {
+                foreach (object parameter in values) cmd.Parameters.AddWithValue("", parameter);
+                object retval = cmd.ExecuteScalar();
+                return retval;
+            }
+        }
+
+        public object ExecuteScalarA(string pQuery, params object[] values)
         {
             using (SQLiteCommand cmd = new SQLiteCommand(pQuery, connection))
             {
@@ -91,6 +125,15 @@ namespace Surgit_NetworkManager
         {
             using (SQLiteCommand cmd = new SQLiteCommand(pQuery, connection))
             {
+                object retval = cmd.ExecuteScalar();
+                return (DataType)Convert.ChangeType(retval, typeof(DataType));
+            }
+        }
+
+        public DataType ExecuteScalarA<DataType>(string pQuery)
+        {
+            using (SQLiteCommand cmd = new SQLiteCommand(pQuery, connection))
+            {
                 connection.Open();
                 object retval = cmd.ExecuteScalar();
                 connection.Close();
@@ -99,6 +142,16 @@ namespace Surgit_NetworkManager
         }
 
         public DataType ExecuteScalar<DataType>(string pQuery, params object[] values)
+        {
+            using (SQLiteCommand cmd = new SQLiteCommand(pQuery, connection))
+            {
+                foreach (object parameter in values) cmd.Parameters.AddWithValue("", parameter);
+                object retval = cmd.ExecuteScalar();
+                return (DataType)Convert.ChangeType(retval, typeof(DataType));
+            }
+        }
+
+        public DataType ExecuteScalarA<DataType>(string pQuery, params object[] values)
         {
             using (SQLiteCommand cmd = new SQLiteCommand(pQuery, connection))
             {

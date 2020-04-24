@@ -31,7 +31,7 @@ namespace Surgit_NetworkManager
             foreach(DeviceType t in values)
             {
                 GroupViewItem gvi = new GroupViewItem(ReadableString(t.ToString()), 0);
-                gvi.ImageIndex = grvDeviceTypes.LargeImageList.Images.IndexOfKey(t.ToString());
+                gvi.ImageIndex = grvDeviceTypes.LargeImageList.Images.IndexOfKey(t.ToString() + "_RAW");
                 grvDeviceTypes.GroupViewItems.Add(gvi);
             }
         }

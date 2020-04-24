@@ -76,6 +76,7 @@
       <DependentUpon>DiscoverDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="NetDevice.cs" />
+    <Compile Include="NetExplore.cs" />
     <Compile Include="SurgitMain.cs">
       <SubType>Form</SubType>
     </Compile>
