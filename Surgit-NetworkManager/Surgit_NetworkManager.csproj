@@ -76,6 +76,12 @@
       <DependentUpon>fDiscoverDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="cSurgitManager.cs" />
+    <Compile Include="fDiscoverLocal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fDiscoverLocal.Designer.cs">
+      <DependentUpon>fDiscoverLocal.cs</DependentUpon>
+    </Compile>
     <Compile Include="fUpdateEntries.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fDiscoverDialog.resx">
       <DependentUpon>fDiscoverDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fDiscoverLocal.resx">
+      <DependentUpon>fDiscoverLocal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fSurgitMain.resx">
       <DependentUpon>fSurgitMain.cs</DependentUpon>

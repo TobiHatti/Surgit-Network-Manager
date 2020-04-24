@@ -32,7 +32,7 @@ namespace Surgit_NetworkManager
 
            // Configure and Initialize form elements
             grvDevices.LargeImageList = NetDevice.GetImageList();
-            cbxSortBy.SelectedIndex = 4;
+            cbxSortBy.SelectedIndex = 5;
             cbxSortOrder.SelectedIndex = 0;
 
             // Initialize Surgit
@@ -87,11 +87,13 @@ namespace Surgit_NetworkManager
                 case 0: orderBy = $"ORDER BY Name {orderDirection}"; break;
                 case 1: orderBy = $"ORDER BY IP4Address {orderDirection}"; break;
                 case 2: orderBy = $"ORDER BY MACAddress {orderDirection}"; break;
-                case 3: orderBy = $"ORDER BY LastSeen {orderDirection}"; break;
-                case 4: orderBy = $"ORDER BY LastPowerState {orderDirectionRev}, Name {orderDirection}"; break;
-                case 5: orderBy = $"ORDER BY LastPowerState {orderDirectionRev}, IP4Address {orderDirection}"; break;
-                case 6: orderBy = $"ORDER BY LastPowerState {orderDirectionRev}, MACAddress {orderDirection}"; break;
-                case 7: orderBy = $"ORDER BY LastPowerState {orderDirectionRev}, LastSeen {orderDirection}"; break;
+                case 3: orderBy = $"ORDER BY DeviceType {orderDirection}"; break;
+                case 4: orderBy = $"ORDER BY LastSeen {orderDirection}"; break;
+                case 5: orderBy = $"ORDER BY LastPowerState {orderDirectionRev}, Name {orderDirection}"; break;
+                case 6: orderBy = $"ORDER BY LastPowerState {orderDirectionRev}, IP4Address {orderDirection}"; break;
+                case 7: orderBy = $"ORDER BY LastPowerState {orderDirectionRev}, DeviceType {orderDirection}"; break;
+                case 8: orderBy = $"ORDER BY LastPowerState {orderDirectionRev}, MACAddress {orderDirection}"; break;
+                case 9: orderBy = $"ORDER BY LastPowerState {orderDirectionRev}, LastSeen {orderDirection}"; break;
                 default: orderBy = ""; break;
             }
 
@@ -304,7 +306,7 @@ namespace Surgit_NetworkManager
         private void bgwCheckPowerState_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
         {
             if (!btnSaveChanges.Enabled) UpdateDeviceList();
-            lblProgressReport.Text = "Surgit Network Manager - Last Check finished at " + DateTime.Now.ToLongTimeString();
+            lblProgressReport.Text = "Surgit Network Manager - Last Auto-PowerCheck finished at " + DateTime.Now.ToLongTimeString();
         }
 
         private void bgwCheckPowerState_ProgressChanged(object sender, System.ComponentModel.ProgressChangedEventArgs e)
@@ -321,6 +323,11 @@ namespace Surgit_NetworkManager
 
             if(e.ProgressPercentage <= pgbPowerCheck.Maximum)
                 pgbPowerCheck.Value = e.ProgressPercentage;
+        }
+
+        private void lblCopyright_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Copyright information\r\n\r\nAny images used, excluding the Surgit-Logo, are default Windows icons and therefor owned and copyrighted by Microsoft.\r\n\r\nThis program is partially built using the Syncfusion Framework under the Syncfusion Comunity Licence.\r\n\r\nThe program, as is, is property of Tobias Hattinger @ Endix Development.\r\nView the Licence at https://github.com/TobiHatti/Surgit-Network-Manager for more information.", "Copyright and Licence information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 #pragma warning restore IDE1006

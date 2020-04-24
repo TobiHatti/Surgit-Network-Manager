@@ -78,6 +78,7 @@
             this.lblProgressReport = new System.Windows.Forms.Label();
             this.btnDiscoverSelf = new System.Windows.Forms.ToolStripButton();
             this.pgbPowerCheck = new System.Windows.Forms.ProgressBar();
+            this.lblCopyright = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.rbcRibbonMenu)).BeginInit();
             this.rbcRibbonMenu.SuspendLayout();
             this.toolStripTabItem1.Panel.SuspendLayout();
@@ -587,10 +588,12 @@
             "Name",
             "IP-Address",
             "MAC-Address",
+            "Device Type",
             "Last seen",
             "Power-State, Name",
             "Power-State, IP-Address",
             "Power-State, MAC-Address",
+            "Power-State, Device-Type",
             "Power-State, Last seen"});
             this.cbxSortBy.Location = new System.Drawing.Point(230, 22);
             this.cbxSortBy.Name = "cbxSortBy";
@@ -664,10 +667,23 @@
             // pgbPowerCheck
             // 
             this.pgbPowerCheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pgbPowerCheck.Location = new System.Drawing.Point(5, 735);
+            this.pgbPowerCheck.Location = new System.Drawing.Point(5, 732);
             this.pgbPowerCheck.Name = "pgbPowerCheck";
             this.pgbPowerCheck.Size = new System.Drawing.Size(285, 10);
             this.pgbPowerCheck.TabIndex = 17;
+            // 
+            // lblCopyright
+            // 
+            this.lblCopyright.AutoSize = true;
+            this.lblCopyright.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(198)))));
+            this.lblCopyright.Font = new System.Drawing.Font("Calibri Light", 10F);
+            this.lblCopyright.ForeColor = System.Drawing.Color.Silver;
+            this.lblCopyright.Location = new System.Drawing.Point(2, 743);
+            this.lblCopyright.Name = "lblCopyright";
+            this.lblCopyright.Size = new System.Drawing.Size(178, 17);
+            this.lblCopyright.TabIndex = 19;
+            this.lblCopyright.Text = "Click for copyright information";
+            this.lblCopyright.Click += new System.EventHandler(this.lblCopyright_Click);
             // 
             // SurgitMain
             // 
@@ -675,6 +691,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(900, 760);
+            this.Controls.Add(this.lblCopyright);
             this.Controls.Add(this.pgbPowerCheck);
             this.Controls.Add(this.lblProgressReport);
             this.Controls.Add(this.groupBox3);
@@ -705,6 +722,7 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -757,6 +775,7 @@
         private System.Windows.Forms.Label lblDeviceOnlineCount;
         private System.Windows.Forms.ToolStripButton btnDiscoverSelf;
         private System.Windows.Forms.ProgressBar pgbPowerCheck;
+        private System.Windows.Forms.Label lblCopyright;
     }
 }
 

@@ -129,7 +129,7 @@
             // chbPingCheck
             // 
             this.chbPingCheck.AutoSize = true;
-            this.chbPingCheck.Location = new System.Drawing.Point(290, 10);
+            this.chbPingCheck.Location = new System.Drawing.Point(290, 8);
             this.chbPingCheck.Name = "chbPingCheck";
             this.chbPingCheck.Size = new System.Drawing.Size(120, 23);
             this.chbPingCheck.TabIndex = 6;

@@ -40,7 +40,7 @@
             this.pgbProgress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pgbProgress.Location = new System.Drawing.Point(7, 50);
-            this.pgbProgress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pgbProgress.Margin = new System.Windows.Forms.Padding(4);
             this.pgbProgress.Name = "pgbProgress";
             this.pgbProgress.Size = new System.Drawing.Size(353, 35);
             this.pgbProgress.TabIndex = 0;
@@ -98,7 +98,9 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.pgbProgress);
             this.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "UpdateEntries";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Update Entries";
