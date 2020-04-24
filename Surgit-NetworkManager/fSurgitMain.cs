@@ -1,4 +1,5 @@
 ﻿using Syncfusion.Windows.Forms.Tools;
+using Syncfusion.XlsIO.Implementation;
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
@@ -38,6 +39,11 @@ namespace Surgit_NetworkManager
             // Initialize Surgit
             ApplyFormStyle();
             UpdateDeviceList();
+
+            sql.connection.Open();
+            lblIPRangeStart.Text = sql.ExecuteScalar<string>($"SELECT Value FROM Settings WHERE Key = 'IPRangeStart'");
+            lblIPRangeEnd.Text = sql.ExecuteScalar<string>($"SELECT Value FROM Settings WHERE Key = 'IPRangeEnd'");
+            sql.connection.Close();
 
             // Start the power-state check
             if (!bgwCheckPowerState.IsBusy) bgwCheckPowerState.RunWorkerAsync();
@@ -136,8 +142,8 @@ namespace Surgit_NetworkManager
         {
             DiscoverDialog discover = new DiscoverDialog
             {
-                IPRangeStart = txbIPRangeStart.Text,
-                IPRangeEnd = txbIPRangeEnd.Text
+                IPRangeStart = lblIPRangeStart.Text,
+                IPRangeEnd = lblIPRangeEnd.Text
             };
 
             // Open dialog and ask if entries should be updated upon completion
@@ -284,8 +290,8 @@ namespace Surgit_NetworkManager
         {
             UpdateEntries upd = new UpdateEntries
             {
-                IPStartRange = txbIPRangeStart.Text,
-                IPEndRange = txbIPRangeEnd.Text
+                IPStartRange = lblIPRangeStart.Text,
+                IPEndRange = lblIPRangeEnd.Text
             };
 
             if (upd.ShowDialog() == DialogResult.OK)
@@ -309,7 +315,7 @@ namespace Surgit_NetworkManager
             
         }
 
-        private void bgwCheckPowerState_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e) => SurgitManager.PowerStateCheck(txbIPRangeStart.Text, txbIPRangeEnd.Text, bgwCheckPowerState);
+        private void bgwCheckPowerState_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e) => SurgitManager.PowerStateCheck(lblIPRangeStart.Text, lblIPRangeEnd.Text, bgwCheckPowerState);
         private void btnSaveChanges_Click(object sender, EventArgs e) => SaveChanges();
         private void cbxSortBy_SelectedIndexChanged(object sender, EventArgs e) => UpdateDeviceList();
         private void cbxSortOrder_SelectedIndexChanged(object sender, EventArgs e) => UpdateDeviceList();
@@ -323,23 +329,54 @@ namespace Surgit_NetworkManager
 
         private void bgwCheckPowerState_ProgressChanged(object sender, System.ComponentModel.ProgressChangedEventArgs e)
         {
-            string[] ipStartParts = txbIPRangeStart.Text.Split('.');
-            string[] ipEndParts = txbIPRangeEnd.Text.Split('.');
+            try
+            {
+                string[] ipStartParts = lblIPRangeStart.Text.Split('.');
+                string[] ipEndParts = lblIPRangeEnd.Text.Split('.');
 
-            pgbPowerCheck.Maximum = Convert.ToInt32(ipEndParts[3]) - Convert.ToInt32(ipStartParts[3]);
-            pgbPowerCheck.Minimum = 0;
+                pgbPowerCheck.Maximum = Convert.ToInt32(ipEndParts[3]) - Convert.ToInt32(ipStartParts[3]);
+                pgbPowerCheck.Minimum = 0;
 
-            string currentIP = $"{ipStartParts[0]}.{ipStartParts[1]}.{ipStartParts[2]}.{e.ProgressPercentage}";
+                string currentIP = $"{ipStartParts[0]}.{ipStartParts[1]}.{ipStartParts[2]}.{e.ProgressPercentage}";
 
-            lblProgressReport.Text = "Checking Power-State of " + currentIP + "...";
+                lblProgressReport.Text = "Checking Power-State of " + currentIP + "...";
 
-            if(e.ProgressPercentage <= pgbPowerCheck.Maximum)
-                pgbPowerCheck.Value = e.ProgressPercentage;
+                if (e.ProgressPercentage <= pgbPowerCheck.Maximum)
+                    pgbPowerCheck.Value = e.ProgressPercentage;
+            }
+            catch(Exception ex)
+            {
+                lblProgressReport.Text = "An error occured during the PowerState-Check. Check if the IP-Range is correct.";
+                if (bgwCheckPowerState.WorkerSupportsCancellation) bgwCheckPowerState.CancelAsync();
+            }
         }
 
         private void lblCopyright_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Copyright information\r\n\r\nAny images used, excluding the Surgit-Logo, are default Windows icons and therefor owned and copyrighted by Microsoft.\r\n\r\nThis program is partially built using the Syncfusion Framework under the Syncfusion Comunity Licence.\r\n\r\nThe program, as is, is property of Tobias Hattinger @ Endix Development.\r\nView the Licence at https://github.com/TobiHatti/Surgit-Network-Manager for more information.", "Copyright and Licence information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnEditIPRange_Click(object sender, EventArgs e)
+        {
+            EditIPRange ipedit = new EditIPRange
+            {
+                IPStartRange = lblIPRangeStart.Text,
+                IPEndRange = lblIPRangeEnd.Text
+            };
+
+            if(ipedit.ShowDialog() == DialogResult.OK)
+            {
+                sql.connection.Open();
+                sql.ExecuteNonQuery($"UPDATE Settings SET Value = '{ipedit.IPStartRange}' WHERE Key = 'IPRangeStart'");
+                sql.ExecuteNonQuery($"UPDATE Settings SET Value = '{ipedit.IPEndRange}' WHERE Key = 'IPRangeEnd'");
+                sql.connection.Close();
+
+                lblIPRangeStart.Text = ipedit.IPStartRange;
+                lblIPRangeEnd.Text = ipedit.IPEndRange;
+
+                if (bgwCheckPowerState.WorkerSupportsCancellation)
+                    bgwCheckPowerState.CancelAsync();
+            }
         }
     }
 #pragma warning restore IDE1006

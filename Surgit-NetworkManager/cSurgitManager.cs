@@ -40,7 +40,7 @@ namespace Surgit_NetworkManager
             string[] ipStartParts = pIPRangeStart.Split('.');
             string[] ipEndParts = pIPRangeEnd.Split('.');
 
-            if (ipStartParts[0] == ipEndParts[0] && ipStartParts[1] == ipEndParts[1] && ipStartParts[2] == ipEndParts[2]) return true;
+            if (ipStartParts[0] == ipEndParts[0] && ipStartParts[1] == ipEndParts[1] && ipStartParts[2] == ipEndParts[2] && Convert.ToInt32(ipStartParts[3]) <= Convert.ToInt32(ipEndParts[3])) return true;
             else return false;
         }
 

@@ -46,7 +46,7 @@ namespace Surgit_NetworkManager
 
             bool ipEndValid;
             // Check if end-IP is valid
-            if (IPAddress.TryParse(txbDiscoveryStart.Text, out IPAddress ipEndRange) && ipEndRange.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork) ipEndValid = true;
+            if (IPAddress.TryParse(txbDiscoveryEnd.Text, out IPAddress ipEndRange) && ipEndRange.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork) ipEndValid = true;
             else
             {
                 MessageBox.Show("The given range-end is not a valid IPv4-Address", "Invalid IP", MessageBoxButtons.OK, MessageBoxIcon.Error);

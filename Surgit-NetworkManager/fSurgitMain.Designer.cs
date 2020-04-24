@@ -34,10 +34,8 @@
             this.toolStripTabItem1 = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
             this.toolStripEx2 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.txbIPRangeStart = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.txbIPRangeEnd = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripEx1 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
             this.btnDiscover = new System.Windows.Forms.ToolStripButton();
             this.btnUpdateDevices = new System.Windows.Forms.ToolStripButton();
@@ -79,6 +77,9 @@
             this.btnDiscoverSelf = new System.Windows.Forms.ToolStripButton();
             this.pgbPowerCheck = new System.Windows.Forms.ProgressBar();
             this.lblCopyright = new System.Windows.Forms.Label();
+            this.btnEditIPRange = new System.Windows.Forms.ToolStripButton();
+            this.lblIPRangeStart = new System.Windows.Forms.ToolStripLabel();
+            this.lblIPRangeEnd = new System.Windows.Forms.ToolStripLabel();
             ((System.ComponentModel.ISupportInitialize)(this.rbcRibbonMenu)).BeginInit();
             this.rbcRibbonMenu.SuspendLayout();
             this.toolStripTabItem1.Panel.SuspendLayout();
@@ -150,32 +151,28 @@
             this.toolStripEx2.Image = null;
             this.toolStripEx2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel1,
-            this.txbIPRangeStart,
-            this.toolStripSeparator1,
+            this.lblIPRangeStart,
             this.toolStripLabel2,
-            this.txbIPRangeEnd});
+            this.lblIPRangeEnd,
+            this.toolStripSeparator1,
+            this.btnEditIPRange});
             this.toolStripEx2.Location = new System.Drawing.Point(0, 1);
             this.toolStripEx2.Name = "toolStripEx2";
             this.toolStripEx2.Office12Mode = false;
             this.toolStripEx2.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.toolStripEx2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripEx2.Size = new System.Drawing.Size(422, 98);
+            this.toolStripEx2.Size = new System.Drawing.Size(361, 98);
             this.toolStripEx2.TabIndex = 1;
             this.toolStripEx2.Text = "IP Address Range";
             // 
             // toolStripLabel1
             // 
             this.toolStripLabel1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripLabel1.Font = new System.Drawing.Font("Calibri Light", 12F);
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(105, 76);
-            this.toolStripLabel1.Text = "IP Range Start:";
-            // 
-            // txbIPRangeStart
-            // 
-            this.txbIPRangeStart.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txbIPRangeStart.Name = "txbIPRangeStart";
-            this.txbIPRangeStart.Size = new System.Drawing.Size(100, 79);
-            this.txbIPRangeStart.Text = "10.0.0.1";
+            this.toolStripLabel1.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.toolStripLabel1.Size = new System.Drawing.Size(85, 76);
+            this.toolStripLabel1.Text = "IP Range:";
             // 
             // toolStripSeparator1
             // 
@@ -184,16 +181,10 @@
             // 
             // toolStripLabel2
             // 
+            this.toolStripLabel2.Font = new System.Drawing.Font("Calibri Light", 12F);
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(98, 76);
-            this.toolStripLabel2.Text = "IP Range End:";
-            // 
-            // txbIPRangeEnd
-            // 
-            this.txbIPRangeEnd.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txbIPRangeEnd.Name = "txbIPRangeEnd";
-            this.txbIPRangeEnd.Size = new System.Drawing.Size(100, 79);
-            this.txbIPRangeEnd.Text = "10.0.0.254";
+            this.toolStripLabel2.Size = new System.Drawing.Size(22, 76);
+            this.toolStripLabel2.Text = "to";
             // 
             // toolStripEx1
             // 
@@ -207,7 +198,7 @@
             this.btnDiscoverSelf,
             this.btnUpdateDevices,
             this.btnRefresh});
-            this.toolStripEx1.Location = new System.Drawing.Point(424, 1);
+            this.toolStripEx1.Location = new System.Drawing.Point(363, 1);
             this.toolStripEx1.Name = "toolStripEx1";
             this.toolStripEx1.Office12Mode = false;
             this.toolStripEx1.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
@@ -686,6 +677,29 @@
             this.lblCopyright.Text = "Click for copyright information";
             this.lblCopyright.Click += new System.EventHandler(this.lblCopyright_Click);
             // 
+            // btnEditIPRange
+            // 
+            this.btnEditIPRange.Image = ((System.Drawing.Image)(resources.GetObject("btnEditIPRange.Image")));
+            this.btnEditIPRange.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnEditIPRange.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEditIPRange.Name = "btnEditIPRange";
+            this.btnEditIPRange.Size = new System.Drawing.Size(70, 76);
+            this.btnEditIPRange.Text = "Edit \r\nIP-Range";
+            this.btnEditIPRange.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnEditIPRange.Click += new System.EventHandler(this.btnEditIPRange_Click);
+            // 
+            // lblIPRangeStart
+            // 
+            this.lblIPRangeStart.Name = "lblIPRangeStart";
+            this.lblIPRangeStart.Size = new System.Drawing.Size(61, 76);
+            this.lblIPRangeStart.Text = "10.0.0.1";
+            // 
+            // lblIPRangeEnd
+            // 
+            this.lblIPRangeEnd.Name = "lblIPRangeEnd";
+            this.lblIPRangeEnd.Size = new System.Drawing.Size(77, 76);
+            this.lblIPRangeEnd.Text = "10.0.0.254";
+            // 
             // SurgitMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
@@ -762,10 +776,8 @@
         private System.Windows.Forms.Timer tmrStartPowerCheck;
         private Syncfusion.Windows.Forms.Tools.ToolStripEx toolStripEx2;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripTextBox txbIPRangeStart;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
-        private System.Windows.Forms.ToolStripTextBox txbIPRangeEnd;
         private System.Windows.Forms.ToolStripButton btnRefresh;
         private System.Windows.Forms.Label lblProgressReport;
         private System.Windows.Forms.Label lblDeviceCount;
@@ -777,6 +789,9 @@
         private System.Windows.Forms.ToolStripButton btnDiscoverSelf;
         private System.Windows.Forms.ProgressBar pgbPowerCheck;
         private System.Windows.Forms.Label lblCopyright;
+        private System.Windows.Forms.ToolStripButton btnEditIPRange;
+        private System.Windows.Forms.ToolStripLabel lblIPRangeStart;
+        private System.Windows.Forms.ToolStripLabel lblIPRangeEnd;
     }
 }
 

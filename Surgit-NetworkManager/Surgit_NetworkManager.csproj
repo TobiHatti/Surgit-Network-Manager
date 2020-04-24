@@ -82,6 +82,12 @@
     <Compile Include="fDiscoverLocal.Designer.cs">
       <DependentUpon>fDiscoverLocal.cs</DependentUpon>
     </Compile>
+    <Compile Include="fEditIPRange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fEditIPRange.Designer.cs">
+      <DependentUpon>fEditIPRange.cs</DependentUpon>
+    </Compile>
     <Compile Include="fUpdateEntries.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fDiscoverLocal.resx">
       <DependentUpon>fDiscoverLocal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fEditIPRange.resx">
+      <DependentUpon>fEditIPRange.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fSurgitMain.resx">
       <DependentUpon>fSurgitMain.cs</DependentUpon>

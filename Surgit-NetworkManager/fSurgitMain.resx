@@ -123,10 +123,20 @@
   <metadata name="toolStripEx2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>466, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnEditIPRange.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADtSURBVDhPrVKxDcJADMwIjMBIjMAYlLRMgUTLECyARBkp
+        gg6lpkGie/4inWU7R0P+pJOcs/999qfrdn1pSikuoRQrt+exXB7vsjk9TUMMDTlfG6jE9eFeiNv4MR0x
+        gRp/xijFSjj5BeTUmYn+g11X+yG4yUAONf6MkQH2AqC7v+x4fU27AxETqOEUYacM1Ihq+WzsEVbAAA6y
+        MytKzE79nzB7FCIUJSJHzPJZIBZfiKKmIzd/FBYimZ3CAZid0URobEFl0x87U62ACCNmKhFdCbih7l3P
+        nJFSrMRe4MS/IGJo6rGMUlxCKf7NvnwBi65eScuAuXUAAAAASUVORK5CYII=
+</value>
+  </data>
   <metadata name="toolStripEx1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnDiscover.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
