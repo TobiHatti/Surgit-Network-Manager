@@ -59,16 +59,18 @@ namespace Surgit_NetworkManager
             string deviceIconBasePathOFF = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"Surgit\DeviceIconsOFF");
             string deviceIconBasePathRAW = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"Surgit\DeviceIconsRAW");
 
-            ImageList imgList = new ImageList();
-            imgList.ImageSize = new Size(64, 64);
-            imgList.ColorDepth = ColorDepth.Depth32Bit;
+            ImageList imgList = new ImageList
+            {
+                ImageSize = new Size(64, 64),
+                ColorDepth = ColorDepth.Depth32Bit
+            };
 
             var values = Enum.GetValues(typeof(DeviceType)).Cast<DeviceType>();
             foreach(DeviceType device in values)
             {
-                imgList.Images.Add(device.ToString() + "_ON", new Icon(Path.Combine(deviceIconBasePathON, $"{device.ToString()}.ico")));
-                imgList.Images.Add(device.ToString() + "_OFF", new Icon(Path.Combine(deviceIconBasePathOFF, $"{device.ToString()}.ico")));
-                imgList.Images.Add(device.ToString() + "_RAW", new Icon(Path.Combine(deviceIconBasePathRAW, $"{device.ToString()}.ico")));
+                imgList.Images.Add(device.ToString() + "_ON", new Icon(Path.Combine(deviceIconBasePathON, $"{device}.ico")));
+                imgList.Images.Add(device.ToString() + "_OFF", new Icon(Path.Combine(deviceIconBasePathOFF, $"{device}.ico")));
+                imgList.Images.Add(device.ToString() + "_RAW", new Icon(Path.Combine(deviceIconBasePathRAW, $"{device}.ico")));
             }
 
             return imgList;

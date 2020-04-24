@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Surgit_NetworkManager
 {
-    public class CSQLite
+    public class CSQLite : IDisposable
     {
-        private string conStr = null;
+        private readonly string conStr = null;
 
         public SQLiteConnection connection = null;
 
@@ -17,6 +17,11 @@ namespace Surgit_NetworkManager
         {
             conStr = $@"URI=file:{pDBPath}";
             connection = new SQLiteConnection(conStr);
+        }
+
+        public void Dispose()
+        {
+            connection.Dispose();
         }
 
         public bool ConnectionTest()
@@ -180,6 +185,8 @@ namespace Surgit_NetworkManager
             foreach (object parameter in values) cmd.Parameters.AddWithValue("", parameter);
             return cmd.ExecuteReader();
         }
+
+        
 
         #endregion
     }

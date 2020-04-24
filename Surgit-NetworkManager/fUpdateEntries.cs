@@ -14,6 +14,7 @@ using Syncfusion.XlsIO.Parser.Biff_Records;
 
 namespace Surgit_NetworkManager
 {
+#pragma warning disable IDE1006
     public partial class UpdateEntries : SfForm
     {
         public string IPStartRange { get; set; } = "";
@@ -57,7 +58,6 @@ namespace Surgit_NetworkManager
             sql.connection.Close();
 
             Ping ping = new Ping();
-            PingReply reply = null;
             StringBuilder sqlSB = new StringBuilder();
 
             if (ipStartParts[0] == ipEndParts[0] && ipStartParts[1] == ipEndParts[1] && ipStartParts[2] == ipEndParts[2])
@@ -67,7 +67,7 @@ namespace Surgit_NetworkManager
                     bgwUpdateEntries.ReportProgress(i);
 
                     string currentIP = ipStartParts[0] + "." + ipStartParts[1] + "." + ipStartParts[2] + "." + i.ToString();
-                    reply = ping.Send(currentIP, 100);
+                    PingReply reply = ping.Send(currentIP, 100);
 
                     if (reply.Status == IPStatus.Success)
                     {
@@ -86,7 +86,7 @@ namespace Surgit_NetworkManager
                             {
                                 // New, unknown device, add to DB
                                 DevicePowerState.Add(currentMAC, true);
-                                sqlSB.Append($"INSERT INTO Devices (MACAddress, DeviceType, Name, IP4Address, LastSeen) VALUES ('{currentMAC}','{DeviceType.UnknownDevice.ToString()}','Device-{currentMAC}','{currentIP}','{DateTime.Now:yyyy-MM-dd H:mm:ss}')");
+                                sqlSB.Append($"INSERT INTO Devices (MACAddress, DeviceType, Name, IP4Address, LastSeen) VALUES ('{currentMAC}','{DeviceType.UnknownDevice}','Device-{currentMAC}','{currentIP}','{DateTime.Now:yyyy-MM-dd H:mm:ss}')");
                             }
                         }
                     }
@@ -94,9 +94,7 @@ namespace Surgit_NetworkManager
                 }
 
                 // Update IP and LastSeen, add new entries
-                sql.connection.Open();
-                sql.ExecuteNonQuery(sqlSB.ToString());
-                sql.connection.Close();
+                sql.ExecuteNonQueryA(sqlSB.ToString());
 
                 // Update last power-state
                 StringBuilder sb = new StringBuilder();
@@ -106,9 +104,8 @@ namespace Surgit_NetworkManager
                     if (entry.Value) state = 1;
                     sb.Append($"UPDATE Devices SET LastPowerState = '{state}' WHERE MACAddress = '{entry.Key}';");
                 }
-                sql.connection.Open();
-                sql.ExecuteNonQuery(sb.ToString());
-                sql.connection.Close();
+                sql.ExecuteNonQueryA(sb.ToString());
+
             }
         }
 
@@ -120,13 +117,16 @@ namespace Surgit_NetworkManager
 
         private void bgwUpdateEntries_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            this.DialogResult = DialogResult.OK;
             this.Close();
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
             if (bgwUpdateEntries.WorkerSupportsCancellation)
                 bgwUpdateEntries.CancelAsync();
+            this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
     }
+#pragma warning restore IDE1006
 }

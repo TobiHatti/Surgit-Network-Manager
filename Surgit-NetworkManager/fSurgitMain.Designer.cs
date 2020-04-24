@@ -40,6 +40,7 @@
             this.txbIPRangeEnd = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripEx1 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
             this.btnDiscover = new System.Windows.Forms.ToolStripButton();
+            this.btnUpdateDevices = new System.Windows.Forms.ToolStripButton();
             this.btnRefresh = new System.Windows.Forms.ToolStripButton();
             this.toolStripTabItem2 = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
             this.toolStripTabItem3 = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
@@ -66,6 +67,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblDeviceOnlineCount = new System.Windows.Forms.Label();
             this.lblDeviceCount = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.cbxSortOrder = new System.Windows.Forms.ComboBox();
@@ -74,7 +76,6 @@
             this.bgwCheckPowerState = new System.ComponentModel.BackgroundWorker();
             this.tmrStartPowerCheck = new System.Windows.Forms.Timer(this.components);
             this.lblProgressReport = new System.Windows.Forms.Label();
-            this.btnUpdateDevices = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.rbcRibbonMenu)).BeginInit();
             this.rbcRibbonMenu.SuspendLayout();
             this.toolStripTabItem1.Panel.SuspendLayout();
@@ -110,7 +111,7 @@
             this.rbcRibbonMenu.RibbonStyle = Syncfusion.Windows.Forms.Tools.RibbonStyle.Office2016;
             this.rbcRibbonMenu.SelectedTab = this.toolStripTabItem1;
             this.rbcRibbonMenu.ShowRibbonDisplayOptionButton = true;
-            this.rbcRibbonMenu.Size = new System.Drawing.Size(1002, 164);
+            this.rbcRibbonMenu.Size = new System.Drawing.Size(902, 167);
             this.rbcRibbonMenu.SystemText.QuickAccessDialogDropDownName = "Start menu";
             this.rbcRibbonMenu.SystemText.RenameDisplayLabelText = "&Display Name:";
             this.rbcRibbonMenu.TabIndex = 1;
@@ -155,7 +156,7 @@
             this.toolStripEx2.Office12Mode = false;
             this.toolStripEx2.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.toolStripEx2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripEx2.Size = new System.Drawing.Size(453, 95);
+            this.toolStripEx2.Size = new System.Drawing.Size(422, 98);
             this.toolStripEx2.TabIndex = 1;
             this.toolStripEx2.Text = "IP Address Range";
             // 
@@ -163,32 +164,30 @@
             // 
             this.toolStripLabel1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(105, 73);
+            this.toolStripLabel1.Size = new System.Drawing.Size(105, 76);
             this.toolStripLabel1.Text = "IP Range Start:";
             // 
             // txbIPRangeStart
             // 
-            this.txbIPRangeStart.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txbIPRangeStart.Name = "txbIPRangeStart";
-            this.txbIPRangeStart.Size = new System.Drawing.Size(100, 76);
+            this.txbIPRangeStart.Size = new System.Drawing.Size(100, 79);
             this.txbIPRangeStart.Text = "10.0.0.1";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 76);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 79);
             // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(98, 73);
+            this.toolStripLabel2.Size = new System.Drawing.Size(98, 76);
             this.toolStripLabel2.Text = "IP Range End:";
             // 
             // txbIPRangeEnd
             // 
-            this.txbIPRangeEnd.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txbIPRangeEnd.Name = "txbIPRangeEnd";
-            this.txbIPRangeEnd.Size = new System.Drawing.Size(100, 76);
+            this.txbIPRangeEnd.Size = new System.Drawing.Size(100, 79);
             this.txbIPRangeEnd.Text = "10.0.0.254";
             // 
             // toolStripEx1
@@ -202,12 +201,12 @@
             this.btnDiscover,
             this.btnUpdateDevices,
             this.btnRefresh});
-            this.toolStripEx1.Location = new System.Drawing.Point(455, 1);
+            this.toolStripEx1.Location = new System.Drawing.Point(424, 1);
             this.toolStripEx1.Name = "toolStripEx1";
             this.toolStripEx1.Office12Mode = false;
             this.toolStripEx1.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.toolStripEx1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripEx1.Size = new System.Drawing.Size(204, 95);
+            this.toolStripEx1.Size = new System.Drawing.Size(204, 98);
             this.toolStripEx1.TabIndex = 0;
             this.toolStripEx1.Text = "Network Discovery";
             // 
@@ -217,10 +216,21 @@
             this.btnDiscover.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnDiscover.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDiscover.Name = "btnDiscover";
-            this.btnDiscover.Size = new System.Drawing.Size(69, 73);
+            this.btnDiscover.Size = new System.Drawing.Size(69, 76);
             this.btnDiscover.Text = "Discover";
             this.btnDiscover.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnDiscover.Click += new System.EventHandler(this.BtnDiscover_Click);
+            // 
+            // btnUpdateDevices
+            // 
+            this.btnUpdateDevices.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdateDevices.Image")));
+            this.btnUpdateDevices.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnUpdateDevices.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnUpdateDevices.Name = "btnUpdateDevices";
+            this.btnUpdateDevices.Size = new System.Drawing.Size(63, 76);
+            this.btnUpdateDevices.Text = "Update\r\nDevices";
+            this.btnUpdateDevices.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnUpdateDevices.Click += new System.EventHandler(this.btnUpdateDevices_Click);
             // 
             // btnRefresh
             // 
@@ -228,7 +238,7 @@
             this.btnRefresh.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(63, 73);
+            this.btnRefresh.Size = new System.Drawing.Size(63, 76);
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
@@ -372,7 +382,7 @@
             this.groupBox1.Controls.Add(this.txbDeviceIPv6);
             this.groupBox1.Controls.Add(this.txbDeviceIPv4);
             this.groupBox1.Controls.Add(this.txbDeviceHostname);
-            this.groupBox1.Location = new System.Drawing.Point(10, 452);
+            this.groupBox1.Location = new System.Drawing.Point(10, 521);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(8);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(364, 191);
@@ -412,7 +422,7 @@
             this.groupBox2.Location = new System.Drawing.Point(10, 162);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(8);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(364, 274);
+            this.groupBox2.Size = new System.Drawing.Size(364, 343);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Device information";
@@ -424,7 +434,7 @@
             this.btnDiscardChanges.Enabled = false;
             this.btnDiscardChanges.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDiscardChanges.ForeColor = System.Drawing.Color.White;
-            this.btnDiscardChanges.Location = new System.Drawing.Point(48, 234);
+            this.btnDiscardChanges.Location = new System.Drawing.Point(48, 303);
             this.btnDiscardChanges.Name = "btnDiscardChanges";
             this.btnDiscardChanges.Size = new System.Drawing.Size(131, 34);
             this.btnDiscardChanges.Style.BackColor = System.Drawing.Color.DodgerBlue;
@@ -441,7 +451,7 @@
             this.btnSaveChanges.Enabled = false;
             this.btnSaveChanges.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveChanges.ForeColor = System.Drawing.Color.White;
-            this.btnSaveChanges.Location = new System.Drawing.Point(185, 234);
+            this.btnSaveChanges.Location = new System.Drawing.Point(185, 303);
             this.btnSaveChanges.Name = "btnSaveChanges";
             this.btnSaveChanges.Size = new System.Drawing.Size(131, 34);
             this.btnSaveChanges.Style.BackColor = System.Drawing.Color.DodgerBlue;
@@ -472,13 +482,13 @@
             this.txbDeviceDescription.Location = new System.Drawing.Point(112, 92);
             this.txbDeviceDescription.Multiline = true;
             this.txbDeviceDescription.Name = "txbDeviceDescription";
-            this.txbDeviceDescription.Size = new System.Drawing.Size(246, 99);
+            this.txbDeviceDescription.Size = new System.Drawing.Size(246, 168);
             this.txbDeviceDescription.TabIndex = 12;
             this.txbDeviceDescription.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbDeviceDescription_KeyDown);
             // 
             // txbDeviceLastSeen
             // 
-            this.txbDeviceLastSeen.Location = new System.Drawing.Point(112, 197);
+            this.txbDeviceLastSeen.Location = new System.Drawing.Point(112, 266);
             this.txbDeviceLastSeen.Name = "txbDeviceLastSeen";
             this.txbDeviceLastSeen.ReadOnly = true;
             this.txbDeviceLastSeen.Size = new System.Drawing.Size(246, 27);
@@ -487,7 +497,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(32, 200);
+            this.label8.Location = new System.Drawing.Point(32, 269);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(74, 19);
             this.label8.TabIndex = 5;
@@ -507,23 +517,35 @@
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.lblDeviceOnlineCount);
             this.groupBox3.Controls.Add(this.lblDeviceCount);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.cbxSortOrder);
             this.groupBox3.Controls.Add(this.cbxSortBy);
             this.groupBox3.Controls.Add(this.grvDevices);
-            this.groupBox3.Location = new System.Drawing.Point(390, 172);
+            this.groupBox3.Location = new System.Drawing.Point(390, 175);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(8);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(600, 508);
+            this.groupBox3.Size = new System.Drawing.Size(500, 539);
             this.groupBox3.TabIndex = 15;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Devices";
             // 
+            // lblDeviceOnlineCount
+            // 
+            this.lblDeviceOnlineCount.AutoSize = true;
+            this.lblDeviceOnlineCount.BackColor = System.Drawing.Color.Transparent;
+            this.lblDeviceOnlineCount.Location = new System.Drawing.Point(7, 36);
+            this.lblDeviceOnlineCount.Name = "lblDeviceOnlineCount";
+            this.lblDeviceOnlineCount.Size = new System.Drawing.Size(117, 19);
+            this.lblDeviceOnlineCount.TabIndex = 17;
+            this.lblDeviceOnlineCount.Text = "0 Devices Online";
+            // 
             // lblDeviceCount
             // 
             this.lblDeviceCount.AutoSize = true;
-            this.lblDeviceCount.Location = new System.Drawing.Point(6, 22);
+            this.lblDeviceCount.BackColor = System.Drawing.Color.Transparent;
+            this.lblDeviceCount.Location = new System.Drawing.Point(6, 17);
             this.lblDeviceCount.Name = "lblDeviceCount";
             this.lblDeviceCount.Size = new System.Drawing.Size(145, 19);
             this.lblDeviceCount.TabIndex = 17;
@@ -531,8 +553,9 @@
             // 
             // label9
             // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(266, 22);
+            this.label9.Location = new System.Drawing.Point(166, 25);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(58, 19);
             this.label9.TabIndex = 16;
@@ -540,11 +563,12 @@
             // 
             // cbxSortOrder
             // 
+            this.cbxSortOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbxSortOrder.FormattingEnabled = true;
             this.cbxSortOrder.Items.AddRange(new object[] {
             "▲",
             "▼"});
-            this.cbxSortOrder.Location = new System.Drawing.Point(557, 19);
+            this.cbxSortOrder.Location = new System.Drawing.Point(457, 22);
             this.cbxSortOrder.Name = "cbxSortOrder";
             this.cbxSortOrder.Size = new System.Drawing.Size(37, 27);
             this.cbxSortOrder.TabIndex = 15;
@@ -552,6 +576,7 @@
             // 
             // cbxSortBy
             // 
+            this.cbxSortBy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbxSortBy.FormattingEnabled = true;
             this.cbxSortBy.Items.AddRange(new object[] {
             "Name",
@@ -562,7 +587,7 @@
             "Power-State, IP-Address",
             "Power-State, MAC-Address",
             "Power-State, Last seen"});
-            this.cbxSortBy.Location = new System.Drawing.Point(330, 19);
+            this.cbxSortBy.Location = new System.Drawing.Point(230, 22);
             this.cbxSortBy.Name = "cbxSortBy";
             this.cbxSortBy.Size = new System.Drawing.Size(221, 27);
             this.cbxSortBy.TabIndex = 15;
@@ -573,7 +598,7 @@
             this.grvDevices.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.grvDevices.BeforeTouchSize = new System.Drawing.Size(594, 453);
+            this.grvDevices.BeforeTouchSize = new System.Drawing.Size(494, 478);
             this.grvDevices.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.grvDevices.ButtonView = true;
             this.grvDevices.FlatLook = true;
@@ -581,10 +606,10 @@
             this.grvDevices.FlowViewItemTextLength = 140;
             this.grvDevices.IntegratedScrolling = true;
             this.grvDevices.ItemXSpacing = 2;
-            this.grvDevices.Location = new System.Drawing.Point(3, 52);
+            this.grvDevices.Location = new System.Drawing.Point(3, 58);
             this.grvDevices.Name = "grvDevices";
             this.grvDevices.ShowFlowViewItemText = true;
-            this.grvDevices.Size = new System.Drawing.Size(594, 453);
+            this.grvDevices.Size = new System.Drawing.Size(494, 478);
             this.grvDevices.TabIndex = 14;
             this.grvDevices.Text = "groupView1";
             this.grvDevices.TextSpacing = 30;
@@ -609,31 +634,20 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblProgressReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(198)))));
             this.lblProgressReport.ForeColor = System.Drawing.Color.White;
-            this.lblProgressReport.Location = new System.Drawing.Point(1, 688);
+            this.lblProgressReport.Location = new System.Drawing.Point(1, 722);
             this.lblProgressReport.Name = "lblProgressReport";
             this.lblProgressReport.Padding = new System.Windows.Forms.Padding(0, 0, 15, 0);
-            this.lblProgressReport.Size = new System.Drawing.Size(1002, 32);
+            this.lblProgressReport.Size = new System.Drawing.Size(902, 32);
             this.lblProgressReport.TabIndex = 16;
             this.lblProgressReport.Text = "Surgit Network Manager";
             this.lblProgressReport.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // btnUpdateDevices
-            // 
-            this.btnUpdateDevices.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdateDevices.Image")));
-            this.btnUpdateDevices.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnUpdateDevices.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnUpdateDevices.Name = "btnUpdateDevices";
-            this.btnUpdateDevices.Size = new System.Drawing.Size(63, 73);
-            this.btnUpdateDevices.Text = "Update\r\nDevices";
-            this.btnUpdateDevices.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnUpdateDevices.Click += new System.EventHandler(this.btnUpdateDevices_Click);
             // 
             // SurgitMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1000, 721);
+            this.ClientSize = new System.Drawing.Size(900, 755);
             this.Controls.Add(this.lblProgressReport);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -641,6 +655,7 @@
             this.Controls.Add(this.rbcRibbonMenu);
             this.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(900, 755);
             this.Name = "SurgitMain";
             this.Padding = new System.Windows.Forms.Padding(1, 0, 1, 1);
             this.ShowApplicationIcon = false;
@@ -711,6 +726,7 @@
         private System.Windows.Forms.ComboBox cbxSortOrder;
         private System.Windows.Forms.ComboBox cbxSortBy;
         private System.Windows.Forms.ToolStripButton btnUpdateDevices;
+        private System.Windows.Forms.Label lblDeviceOnlineCount;
     }
 }
 

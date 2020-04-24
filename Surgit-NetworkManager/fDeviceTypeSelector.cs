@@ -11,6 +11,7 @@ using Syncfusion.WinForms.Controls;
 
 namespace Surgit_NetworkManager
 {
+#pragma warning disable IDE1006
     public partial class DeviceTypeSelector : SfForm
     {
         public string SelectedDeviceType = null;
@@ -26,14 +27,8 @@ namespace Surgit_NetworkManager
 
         private void FillDeviceList()
         {
-            var values = Enum.GetValues(typeof(DeviceType)).Cast<DeviceType>();
-
-            foreach(DeviceType t in values)
-            {
-                GroupViewItem gvi = new GroupViewItem(ReadableString(t.ToString()), 0);
-                gvi.ImageIndex = grvDeviceTypes.LargeImageList.Images.IndexOfKey(t.ToString() + "_RAW");
-                grvDeviceTypes.GroupViewItems.Add(gvi);
-            }
+            foreach(DeviceType t in Enum.GetValues(typeof(DeviceType)).Cast<DeviceType>())
+                grvDeviceTypes.GroupViewItems.Add(new GroupViewItem(ReadableString(t.ToString()), grvDeviceTypes.LargeImageList.Images.IndexOfKey(t.ToString() + "_RAW")));
         }
 
         private string ReadableString(string pInput)
@@ -75,4 +70,5 @@ namespace Surgit_NetworkManager
             this.Close();
         }
     }
+#pragma warning restore IDE1006
 }

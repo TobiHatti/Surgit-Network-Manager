@@ -62,43 +62,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CSQLite.cs" />
-    <Compile Include="DeviceTypeSelector.cs">
+    <Compile Include="cCSQLite.cs" />
+    <Compile Include="fDeviceTypeSelector.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DeviceTypeSelector.Designer.cs">
-      <DependentUpon>DeviceTypeSelector.cs</DependentUpon>
+    <Compile Include="fDeviceTypeSelector.Designer.cs">
+      <DependentUpon>fDeviceTypeSelector.cs</DependentUpon>
     </Compile>
-    <Compile Include="DiscoverDialog.cs">
+    <Compile Include="fDiscoverDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DiscoverDialog.Designer.cs">
-      <DependentUpon>DiscoverDialog.cs</DependentUpon>
+    <Compile Include="fDiscoverDialog.Designer.cs">
+      <DependentUpon>fDiscoverDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="UpdateEntries.cs">
+    <Compile Include="cSurgitManager.cs" />
+    <Compile Include="fUpdateEntries.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UpdateEntries.Designer.cs">
-      <DependentUpon>UpdateEntries.cs</DependentUpon>
+    <Compile Include="fUpdateEntries.Designer.cs">
+      <DependentUpon>fUpdateEntries.cs</DependentUpon>
     </Compile>
-    <Compile Include="NetDevice.cs" />
-    <Compile Include="NetExplore.cs" />
-    <Compile Include="SurgitMain.cs">
+    <Compile Include="cNetDevice.cs" />
+    <Compile Include="cNetExplore.cs" />
+    <Compile Include="fSurgitMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SurgitMain.Designer.cs">
-      <DependentUpon>SurgitMain.cs</DependentUpon>
+    <Compile Include="fSurgitMain.Designer.cs">
+      <DependentUpon>fSurgitMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="DeviceTypeSelector.resx">
-      <DependentUpon>DeviceTypeSelector.cs</DependentUpon>
+    <EmbeddedResource Include="fDeviceTypeSelector.resx">
+      <DependentUpon>fDeviceTypeSelector.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DiscoverDialog.resx">
-      <DependentUpon>DiscoverDialog.cs</DependentUpon>
+    <EmbeddedResource Include="fDiscoverDialog.resx">
+      <DependentUpon>fDiscoverDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SurgitMain.resx">
-      <DependentUpon>SurgitMain.cs</DependentUpon>
+    <EmbeddedResource Include="fSurgitMain.resx">
+      <DependentUpon>fSurgitMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -109,8 +110,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UpdateEntries.resx">
-      <DependentUpon>UpdateEntries.cs</DependentUpon>
+    <EmbeddedResource Include="fUpdateEntries.resx">
+      <DependentUpon>fUpdateEntries.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

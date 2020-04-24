@@ -147,6 +147,8 @@
             this.bgwDiscovery.WorkerReportsProgress = true;
             this.bgwDiscovery.WorkerSupportsCancellation = true;
             this.bgwDiscovery.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwDiscovery_DoWork);
+            this.bgwDiscovery.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bgwDiscovery_ProgressChanged);
+            this.bgwDiscovery.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwDiscovery_RunWorkerCompleted);
             // 
             // btnCancel
             // 
@@ -186,6 +188,7 @@
             this.Name = "DiscoverDialog";
             this.Text = "Discover";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DiscoverDialog_FormClosing);
+            this.Load += new System.EventHandler(this.DiscoverDialog_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
