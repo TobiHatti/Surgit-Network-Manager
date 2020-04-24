@@ -17,7 +17,6 @@ H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\bin\Debug\Syncfusion.Tools.Wi
 H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\bin\Debug\Syncfusion.Grid.Base.xml
 H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\bin\Debug\Syncfusion.SpellChecker.Base.xml
 H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\bin\Debug\Syncfusion.Grid.Windows.XmlSerializers.dll
-H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Debug\Surgit_NetworkManager.csprojAssemblyReference.cache
 H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Debug\Surgit_NetworkManager.Properties.Resources.resources
 H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Debug\Surgit_NetworkManager.csproj.GenerateResource.cache
 H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Debug\Surgit_NetworkManager.csproj.CoreCompileInputs.cache
@@ -46,3 +45,5 @@ H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\bin\Debug\System.Data.SQLite.
 H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\bin\Debug\System.Data.SQLite.xml
 H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\bin\Debug\System.Data.SQLite.dll.config
 H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Debug\Surgit_NetworkManager.DeviceTypeSelector.resources
+H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Debug\Surgit_NetworkManager.csprojAssemblyReference.cache
+H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Debug\Surgit_NetworkManager.UpdateEntries.resources

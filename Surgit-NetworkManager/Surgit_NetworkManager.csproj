@@ -75,6 +75,12 @@
     <Compile Include="DiscoverDialog.Designer.cs">
       <DependentUpon>DiscoverDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="UpdateEntries.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateEntries.Designer.cs">
+      <DependentUpon>UpdateEntries.cs</DependentUpon>
+    </Compile>
     <Compile Include="NetDevice.cs" />
     <Compile Include="NetExplore.cs" />
     <Compile Include="SurgitMain.cs">
@@ -103,6 +109,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UpdateEntries.resx">
+      <DependentUpon>UpdateEntries.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

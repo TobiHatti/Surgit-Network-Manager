@@ -373,5 +373,18 @@ namespace Surgit_NetworkManager
         {
             UpdateDeviceList();
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            UpdateDeviceList();
+        }
+
+        private void btnUpdateDevices_Click(object sender, EventArgs e)
+        {
+            UpdateEntries upd = new UpdateEntries();
+            upd.IPStartRange = txbIPRangeStart.Text;
+            upd.IPEndRange = txbIPRangeEnd.Text;
+            upd.ShowDialog();
+        }
     }
 }
