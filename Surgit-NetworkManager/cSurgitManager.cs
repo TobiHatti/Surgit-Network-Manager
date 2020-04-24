@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data.SQLite;
 using System.IO;
 using System.Linq;
@@ -43,7 +44,7 @@ namespace Surgit_NetworkManager
             else return false;
         }
 
-        public static void PowerStateCheck(string pIPRangeStart, string pIPRangeEnd)
+        public static void PowerStateCheck(string pIPRangeStart, string pIPRangeEnd, BackgroundWorker pProgressReplyBGW = null)
         {
             using (CSQLite tsql = new CSQLite(SurgitManager.SurgitDatabaseLocation))
             {
@@ -68,6 +69,8 @@ namespace Surgit_NetworkManager
 
                     for (int i = Convert.ToInt32(ipStartParts[3]); i <= Convert.ToInt32(ipEndParts[3]); i++)
                     {
+                        if (pProgressReplyBGW != null) pProgressReplyBGW.ReportProgress(i);
+
                         string currentIP = ipStartParts[0] + "." + ipStartParts[1] + "." + ipStartParts[2] + "." + i.ToString();
                         PingReply reply = ping.Send(currentIP, 100);
 

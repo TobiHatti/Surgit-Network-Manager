@@ -278,8 +278,6 @@ namespace Surgit_NetworkManager
             if (!bgwCheckPowerState.IsBusy) bgwCheckPowerState.RunWorkerAsync();
         }
 
-        
-
         private void btnUpdateDevices_Click(object sender, EventArgs e)
         {
             UpdateEntries upd = new UpdateEntries
@@ -292,12 +290,38 @@ namespace Surgit_NetworkManager
                 UpdateDeviceList();
         }
 
-        private void bgwCheckPowerState_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e) => SurgitManager.PowerStateCheck(txbIPRangeStart.Text, txbIPRangeEnd.Text);
+        private void btnDiscoverSelf_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bgwCheckPowerState_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e) => SurgitManager.PowerStateCheck(txbIPRangeStart.Text, txbIPRangeEnd.Text, bgwCheckPowerState);
         private void btnSaveChanges_Click(object sender, EventArgs e) => SaveChanges();
         private void cbxSortBy_SelectedIndexChanged(object sender, EventArgs e) => UpdateDeviceList();
         private void cbxSortOrder_SelectedIndexChanged(object sender, EventArgs e) => UpdateDeviceList();
         private void btnRefresh_Click(object sender, EventArgs e) => UpdateDeviceList();
-        
+
+        private void bgwCheckPowerState_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
+        {
+            if (!btnSaveChanges.Enabled) UpdateDeviceList();
+            lblProgressReport.Text = "Surgit Network Manager - Last Check finished at " + DateTime.Now.ToLongTimeString();
+        }
+
+        private void bgwCheckPowerState_ProgressChanged(object sender, System.ComponentModel.ProgressChangedEventArgs e)
+        {
+            string[] ipStartParts = txbIPRangeStart.Text.Split('.');
+            string[] ipEndParts = txbIPRangeEnd.Text.Split('.');
+
+            pgbPowerCheck.Maximum = Convert.ToInt32(ipEndParts[3]) - Convert.ToInt32(ipStartParts[3]);
+            pgbPowerCheck.Minimum = 0;
+
+            string currentIP = $"{ipStartParts[0]}.{ipStartParts[1]}.{ipStartParts[2]}.{e.ProgressPercentage}";
+
+            lblProgressReport.Text = "Checking Power-State of " + currentIP + "...";
+
+            if(e.ProgressPercentage <= pgbPowerCheck.Maximum)
+                pgbPowerCheck.Value = e.ProgressPercentage;
+        }
     }
 #pragma warning restore IDE1006
 }
