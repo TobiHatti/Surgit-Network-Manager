@@ -68,7 +68,7 @@
             this.grvInterfaces.Name = "grvInterfaces";
             this.grvInterfaces.ShowFlowViewItemText = true;
             this.grvInterfaces.Size = new System.Drawing.Size(610, 300);
-            this.grvInterfaces.TabIndex = 15;
+            this.grvInterfaces.TabIndex = 1;
             this.grvInterfaces.Text = "groupView1";
             this.grvInterfaces.TextSpacing = 30;
             this.grvInterfaces.TextWrap = true;
@@ -89,7 +89,7 @@
             this.btnAddDevice.Size = new System.Drawing.Size(108, 29);
             this.btnAddDevice.Style.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnAddDevice.Style.ForeColor = System.Drawing.Color.White;
-            this.btnAddDevice.TabIndex = 16;
+            this.btnAddDevice.TabIndex = 2;
             this.btnAddDevice.Text = "Add as Device";
             this.btnAddDevice.UseVisualStyleBackColor = false;
             this.btnAddDevice.Click += new System.EventHandler(this.btnAddDevice_Click);
@@ -107,7 +107,7 @@
             this.btnCancel.Size = new System.Drawing.Size(108, 29);
             this.btnCancel.Style.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnCancel.Style.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.TabIndex = 17;
+            this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -199,7 +199,7 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "DiscoverLocal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

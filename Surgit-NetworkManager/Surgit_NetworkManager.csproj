@@ -63,6 +63,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="cCSQLite.cs" />
+    <Compile Include="fAddEditDevice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fAddEditDevice.Designer.cs">
+      <DependentUpon>fAddEditDevice.cs</DependentUpon>
+    </Compile>
     <Compile Include="fDeviceTypeSelector.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="fAddEditDevice.resx">
+      <DependentUpon>fAddEditDevice.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fDeviceTypeSelector.resx">
       <DependentUpon>fDeviceTypeSelector.cs</DependentUpon>
     </EmbeddedResource>

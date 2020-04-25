@@ -64,6 +64,8 @@ namespace Surgit_NetworkManager
             {
                 for (int i = Convert.ToInt32(ipStartParts[3]); i <= Convert.ToInt32(ipEndParts[3]); i++)
                 {
+                    if (bgwUpdateEntries.CancellationPending) return;
+
                     bgwUpdateEntries.ReportProgress(i);
 
                     string currentIP = ipStartParts[0] + "." + ipStartParts[1] + "." + ipStartParts[2] + "." + i.ToString();
@@ -93,6 +95,8 @@ namespace Surgit_NetworkManager
                     else continue;
                 }
 
+                if (bgwUpdateEntries.CancellationPending) return;
+
                 // Update IP and LastSeen, add new entries
                 sql.ExecuteNonQueryA(sqlSB.ToString());
 
@@ -117,6 +121,8 @@ namespace Surgit_NetworkManager
 
         private void bgwUpdateEntries_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            if (bgwUpdateEntries.CancellationPending) return;
+
             this.DialogResult = DialogResult.OK;
             this.Close();
         }

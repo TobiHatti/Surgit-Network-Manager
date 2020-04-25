@@ -211,14 +211,15 @@ namespace Surgit_NetworkManager
                     txbDeviceName.Text = Convert.ToString(reader["Name"]);
                     btnChangeDeviceType.Text = SurgitManager.ReadableString(Convert.ToString(reader["DeviceType"])) + " (click to change)";
                     txbDeviceDescription.Text = Convert.ToString(reader["Description"]);
-                    txbDeviceLastSeen.Text = Convert.ToDateTime(reader["LastSeen"]).ToString("d. MMMM yyyy, H:mm:ss");
+                    if (string.IsNullOrEmpty(Convert.ToString(reader["LastSeen"]))) txbDeviceLastSeen.Text = "No Records";
+                    else txbDeviceLastSeen.Text = Convert.ToDateTime(reader["LastSeen"]).ToString("d. MMMM yyyy, H:mm:ss");
 
                     txbDeviceHostname.Text = Convert.ToString(reader["Hostname"]);
                     txbDeviceIPv4.Text = Convert.ToString(reader["IP4Address"]);
                     txbDeviceIPv6.Text = Convert.ToString(reader["IP6Address"]);
                     txbDeviceMac.Text = Convert.ToString(reader["MACAddress"]);
 
-                    newDeviceType = Convert.ToString(reader["DeviceType"]);
+                    deviceType = Convert.ToString(reader["DeviceType"]);
 
                     txbDeviceManufacturer.Text = "";
 
@@ -246,7 +247,7 @@ namespace Surgit_NetworkManager
             btnDiscardChanges.Enabled = true;
         }
 
-        private string newDeviceType = null;
+        private string deviceType = null;
         private void btnChangeDeviceType_Click(object sender, EventArgs e)
         {
             DeviceTypeSelector devSelect = new DeviceTypeSelector();
@@ -254,7 +255,7 @@ namespace Surgit_NetworkManager
             if(devSelect.ShowDialog() == DialogResult.OK)
             {
                 btnChangeDeviceType.Text = devSelect.SelectedDeviceType + " (click to change)";
-                newDeviceType = devSelect.SelectedDeviceType.Replace(" ", "");
+                deviceType = devSelect.SelectedDeviceType.Replace(" ", "");
 
                 btnSaveChanges.Enabled = true;
                 btnDiscardChanges.Enabled = true;
@@ -270,7 +271,7 @@ namespace Surgit_NetworkManager
             {
                 btnSaveChanges.Enabled = false;
                 btnDiscardChanges.Enabled = false;
-                sql.ExecuteNonQuery($"UPDATE Devices SET Name = '{txbDeviceName.Text}', Description = '{txbDeviceDescription.Text}', DeviceType = '{newDeviceType}' WHERE MACAddress = '{txbDeviceMac.Text}'");
+                sql.ExecuteNonQuery($"UPDATE Devices SET Name = '{txbDeviceName.Text}', Description = '{txbDeviceDescription.Text}', DeviceType = '{deviceType}' WHERE MACAddress = '{txbDeviceMac.Text}'");
             }
             else MessageBox.Show("The entered Device-Name already exitst. Please enter a unique name for each device!", "Name duplicate", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             sql.connection.Close();
@@ -325,6 +326,8 @@ namespace Surgit_NetworkManager
 
         private void bgwCheckPowerState_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
         {
+            if (bgwCheckPowerState.CancellationPending) return;
+
             if (!btnSaveChanges.Enabled) UpdateDeviceList();
             lblProgressReport.Text = "Surgit Network Manager - Last Auto-PowerCheck finished at " + DateTime.Now.ToLongTimeString();
         }
@@ -408,6 +411,47 @@ namespace Surgit_NetworkManager
             txbDeviceHostname.Text = "";
 
             btnChangeDeviceType.Enabled = false;
+        }
+
+        private void btnAddDevice_Click(object sender, EventArgs e)
+        {
+            AddEditDevice addDevice = new AddEditDevice
+            {
+                IsEditMode = false
+            };
+
+            if (addDevice.ShowDialog() == DialogResult.OK)
+            {
+                sql.connection.Open();
+                sql.ExecuteNonQuery($"INSERT INTO Devices (MACAddress, Name, DeviceType, Description, Hostname, IP4Address, IP6Address) VALUES ('{addDevice.DeviceMac}','{addDevice.DeviceName}','{addDevice.DeviceTType}','{addDevice.DeviceDescription}','{addDevice.DeviceHostname}','{addDevice.DeviceIPv4}','{addDevice.DeviceIPv6}')");
+                sql.connection.Close();
+                UpdateDeviceList();
+            }
+        }
+
+        private void btnEditDevice_Click(object sender, EventArgs e)
+        {
+            AddEditDevice editDevice = new AddEditDevice
+            {
+                IsEditMode = true,
+                DeviceName = txbDeviceName.Text,
+                DeviceDescription = txbDeviceDescription.Text,
+                DeviceTType = deviceType,
+                DeviceHostname = txbDeviceHostname.Text,
+                DeviceIPv4 = txbDeviceIPv4.Text,
+                DeviceIPv6 = txbDeviceIPv6.Text,
+                DeviceMac = txbDeviceMac.Text
+            };
+
+            if (editDevice.ShowDialog() == DialogResult.OK)
+            {
+                sql.connection.Open();
+                sql.ExecuteNonQuery($"UPDATE Devices SET Name = '{editDevice.DeviceName}', Description = '{editDevice.DeviceDescription}', DeviceType = '{editDevice.DeviceTType}', Hostname = '{editDevice.DeviceHostname}', IP4Address = '{editDevice.DeviceIPv4}', IP6Address = '{editDevice.DeviceIPv6}' WHERE MACAddress = '{editDevice.OriginalDeviceMac}'");
+                if(editDevice.DeviceMac != editDevice.OriginalDeviceMac) sql.ExecuteNonQuery($"UPDATE Devices SET MACAddress = '{editDevice.DeviceMac}' WHERE MACAddress = '{editDevice.OriginalDeviceMac}'");
+                sql.connection.Close();
+
+                UpdateDeviceList();
+            }
         }
     }
 #pragma warning restore IDE1006

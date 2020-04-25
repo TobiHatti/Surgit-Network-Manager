@@ -97,7 +97,7 @@
             this.btnStartDiscovery.Size = new System.Drawing.Size(117, 27);
             this.btnStartDiscovery.Style.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnStartDiscovery.Style.ForeColor = System.Drawing.Color.White;
-            this.btnStartDiscovery.TabIndex = 2;
+            this.btnStartDiscovery.TabIndex = 3;
             this.btnStartDiscovery.Text = "Start Discovery";
             this.btnStartDiscovery.UseVisualStyleBackColor = false;
             this.btnStartDiscovery.Click += new System.EventHandler(this.BtnStartDiscovery_Click);
@@ -114,7 +114,7 @@
             this.btnFinishDiscover.Size = new System.Drawing.Size(96, 29);
             this.btnFinishDiscover.Style.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnFinishDiscover.Style.ForeColor = System.Drawing.Color.White;
-            this.btnFinishDiscover.TabIndex = 3;
+            this.btnFinishDiscover.TabIndex = 4;
             this.btnFinishDiscover.Text = "Finish";
             this.btnFinishDiscover.UseVisualStyleBackColor = false;
             this.btnFinishDiscover.Click += new System.EventHandler(this.BtnFinishDiscover_Click);
@@ -132,7 +132,7 @@
             this.chbPingCheck.Location = new System.Drawing.Point(290, 8);
             this.chbPingCheck.Name = "chbPingCheck";
             this.chbPingCheck.Size = new System.Drawing.Size(120, 23);
-            this.chbPingCheck.TabIndex = 6;
+            this.chbPingCheck.TabIndex = 2;
             this.chbPingCheck.Text = "Ping Check (?)";
             this.ttpPingCheck.SetToolTip(this.chbPingCheck, resources.GetString("chbPingCheck.ToolTip"));
             this.chbPingCheck.UseVisualStyleBackColor = true;
@@ -161,7 +161,7 @@
             this.btnCancel.Size = new System.Drawing.Size(96, 29);
             this.btnCancel.Style.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnCancel.Style.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.TabIndex = 7;
+            this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);

@@ -69,6 +69,8 @@ namespace Surgit_NetworkManager
 
                     for (int i = Convert.ToInt32(ipStartParts[3]); i <= Convert.ToInt32(ipEndParts[3]); i++)
                     {
+                        if (pProgressReplyBGW.CancellationPending) return;
+
                         if (pProgressReplyBGW != null) pProgressReplyBGW.ReportProgress(i);
 
                         string currentIP = ipStartParts[0] + "." + ipStartParts[1] + "." + ipStartParts[2] + "." + i.ToString();
@@ -109,6 +111,7 @@ namespace Surgit_NetworkManager
                 }
                 else
                 {
+                    if (pProgressReplyBGW.CancellationPending) return;
                     MessageBox.Show("The given range is not valid. Make sure the IPs are in the same subnet. Note: Only C-Class IP-Adresses are currently supported", "Invalid Range", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }

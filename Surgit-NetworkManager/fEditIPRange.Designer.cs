@@ -57,7 +57,7 @@
             this.txbIPRangeEnd.Location = new System.Drawing.Point(114, 39);
             this.txbIPRangeEnd.Name = "txbIPRangeEnd";
             this.txbIPRangeEnd.Size = new System.Drawing.Size(193, 27);
-            this.txbIPRangeEnd.TabIndex = 0;
+            this.txbIPRangeEnd.TabIndex = 1;
             // 
             // label2
             // 
@@ -80,7 +80,7 @@
             this.btnSave.Size = new System.Drawing.Size(74, 29);
             this.btnSave.Style.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnSave.Style.ForeColor = System.Drawing.Color.White;
-            this.btnSave.TabIndex = 17;
+            this.btnSave.TabIndex = 2;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -97,7 +97,7 @@
             this.btnCancel.Size = new System.Drawing.Size(74, 29);
             this.btnCancel.Style.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnCancel.Style.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.TabIndex = 17;
+            this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             // 
@@ -114,7 +114,7 @@
             this.Controls.Add(this.txbIPRangeStart);
             this.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "EditIPRange";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

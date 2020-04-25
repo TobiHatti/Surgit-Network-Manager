@@ -45,7 +45,7 @@
             this.btnCancel.Size = new System.Drawing.Size(96, 29);
             this.btnCancel.Style.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnCancel.Style.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.TabIndex = 8;
+            this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -63,7 +63,7 @@
             this.btnApply.Size = new System.Drawing.Size(96, 29);
             this.btnApply.Style.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnApply.Style.ForeColor = System.Drawing.Color.White;
-            this.btnApply.TabIndex = 9;
+            this.btnApply.TabIndex = 1;
             this.btnApply.Text = "Apply";
             this.btnApply.UseVisualStyleBackColor = false;
             this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
@@ -85,7 +85,7 @@
             this.grvDeviceTypes.Name = "grvDeviceTypes";
             this.grvDeviceTypes.ShowFlowViewItemText = true;
             this.grvDeviceTypes.Size = new System.Drawing.Size(596, 355);
-            this.grvDeviceTypes.TabIndex = 15;
+            this.grvDeviceTypes.TabIndex = 0;
             this.grvDeviceTypes.Text = "groupView1";
             this.grvDeviceTypes.TextSpacing = 40;
             this.grvDeviceTypes.TextWrap = true;

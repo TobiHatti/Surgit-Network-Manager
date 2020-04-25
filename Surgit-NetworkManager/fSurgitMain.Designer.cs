@@ -310,6 +310,7 @@
             this.btnAddDevice.Size = new System.Drawing.Size(74, 76);
             this.btnAddDevice.Text = "Add \r\nManually";
             this.btnAddDevice.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnAddDevice.Click += new System.EventHandler(this.btnAddDevice_Click);
             // 
             // btnDeleteDevice
             // 
@@ -334,6 +335,7 @@
             this.btnEditDevice.Size = new System.Drawing.Size(74, 76);
             this.btnEditDevice.Text = "Edit\r\n";
             this.btnEditDevice.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnEditDevice.Click += new System.EventHandler(this.btnEditDevice_Click);
             // 
             // toolStripTabItem2
             // 

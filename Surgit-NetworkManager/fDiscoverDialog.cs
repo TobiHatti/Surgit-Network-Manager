@@ -11,6 +11,7 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
 using Syncfusion.WinForms.Controls;
+using Syncfusion.XlsIO.Implementation;
 
 namespace Surgit_NetworkManager
 {
@@ -96,6 +97,8 @@ namespace Surgit_NetworkManager
                 {
                     string currentIP = ipStartParts[0] + "." + ipStartParts[1] + "." + ipStartParts[2] + "." + i.ToString();
 
+                    if (bgwDiscovery.CancellationPending) return;
+
                     try
                     {
                         Ping ping = new Ping();
@@ -116,6 +119,8 @@ namespace Surgit_NetworkManager
             // Start the discovery
             for (int i = Convert.ToInt32(ipStartParts[3]); i <= Convert.ToInt32(ipEndParts[3]); i++)
             {
+                if (bgwDiscovery.CancellationPending) return;
+
                 string currentIP = ipStartParts[0] + "." + ipStartParts[1] + "." + ipStartParts[2] + "." + i.ToString();
                 string currentMAC = NetExplore.GetMacAddress(currentIP);
                 string currentHostname = string.Empty;
@@ -142,6 +147,8 @@ namespace Surgit_NetworkManager
 
                 bgwDiscovery.ReportProgress(progressCounter++);
             }
+
+            MessageBox.Show("Discovery finished!" + Environment.NewLine + $"Found a total of {DiscoveredDevices.Count} devices.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         
         private void BtnFinishDiscover_Click(object sender, EventArgs e)
@@ -208,9 +215,10 @@ namespace Surgit_NetworkManager
 
         private void bgwDiscovery_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            if (bgwDiscovery.CancellationPending) return;
+
             prbDiscoveryProgress.Value = prbDiscoveryProgress.Maximum;
             btnFinishDiscover.Enabled = true;
-            MessageBox.Show("Discovery finished!" + Environment.NewLine + $"Found a total of {DiscoveredDevices.Count} devices.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 #pragma warning restore IDE1006
