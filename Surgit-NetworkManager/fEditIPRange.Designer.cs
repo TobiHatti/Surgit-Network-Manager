@@ -117,6 +117,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "EditIPRange";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Edit IP-Range";
             this.Load += new System.EventHandler(this.EditIPRange_Load);
             this.ResumeLayout(false);

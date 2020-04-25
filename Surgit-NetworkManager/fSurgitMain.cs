@@ -199,6 +199,8 @@ namespace Surgit_NetworkManager
             btnDiscardChanges.Enabled = false;
             selectedIndex = grvDevices.SelectedItem;
 
+            btnDeleteDevice.Enabled = true;
+            btnEditDevice.Enabled = true;
 
             sql.connection.Open();
 
@@ -377,6 +379,35 @@ namespace Surgit_NetworkManager
                 if (bgwCheckPowerState.WorkerSupportsCancellation)
                     bgwCheckPowerState.CancelAsync();
             }
+        }
+
+        private void btnDeleteDevice_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show($"Are you sure you want to delete the Device \"{txbDeviceName.Text}\"?", "Delete device", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                sql.ExecuteNonQueryA($"DELETE FROM Devices WHERE MACAddress = '{txbDeviceMac.Text}'");
+                UpdateDeviceList();
+
+                btnEditDevice.Enabled = false;
+                btnDeleteDevice.Enabled = false;
+
+                ClearDeviceInfo();
+
+            }
+        }
+
+        private void ClearDeviceInfo()
+        {
+            txbDeviceName.Text = "";
+            txbDeviceDescription.Text = "";
+            txbDeviceLastSeen.Text = "";
+            txbDeviceIPv4.Text = "";
+            txbDeviceIPv6.Text = "";
+            txbDeviceMac.Text = "";
+            txbDeviceManufacturer.Text = "";
+            txbDeviceHostname.Text = "";
+
+            btnChangeDeviceType.Enabled = false;
         }
     }
 #pragma warning restore IDE1006
