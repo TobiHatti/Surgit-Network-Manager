@@ -1012,6 +1012,7 @@
             this.btnManageDeviceSites.Size = new System.Drawing.Size(90, 82);
             this.btnManageDeviceSites.Text = "Manage\r\nSites";
             this.btnManageDeviceSites.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnManageDeviceSites.Click += new System.EventHandler(this.btnManageDeviceSites_Click);
             // 
             // btnManageRDPFiles
             // 
@@ -1024,6 +1025,7 @@
             this.btnManageRDPFiles.Size = new System.Drawing.Size(90, 82);
             this.btnManageRDPFiles.Text = "Manage\r\nRDP Files";
             this.btnManageRDPFiles.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnManageRDPFiles.Click += new System.EventHandler(this.btnManageRDPFiles_Click);
             // 
             // toolStripSeparator4
             // 

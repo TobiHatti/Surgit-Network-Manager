@@ -53,3 +53,5 @@ H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Debug\Surgit_NetworkManag
 H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Debug\Surgit_NetworkManager.WOLStart.resources
 H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Debug\Surgit_NetworkManager.RDPSettings.resources
 H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Debug\Surgit_NetworkManager.AddDeviceSite.resources
+H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Debug\Surgit_NetworkManager.ManageRDPFiles.resources
+H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Debug\Surgit_NetworkManager.ManageDeviceSites.resources

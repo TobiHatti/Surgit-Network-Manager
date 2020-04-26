@@ -695,6 +695,24 @@ namespace Surgit_NetworkManager
                 LoadDeviceData();
             }
         }
+
+        private void btnManageRDPFiles_Click(object sender, EventArgs e)
+        {
+            ManageRDPFiles manageRDP = new ManageRDPFiles();
+            manageRDP.MACAddress = txbDeviceMac.Text;
+            manageRDP.ShowDialog();
+
+            LoadDeviceData();
+        }
+
+        private void btnManageDeviceSites_Click(object sender, EventArgs e)
+        {
+            ManageDeviceSites manageSites = new ManageDeviceSites();
+            manageSites.MACAddress = txbDeviceMac.Text;
+            manageSites.ShowDialog();
+
+            LoadDeviceData();
+        }
     }
 #pragma warning restore IDE1006
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SQLite;
 using System.Linq;
 using System.Text;
@@ -186,7 +187,13 @@ namespace Surgit_NetworkManager
             return cmd.ExecuteReader();
         }
 
-        
+        public DataTable CreateDT(string sql)
+        {
+            SQLiteDataAdapter da = new SQLiteDataAdapter(sql, connection);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
 
         #endregion
     }

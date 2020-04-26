@@ -101,6 +101,18 @@
     <Compile Include="fEditIPRange.Designer.cs">
       <DependentUpon>fEditIPRange.cs</DependentUpon>
     </Compile>
+    <Compile Include="fManageDeviceSites.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fManageDeviceSites.Designer.cs">
+      <DependentUpon>fManageDeviceSites.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fManageRDPFiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fManageRDPFiles.Designer.cs">
+      <DependentUpon>fManageRDPFiles.cs</DependentUpon>
+    </Compile>
     <Compile Include="fRDPSettings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +158,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fEditIPRange.resx">
       <DependentUpon>fEditIPRange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fManageDeviceSites.resx">
+      <DependentUpon>fManageDeviceSites.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fManageRDPFiles.resx">
+      <DependentUpon>fManageRDPFiles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fRDPSettings.resx">
       <DependentUpon>fRDPSettings.cs</DependentUpon>
