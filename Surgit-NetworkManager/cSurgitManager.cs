@@ -13,14 +13,8 @@ namespace Surgit_NetworkManager
 {
     public class SurgitManager
     {
-        public static string SurgitDataLocation 
-        { get => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Surgit"); }
-
         public static string SurgitDatabaseLocation
-        { get => Path.Combine(SurgitDataLocation, "surgit.db"); }
-
-
-
+        { get => "surgit.db"; }
 
         public static string ReadableString(string pInput)
         {

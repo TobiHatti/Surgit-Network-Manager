@@ -34,7 +34,7 @@ namespace Surgit_NetworkManager
                 ImageSize = new Size(64, 64),
                 ColorDepth = ColorDepth.Depth32Bit
             };
-            ilt.Images.Add("NWC", new Icon(Path.Combine(SurgitManager.SurgitDataLocation, "Icons","networkCard.ico")));
+            ilt.Images.Add("NWC", Properties.Resources.networkCard);
             grvInterfaces.LargeImageList = ilt;
             foreach (NetworkInterface adapter in adapters)
             {
