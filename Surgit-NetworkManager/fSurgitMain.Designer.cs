@@ -1053,8 +1053,8 @@
             this.ShowApplicationIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Surgit Network Manager";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SurgitMain_FormClosing);
+            this.Load += new System.EventHandler(this.SurgitMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.rbcRibbonMenu)).EndInit();
             this.rbcRibbonMenu.ResumeLayout(false);
             this.rbcRibbonMenu.PerformLayout();

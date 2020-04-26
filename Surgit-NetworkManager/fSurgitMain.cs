@@ -672,18 +672,32 @@ namespace Surgit_NetworkManager
 
         void CallRDP(object sender, EventArgs e)
         {
-            ToolStripButton tsb = sender as ToolStripButton;
+            try
+            {
+                ToolStripButton tsb = sender as ToolStripButton;
 
-            Process rdcProcess = new Process();
-            rdcProcess.StartInfo.FileName = Environment.ExpandEnvironmentVariables(@"%SystemRoot%\system32\mstsc.exe");
-            rdcProcess.StartInfo.Arguments = tsb.Tag.ToString() + " "; // ip or name of computer to connect
-            rdcProcess.Start();
+                Process rdcProcess = new Process();
+                rdcProcess.StartInfo.FileName = Environment.ExpandEnvironmentVariables(@"%SystemRoot%\system32\mstsc.exe");
+                rdcProcess.StartInfo.Arguments = tsb.Tag.ToString() + " "; // ip or name of computer to connect
+                rdcProcess.Start();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Could not launch RDP. Please ensure that the RDP-File still exists. More information below:\r\n\r\n" + ex.Message);
+            }
         }
 
         void CallSite(object sender, EventArgs e)
         {
-            ToolStripButton tsb = sender as ToolStripButton;
-            Process.Start(tsb.Tag.ToString());
+            try
+            {
+                ToolStripButton tsb = sender as ToolStripButton;
+                Process.Start(tsb.Tag.ToString());
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Could not launch the Device-Site. More information below:\r\n\r\n" + ex.Message);
+            }
         }
 
         private void btnAddDeviceSite_Click(object sender, EventArgs e)
@@ -712,6 +726,11 @@ namespace Surgit_NetworkManager
             manageSites.ShowDialog();
 
             LoadDeviceData();
+        }
+
+        private void SurgitMain_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
         }
     }
 #pragma warning restore IDE1006
