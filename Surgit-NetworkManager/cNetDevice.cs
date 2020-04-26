@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Surgit_NetworkManager.Properties;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -55,10 +57,6 @@ namespace Surgit_NetworkManager
     {
         public static ImageList GetImageList()
         {
-            string deviceIconBasePathON = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"Surgit\DeviceIconsON");
-            string deviceIconBasePathOFF = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"Surgit\DeviceIconsOFF");
-            string deviceIconBasePathRAW = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"Surgit\DeviceIconsRAW");
-
             ImageList imgList = new ImageList
             {
                 ImageSize = new Size(64, 64),
@@ -68,9 +66,10 @@ namespace Surgit_NetworkManager
             var values = Enum.GetValues(typeof(DeviceType)).Cast<DeviceType>();
             foreach(DeviceType device in values)
             {
-                imgList.Images.Add(device.ToString() + "_ON", new Icon(Path.Combine(deviceIconBasePathON, $"{device}.ico")));
-                imgList.Images.Add(device.ToString() + "_OFF", new Icon(Path.Combine(deviceIconBasePathOFF, $"{device}.ico")));
-                imgList.Images.Add(device.ToString() + "_RAW", new Icon(Path.Combine(deviceIconBasePathRAW, $"{device}.ico")));
+
+                imgList.Images.Add(device.ToString() + "_ON", (Icon)Resources.ResourceManager.GetObject($"{device}_ON"));
+                imgList.Images.Add(device.ToString() + "_OFF", (Icon)Resources.ResourceManager.GetObject($"{device}_OFF"));
+                imgList.Images.Add(device.ToString() + "_RAW", (Icon)Resources.ResourceManager.GetObject($"{device}_RAW"));
             }
 
             return imgList;

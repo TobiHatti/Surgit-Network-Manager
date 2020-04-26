@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SurgitMain));
             this.rbcRibbonMenu = new Syncfusion.Windows.Forms.Tools.RibbonControlAdv();
             this.toolStripTabItem1 = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
             this.toolStripEx2 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
@@ -57,8 +56,14 @@
             this.toolStripEx6 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
             this.btnStartAutoRDP = new System.Windows.Forms.ToolStripButton();
             this.btnOpenRDPSettings = new System.Windows.Forms.ToolStripButton();
-            this.btnLinkRDP = new System.Windows.Forms.ToolStripButton();
             this.tseRDPLinks = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
+            this.btnLinkRDP = new System.Windows.Forms.ToolStripButton();
+            this.btnManageRDPFiles = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.tseDeviceSites = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
+            this.btnAddDeviceSite = new System.Windows.Forms.ToolStripButton();
+            this.btnManageDeviceSites = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.txbDeviceName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -96,12 +101,6 @@
             this.pgbPowerCheck = new System.Windows.Forms.ProgressBar();
             this.lblCopyright = new System.Windows.Forms.Label();
             this.ofdOpenRDPFile = new System.Windows.Forms.OpenFileDialog();
-            this.tseDeviceSites = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
-            this.btnAddDeviceSite = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnManageDeviceSites = new System.Windows.Forms.ToolStripButton();
-            this.btnManageRDPFiles = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.rbcRibbonMenu)).BeginInit();
             this.rbcRibbonMenu.SuspendLayout();
             this.toolStripTabItem1.Panel.SuspendLayout();
@@ -113,10 +112,10 @@
             this.toolStripTabItem3.Panel.SuspendLayout();
             this.toolStripEx6.SuspendLayout();
             this.tseRDPLinks.SuspendLayout();
+            this.tseDeviceSites.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.tseDeviceSites.SuspendLayout();
             this.SuspendLayout();
             // 
             // rbcRibbonMenu
@@ -144,12 +143,13 @@
             this.rbcRibbonMenu.RibbonStyle = Syncfusion.Windows.Forms.Tools.RibbonStyle.Office2016;
             this.rbcRibbonMenu.SelectedTab = this.toolStripTabItem3;
             this.rbcRibbonMenu.ShowRibbonDisplayOptionButton = true;
-            this.rbcRibbonMenu.Size = new System.Drawing.Size(1092, 173);
+            this.rbcRibbonMenu.Size = new System.Drawing.Size(1092, 179);
             this.rbcRibbonMenu.SystemText.QuickAccessDialogDropDownName = "Start menu";
             this.rbcRibbonMenu.SystemText.RenameDisplayLabelText = "&Display Name:";
             this.rbcRibbonMenu.TabIndex = 1;
             this.rbcRibbonMenu.Text = "ribbonControlAdv1";
             this.rbcRibbonMenu.ThemeName = "Office2016";
+            this.rbcRibbonMenu.ThemeStyle.MoreCommandsStyle.PropertyGridViewBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.rbcRibbonMenu.TitleColor = System.Drawing.Color.Black;
             // 
             // toolStripTabItem1
@@ -191,7 +191,7 @@
             this.toolStripEx2.Office12Mode = false;
             this.toolStripEx2.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.toolStripEx2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripEx2.Size = new System.Drawing.Size(340, 104);
+            this.toolStripEx2.Size = new System.Drawing.Size(340, 110);
             this.toolStripEx2.TabIndex = 1;
             this.toolStripEx2.Text = "IP Address Range";
             // 
@@ -201,37 +201,37 @@
             this.toolStripLabel1.Font = new System.Drawing.Font("Calibri Light", 12F);
             this.toolStripLabel1.Name = "toolStripLabel1";
             this.toolStripLabel1.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.toolStripLabel1.Size = new System.Drawing.Size(85, 82);
+            this.toolStripLabel1.Size = new System.Drawing.Size(85, 88);
             this.toolStripLabel1.Text = "IP Range:";
             // 
             // lblIPRangeStart
             // 
             this.lblIPRangeStart.Name = "lblIPRangeStart";
-            this.lblIPRangeStart.Size = new System.Drawing.Size(61, 82);
+            this.lblIPRangeStart.Size = new System.Drawing.Size(61, 88);
             this.lblIPRangeStart.Text = "10.0.0.1";
             // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.Font = new System.Drawing.Font("Calibri Light", 12F);
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(22, 82);
+            this.toolStripLabel2.Size = new System.Drawing.Size(22, 88);
             this.toolStripLabel2.Text = "to";
             // 
             // lblIPRangeEnd
             // 
             this.lblIPRangeEnd.Name = "lblIPRangeEnd";
-            this.lblIPRangeEnd.Size = new System.Drawing.Size(77, 82);
+            this.lblIPRangeEnd.Size = new System.Drawing.Size(77, 88);
             this.lblIPRangeEnd.Text = "10.0.0.254";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 85);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 91);
             // 
             // btnEditIPRange
             // 
             this.btnEditIPRange.AutoSize = false;
-            this.btnEditIPRange.Image = ((System.Drawing.Image)(resources.GetObject("btnEditIPRange.Image")));
+            this.btnEditIPRange.Image = global::Surgit_NetworkManager.Properties.Resources.settings;
             this.btnEditIPRange.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnEditIPRange.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditIPRange.Name = "btnEditIPRange";
@@ -257,14 +257,14 @@
             this.toolStripEx1.Office12Mode = false;
             this.toolStripEx1.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.toolStripEx1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripEx1.Size = new System.Drawing.Size(329, 104);
+            this.toolStripEx1.Size = new System.Drawing.Size(329, 110);
             this.toolStripEx1.TabIndex = 0;
             this.toolStripEx1.Text = "Network Discovery";
             // 
             // btnDiscover
             // 
             this.btnDiscover.AutoSize = false;
-            this.btnDiscover.Image = ((System.Drawing.Image)(resources.GetObject("btnDiscover.Image")));
+            this.btnDiscover.Image = global::Surgit_NetworkManager.Properties.Resources.discover;
             this.btnDiscover.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnDiscover.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDiscover.Name = "btnDiscover";
@@ -276,7 +276,7 @@
             // btnDiscoverSelf
             // 
             this.btnDiscoverSelf.AutoSize = false;
-            this.btnDiscoverSelf.Image = ((System.Drawing.Image)(resources.GetObject("btnDiscoverSelf.Image")));
+            this.btnDiscoverSelf.Image = global::Surgit_NetworkManager.Properties.Resources.selfDiscover;
             this.btnDiscoverSelf.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnDiscoverSelf.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDiscoverSelf.Name = "btnDiscoverSelf";
@@ -288,7 +288,7 @@
             // btnUpdateDevices
             // 
             this.btnUpdateDevices.AutoSize = false;
-            this.btnUpdateDevices.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdateDevices.Image")));
+            this.btnUpdateDevices.Image = global::Surgit_NetworkManager.Properties.Resources.refreshEntries;
             this.btnUpdateDevices.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnUpdateDevices.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnUpdateDevices.Name = "btnUpdateDevices";
@@ -300,7 +300,7 @@
             // btnRefresh
             // 
             this.btnRefresh.AutoSize = false;
-            this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
+            this.btnRefresh.Image = global::Surgit_NetworkManager.Properties.Resources.refresh;
             this.btnRefresh.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnRefresh.Name = "btnRefresh";
@@ -325,14 +325,14 @@
             this.toolStripEx3.Office12Mode = false;
             this.toolStripEx3.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.toolStripEx3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripEx3.Size = new System.Drawing.Size(249, 104);
+            this.toolStripEx3.Size = new System.Drawing.Size(249, 110);
             this.toolStripEx3.TabIndex = 2;
             this.toolStripEx3.Text = "Manage Devices";
             // 
             // btnAddDevice
             // 
             this.btnAddDevice.AutoSize = false;
-            this.btnAddDevice.Image = ((System.Drawing.Image)(resources.GetObject("btnAddDevice.Image")));
+            this.btnAddDevice.Image = global::Surgit_NetworkManager.Properties.Resources.add;
             this.btnAddDevice.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnAddDevice.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAddDevice.Name = "btnAddDevice";
@@ -345,7 +345,7 @@
             // 
             this.btnDeleteDevice.AutoSize = false;
             this.btnDeleteDevice.Enabled = false;
-            this.btnDeleteDevice.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteDevice.Image")));
+            this.btnDeleteDevice.Image = global::Surgit_NetworkManager.Properties.Resources.delete;
             this.btnDeleteDevice.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnDeleteDevice.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDeleteDevice.Name = "btnDeleteDevice";
@@ -358,7 +358,7 @@
             // 
             this.btnEditDevice.AutoSize = false;
             this.btnEditDevice.Enabled = false;
-            this.btnEditDevice.Image = ((System.Drawing.Image)(resources.GetObject("btnEditDevice.Image")));
+            this.btnEditDevice.Image = global::Surgit_NetworkManager.Properties.Resources.edit;
             this.btnEditDevice.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnEditDevice.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditDevice.Name = "btnEditDevice";
@@ -401,14 +401,14 @@
             this.toolStripEx4.Office12Mode = false;
             this.toolStripEx4.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.toolStripEx4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripEx4.Size = new System.Drawing.Size(195, 104);
+            this.toolStripEx4.Size = new System.Drawing.Size(195, 110);
             this.toolStripEx4.TabIndex = 0;
             // 
             // btnStartDeviceWOL
             // 
             this.btnStartDeviceWOL.AutoSize = false;
             this.btnStartDeviceWOL.Enabled = false;
-            this.btnStartDeviceWOL.Image = ((System.Drawing.Image)(resources.GetObject("btnStartDeviceWOL.Image")));
+            this.btnStartDeviceWOL.Image = global::Surgit_NetworkManager.Properties.Resources.start;
             this.btnStartDeviceWOL.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnStartDeviceWOL.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnStartDeviceWOL.Name = "btnStartDeviceWOL";
@@ -420,13 +420,13 @@
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 85);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 91);
             // 
             // btnUpdatePowerState
             // 
             this.btnUpdatePowerState.AutoSize = false;
             this.btnUpdatePowerState.Enabled = false;
-            this.btnUpdatePowerState.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdatePowerState.Image")));
+            this.btnUpdatePowerState.Image = global::Surgit_NetworkManager.Properties.Resources.refresh;
             this.btnUpdatePowerState.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnUpdatePowerState.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnUpdatePowerState.Name = "btnUpdatePowerState";
@@ -468,7 +468,7 @@
             this.toolStripEx6.Office12Mode = false;
             this.toolStripEx6.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.toolStripEx6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripEx6.Size = new System.Drawing.Size(189, 104);
+            this.toolStripEx6.Size = new System.Drawing.Size(189, 110);
             this.toolStripEx6.TabIndex = 0;
             this.toolStripEx6.Text = "RDP Connections";
             // 
@@ -476,7 +476,7 @@
             // 
             this.btnStartAutoRDP.AutoSize = false;
             this.btnStartAutoRDP.Enabled = false;
-            this.btnStartAutoRDP.Image = ((System.Drawing.Image)(resources.GetObject("btnStartAutoRDP.Image")));
+            this.btnStartAutoRDP.Image = global::Surgit_NetworkManager.Properties.Resources.rdp;
             this.btnStartAutoRDP.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnStartAutoRDP.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnStartAutoRDP.Name = "btnStartAutoRDP";
@@ -489,7 +489,7 @@
             // 
             this.btnOpenRDPSettings.AutoSize = false;
             this.btnOpenRDPSettings.Enabled = false;
-            this.btnOpenRDPSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnOpenRDPSettings.Image")));
+            this.btnOpenRDPSettings.Image = global::Surgit_NetworkManager.Properties.Resources.settings;
             this.btnOpenRDPSettings.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnOpenRDPSettings.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnOpenRDPSettings.Name = "btnOpenRDPSettings";
@@ -497,20 +497,6 @@
             this.btnOpenRDPSettings.Text = "RDP\r\nSettings";
             this.btnOpenRDPSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnOpenRDPSettings.Click += new System.EventHandler(this.btnOpenRDPSettings_Click);
-            // 
-            // btnLinkRDP
-            // 
-            this.btnLinkRDP.AutoSize = false;
-            this.btnLinkRDP.Enabled = false;
-            this.btnLinkRDP.Image = ((System.Drawing.Image)(resources.GetObject("btnLinkRDP.Image")));
-            this.btnLinkRDP.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnLinkRDP.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnLinkRDP.Name = "btnLinkRDP";
-            this.btnLinkRDP.Size = new System.Drawing.Size(90, 82);
-            this.btnLinkRDP.Tag = "";
-            this.btnLinkRDP.Text = "Link existing \r\nRDP File";
-            this.btnLinkRDP.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnLinkRDP.Click += new System.EventHandler(this.btnLinkRDP_Click);
             // 
             // tseRDPLinks
             // 
@@ -529,9 +515,93 @@
             this.tseRDPLinks.Office12Mode = false;
             this.tseRDPLinks.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.tseRDPLinks.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tseRDPLinks.Size = new System.Drawing.Size(324, 104);
+            this.tseRDPLinks.Size = new System.Drawing.Size(324, 110);
             this.tseRDPLinks.TabIndex = 1;
             this.tseRDPLinks.Text = "Saved RDP-Connections";
+            // 
+            // btnLinkRDP
+            // 
+            this.btnLinkRDP.AutoSize = false;
+            this.btnLinkRDP.Enabled = false;
+            this.btnLinkRDP.Image = global::Surgit_NetworkManager.Properties.Resources.link;
+            this.btnLinkRDP.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnLinkRDP.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnLinkRDP.Name = "btnLinkRDP";
+            this.btnLinkRDP.Size = new System.Drawing.Size(90, 82);
+            this.btnLinkRDP.Tag = "";
+            this.btnLinkRDP.Text = "Link existing \r\nRDP File";
+            this.btnLinkRDP.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnLinkRDP.Click += new System.EventHandler(this.btnLinkRDP_Click);
+            // 
+            // btnManageRDPFiles
+            // 
+            this.btnManageRDPFiles.AutoSize = false;
+            this.btnManageRDPFiles.Enabled = false;
+            this.btnManageRDPFiles.Image = global::Surgit_NetworkManager.Properties.Resources.edit;
+            this.btnManageRDPFiles.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnManageRDPFiles.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnManageRDPFiles.Name = "btnManageRDPFiles";
+            this.btnManageRDPFiles.Size = new System.Drawing.Size(90, 82);
+            this.btnManageRDPFiles.Text = "Manage\r\nRDP Files";
+            this.btnManageRDPFiles.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnManageRDPFiles.Click += new System.EventHandler(this.btnManageRDPFiles_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 91);
+            // 
+            // tseDeviceSites
+            // 
+            this.tseDeviceSites.Dock = System.Windows.Forms.DockStyle.None;
+            this.tseDeviceSites.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tseDeviceSites.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.tseDeviceSites.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.tseDeviceSites.Image = null;
+            this.tseDeviceSites.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnAddDeviceSite,
+            this.btnManageDeviceSites,
+            this.toolStripSeparator3});
+            this.tseDeviceSites.Location = new System.Drawing.Point(517, 1);
+            this.tseDeviceSites.MinimumSize = new System.Drawing.Size(320, 104);
+            this.tseDeviceSites.Name = "tseDeviceSites";
+            this.tseDeviceSites.Office12Mode = false;
+            this.tseDeviceSites.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.tseDeviceSites.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tseDeviceSites.Size = new System.Drawing.Size(324, 110);
+            this.tseDeviceSites.TabIndex = 2;
+            this.tseDeviceSites.Text = "Device Managements Sites";
+            // 
+            // btnAddDeviceSite
+            // 
+            this.btnAddDeviceSite.AutoSize = false;
+            this.btnAddDeviceSite.Enabled = false;
+            this.btnAddDeviceSite.Image = global::Surgit_NetworkManager.Properties.Resources.link;
+            this.btnAddDeviceSite.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnAddDeviceSite.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnAddDeviceSite.Name = "btnAddDeviceSite";
+            this.btnAddDeviceSite.Size = new System.Drawing.Size(90, 82);
+            this.btnAddDeviceSite.Text = "Add new\r\nSite";
+            this.btnAddDeviceSite.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnAddDeviceSite.Click += new System.EventHandler(this.btnAddDeviceSite_Click);
+            // 
+            // btnManageDeviceSites
+            // 
+            this.btnManageDeviceSites.AutoSize = false;
+            this.btnManageDeviceSites.Enabled = false;
+            this.btnManageDeviceSites.Image = global::Surgit_NetworkManager.Properties.Resources.edit;
+            this.btnManageDeviceSites.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnManageDeviceSites.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnManageDeviceSites.Name = "btnManageDeviceSites";
+            this.btnManageDeviceSites.Size = new System.Drawing.Size(90, 82);
+            this.btnManageDeviceSites.Text = "Manage\r\nSites";
+            this.btnManageDeviceSites.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnManageDeviceSites.Click += new System.EventHandler(this.btnManageDeviceSites_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 91);
             // 
             // txbDeviceName
             // 
@@ -800,10 +870,10 @@
             this.groupBox3.Controls.Add(this.cbxSortOrder);
             this.groupBox3.Controls.Add(this.cbxSortBy);
             this.groupBox3.Controls.Add(this.grvDevices);
-            this.groupBox3.Location = new System.Drawing.Point(390, 185);
+            this.groupBox3.Location = new System.Drawing.Point(390, 191);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(8);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(690, 594);
+            this.groupBox3.Size = new System.Drawing.Size(690, 588);
             this.groupBox3.TabIndex = 15;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Devices";
@@ -889,7 +959,7 @@
             this.grvDevices.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.grvDevices.BeforeTouchSize = new System.Drawing.Size(684, 506);
+            this.grvDevices.BeforeTouchSize = new System.Drawing.Size(684, 500);
             this.grvDevices.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.grvDevices.ButtonView = true;
             this.grvDevices.FlatLook = true;
@@ -900,7 +970,7 @@
             this.grvDevices.Location = new System.Drawing.Point(3, 85);
             this.grvDevices.Name = "grvDevices";
             this.grvDevices.ShowFlowViewItemText = true;
-            this.grvDevices.Size = new System.Drawing.Size(684, 506);
+            this.grvDevices.Size = new System.Drawing.Size(684, 500);
             this.grvDevices.TabIndex = 14;
             this.grvDevices.Text = "groupView1";
             this.grvDevices.TextSpacing = 30;
@@ -963,75 +1033,6 @@
             this.ofdOpenRDPFile.Filter = "RDP-Files|*.rdp|All Files|*.*";
             this.ofdOpenRDPFile.Title = "Select RDP-File";
             // 
-            // tseDeviceSites
-            // 
-            this.tseDeviceSites.Dock = System.Windows.Forms.DockStyle.None;
-            this.tseDeviceSites.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tseDeviceSites.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.tseDeviceSites.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.tseDeviceSites.Image = null;
-            this.tseDeviceSites.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnAddDeviceSite,
-            this.btnManageDeviceSites,
-            this.toolStripSeparator3});
-            this.tseDeviceSites.Location = new System.Drawing.Point(517, 1);
-            this.tseDeviceSites.MinimumSize = new System.Drawing.Size(320, 104);
-            this.tseDeviceSites.Name = "tseDeviceSites";
-            this.tseDeviceSites.Office12Mode = false;
-            this.tseDeviceSites.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.tseDeviceSites.Size = new System.Drawing.Size(324, 104);
-            this.tseDeviceSites.TabIndex = 2;
-            this.tseDeviceSites.Text = "Device Managements Sites";
-            // 
-            // btnAddDeviceSite
-            // 
-            this.btnAddDeviceSite.AutoSize = false;
-            this.btnAddDeviceSite.Enabled = false;
-            this.btnAddDeviceSite.Image = ((System.Drawing.Image)(resources.GetObject("btnAddDeviceSite.Image")));
-            this.btnAddDeviceSite.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnAddDeviceSite.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnAddDeviceSite.Name = "btnAddDeviceSite";
-            this.btnAddDeviceSite.Size = new System.Drawing.Size(90, 82);
-            this.btnAddDeviceSite.Text = "Add new\r\nSite";
-            this.btnAddDeviceSite.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnAddDeviceSite.Click += new System.EventHandler(this.btnAddDeviceSite_Click);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 85);
-            // 
-            // btnManageDeviceSites
-            // 
-            this.btnManageDeviceSites.AutoSize = false;
-            this.btnManageDeviceSites.Enabled = false;
-            this.btnManageDeviceSites.Image = ((System.Drawing.Image)(resources.GetObject("btnManageDeviceSites.Image")));
-            this.btnManageDeviceSites.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnManageDeviceSites.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnManageDeviceSites.Name = "btnManageDeviceSites";
-            this.btnManageDeviceSites.Size = new System.Drawing.Size(90, 82);
-            this.btnManageDeviceSites.Text = "Manage\r\nSites";
-            this.btnManageDeviceSites.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnManageDeviceSites.Click += new System.EventHandler(this.btnManageDeviceSites_Click);
-            // 
-            // btnManageRDPFiles
-            // 
-            this.btnManageRDPFiles.AutoSize = false;
-            this.btnManageRDPFiles.Enabled = false;
-            this.btnManageRDPFiles.Image = ((System.Drawing.Image)(resources.GetObject("btnManageRDPFiles.Image")));
-            this.btnManageRDPFiles.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnManageRDPFiles.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnManageRDPFiles.Name = "btnManageRDPFiles";
-            this.btnManageRDPFiles.Size = new System.Drawing.Size(90, 82);
-            this.btnManageRDPFiles.Text = "Manage\r\nRDP Files";
-            this.btnManageRDPFiles.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnManageRDPFiles.Click += new System.EventHandler(this.btnManageRDPFiles_Click);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 85);
-            // 
             // SurgitMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
@@ -1076,14 +1077,14 @@
             this.toolStripEx6.PerformLayout();
             this.tseRDPLinks.ResumeLayout(false);
             this.tseRDPLinks.PerformLayout();
+            this.tseDeviceSites.ResumeLayout(false);
+            this.tseDeviceSites.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.tseDeviceSites.ResumeLayout(false);
-            this.tseDeviceSites.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

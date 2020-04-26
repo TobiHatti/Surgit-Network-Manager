@@ -182,6 +182,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="fUpdateEntries.resx">
       <DependentUpon>fUpdateEntries.cs</DependentUpon>
@@ -196,6 +197,389 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\surgit.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\discover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\link.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\networkCard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rdp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refreshEntries.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\selfDiscover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\start.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\web.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rdp1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rdp.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\web.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\AccessPoint_OFF.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AllInOnePC_OFF.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DesktopPC_OFF.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DevelopmentDevice_OFF.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fax_OFF.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GameConsole_OFF.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HealthEquipment_OFF.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Intercom_OFF.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IoTDevice_OFF.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IPCamera_OFF.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IPRadio_OFF.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IPSetTopBox_OFF.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IPSoundSystem_OFF.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IPTV_OFF.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MultiPrinter_OFF.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NAS_OFF.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Notebook_OFF.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Organizer_OFF.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PLC_OFF.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\POSTerminal_OFF.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Printer_OFF.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Printer3D_OFF.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Projector_OFF.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Router_OFF.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scanner_OFF.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SecuritySystem_OFF.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Server_OFF.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Smartphone_OFF.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Switch_OFF.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tablet_OFF.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TabletComputer_OFF.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UnknownDevice_OFF.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UPS_OFF.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VirtualMachine_OFF.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VoIP_OFF.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VRHeadset_OFF.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WirelessRouter_OFF.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AccessPoint_ON.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AllInOnePC_ON.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DesktopPC_ON.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DevelopmentDevice_ON.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fax_ON.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GameConsole_ON.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HealthEquipment_ON.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Intercom_ON.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IoTDevice_ON.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IPCamera_ON.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IPRadio_ON.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IPSetTopBox_ON.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IPSoundSystem_ON.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IPTV_ON.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MultiPrinter_ON.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NAS_ON.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Notebook_ON.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Organizer_ON.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PLC_ON.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\POSTerminal_ON.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Printer_ON.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Printer3D_ON.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Projector_ON.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Router_ON.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scanner_ON.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SecuritySystem_ON.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Server_ON.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Smartphone_ON.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Switch_ON.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tablet_ON.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TabletComputer_ON.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UnknownDevice_ON.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UPS_ON.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VirtualMachine_ON.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VoIP_ON.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VRHeadset_ON.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WirelessRouter_ON.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AccessPoint_RAW.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AllInOnePC_RAW.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DesktopPC_RAW.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DevelopmentDevice_RAW.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fax_RAW.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GameConsole_RAW.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HealthEquipment_RAW.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Intercom_RAW.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IoTDevice_RAW.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IPCamera_RAW.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IPRadio_RAW.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IPSetTopBox_RAW.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IPSoundSystem_RAW.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IPTV_RAW.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MultiPrinter_RAW.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NAS_RAW.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Notebook_RAW.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Organizer_RAW.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PLC_RAW.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\POSTerminal_RAW.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Printer_RAW.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Printer3D_RAW.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Projector_RAW.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Router_RAW.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scanner_RAW.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SecuritySystem_RAW.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Server_RAW.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Smartphone_RAW.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Switch_RAW.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tablet_RAW.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TabletComputer_RAW.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UnknownDevice_RAW.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UPS_RAW.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VirtualMachine_RAW.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VoIP_RAW.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VRHeadset_RAW.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WirelessRouter_RAW.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

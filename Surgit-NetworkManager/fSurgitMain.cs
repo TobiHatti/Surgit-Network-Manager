@@ -9,6 +9,7 @@ using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Net.NetworkInformation;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -624,12 +625,14 @@ namespace Surgit_NetworkManager
 
                 while (reader.Read())
                 {
-                    ToolStripButton tsb = new ToolStripButton(Convert.ToString(reader["Name"]), new Icon(Path.Combine(SurgitManager.SurgitDataLocation, "Icons", "rdp.ico")).ToBitmap());
+                    
 
-                    tsb.TextImageRelation = TextImageRelation.ImageAboveText;
+                    ToolStripButton tsb = new ToolStripButton(Convert.ToString(reader["Name"]), Properties.Resources.rdpIco.ToBitmap());
+
                     tsb.ImageScaling = ToolStripItemImageScaling.None;
+                    tsb.TextImageRelation = TextImageRelation.ImageAboveText;
+                    tsb.ImageAlign = ContentAlignment.MiddleCenter;
                     tsb.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
-                    tsb.Size = new Size(90, 82);
                     tsb.Tag = Convert.ToString(reader["Path"]);
 
                     tsb.Click += new EventHandler(CallRDP);
@@ -653,12 +656,12 @@ namespace Surgit_NetworkManager
 
                 while (reader.Read())
                 {
-                    ToolStripButton tsb = new ToolStripButton(Convert.ToString(reader["Name"]), new Icon(Path.Combine(SurgitManager.SurgitDataLocation, "Icons", "web.ico")).ToBitmap());
+                    ToolStripButton tsb = new ToolStripButton(Convert.ToString(reader["Name"]), Properties.Resources.webIco.ToBitmap());
 
-                    tsb.TextImageRelation = TextImageRelation.ImageAboveText;
                     tsb.ImageScaling = ToolStripItemImageScaling.None;
+                    tsb.TextImageRelation = TextImageRelation.ImageAboveText;
+                    tsb.ImageAlign = ContentAlignment.MiddleCenter;
                     tsb.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
-                    tsb.Size = new Size(90, 82);
                     tsb.Tag = Convert.ToString(reader["Site"]);
 
                     tsb.Click += new EventHandler(CallSite);
