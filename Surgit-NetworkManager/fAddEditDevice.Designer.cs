@@ -226,6 +226,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "AddEditDevice";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add/Edit Device";
             this.Load += new System.EventHandler(this.AddEditDevice_Load);
             this.ResumeLayout(false);

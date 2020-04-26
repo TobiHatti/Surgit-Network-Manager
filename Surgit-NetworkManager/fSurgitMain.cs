@@ -202,6 +202,9 @@ namespace Surgit_NetworkManager
             btnDeleteDevice.Enabled = true;
             btnEditDevice.Enabled = true;
 
+            btnStartDeviceWOL.Enabled = true;
+            btnShutdownDevice.Enabled = true;
+
             sql.connection.Open();
 
             using (SQLiteDataReader reader = sql.ExecuteQuery($"SELECT * FROM Devices WHERE Name = '{grvDevices.GroupViewItems[grvDevices.SelectedItem].Text}'"))
@@ -451,6 +454,19 @@ namespace Surgit_NetworkManager
                 sql.connection.Close();
 
                 UpdateDeviceList();
+            }
+        }
+
+        private void btnStartDeviceWOL_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show($"Do you want to attempt to start the device \"{txbDeviceName.Text}\" via Wake-On-Lan?", "Start Device", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                WOLStart wol = new WOLStart
+                {
+                    MACAddress = txbDeviceMac.Text,
+                    IPv4 = txbDeviceIPv4.Text
+                };
+                wol.ShowDialog();
             }
         }
     }

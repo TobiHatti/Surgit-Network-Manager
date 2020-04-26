@@ -108,6 +108,12 @@
     <Compile Include="fSurgitMain.Designer.cs">
       <DependentUpon>fSurgitMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="fWOLStart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fWOLStart.Designer.cs">
+      <DependentUpon>fWOLStart.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="fAddEditDevice.resx">
@@ -127,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fSurgitMain.resx">
       <DependentUpon>fSurgitMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fWOLStart.resx">
+      <DependentUpon>fWOLStart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
