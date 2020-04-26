@@ -64,6 +64,12 @@
   <ItemGroup>
     <Compile Include="cCSQLite.cs" />
     <Compile Include="cRDPConnect.cs" />
+    <Compile Include="fAddDeviceSite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fAddDeviceSite.Designer.cs">
+      <DependentUpon>fAddDeviceSite.cs</DependentUpon>
+    </Compile>
     <Compile Include="fAddEditDevice.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="fAddDeviceSite.resx">
+      <DependentUpon>fAddDeviceSite.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fAddEditDevice.resx">
       <DependentUpon>fAddEditDevice.cs</DependentUpon>
     </EmbeddedResource>

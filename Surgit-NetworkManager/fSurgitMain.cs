@@ -174,7 +174,12 @@ namespace Surgit_NetworkManager
         private bool skipNextIndexCheck = false;
         private void grvDevices_GroupViewItemSelected(object sender, EventArgs e)
         {
-            if(skipNextIndexCheck)
+            LoadDeviceData();
+        }
+
+        private void LoadDeviceData()
+        {
+            if (skipNextIndexCheck)
             {
                 skipNextIndexCheck = false;
                 return;
@@ -185,14 +190,14 @@ namespace Surgit_NetworkManager
             {
                 DialogResult qResponse = MessageBox.Show($"Do you want to save the changes you made to \"{txbDeviceName.Text}\"?", "Save Changes", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
 
-                if(qResponse == DialogResult.Cancel)
+                if (qResponse == DialogResult.Cancel)
                 {
                     skipNextIndexCheck = true;
                     grvDevices.SelectedItem = selectedIndex;
                     return;
                 }
 
-                if(qResponse == DialogResult.Yes)
+                if (qResponse == DialogResult.Yes)
                 {
                     SaveChanges();
                 }
@@ -214,13 +219,18 @@ namespace Surgit_NetworkManager
 
             btnStartAutoRDP.Enabled = true;
             btnOpenRDPSettings.Enabled = true;
+
             btnLinkRDP.Enabled = true;
+            btnManageRDPFiles.Enabled = true;
+
+            btnAddDeviceSite.Enabled = true;
+            btnManageDeviceSites.Enabled = true;
 
             sql.connection.Open();
 
-            using (SQLiteDataReader reader = sql.ExecuteQuery($"SELECT * FROM Devices WHERE Name = '{grvDevices.GroupViewItems[grvDevices.SelectedItem].Text.Replace("[H] ","")}'"))
+            using (SQLiteDataReader reader = sql.ExecuteQuery($"SELECT * FROM Devices WHERE Name = '{grvDevices.GroupViewItems[grvDevices.SelectedItem].Text.Replace("[H] ", "")}'"))
             {
-                while(reader.Read())
+                while (reader.Read())
                 {
                     txbDeviceName.Text = Convert.ToString(reader["Name"]);
                     btnChangeDeviceType.Text = SurgitManager.ReadableString(Convert.ToString(reader["DeviceType"])) + " (click to change)";
@@ -240,7 +250,7 @@ namespace Surgit_NetworkManager
 
                     txbDeviceManufacturer.Text = "";
 
-                    try 
+                    try
                     {
                         using (WebClient webClient = new WebClient())
                             txbDeviceManufacturer.Text = webClient.DownloadString("http://api.macvendors.com/" + WebUtility.UrlEncode(Convert.ToString(reader["MACAddress"])));
@@ -250,6 +260,10 @@ namespace Surgit_NetworkManager
             }
 
             sql.connection.Close();
+
+
+            LoadRDPLinks();
+            LoadDeviceLinks();
         }
 
         private void txbDeviceName_KeyDown(object sender, KeyEventArgs e)
@@ -515,7 +529,18 @@ namespace Surgit_NetworkManager
 
             btnStartAutoRDP.Enabled = false;
             btnOpenRDPSettings.Enabled = false;
+
             btnLinkRDP.Enabled = false;
+            btnManageRDPFiles.Enabled = false;
+
+            btnAddDeviceSite.Enabled = false;
+            btnManageDeviceSites.Enabled = false;
+
+            while (tseDeviceSites.Items.Count > 3)
+                tseDeviceSites.Items.RemoveAt(3);
+
+            while (tseRDPLinks.Items.Count > 3)
+                tseRDPLinks.Items.RemoveAt(3);
         }
 
         private void btnUpdatePowerState_Click(object sender, EventArgs e)
@@ -572,6 +597,102 @@ namespace Surgit_NetworkManager
                 sql.ExecuteNonQuery($"UPDATE Settings SET Value = '{rdpSettings.WindowHeight}' WHERE Key = 'RDPScreenHeight'");
                 sql.ExecuteNonQuery($"UPDATE Settings SET Value = '{rdpSettings.PublicMode}' WHERE Key = 'RDPPublicMode'");
                 sql.connection.Close();
+            }
+        }
+
+        private void btnLinkRDP_Click(object sender, EventArgs e)
+        {
+            ofdOpenRDPFile.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+            if(ofdOpenRDPFile.ShowDialog() == DialogResult.OK)
+            {
+                string name = Path.GetFileNameWithoutExtension(ofdOpenRDPFile.FileName);
+                sql.ExecuteNonQueryA($"INSERT INTO RDPFiles (MACAddress, Name, Path) VALUES ('{txbDeviceMac.Text}','{name}','{ofdOpenRDPFile.FileName}')");
+                LoadDeviceData();
+            }
+        }
+
+        private void LoadRDPLinks()
+        {
+            sql.connection.Open();
+
+
+            using (SQLiteDataReader reader = sql.ExecuteQuery($"SELECT * FROM RDPFiles WHERE MACAddress = '{txbDeviceMac.Text}'"))
+            {
+                while(tseRDPLinks.Items.Count > 3)
+                    tseRDPLinks.Items.RemoveAt(3);
+
+                while (reader.Read())
+                {
+                    ToolStripButton tsb = new ToolStripButton(Convert.ToString(reader["Name"]), new Icon(Path.Combine(SurgitManager.SurgitDataLocation, "Icons", "rdp.ico")).ToBitmap());
+
+                    tsb.TextImageRelation = TextImageRelation.ImageAboveText;
+                    tsb.ImageScaling = ToolStripItemImageScaling.None;
+                    tsb.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
+                    tsb.Size = new Size(90, 82);
+                    tsb.Tag = Convert.ToString(reader["Path"]);
+
+                    tsb.Click += new EventHandler(CallRDP);
+
+                    tseRDPLinks.Items.Add(tsb);
+                }
+            }
+
+            sql.connection.Close();
+        }
+
+        private void LoadDeviceLinks()
+        {
+            sql.connection.Open();
+
+
+            using (SQLiteDataReader reader = sql.ExecuteQuery($"SELECT * FROM DeviceSites WHERE MACAddress = '{txbDeviceMac.Text}'"))
+            {
+                while (tseDeviceSites.Items.Count > 3)
+                    tseDeviceSites.Items.RemoveAt(3);
+
+                while (reader.Read())
+                {
+                    ToolStripButton tsb = new ToolStripButton(Convert.ToString(reader["Name"]), new Icon(Path.Combine(SurgitManager.SurgitDataLocation, "Icons", "web.ico")).ToBitmap());
+
+                    tsb.TextImageRelation = TextImageRelation.ImageAboveText;
+                    tsb.ImageScaling = ToolStripItemImageScaling.None;
+                    tsb.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
+                    tsb.Size = new Size(90, 82);
+                    tsb.Tag = Convert.ToString(reader["Site"]);
+
+                    tsb.Click += new EventHandler(CallSite);
+
+                    tseDeviceSites.Items.Add(tsb);
+                }
+            }
+
+            sql.connection.Close();
+        }
+
+        void CallRDP(object sender, EventArgs e)
+        {
+            ToolStripButton tsb = sender as ToolStripButton;
+
+            Process rdcProcess = new Process();
+            rdcProcess.StartInfo.FileName = Environment.ExpandEnvironmentVariables(@"%SystemRoot%\system32\mstsc.exe");
+            rdcProcess.StartInfo.Arguments = tsb.Tag.ToString() + " "; // ip or name of computer to connect
+            rdcProcess.Start();
+        }
+
+        void CallSite(object sender, EventArgs e)
+        {
+            ToolStripButton tsb = sender as ToolStripButton;
+            Process.Start(tsb.Tag.ToString());
+        }
+
+        private void btnAddDeviceSite_Click(object sender, EventArgs e)
+        {
+            AddDeviceSite ads = new AddDeviceSite();
+            if(ads.ShowDialog() == DialogResult.OK)
+            {
+                sql.ExecuteNonQueryA($"INSERT INTO DeviceSites (Name, Site, MACAddress) VALUES ('{ads.DeviceName}','{ads.DeviceSiteURL}','{txbDeviceMac.Text}')");
+                LoadDeviceData();
             }
         }
     }
