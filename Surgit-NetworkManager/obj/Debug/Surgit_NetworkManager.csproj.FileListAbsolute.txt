@@ -51,3 +51,4 @@ H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Debug\Surgit_NetworkManag
 H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Debug\Surgit_NetworkManager.EditIPRange.resources
 H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Debug\Surgit_NetworkManager.AddEditDevice.resources
 H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Debug\Surgit_NetworkManager.WOLStart.resources
+H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Debug\Surgit_NetworkManager.RDPSettings.resources

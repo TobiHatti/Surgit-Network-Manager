@@ -1,0 +1,11 @@
+H:\Git\Surgit-NetworkManager\RDPTool\obj\Debug\RDPTool.csprojAssemblyReference.cache
+H:\Git\Surgit-NetworkManager\RDPTool\obj\Debug\RDPTool.csproj.CoreCompileInputs.cache
+H:\Git\Surgit-NetworkManager\RDPTool\bin\Debug\RDPTool.exe.config
+H:\Git\Surgit-NetworkManager\RDPTool\bin\Debug\RDPTool.exe
+H:\Git\Surgit-NetworkManager\RDPTool\bin\Debug\RDPTool.pdb
+H:\Git\Surgit-NetworkManager\RDPTool\obj\Debug\RDPTool.exe
+H:\Git\Surgit-NetworkManager\RDPTool\obj\Debug\RDPTool.pdb
+H:\Git\Surgit-NetworkManager\RDPTool\bin\Debug\System.Management.Automation.dll
+H:\Git\Surgit-NetworkManager\RDPTool\bin\Debug\Microsoft.Management.Infrastructure.dll
+H:\Git\Surgit-NetworkManager\RDPTool\bin\Debug\System.Management.Automation.xml
+H:\Git\Surgit-NetworkManager\RDPTool\obj\Debug\RDPTool.csproj.CopyComplete

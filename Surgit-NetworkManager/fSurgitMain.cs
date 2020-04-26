@@ -210,8 +210,11 @@ namespace Surgit_NetworkManager
             btnEditDevice.Enabled = true;
 
             btnStartDeviceWOL.Enabled = true;
-            btnShutdownDevice.Enabled = true;
             btnUpdatePowerState.Enabled = true;
+
+            btnStartAutoRDP.Enabled = true;
+            btnOpenRDPSettings.Enabled = true;
+            btnLinkRDP.Enabled = true;
 
             sql.connection.Open();
 
@@ -508,8 +511,11 @@ namespace Surgit_NetworkManager
             btnEditDevice.Enabled = false;
 
             btnStartDeviceWOL.Enabled = false;
-            btnShutdownDevice.Enabled = false;
             btnUpdatePowerState.Enabled = false;
+
+            btnStartAutoRDP.Enabled = false;
+            btnOpenRDPSettings.Enabled = false;
+            btnLinkRDP.Enabled = false;
         }
 
         private void btnUpdatePowerState_Click(object sender, EventArgs e)
@@ -519,13 +525,54 @@ namespace Surgit_NetworkManager
             int online = 0;
             for (int i = 0; i < 3; i++)
             {
-                reply = ping.Send(txbDeviceIPv4.Text);
-                if (reply.Status != IPStatus.Success) online = 1;
+                reply = ping.Send(txbDeviceIPv4.Text,500);
+                if (reply.Status == IPStatus.Success) online = 1;
             }
 
             sql.ExecuteNonQueryA($"UPDATE Devices SET LastPowerState = '{online}' WHERE MACAddress = '{txbDeviceMac.Text}'");
 
             UpdateDeviceList();
+            DeselectItem();
+        }
+
+        private void btnStartAutoRDP_Click(object sender, EventArgs e)
+        {
+            RDPConnect rdp = new RDPConnect();
+            rdp.MachineNameOrIP = txbDeviceIPv4.Text;
+
+            sql.connection.Open();
+            rdp.MultiMonitor = Convert.ToBoolean(sql.ExecuteScalar<string>("SELECT Value FROM Settings WHERE Key = 'RDPMultiMonitor'"));
+            rdp.FullScreen = Convert.ToBoolean(sql.ExecuteScalar<string>("SELECT Value FROM Settings WHERE Key = 'RDPFullScreen'"));
+            rdp.WindowWidth = Convert.ToInt32(sql.ExecuteScalar<string>("SELECT Value FROM Settings WHERE Key = 'RDPScreenWidth'"));
+            rdp.WindowHeight = Convert.ToInt32(sql.ExecuteScalar<string>("SELECT Value FROM Settings WHERE Key = 'RDPScreenHeight'"));
+            rdp.PublicMode = Convert.ToBoolean(sql.ExecuteScalar<string>("SELECT Value FROM Settings WHERE Key = 'RDPPublicMode'"));
+            sql.connection.Close();
+
+            rdp.StartRDP();
+        }
+
+        private void btnOpenRDPSettings_Click(object sender, EventArgs e)
+        {
+            RDPSettings rdpSettings = new RDPSettings();
+
+            sql.connection.Open();
+            rdpSettings.MultiMonitor = Convert.ToBoolean(sql.ExecuteScalar<string>("SELECT Value FROM Settings WHERE Key = 'RDPMultiMonitor'"));
+            rdpSettings.FullScreen = Convert.ToBoolean(sql.ExecuteScalar<string>("SELECT Value FROM Settings WHERE Key = 'RDPFullScreen'"));
+            rdpSettings.WindowWidth = Convert.ToInt32(sql.ExecuteScalar<string>("SELECT Value FROM Settings WHERE Key = 'RDPScreenWidth'"));
+            rdpSettings.WindowHeight = Convert.ToInt32(sql.ExecuteScalar<string>("SELECT Value FROM Settings WHERE Key = 'RDPScreenHeight'"));
+            rdpSettings.PublicMode = Convert.ToBoolean(sql.ExecuteScalar<string>("SELECT Value FROM Settings WHERE Key = 'RDPPublicMode'"));
+            sql.connection.Close();
+
+            if(rdpSettings.ShowDialog() == DialogResult.OK)
+            {
+                sql.connection.Open();
+                sql.ExecuteNonQuery($"UPDATE Settings SET Value = '{rdpSettings.MultiMonitor}' WHERE Key = 'RDPMultiMonitor'");
+                sql.ExecuteNonQuery($"UPDATE Settings SET Value = '{rdpSettings.FullScreen}' WHERE Key = 'RDPFullScreen'");
+                sql.ExecuteNonQuery($"UPDATE Settings SET Value = '{rdpSettings.WindowWidth}' WHERE Key = 'RDPScreenWidth'");
+                sql.ExecuteNonQuery($"UPDATE Settings SET Value = '{rdpSettings.WindowHeight}' WHERE Key = 'RDPScreenHeight'");
+                sql.ExecuteNonQuery($"UPDATE Settings SET Value = '{rdpSettings.PublicMode}' WHERE Key = 'RDPPublicMode'");
+                sql.connection.Close();
+            }
         }
     }
 #pragma warning restore IDE1006
