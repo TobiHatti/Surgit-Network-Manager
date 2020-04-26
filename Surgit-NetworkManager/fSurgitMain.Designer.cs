@@ -89,6 +89,8 @@
             this.lblCopyright = new System.Windows.Forms.Label();
             this.chbShowHiddenDevices = new System.Windows.Forms.CheckBox();
             this.btnHideDevice = new Syncfusion.WinForms.Controls.SfButton();
+            this.toolStripEx5 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
+            this.btnUpdatePowerState = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.rbcRibbonMenu)).BeginInit();
             this.rbcRibbonMenu.SuspendLayout();
             this.toolStripTabItem1.Panel.SuspendLayout();
@@ -100,6 +102,7 @@
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.toolStripEx5.SuspendLayout();
             this.SuspendLayout();
             // 
             // rbcRibbonMenu
@@ -184,32 +187,32 @@
             this.toolStripLabel1.Font = new System.Drawing.Font("Calibri Light", 12F);
             this.toolStripLabel1.Name = "toolStripLabel1";
             this.toolStripLabel1.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.toolStripLabel1.Size = new System.Drawing.Size(85, 19);
+            this.toolStripLabel1.Size = new System.Drawing.Size(85, 82);
             this.toolStripLabel1.Text = "IP Range:";
             // 
             // lblIPRangeStart
             // 
             this.lblIPRangeStart.Name = "lblIPRangeStart";
-            this.lblIPRangeStart.Size = new System.Drawing.Size(46, 15);
+            this.lblIPRangeStart.Size = new System.Drawing.Size(61, 82);
             this.lblIPRangeStart.Text = "10.0.0.1";
             // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.Font = new System.Drawing.Font("Calibri Light", 12F);
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(22, 19);
+            this.toolStripLabel2.Size = new System.Drawing.Size(22, 82);
             this.toolStripLabel2.Text = "to";
             // 
             // lblIPRangeEnd
             // 
             this.lblIPRangeEnd.Name = "lblIPRangeEnd";
-            this.lblIPRangeEnd.Size = new System.Drawing.Size(58, 15);
+            this.lblIPRangeEnd.Size = new System.Drawing.Size(77, 82);
             this.lblIPRangeEnd.Text = "10.0.0.254";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 104);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 85);
             // 
             // btnEditIPRange
             // 
@@ -217,7 +220,7 @@
             this.btnEditIPRange.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnEditIPRange.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditIPRange.Name = "btnEditIPRange";
-            this.btnEditIPRange.Size = new System.Drawing.Size(59, 54);
+            this.btnEditIPRange.Size = new System.Drawing.Size(70, 82);
             this.btnEditIPRange.Text = "Edit \r\nIP-Range";
             this.btnEditIPRange.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnEditIPRange.Click += new System.EventHandler(this.btnEditIPRange_Click);
@@ -249,7 +252,7 @@
             this.btnDiscover.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnDiscover.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDiscover.Name = "btnDiscover";
-            this.btnDiscover.Size = new System.Drawing.Size(56, 22);
+            this.btnDiscover.Size = new System.Drawing.Size(69, 82);
             this.btnDiscover.Text = "Discover\r\nNetwork";
             this.btnDiscover.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnDiscover.Click += new System.EventHandler(this.BtnDiscover_Click);
@@ -260,7 +263,7 @@
             this.btnDiscoverSelf.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnDiscoverSelf.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDiscoverSelf.Name = "btnDiscoverSelf";
-            this.btnDiscoverSelf.Size = new System.Drawing.Size(70, 54);
+            this.btnDiscoverSelf.Size = new System.Drawing.Size(87, 82);
             this.btnDiscoverSelf.Text = "Discover \r\nThis Device";
             this.btnDiscoverSelf.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnDiscoverSelf.Click += new System.EventHandler(this.btnDiscoverSelf_Click);
@@ -271,7 +274,7 @@
             this.btnUpdateDevices.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnUpdateDevices.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnUpdateDevices.Name = "btnUpdateDevices";
-            this.btnUpdateDevices.Size = new System.Drawing.Size(51, 54);
+            this.btnUpdateDevices.Size = new System.Drawing.Size(63, 82);
             this.btnUpdateDevices.Text = "Update\r\nDevices";
             this.btnUpdateDevices.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnUpdateDevices.Click += new System.EventHandler(this.btnUpdateDevices_Click);
@@ -282,7 +285,7 @@
             this.btnRefresh.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(50, 39);
+            this.btnRefresh.Size = new System.Drawing.Size(63, 82);
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
@@ -351,6 +354,7 @@
             // rbcRibbonMenu.ribbonPanel2
             // 
             this.toolStripTabItem2.Panel.Controls.Add(this.toolStripEx4);
+            this.toolStripTabItem2.Panel.Controls.Add(this.toolStripEx5);
             this.toolStripTabItem2.Panel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.toolStripTabItem2.Panel.Name = "ribbonPanel2";
             this.toolStripTabItem2.Panel.Padding = new System.Windows.Forms.Padding(0, 1, 47, 0);
@@ -843,6 +847,34 @@
             this.btnHideDevice.UseVisualStyleBackColor = false;
             this.btnHideDevice.Click += new System.EventHandler(this.btnHideDevice_Click);
             // 
+            // toolStripEx5
+            // 
+            this.toolStripEx5.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStripEx5.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripEx5.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.toolStripEx5.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStripEx5.Image = null;
+            this.toolStripEx5.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnUpdatePowerState});
+            this.toolStripEx5.Location = new System.Drawing.Point(185, 1);
+            this.toolStripEx5.Name = "toolStripEx5";
+            this.toolStripEx5.Office12Mode = false;
+            this.toolStripEx5.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.toolStripEx5.Size = new System.Drawing.Size(131, 104);
+            this.toolStripEx5.TabIndex = 1;
+            // 
+            // btnUpdatePowerState
+            // 
+            this.btnUpdatePowerState.Enabled = false;
+            this.btnUpdatePowerState.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdatePowerState.Image")));
+            this.btnUpdatePowerState.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnUpdatePowerState.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnUpdatePowerState.Name = "btnUpdatePowerState";
+            this.btnUpdatePowerState.Size = new System.Drawing.Size(91, 82);
+            this.btnUpdatePowerState.Text = "Update \r\nPower-State";
+            this.btnUpdatePowerState.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnUpdatePowerState.Click += new System.EventHandler(this.btnUpdatePowerState_Click);
+            // 
             // SurgitMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
@@ -885,6 +917,8 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.toolStripEx5.ResumeLayout(false);
+            this.toolStripEx5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -950,6 +984,8 @@
         private System.Windows.Forms.ToolStripButton btnShutdownDevice;
         private System.Windows.Forms.CheckBox chbShowHiddenDevices;
         private Syncfusion.WinForms.Controls.SfButton btnHideDevice;
+        private Syncfusion.Windows.Forms.Tools.ToolStripEx toolStripEx5;
+        private System.Windows.Forms.ToolStripButton btnUpdatePowerState;
     }
 }
 

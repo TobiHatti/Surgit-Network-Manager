@@ -123,13 +123,37 @@
   <metadata name="toolStripEx4.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>700, 17</value>
   </metadata>
+  <metadata name="toolStripEx5.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>817, 17</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnUpdatePowerState.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIaSURBVDhPzZQ9T9tQFIbzCyBQQRC0JCHBIUT5sk2BjX+C
+        +UjSNoRAgVYtpaXlQ0KqigRCol3uYt+IVOqQJQODhwweMnjNloxs/ITTc63rkMi2xJhXeiXb9/iR7/F7
+        rm8gNbRGCb/0VmxLVYQtTY/t1UA4qEN0vw7h3RpM5jU9sKkqvMw3skHJaK4K/NapdLkSSpSomTpuQPa6
+        A9LtQ58zVx2IfmlAIEfNFwib/qhD+MhwBzJY8v3do/irBQu/EYDA5GkTEt8NmD9GnzQhi0C2lvzZgshh
+        w7qe8QJmdqgpX7bgNRZlzpsgFLX27DtViRQrK8FCZeVVQVWm8lo7jmBWY9sVmC6rivyjAYt/HkBEWLxE
+        SbpM/Hy5q6k8JbOfdKvOduSrCzC7q+lLNx1YRCdKWtsN9vINJcJnHZYR0uuoG1Daq8LCmQHZo3tI4h/m
+        j7uaRliwWIV57Gcc+zmHjn0zQEBP7tTdezjYkj78s7Yso6VTA0R05gS3tl+D8FvnJIxhuEMH99aWXYMt
+        H9YdzRYvTIgWnbDgKvGPbWhtGXPK7F/TdL70JAZcQohtBhM8YBM5SlgWWd0Mhnt43fkTLWBvWFmw57b/
+        OoOdewp2CqdldJ2aHNEvCYFsjNiXSb2jd8ZHjxlBIj6zR2+8cPc4vFoJcUS/GJDBUtuU2IcDe9nrcBjH
+        wyFQ8IAxiRhsnOVuz557fHlK6oENkHy+//YPnWpBf1/wAAAAAElFTkSuQmCC
+</value>
+  </data>
   <metadata name="toolStripTabItem1.TabGroup" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value />
   </metadata>
   <metadata name="toolStripEx2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>466, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <metadata name="toolStripEx1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="toolStripEx3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>583, 17</value>
+  </metadata>
   <data name="btnEditIPRange.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -140,9 +164,6 @@
         nJFSrMRe4MS/IGJo6rGMUlxCKf7NvnwBi65eScuAuXUAAAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="toolStripEx1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <data name="btnDiscover.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -211,9 +232,6 @@
         A+OSEGzMcr9n/3t8+UoegI2RAoG/WeGdPbk+YU0AAAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="toolStripEx3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>583, 17</value>
-  </metadata>
   <data name="btnAddDevice.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8

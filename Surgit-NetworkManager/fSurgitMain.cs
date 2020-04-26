@@ -119,12 +119,15 @@ namespace Surgit_NetworkManager
                     if (!string.IsNullOrEmpty(Convert.ToString(reader["LastPowerState"])) && Convert.ToBoolean(reader["LastPowerState"])) onlineCtr++;
                     else powerState = "_OFF";
 
+                    string devicePrefix = "";
+                    if (Convert.ToBoolean(reader["IsHidden"])) devicePrefix = "[H] ";
+
                     // Add device to view
                     grvDevices.GroupViewItems.Add(
-                        new GroupViewItem(
-                            Convert.ToString(reader["Name"]),
-                            grvDevices.LargeImageList.Images.IndexOfKey(
-                                Convert.ToString(reader["DeviceType"]) + powerState)
+                    new GroupViewItem(
+                        devicePrefix + Convert.ToString(reader["Name"]),
+                        grvDevices.LargeImageList.Images.IndexOfKey(
+                            Convert.ToString(reader["DeviceType"]) + powerState)
                     ));
                 }
 
@@ -208,10 +211,11 @@ namespace Surgit_NetworkManager
 
             btnStartDeviceWOL.Enabled = true;
             btnShutdownDevice.Enabled = true;
+            btnUpdatePowerState.Enabled = true;
 
             sql.connection.Open();
 
-            using (SQLiteDataReader reader = sql.ExecuteQuery($"SELECT * FROM Devices WHERE Name = '{grvDevices.GroupViewItems[grvDevices.SelectedItem].Text}'"))
+            using (SQLiteDataReader reader = sql.ExecuteQuery($"SELECT * FROM Devices WHERE Name = '{grvDevices.GroupViewItems[grvDevices.SelectedItem].Text.Replace("[H] ","")}'"))
             {
                 while(reader.Read())
                 {
@@ -401,11 +405,7 @@ namespace Surgit_NetworkManager
                 sql.ExecuteNonQueryA($"DELETE FROM Devices WHERE MACAddress = '{txbDeviceMac.Text}'");
                 UpdateDeviceList();
 
-                btnEditDevice.Enabled = false;
-                btnDeleteDevice.Enabled = false;
-
-                ClearDeviceInfo();
-
+                DeselectItem();
             }
         }
 
@@ -480,6 +480,7 @@ namespace Surgit_NetworkManager
         private void chbShowHiddenDevices_CheckedChanged(object sender, EventArgs e)
         {
             UpdateDeviceList();
+            DeselectItem();
         }
 
         private void btnHideDevice_Click(object sender, EventArgs e)
@@ -492,8 +493,39 @@ namespace Surgit_NetworkManager
             sql.connection.Close();
 
             UpdateDeviceList();
+            DeselectItem();
+        }
+
+        private void DeselectItem()
+        {
             ClearDeviceInfo();
+            
+            btnSaveChanges.Enabled = false;
+            btnDiscardChanges.Enabled = false;
             btnHideDevice.Enabled = false;
+
+            btnDeleteDevice.Enabled = false;
+            btnEditDevice.Enabled = false;
+
+            btnStartDeviceWOL.Enabled = false;
+            btnShutdownDevice.Enabled = false;
+            btnUpdatePowerState.Enabled = false;
+        }
+
+        private void btnUpdatePowerState_Click(object sender, EventArgs e)
+        {
+            Ping ping = new Ping();
+            PingReply reply;
+            int online = 0;
+            for (int i = 0; i < 3; i++)
+            {
+                reply = ping.Send(txbDeviceIPv4.Text);
+                if (reply.Status != IPStatus.Success) online = 1;
+            }
+
+            sql.ExecuteNonQueryA($"UPDATE Devices SET LastPowerState = '{online}' WHERE MACAddress = '{txbDeviceMac.Text}'");
+
+            UpdateDeviceList();
         }
     }
 #pragma warning restore IDE1006
