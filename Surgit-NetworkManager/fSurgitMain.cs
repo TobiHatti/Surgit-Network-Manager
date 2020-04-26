@@ -111,19 +111,22 @@ namespace Surgit_NetworkManager
             using (SQLiteDataReader reader = sql.ExecuteQuery($"SELECT * FROM Devices {orderBy}"))
             while(reader.Read())
             {
-                string powerState = "_ON";
+                if (!Convert.ToBoolean(reader["IsHidden"]) || (Convert.ToBoolean(reader["IsHidden"]) && chbShowHiddenDevices.Checked))
+                {
+                    string powerState = "_ON";
 
-                // Check if the device is powered
-                if (!string.IsNullOrEmpty(Convert.ToString(reader["LastPowerState"])) && Convert.ToBoolean(reader["LastPowerState"])) onlineCtr++;
-                else powerState = "_OFF";
+                    // Check if the device is powered
+                    if (!string.IsNullOrEmpty(Convert.ToString(reader["LastPowerState"])) && Convert.ToBoolean(reader["LastPowerState"])) onlineCtr++;
+                    else powerState = "_OFF";
 
-                // Add device to view
-                grvDevices.GroupViewItems.Add(
-                    new GroupViewItem(
-                        Convert.ToString(reader["Name"]), 
-                        grvDevices.LargeImageList.Images.IndexOfKey(
-                            Convert.ToString(reader["DeviceType"]) + powerState)
-                ));
+                    // Add device to view
+                    grvDevices.GroupViewItems.Add(
+                        new GroupViewItem(
+                            Convert.ToString(reader["Name"]),
+                            grvDevices.LargeImageList.Images.IndexOfKey(
+                                Convert.ToString(reader["DeviceType"]) + powerState)
+                    ));
+                }
 
                 entryCtr++;
             }
@@ -197,6 +200,7 @@ namespace Surgit_NetworkManager
             btnChangeDeviceType.Enabled = true;
             btnSaveChanges.Enabled = false;
             btnDiscardChanges.Enabled = false;
+            btnHideDevice.Enabled = true;
             selectedIndex = grvDevices.SelectedItem;
 
             btnDeleteDevice.Enabled = true;
@@ -223,6 +227,9 @@ namespace Surgit_NetworkManager
                     txbDeviceMac.Text = Convert.ToString(reader["MACAddress"]);
 
                     deviceType = Convert.ToString(reader["DeviceType"]);
+
+                    if (Convert.ToBoolean(reader["IsHidden"])) btnHideDevice.Text = "Show Device";
+                    else btnHideDevice.Text = "Hide Device";
 
                     txbDeviceManufacturer.Text = "";
 
@@ -468,6 +475,25 @@ namespace Surgit_NetworkManager
                 };
                 wol.ShowDialog();
             }
+        }
+
+        private void chbShowHiddenDevices_CheckedChanged(object sender, EventArgs e)
+        {
+            UpdateDeviceList();
+        }
+
+        private void btnHideDevice_Click(object sender, EventArgs e)
+        {
+            sql.connection.Open();
+            if (sql.ExecuteScalar<int>($"SELECT IsHidden FROM Devices WHERE MACAddress = '{txbDeviceMac.Text}'") == 1)
+                sql.ExecuteNonQuery($"UPDATE Devices SET IsHidden = 0 WHERE MACAddress = '{txbDeviceMac.Text}'");
+            else
+                sql.ExecuteNonQuery($"UPDATE Devices SET IsHidden = 1 WHERE MACAddress = '{txbDeviceMac.Text}'");
+            sql.connection.Close();
+
+            UpdateDeviceList();
+            ClearDeviceInfo();
+            btnHideDevice.Enabled = false;
         }
     }
 #pragma warning restore IDE1006
