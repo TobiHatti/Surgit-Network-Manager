@@ -735,6 +735,11 @@ namespace Surgit_NetworkManager
         {
             this.WindowState = FormWindowState.Maximized;
         }
+
+        private void SurgitMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 #pragma warning restore IDE1006
 }

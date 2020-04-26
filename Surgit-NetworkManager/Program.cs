@@ -15,7 +15,7 @@ namespace Surgit_NetworkManager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SurgitMain());
+            Application.Run(new SplashScreen());
         }
     }
 }

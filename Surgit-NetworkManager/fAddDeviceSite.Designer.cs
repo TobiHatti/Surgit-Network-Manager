@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddDeviceSite));
             this.txbDeviceURL = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCancel = new Syncfusion.WinForms.Controls.SfButton();
@@ -41,7 +42,7 @@
             this.txbDeviceURL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txbDeviceURL.Location = new System.Drawing.Point(7, 80);
-            this.txbDeviceURL.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbDeviceURL.Margin = new System.Windows.Forms.Padding(4);
             this.txbDeviceURL.Name = "txbDeviceURL";
             this.txbDeviceURL.Size = new System.Drawing.Size(379, 27);
             this.txbDeviceURL.TabIndex = 0;
@@ -122,7 +123,9 @@
             this.Controls.Add(this.txbDeviceURL);
             this.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IconSize = new System.Drawing.Size(30, 30);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "AddDeviceSite";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

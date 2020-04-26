@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeviceTypeSelector));
             this.btnCancel = new Syncfusion.WinForms.Controls.SfButton();
             this.btnApply = new Syncfusion.WinForms.Controls.SfButton();
             this.grvDeviceTypes = new Syncfusion.Windows.Forms.Tools.GroupView();
@@ -101,6 +102,8 @@
             this.Controls.Add(this.grvDeviceTypes);
             this.Controls.Add(this.btnApply);
             this.Controls.Add(this.btnCancel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IconSize = new System.Drawing.Size(30, 30);
             this.Name = "DeviceTypeSelector";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Select Device Type";

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RDPSettings));
             this.numWindowHeight = new System.Windows.Forms.NumericUpDown();
             this.numWindowWidth = new System.Windows.Forms.NumericUpDown();
             this.chbFullscreen = new System.Windows.Forms.CheckBox();
@@ -221,7 +222,9 @@
             this.Controls.Add(this.numWindowHeight);
             this.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IconSize = new System.Drawing.Size(30, 30);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "RDPSettings";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

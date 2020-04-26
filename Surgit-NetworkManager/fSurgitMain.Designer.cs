@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SurgitMain));
             this.rbcRibbonMenu = new Syncfusion.Windows.Forms.Tools.RibbonControlAdv();
             this.toolStripTabItem1 = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
             this.toolStripEx2 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
@@ -252,7 +253,7 @@
             this.btnDiscoverSelf,
             this.btnUpdateDevices,
             this.btnRefresh});
-            this.toolStripEx1.Location = new System.Drawing.Point(342, 1);
+            this.toolStripEx1.Location = new System.Drawing.Point(0, 1);
             this.toolStripEx1.Name = "toolStripEx1";
             this.toolStripEx1.Office12Mode = false;
             this.toolStripEx1.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
@@ -320,7 +321,7 @@
             this.btnAddDevice,
             this.btnDeleteDevice,
             this.btnEditDevice});
-            this.toolStripEx3.Location = new System.Drawing.Point(673, 1);
+            this.toolStripEx3.Location = new System.Drawing.Point(0, 1);
             this.toolStripEx3.Name = "toolStripEx3";
             this.toolStripEx3.Office12Mode = false;
             this.toolStripEx3.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
@@ -1047,6 +1048,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.rbcRibbonMenu);
             this.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(1020, 820);
             this.Name = "SurgitMain";
@@ -1055,6 +1057,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Surgit Network Manager";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SurgitMain_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SurgitMain_FormClosed);
             this.Load += new System.EventHandler(this.SurgitMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.rbcRibbonMenu)).EndInit();
             this.rbcRibbonMenu.ResumeLayout(false);
