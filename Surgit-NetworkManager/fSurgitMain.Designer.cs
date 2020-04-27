@@ -78,10 +78,8 @@
             this.txbDeviceIPv6 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txbDeviceHostname = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txbDeviceManufacturer = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
             this.webMarkdown = new System.Windows.Forms.WebBrowser();
             this.btnHideDevice = new Syncfusion.WinForms.Controls.SfButton();
@@ -92,7 +90,6 @@
             this.txbDeviceLastSeen = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.chbShowHiddenDevices = new System.Windows.Forms.CheckBox();
             this.lblDeviceOnlineCount = new System.Windows.Forms.Label();
             this.lblDeviceCount = new System.Windows.Forms.Label();
@@ -109,6 +106,10 @@
             this.ofdSurgitDataFile = new System.Windows.Forms.OpenFileDialog();
             this.toolStripTabItem4 = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
             this.bgwLoadMacVendor = new System.ComponentModel.BackgroundWorker();
+            this.spcSplitter = new Syncfusion.Windows.Forms.Tools.SplitContainerAdv();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.rbcRibbonMenu)).BeginInit();
             this.rbcRibbonMenu.SuspendLayout();
             this.toolStripTabItem1.Panel.SuspendLayout();
@@ -122,9 +123,10 @@
             this.tseRDPLinks.SuspendLayout();
             this.tseDeviceSites.SuspendLayout();
             this.toolStripEx5.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spcSplitter)).BeginInit();
+            this.spcSplitter.Panel1.SuspendLayout();
+            this.spcSplitter.Panel2.SuspendLayout();
+            this.spcSplitter.SuspendLayout();
             this.SuspendLayout();
             // 
             // rbcRibbonMenu
@@ -150,9 +152,9 @@
             this.rbcRibbonMenu.QuickPanelImageLayout = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.rbcRibbonMenu.RibbonHeaderImage = Syncfusion.Windows.Forms.Tools.RibbonHeaderImage.None;
             this.rbcRibbonMenu.RibbonStyle = Syncfusion.Windows.Forms.Tools.RibbonStyle.Office2016;
-            this.rbcRibbonMenu.SelectedTab = this.toolStripTabItem1;
+            this.rbcRibbonMenu.SelectedTab = this.toolStripTabItem3;
             this.rbcRibbonMenu.ShowRibbonDisplayOptionButton = true;
-            this.rbcRibbonMenu.Size = new System.Drawing.Size(1092, 188);
+            this.rbcRibbonMenu.Size = new System.Drawing.Size(1022, 191);
             this.rbcRibbonMenu.SystemText.QuickAccessDialogDropDownName = "Start menu";
             this.rbcRibbonMenu.SystemText.RenameDisplayLabelText = "&Display Name:";
             this.rbcRibbonMenu.TabIndex = 1;
@@ -200,7 +202,7 @@
             this.toolStripEx2.Office12Mode = false;
             this.toolStripEx2.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.toolStripEx2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripEx2.Size = new System.Drawing.Size(340, 119);
+            this.toolStripEx2.Size = new System.Drawing.Size(340, 122);
             this.toolStripEx2.TabIndex = 1;
             this.toolStripEx2.Text = "IP Address Range";
             // 
@@ -210,32 +212,32 @@
             this.toolStripLabel1.Font = new System.Drawing.Font("Calibri Light", 12F);
             this.toolStripLabel1.Name = "toolStripLabel1";
             this.toolStripLabel1.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.toolStripLabel1.Size = new System.Drawing.Size(85, 97);
+            this.toolStripLabel1.Size = new System.Drawing.Size(85, 100);
             this.toolStripLabel1.Text = "IP Range:";
             // 
             // lblIPRangeStart
             // 
             this.lblIPRangeStart.Name = "lblIPRangeStart";
-            this.lblIPRangeStart.Size = new System.Drawing.Size(61, 97);
+            this.lblIPRangeStart.Size = new System.Drawing.Size(61, 100);
             this.lblIPRangeStart.Text = "10.0.0.1";
             // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.Font = new System.Drawing.Font("Calibri Light", 12F);
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(22, 97);
+            this.toolStripLabel2.Size = new System.Drawing.Size(22, 100);
             this.toolStripLabel2.Text = "to";
             // 
             // lblIPRangeEnd
             // 
             this.lblIPRangeEnd.Name = "lblIPRangeEnd";
-            this.lblIPRangeEnd.Size = new System.Drawing.Size(77, 97);
+            this.lblIPRangeEnd.Size = new System.Drawing.Size(77, 100);
             this.lblIPRangeEnd.Text = "10.0.0.254";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 100);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 103);
             // 
             // btnEditIPRange
             // 
@@ -266,7 +268,7 @@
             this.toolStripEx1.Office12Mode = false;
             this.toolStripEx1.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.toolStripEx1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripEx1.Size = new System.Drawing.Size(329, 119);
+            this.toolStripEx1.Size = new System.Drawing.Size(329, 122);
             this.toolStripEx1.TabIndex = 0;
             this.toolStripEx1.Text = "Network Discovery";
             // 
@@ -334,7 +336,7 @@
             this.toolStripEx3.Office12Mode = false;
             this.toolStripEx3.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.toolStripEx3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripEx3.Size = new System.Drawing.Size(249, 119);
+            this.toolStripEx3.Size = new System.Drawing.Size(249, 122);
             this.toolStripEx3.TabIndex = 2;
             this.toolStripEx3.Text = "Manage Devices";
             // 
@@ -410,7 +412,7 @@
             this.toolStripEx4.Office12Mode = false;
             this.toolStripEx4.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.toolStripEx4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripEx4.Size = new System.Drawing.Size(195, 119);
+            this.toolStripEx4.Size = new System.Drawing.Size(195, 122);
             this.toolStripEx4.TabIndex = 0;
             // 
             // btnStartDeviceWOL
@@ -429,7 +431,7 @@
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 100);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 103);
             // 
             // btnUpdatePowerState
             // 
@@ -477,7 +479,7 @@
             this.toolStripEx6.Office12Mode = false;
             this.toolStripEx6.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.toolStripEx6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripEx6.Size = new System.Drawing.Size(189, 119);
+            this.toolStripEx6.Size = new System.Drawing.Size(189, 122);
             this.toolStripEx6.TabIndex = 0;
             this.toolStripEx6.Text = "RDP Connections";
             // 
@@ -524,7 +526,7 @@
             this.tseRDPLinks.Office12Mode = false;
             this.tseRDPLinks.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.tseRDPLinks.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tseRDPLinks.Size = new System.Drawing.Size(324, 119);
+            this.tseRDPLinks.Size = new System.Drawing.Size(324, 122);
             this.tseRDPLinks.TabIndex = 1;
             this.tseRDPLinks.Text = "Saved RDP-Connections";
             // 
@@ -558,7 +560,7 @@
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 100);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 103);
             // 
             // tseDeviceSites
             // 
@@ -577,7 +579,7 @@
             this.tseDeviceSites.Office12Mode = false;
             this.tseDeviceSites.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.tseDeviceSites.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tseDeviceSites.Size = new System.Drawing.Size(324, 119);
+            this.tseDeviceSites.Size = new System.Drawing.Size(324, 122);
             this.tseDeviceSites.TabIndex = 2;
             this.tseDeviceSites.Text = "Device Managements Sites";
             // 
@@ -610,7 +612,7 @@
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 100);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 103);
             // 
             // toolStripEx5
             // 
@@ -641,17 +643,19 @@
             // 
             // txbDeviceName
             // 
+            this.txbDeviceName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txbDeviceName.Enabled = false;
-            this.txbDeviceName.Location = new System.Drawing.Point(112, 26);
+            this.txbDeviceName.Location = new System.Drawing.Point(119, 40);
             this.txbDeviceName.Name = "txbDeviceName";
-            this.txbDeviceName.Size = new System.Drawing.Size(246, 27);
+            this.txbDeviceName.Size = new System.Drawing.Size(284, 27);
             this.txbDeviceName.TabIndex = 4;
             this.txbDeviceName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbDeviceName_KeyDown);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 29);
+            this.label2.Location = new System.Drawing.Point(13, 43);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 19);
             this.label2.TabIndex = 5;
@@ -659,8 +663,10 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(65, 128);
+            this.label3.Location = new System.Drawing.Point(71, 524);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 19);
             this.label3.TabIndex = 6;
@@ -668,24 +674,30 @@
             // 
             // txbDeviceMac
             // 
-            this.txbDeviceMac.Location = new System.Drawing.Point(116, 125);
+            this.txbDeviceMac.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txbDeviceMac.Location = new System.Drawing.Point(119, 521);
             this.txbDeviceMac.Name = "txbDeviceMac";
             this.txbDeviceMac.ReadOnly = true;
-            this.txbDeviceMac.Size = new System.Drawing.Size(242, 27);
+            this.txbDeviceMac.Size = new System.Drawing.Size(284, 27);
             this.txbDeviceMac.TabIndex = 4;
             // 
             // txbDeviceIPv4
             // 
-            this.txbDeviceIPv4.Location = new System.Drawing.Point(116, 59);
+            this.txbDeviceIPv4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txbDeviceIPv4.Location = new System.Drawing.Point(119, 455);
             this.txbDeviceIPv4.Name = "txbDeviceIPv4";
             this.txbDeviceIPv4.ReadOnly = true;
-            this.txbDeviceIPv4.Size = new System.Drawing.Size(242, 27);
+            this.txbDeviceIPv4.Size = new System.Drawing.Size(284, 27);
             this.txbDeviceIPv4.TabIndex = 8;
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(70, 62);
+            this.label5.Location = new System.Drawing.Point(76, 458);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 19);
             this.label5.TabIndex = 9;
@@ -694,7 +706,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(15, 62);
+            this.label12.Location = new System.Drawing.Point(22, 76);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(91, 19);
             this.label12.TabIndex = 5;
@@ -702,8 +714,10 @@
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(70, 95);
+            this.label6.Location = new System.Drawing.Point(76, 491);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(40, 19);
             this.label6.TabIndex = 9;
@@ -711,16 +725,20 @@
             // 
             // txbDeviceIPv6
             // 
-            this.txbDeviceIPv6.Location = new System.Drawing.Point(116, 92);
+            this.txbDeviceIPv6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txbDeviceIPv6.Location = new System.Drawing.Point(119, 488);
             this.txbDeviceIPv6.Name = "txbDeviceIPv6";
             this.txbDeviceIPv6.ReadOnly = true;
-            this.txbDeviceIPv6.Size = new System.Drawing.Size(242, 27);
+            this.txbDeviceIPv6.Size = new System.Drawing.Size(284, 27);
             this.txbDeviceIPv6.TabIndex = 8;
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(31, 29);
+            this.label4.Location = new System.Drawing.Point(37, 425);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 19);
             this.label4.TabIndex = 5;
@@ -728,74 +746,34 @@
             // 
             // txbDeviceHostname
             // 
-            this.txbDeviceHostname.Location = new System.Drawing.Point(116, 26);
+            this.txbDeviceHostname.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txbDeviceHostname.Location = new System.Drawing.Point(119, 422);
             this.txbDeviceHostname.Name = "txbDeviceHostname";
             this.txbDeviceHostname.ReadOnly = true;
-            this.txbDeviceHostname.Size = new System.Drawing.Size(242, 27);
+            this.txbDeviceHostname.Size = new System.Drawing.Size(284, 27);
             this.txbDeviceHostname.TabIndex = 8;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.txbDeviceManufacturer);
-            this.groupBox1.Controls.Add(this.txbDeviceMac);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txbDeviceIPv6);
-            this.groupBox1.Controls.Add(this.txbDeviceIPv4);
-            this.groupBox1.Controls.Add(this.txbDeviceHostname);
-            this.groupBox1.Location = new System.Drawing.Point(10, 571);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(8);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(364, 208);
-            this.groupBox1.TabIndex = 13;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Network information";
             // 
             // txbDeviceManufacturer
             // 
-            this.txbDeviceManufacturer.Location = new System.Drawing.Point(116, 158);
+            this.txbDeviceManufacturer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txbDeviceManufacturer.Location = new System.Drawing.Point(119, 554);
             this.txbDeviceManufacturer.Name = "txbDeviceManufacturer";
             this.txbDeviceManufacturer.ReadOnly = true;
-            this.txbDeviceManufacturer.Size = new System.Drawing.Size(242, 27);
+            this.txbDeviceManufacturer.Size = new System.Drawing.Size(284, 27);
             this.txbDeviceManufacturer.TabIndex = 4;
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 161);
+            this.label1.Location = new System.Drawing.Point(12, 557);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 19);
             this.label1.TabIndex = 6;
             this.label1.Text = "Manufacturer:";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.webMarkdown);
-            this.groupBox2.Controls.Add(this.btnHideDevice);
-            this.groupBox2.Controls.Add(this.btnDiscardChanges);
-            this.groupBox2.Controls.Add(this.btnSaveChanges);
-            this.groupBox2.Controls.Add(this.btnChangeDeviceType);
-            this.groupBox2.Controls.Add(this.txbDeviceDescription);
-            this.groupBox2.Controls.Add(this.txbDeviceLastSeen);
-            this.groupBox2.Controls.Add(this.txbDeviceName);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Location = new System.Drawing.Point(10, 195);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(8);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(364, 360);
-            this.groupBox2.TabIndex = 14;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Device information";
             // 
             // label10
             // 
@@ -803,7 +781,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Calibri Light", 9F);
             this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label10.Location = new System.Drawing.Point(109, 240);
+            this.label10.Location = new System.Drawing.Point(116, 284);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(124, 14);
             this.label10.TabIndex = 17;
@@ -812,13 +790,14 @@
             // webMarkdown
             // 
             this.webMarkdown.AllowWebBrowserDrop = false;
-            this.webMarkdown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.webMarkdown.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.webMarkdown.IsWebBrowserContextMenuEnabled = false;
-            this.webMarkdown.Location = new System.Drawing.Point(112, 92);
+            this.webMarkdown.Location = new System.Drawing.Point(119, 106);
             this.webMarkdown.MinimumSize = new System.Drawing.Size(20, 20);
             this.webMarkdown.Name = "webMarkdown";
-            this.webMarkdown.Size = new System.Drawing.Size(246, 145);
+            this.webMarkdown.Size = new System.Drawing.Size(284, 175);
             this.webMarkdown.TabIndex = 16;
             this.webMarkdown.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webMarkdown_DocumentCompleted);
             // 
@@ -830,9 +809,9 @@
             this.btnHideDevice.Enabled = false;
             this.btnHideDevice.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHideDevice.ForeColor = System.Drawing.Color.White;
-            this.btnHideDevice.Location = new System.Drawing.Point(112, 334);
+            this.btnHideDevice.Location = new System.Drawing.Point(7, 334);
             this.btnHideDevice.Name = "btnHideDevice";
-            this.btnHideDevice.Size = new System.Drawing.Size(131, 21);
+            this.btnHideDevice.Size = new System.Drawing.Size(104, 34);
             this.btnHideDevice.Style.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnHideDevice.Style.ForeColor = System.Drawing.Color.White;
             this.btnHideDevice.TabIndex = 15;
@@ -843,12 +822,12 @@
             // btnDiscardChanges
             // 
             this.btnDiscardChanges.AccessibleName = "Button";
-            this.btnDiscardChanges.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnDiscardChanges.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDiscardChanges.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnDiscardChanges.Enabled = false;
             this.btnDiscardChanges.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDiscardChanges.ForeColor = System.Drawing.Color.White;
-            this.btnDiscardChanges.Location = new System.Drawing.Point(48, 294);
+            this.btnDiscardChanges.Location = new System.Drawing.Point(135, 334);
             this.btnDiscardChanges.Name = "btnDiscardChanges";
             this.btnDiscardChanges.Size = new System.Drawing.Size(131, 34);
             this.btnDiscardChanges.Style.BackColor = System.Drawing.Color.DodgerBlue;
@@ -861,12 +840,12 @@
             // btnSaveChanges
             // 
             this.btnSaveChanges.AccessibleName = "Button";
-            this.btnSaveChanges.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSaveChanges.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSaveChanges.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnSaveChanges.Enabled = false;
             this.btnSaveChanges.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveChanges.ForeColor = System.Drawing.Color.White;
-            this.btnSaveChanges.Location = new System.Drawing.Point(185, 294);
+            this.btnSaveChanges.Location = new System.Drawing.Point(272, 334);
             this.btnSaveChanges.Name = "btnSaveChanges";
             this.btnSaveChanges.Size = new System.Drawing.Size(131, 34);
             this.btnSaveChanges.Style.BackColor = System.Drawing.Color.DodgerBlue;
@@ -879,12 +858,14 @@
             // btnChangeDeviceType
             // 
             this.btnChangeDeviceType.AccessibleName = "Button";
+            this.btnChangeDeviceType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnChangeDeviceType.BackColor = System.Drawing.Color.Gainsboro;
             this.btnChangeDeviceType.Enabled = false;
             this.btnChangeDeviceType.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChangeDeviceType.Location = new System.Drawing.Point(112, 59);
+            this.btnChangeDeviceType.Location = new System.Drawing.Point(119, 73);
             this.btnChangeDeviceType.Name = "btnChangeDeviceType";
-            this.btnChangeDeviceType.Size = new System.Drawing.Size(246, 27);
+            this.btnChangeDeviceType.Size = new System.Drawing.Size(284, 27);
             this.btnChangeDeviceType.Style.BackColor = System.Drawing.Color.Gainsboro;
             this.btnChangeDeviceType.TabIndex = 13;
             this.btnChangeDeviceType.Text = "Device Type";
@@ -893,32 +874,34 @@
             // 
             // txbDeviceDescription
             // 
-            this.txbDeviceDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.txbDeviceDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txbDeviceDescription.Enabled = false;
-            this.txbDeviceDescription.Location = new System.Drawing.Point(112, 92);
+            this.txbDeviceDescription.Location = new System.Drawing.Point(119, 106);
             this.txbDeviceDescription.Multiline = true;
             this.txbDeviceDescription.Name = "txbDeviceDescription";
             this.txbDeviceDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txbDeviceDescription.Size = new System.Drawing.Size(246, 145);
+            this.txbDeviceDescription.Size = new System.Drawing.Size(284, 175);
             this.txbDeviceDescription.TabIndex = 12;
             this.txbDeviceDescription.Visible = false;
             this.txbDeviceDescription.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbDeviceDescription_KeyDown);
             // 
             // txbDeviceLastSeen
             // 
-            this.txbDeviceLastSeen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txbDeviceLastSeen.Location = new System.Drawing.Point(112, 257);
+            this.txbDeviceLastSeen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txbDeviceLastSeen.Location = new System.Drawing.Point(119, 301);
             this.txbDeviceLastSeen.Name = "txbDeviceLastSeen";
             this.txbDeviceLastSeen.ReadOnly = true;
-            this.txbDeviceLastSeen.Size = new System.Drawing.Size(246, 27);
+            this.txbDeviceLastSeen.Size = new System.Drawing.Size(284, 27);
             this.txbDeviceLastSeen.TabIndex = 4;
             // 
             // label8
             // 
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(32, 260);
+            this.label8.Location = new System.Drawing.Point(39, 304);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(74, 19);
             this.label8.TabIndex = 5;
@@ -927,37 +910,17 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(19, 95);
+            this.label7.Location = new System.Drawing.Point(26, 109);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(87, 19);
             this.label7.TabIndex = 5;
             this.label7.Text = "Description:";
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox3.Controls.Add(this.chbShowHiddenDevices);
-            this.groupBox3.Controls.Add(this.lblDeviceOnlineCount);
-            this.groupBox3.Controls.Add(this.lblDeviceCount);
-            this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.cbxSortOrder);
-            this.groupBox3.Controls.Add(this.cbxSortBy);
-            this.groupBox3.Controls.Add(this.grvDevices);
-            this.groupBox3.Location = new System.Drawing.Point(390, 195);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(8);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(690, 584);
-            this.groupBox3.TabIndex = 15;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Devices";
-            // 
             // chbShowHiddenDevices
             // 
             this.chbShowHiddenDevices.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chbShowHiddenDevices.AutoSize = true;
-            this.chbShowHiddenDevices.Location = new System.Drawing.Point(420, 53);
+            this.chbShowHiddenDevices.Location = new System.Drawing.Point(317, 39);
             this.chbShowHiddenDevices.Name = "chbShowHiddenDevices";
             this.chbShowHiddenDevices.Size = new System.Drawing.Size(162, 23);
             this.chbShowHiddenDevices.TabIndex = 19;
@@ -969,7 +932,7 @@
             // 
             this.lblDeviceOnlineCount.AutoSize = true;
             this.lblDeviceOnlineCount.BackColor = System.Drawing.Color.Transparent;
-            this.lblDeviceOnlineCount.Location = new System.Drawing.Point(6, 42);
+            this.lblDeviceOnlineCount.Location = new System.Drawing.Point(6, 28);
             this.lblDeviceOnlineCount.Name = "lblDeviceOnlineCount";
             this.lblDeviceOnlineCount.Size = new System.Drawing.Size(117, 19);
             this.lblDeviceOnlineCount.TabIndex = 17;
@@ -979,7 +942,7 @@
             // 
             this.lblDeviceCount.AutoSize = true;
             this.lblDeviceCount.BackColor = System.Drawing.Color.Transparent;
-            this.lblDeviceCount.Location = new System.Drawing.Point(6, 23);
+            this.lblDeviceCount.Location = new System.Drawing.Point(6, 9);
             this.lblDeviceCount.Name = "lblDeviceCount";
             this.lblDeviceCount.Size = new System.Drawing.Size(145, 19);
             this.lblDeviceCount.TabIndex = 17;
@@ -989,7 +952,7 @@
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(356, 23);
+            this.label9.Location = new System.Drawing.Point(253, 9);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(58, 19);
             this.label9.TabIndex = 16;
@@ -1002,7 +965,7 @@
             this.cbxSortOrder.Items.AddRange(new object[] {
             "▲",
             "▼"});
-            this.cbxSortOrder.Location = new System.Drawing.Point(647, 20);
+            this.cbxSortOrder.Location = new System.Drawing.Point(544, 6);
             this.cbxSortOrder.Name = "cbxSortOrder";
             this.cbxSortOrder.Size = new System.Drawing.Size(37, 27);
             this.cbxSortOrder.TabIndex = 15;
@@ -1023,7 +986,7 @@
             "Power-State, MAC-Address",
             "Power-State, Device-Type",
             "Power-State, Last seen"});
-            this.cbxSortBy.Location = new System.Drawing.Point(420, 20);
+            this.cbxSortBy.Location = new System.Drawing.Point(317, 6);
             this.cbxSortBy.Name = "cbxSortBy";
             this.cbxSortBy.Size = new System.Drawing.Size(221, 27);
             this.cbxSortBy.TabIndex = 15;
@@ -1034,18 +997,18 @@
             this.grvDevices.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.grvDevices.BeforeTouchSize = new System.Drawing.Size(684, 496);
-            this.grvDevices.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.grvDevices.BeforeTouchSize = new System.Drawing.Size(576, 500);
+            this.grvDevices.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.grvDevices.ButtonView = true;
             this.grvDevices.FlatLook = true;
             this.grvDevices.FlowView = true;
             this.grvDevices.FlowViewItemTextLength = 140;
             this.grvDevices.IntegratedScrolling = true;
             this.grvDevices.ItemXSpacing = 2;
-            this.grvDevices.Location = new System.Drawing.Point(3, 85);
+            this.grvDevices.Location = new System.Drawing.Point(5, 90);
             this.grvDevices.Name = "grvDevices";
             this.grvDevices.ShowFlowViewItemText = true;
-            this.grvDevices.Size = new System.Drawing.Size(684, 496);
+            this.grvDevices.Size = new System.Drawing.Size(576, 500);
             this.grvDevices.TabIndex = 14;
             this.grvDevices.Text = "groupView1";
             this.grvDevices.TextSpacing = 30;
@@ -1065,7 +1028,7 @@
             // tmrStartPowerCheck
             // 
             this.tmrStartPowerCheck.Enabled = true;
-            this.tmrStartPowerCheck.Interval = 120000;
+            this.tmrStartPowerCheck.Interval = 300000;
             this.tmrStartPowerCheck.Tick += new System.EventHandler(this.tmrStartPowerCheck_Tick);
             // 
             // lblProgressReport
@@ -1077,7 +1040,7 @@
             this.lblProgressReport.Location = new System.Drawing.Point(1, 787);
             this.lblProgressReport.Name = "lblProgressReport";
             this.lblProgressReport.Padding = new System.Windows.Forms.Padding(0, 0, 15, 0);
-            this.lblProgressReport.Size = new System.Drawing.Size(1092, 32);
+            this.lblProgressReport.Size = new System.Drawing.Size(1022, 32);
             this.lblProgressReport.TabIndex = 16;
             this.lblProgressReport.Text = "Surgit Network Manager";
             this.lblProgressReport.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -1137,18 +1100,116 @@
             this.bgwLoadMacVendor.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwLoadMacVendor_DoWork);
             this.bgwLoadMacVendor.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwLoadMacVendor_RunWorkerCompleted);
             // 
+            // spcSplitter
+            // 
+            this.spcSplitter.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.spcSplitter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.spcSplitter.BeforeTouchSize = 10;
+            this.spcSplitter.ExpandLine = System.Drawing.Color.Gray;
+            this.spcSplitter.HotExpandLine = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.spcSplitter.Location = new System.Drawing.Point(2, 190);
+            this.spcSplitter.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.spcSplitter.Name = "spcSplitter";
+            // 
+            // spcSplitter.Panel1
+            // 
+            this.spcSplitter.Panel1.BackgroundColor = new Syncfusion.Drawing.BrushInfo(System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))));
+            this.spcSplitter.Panel1.Controls.Add(this.label4);
+            this.spcSplitter.Panel1.Controls.Add(this.label6);
+            this.spcSplitter.Panel1.Controls.Add(this.label10);
+            this.spcSplitter.Panel1.Controls.Add(this.txbDeviceManufacturer);
+            this.spcSplitter.Panel1.Controls.Add(this.label14);
+            this.spcSplitter.Panel1.Controls.Add(this.txbDeviceMac);
+            this.spcSplitter.Panel1.Controls.Add(this.label13);
+            this.spcSplitter.Panel1.Controls.Add(this.label5);
+            this.spcSplitter.Panel1.Controls.Add(this.webMarkdown);
+            this.spcSplitter.Panel1.Controls.Add(this.label1);
+            this.spcSplitter.Panel1.Controls.Add(this.btnHideDevice);
+            this.spcSplitter.Panel1.Controls.Add(this.label3);
+            this.spcSplitter.Panel1.Controls.Add(this.txbDeviceIPv6);
+            this.spcSplitter.Panel1.Controls.Add(this.btnDiscardChanges);
+            this.spcSplitter.Panel1.Controls.Add(this.txbDeviceIPv4);
+            this.spcSplitter.Panel1.Controls.Add(this.label2);
+            this.spcSplitter.Panel1.Controls.Add(this.txbDeviceHostname);
+            this.spcSplitter.Panel1.Controls.Add(this.btnSaveChanges);
+            this.spcSplitter.Panel1.Controls.Add(this.label12);
+            this.spcSplitter.Panel1.Controls.Add(this.btnChangeDeviceType);
+            this.spcSplitter.Panel1.Controls.Add(this.label7);
+            this.spcSplitter.Panel1.Controls.Add(this.txbDeviceDescription);
+            this.spcSplitter.Panel1.Controls.Add(this.label8);
+            this.spcSplitter.Panel1.Controls.Add(this.txbDeviceLastSeen);
+            this.spcSplitter.Panel1.Controls.Add(this.txbDeviceName);
+            this.spcSplitter.Panel1MinSize = 410;
+            // 
+            // spcSplitter.Panel2
+            // 
+            this.spcSplitter.Panel2.BackgroundColor = new Syncfusion.Drawing.BrushInfo(System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))));
+            this.spcSplitter.Panel2.Controls.Add(this.grvDevices);
+            this.spcSplitter.Panel2.Controls.Add(this.chbShowHiddenDevices);
+            this.spcSplitter.Panel2.Controls.Add(this.label9);
+            this.spcSplitter.Panel2.Controls.Add(this.label11);
+            this.spcSplitter.Panel2.Controls.Add(this.lblDeviceOnlineCount);
+            this.spcSplitter.Panel2.Controls.Add(this.cbxSortOrder);
+            this.spcSplitter.Panel2.Controls.Add(this.cbxSortBy);
+            this.spcSplitter.Panel2.Controls.Add(this.lblDeviceCount);
+            this.spcSplitter.Panel2MinSize = 500;
+            this.spcSplitter.Size = new System.Drawing.Size(1013, 594);
+            this.spcSplitter.SplitterDistance = 410;
+            this.spcSplitter.SplitterWidth = 10;
+            this.spcSplitter.Style = Syncfusion.Windows.Forms.Tools.Enums.Style.Office2016Colorful;
+            this.spcSplitter.TabIndex = 21;
+            this.spcSplitter.Text = "splitContainerAdv1";
+            this.spcSplitter.ThemeName = "Office2016Colorful";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(6, 64);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(69, 23);
+            this.label11.TabIndex = 17;
+            this.label11.Text = "Devices";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label13.Location = new System.Drawing.Point(10, 14);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(159, 23);
+            this.label13.TabIndex = 20;
+            this.label13.Text = "Device Information";
+            // 
+            // label14
+            // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label14.Location = new System.Drawing.Point(10, 396);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(175, 23);
+            this.label14.TabIndex = 20;
+            this.label14.Text = "Network Information";
+            // 
             // SurgitMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1090, 820);
+            this.ClientSize = new System.Drawing.Size(1020, 820);
+            this.Controls.Add(this.spcSplitter);
             this.Controls.Add(this.lblCopyright);
             this.Controls.Add(this.pgbPowerCheck);
             this.Controls.Add(this.lblProgressReport);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.rbcRibbonMenu);
             this.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1187,12 +1248,12 @@
             this.tseDeviceSites.PerformLayout();
             this.toolStripEx5.ResumeLayout(false);
             this.toolStripEx5.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.spcSplitter.Panel1.ResumeLayout(false);
+            this.spcSplitter.Panel1.PerformLayout();
+            this.spcSplitter.Panel2.ResumeLayout(false);
+            this.spcSplitter.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spcSplitter)).EndInit();
+            this.spcSplitter.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1213,13 +1274,10 @@
         private System.Windows.Forms.TextBox txbDeviceIPv6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txbDeviceHostname;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txbDeviceDescription;
         private System.Windows.Forms.TextBox txbDeviceLastSeen;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.GroupBox groupBox3;
         private Syncfusion.Windows.Forms.Tools.ToolStripEx toolStripEx1;
         private System.Windows.Forms.ToolStripButton btnDiscover;
         private Syncfusion.Windows.Forms.Tools.GroupView grvDevices;
@@ -1278,6 +1336,10 @@
         private System.ComponentModel.BackgroundWorker bgwLoadMacVendor;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.WebBrowser webMarkdown;
+        private Syncfusion.Windows.Forms.Tools.SplitContainerAdv spcSplitter;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
     }
 }
 

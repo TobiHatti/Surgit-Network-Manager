@@ -79,6 +79,8 @@ namespace Surgit_NetworkManager
             this.rbcRibbonMenu.TitleFont = new Font("Calibri", 11);
 
             Write2WebControll(webMarkdown, "");
+
+            spcSplitter.SplitterDistance = 410;
         }
 
         /// <summary>
