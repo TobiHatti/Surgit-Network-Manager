@@ -73,6 +73,8 @@ namespace Surgit_NetworkManager
             this.EnableAeroTheme = true;
             this.Borders = new Padding(-1);
 
+            this.Text = $"Surgit Network Manager  (Version {System.Reflection.Assembly.GetEntryAssembly().GetName().Version})";
+
             this.rbcRibbonMenu.TitleFont = new Font("Calibri", 11);
         }
 
@@ -258,12 +260,14 @@ namespace Surgit_NetworkManager
 
                     txbDeviceManufacturer.Text = "";
 
-                    try
+                    if(bgwLoadMacVendor.WorkerSupportsCancellation)
                     {
-                        using (WebClient webClient = new WebClient())
-                            txbDeviceManufacturer.Text = webClient.DownloadString("http://api.macvendors.com/" + WebUtility.UrlEncode(Convert.ToString(reader["MACAddress"])));
+                        bgwLoadMacVendor.CancelAsync();
+                        if (!bgwLoadMacVendor.IsBusy)
+                            bgwLoadMacVendor.RunWorkerAsync();
                     }
-                    catch { }
+
+                    
                 }
             }
 
@@ -321,6 +325,7 @@ namespace Surgit_NetworkManager
         {
             btnSaveChanges.Enabled = false;
             btnDiscardChanges.Enabled = false;
+            DeselectItem();
         }
 
         private void tmrStartPowerCheck_Tick(object sender, EventArgs e)
@@ -754,6 +759,30 @@ namespace Surgit_NetworkManager
         private void SurgitMain_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void grvDevices_GroupViewItemDoubleClick(GroupView sender, GroupViewItemDoubleClickEventArgs e)
+        {
+            LoadDeviceData();
+        }
+
+        private string macVendor = "";
+        private void bgwLoadMacVendor_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            macVendor = "Could not load MAC-Vendor.";
+
+            try
+            {
+                if (bgwLoadMacVendor.CancellationPending) return;
+                using (WebClient webClient = new WebClient())
+                    macVendor = webClient.DownloadString("http://api.macvendors.com/" + WebUtility.UrlEncode(txbDeviceMac.Text));
+            }
+            catch { }
+        }
+
+        private void bgwLoadMacVendor_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
+        {
+            txbDeviceManufacturer.Text = macVendor;
         }
     }
 #pragma warning restore IDE1006

@@ -31,7 +31,7 @@ namespace Surgit_NetworkManager
         }
         private void UpdateEntries_Load(object sender, EventArgs e)
         {
-            sql = new CSQLite($@"{Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"Surgit\surgit.db")}");
+            sql = new CSQLite(SurgitManager.SurgitDatabaseLocation);
 
             // Ping all devices in Network Range
             ipStartParts = IPStartRange.Split('.');
