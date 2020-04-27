@@ -14,43 +14,52 @@ namespace Surgit_NetworkManager
 {
     public enum DeviceType
     {
-        AccessPoint = 0,
-        AllInOnePC = 1,
-        DesktopPC = 2,
-        DevelopmentDevice = 3,
-        Fax = 4,
-        GameConsole = 5,
-        HealthEquipment = 6,
-        Intercom = 7,
-        IoTDevice = 8,
-        IPCamera = 9,
-        IPRadio = 10,
-        IPSetTopBox = 11,
-        IPSoundSystem = 12,
-        IPTV = 13,
-        MultiPrinter = 14,
-        NAS = 15,
-        Notebook = 16,
-        Organizer = 17,
-        PLC = 18,
-        POSTerminal = 19,
-        Printer = 20,
-        Printer3D = 21,
-        Projector = 22,
-        Router = 23,
-        Scanner = 24,
-        SecuritySystem = 25,
-        Server = 26,
-        Smartphone = 27,
-        Switch = 28,
-        Tablet = 29,
-        TabletComputer = 30,
-        UnknownDevice = 31,
-        UPS = 32,
-        VirtualMachine = 33,
-        VoIP = 34,
-        VRHeadset = 35,
-        WirelessRouter = 36
+        DesktopPC,
+        Notebook,
+        AllInOnePC,
+        TabletComputer,
+
+        Smartphone,
+        Tablet,
+        Organizer,
+        GameConsole,
+        VoIP,
+
+        Printer,
+        Scanner,
+        Fax,
+        MultiPrinter,
+        Printer3D,
+        VRHeadset,
+
+        AccessPoint,
+        Router,
+        WirelessRouter,
+
+        Server,
+        VirtualMachine,
+        NAS,
+        Switch,
+        UPS,
+
+        IoTDevice,
+        IPCamera,
+        Intercom,
+
+        IPTV,
+        IPSetTopBox,
+        IPRadio,
+        IPSoundSystem,
+        Projector,
+        
+        POSTerminal,
+        HealthEquipment,
+        SecuritySystem,
+
+        DevelopmentDevice,
+        PLC,
+
+        UnknownDevice
     }
 
     public class NetDevice
