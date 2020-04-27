@@ -82,6 +82,8 @@
             this.txbDeviceManufacturer = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.webMarkdown = new System.Windows.Forms.WebBrowser();
             this.btnHideDevice = new Syncfusion.WinForms.Controls.SfButton();
             this.btnDiscardChanges = new Syncfusion.WinForms.Controls.SfButton();
             this.btnSaveChanges = new Syncfusion.WinForms.Controls.SfButton();
@@ -107,8 +109,6 @@
             this.ofdSurgitDataFile = new System.Windows.Forms.OpenFileDialog();
             this.toolStripTabItem4 = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
             this.bgwLoadMacVendor = new System.ComponentModel.BackgroundWorker();
-            this.webMarkdown = new System.Windows.Forms.WebBrowser();
-            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.rbcRibbonMenu)).BeginInit();
             this.rbcRibbonMenu.SuspendLayout();
             this.toolStripTabItem1.Panel.SuspendLayout();
@@ -150,7 +150,7 @@
             this.rbcRibbonMenu.QuickPanelImageLayout = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.rbcRibbonMenu.RibbonHeaderImage = Syncfusion.Windows.Forms.Tools.RibbonHeaderImage.None;
             this.rbcRibbonMenu.RibbonStyle = Syncfusion.Windows.Forms.Tools.RibbonStyle.Office2016;
-            this.rbcRibbonMenu.SelectedTab = this.toolStripTabItem2;
+            this.rbcRibbonMenu.SelectedTab = this.toolStripTabItem1;
             this.rbcRibbonMenu.ShowRibbonDisplayOptionButton = true;
             this.rbcRibbonMenu.Size = new System.Drawing.Size(1092, 188);
             this.rbcRibbonMenu.SystemText.QuickAccessDialogDropDownName = "Start menu";
@@ -797,6 +797,31 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Device information";
             // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Calibri Light", 9F);
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label10.Location = new System.Drawing.Point(109, 240);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(124, 14);
+            this.label10.TabIndex = 17;
+            this.label10.Text = "Markdown is supported.";
+            // 
+            // webMarkdown
+            // 
+            this.webMarkdown.AllowWebBrowserDrop = false;
+            this.webMarkdown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.webMarkdown.IsWebBrowserContextMenuEnabled = false;
+            this.webMarkdown.Location = new System.Drawing.Point(112, 92);
+            this.webMarkdown.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webMarkdown.Name = "webMarkdown";
+            this.webMarkdown.Size = new System.Drawing.Size(246, 145);
+            this.webMarkdown.TabIndex = 16;
+            this.webMarkdown.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webMarkdown_DocumentCompleted);
+            // 
             // btnHideDevice
             // 
             this.btnHideDevice.AccessibleName = "Button";
@@ -1111,31 +1136,6 @@
             this.bgwLoadMacVendor.WorkerSupportsCancellation = true;
             this.bgwLoadMacVendor.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwLoadMacVendor_DoWork);
             this.bgwLoadMacVendor.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwLoadMacVendor_RunWorkerCompleted);
-            // 
-            // webMarkdown
-            // 
-            this.webMarkdown.AllowWebBrowserDrop = false;
-            this.webMarkdown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.webMarkdown.IsWebBrowserContextMenuEnabled = false;
-            this.webMarkdown.Location = new System.Drawing.Point(112, 92);
-            this.webMarkdown.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webMarkdown.Name = "webMarkdown";
-            this.webMarkdown.Size = new System.Drawing.Size(246, 145);
-            this.webMarkdown.TabIndex = 16;
-            this.webMarkdown.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webMarkdown_DocumentCompleted);
-            // 
-            // label10
-            // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Calibri Light", 9F);
-            this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label10.Location = new System.Drawing.Point(109, 240);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(124, 14);
-            this.label10.TabIndex = 17;
-            this.label10.Text = "Markdown is supported.";
             // 
             // SurgitMain
             // 
