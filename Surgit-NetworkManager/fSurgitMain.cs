@@ -529,7 +529,11 @@ namespace Surgit_NetworkManager
         private void DeselectItem()
         {
             ClearDeviceInfo();
-            
+
+            txbDeviceName.Enabled = false;
+            txbDeviceDescription.Enabled = false;
+            btnChangeDeviceType.Enabled = false;
+
             btnSaveChanges.Enabled = false;
             btnDiscardChanges.Enabled = false;
             btnHideDevice.Enabled = false;
