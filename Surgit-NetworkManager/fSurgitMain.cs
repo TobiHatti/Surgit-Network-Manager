@@ -1,4 +1,5 @@
-﻿using Syncfusion.Windows.Forms.Tools;
+﻿using MarkdownSharp;
+using Syncfusion.Windows.Forms.Tools;
 using Syncfusion.XlsIO.Implementation;
 using System;
 using System.Collections.Generic;
@@ -76,6 +77,8 @@ namespace Surgit_NetworkManager
             this.Text = $"Surgit Network Manager  (Version {System.Reflection.Assembly.GetEntryAssembly().GetName().Version})";
 
             this.rbcRibbonMenu.TitleFont = new Font("Calibri", 11);
+
+            Write2WebControll(webMarkdown, "");
         }
 
         /// <summary>
@@ -236,6 +239,9 @@ namespace Surgit_NetworkManager
             btnAddDeviceSite.Enabled = true;
             btnManageDeviceSites.Enabled = true;
 
+            webMarkdown.Visible = true;
+            txbDeviceDescription.Visible = false;
+
             sql.connection.Open();
 
             using (SQLiteDataReader reader = sql.ExecuteQuery($"SELECT * FROM Devices WHERE Name = '{grvDevices.GroupViewItems[grvDevices.SelectedItem].Text.Replace("[H] ", "")}'"))
@@ -252,6 +258,10 @@ namespace Surgit_NetworkManager
                     txbDeviceIPv4.Text = Convert.ToString(reader["IP4Address"]);
                     txbDeviceIPv6.Text = Convert.ToString(reader["IP6Address"]);
                     txbDeviceMac.Text = Convert.ToString(reader["MACAddress"]);
+
+                    Markdown md = new Markdown();
+                    Write2WebControll(webMarkdown, md.Transform(Convert.ToString(reader["Description"])));
+
 
                     deviceType = Convert.ToString(reader["DeviceType"]);
 
@@ -319,6 +329,7 @@ namespace Surgit_NetworkManager
             else MessageBox.Show("The entered Device-Name already exitst. Please enter a unique name for each device!", "Name duplicate", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             sql.connection.Close();
             UpdateDeviceList();
+            LoadDeviceData();
         }
 
         private void btnDiscardChanges_Click(object sender, EventArgs e)
@@ -491,6 +502,7 @@ namespace Surgit_NetworkManager
                 sql.connection.Close();
 
                 UpdateDeviceList();
+                LoadDeviceData();
             }
         }
 
@@ -534,6 +546,9 @@ namespace Surgit_NetworkManager
             txbDeviceDescription.Enabled = false;
             btnChangeDeviceType.Enabled = false;
 
+            webMarkdown.Visible = true;
+            txbDeviceDescription.Visible = false;
+
             btnSaveChanges.Enabled = false;
             btnDiscardChanges.Enabled = false;
             btnHideDevice.Enabled = false;
@@ -558,6 +573,8 @@ namespace Surgit_NetworkManager
 
             while (tseRDPLinks.Items.Count > 3)
                 tseRDPLinks.Items.RemoveAt(3);
+
+            Write2WebControll(webMarkdown, "");
         }
 
         private void btnUpdatePowerState_Click(object sender, EventArgs e)
@@ -787,6 +804,29 @@ namespace Surgit_NetworkManager
         private void bgwLoadMacVendor_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
         {
             txbDeviceManufacturer.Text = macVendor;
+        }
+
+        private void Write2WebControll(WebBrowser web, string content)
+        {
+            web.Navigate("about:blank");
+            web.Document.Write(string.Empty);
+            web.DocumentText = "<style>*{font-family: Calibri, sans-serif;font-weight: lighter;}html{margin:0;padding:0;border:1px solid #888888;}body{margin:3px;padding:0;} </style>" + content;
+        }
+
+        private void webMarkdown_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+            webMarkdown.Document.Body.MouseDown += new HtmlElementEventHandler(Body_MouseDown);
+        }
+
+        void Body_MouseDown(Object sender, HtmlElementEventArgs e)
+        {
+            if(grvDevices.SelectedItem != -1 && e.MouseButtonsPressed == MouseButtons.Left)
+            {
+                webMarkdown.Visible = false;
+                txbDeviceDescription.Visible = true;
+                txbDeviceDescription.Focus();
+                txbDeviceDescription.Select();
+            }
         }
     }
 #pragma warning restore IDE1006

@@ -116,3 +116,5 @@ H:\Git\Surgit-NetworkManager - Kopie (2)\Surgit-NetworkManager\obj\Debug\Surgit_
 H:\Git\Surgit-NetworkManager - Kopie (2)\Surgit-NetworkManager\obj\Debug\Surgit_NetworkManager.csproj.CopyComplete
 H:\Git\Surgit-NetworkManager - Kopie (2)\Surgit-NetworkManager\obj\Debug\Surgit_NetworkManager.exe
 H:\Git\Surgit-NetworkManager - Kopie (2)\Surgit-NetworkManager\obj\Debug\Surgit_NetworkManager.pdb
+H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\bin\Debug\MarkdownSharp.dll
+H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\bin\Debug\MarkdownSharp.xml

@@ -45,6 +45,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnAdd = new Syncfusion.WinForms.Controls.SfButton();
             this.btnCancel = new Syncfusion.WinForms.Controls.SfButton();
+            this.label10 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txbDeviceName
@@ -56,10 +57,12 @@
             // 
             // txbDeviceDescription
             // 
+            this.txbDeviceDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.txbDeviceDescription.Location = new System.Drawing.Point(113, 72);
             this.txbDeviceDescription.Multiline = true;
             this.txbDeviceDescription.Name = "txbDeviceDescription";
-            this.txbDeviceDescription.Size = new System.Drawing.Size(254, 148);
+            this.txbDeviceDescription.Size = new System.Drawing.Size(254, 280);
             this.txbDeviceDescription.TabIndex = 2;
             // 
             // btnSelectDeviceType
@@ -78,28 +81,32 @@
             // 
             // txbDeviceHostname
             // 
-            this.txbDeviceHostname.Location = new System.Drawing.Point(113, 226);
+            this.txbDeviceHostname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txbDeviceHostname.Location = new System.Drawing.Point(113, 372);
             this.txbDeviceHostname.Name = "txbDeviceHostname";
             this.txbDeviceHostname.Size = new System.Drawing.Size(254, 27);
             this.txbDeviceHostname.TabIndex = 3;
             // 
             // txbDeviceIPv4
             // 
-            this.txbDeviceIPv4.Location = new System.Drawing.Point(113, 259);
+            this.txbDeviceIPv4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txbDeviceIPv4.Location = new System.Drawing.Point(113, 405);
             this.txbDeviceIPv4.Name = "txbDeviceIPv4";
             this.txbDeviceIPv4.Size = new System.Drawing.Size(254, 27);
             this.txbDeviceIPv4.TabIndex = 4;
             // 
             // txbDeviceIPv6
             // 
-            this.txbDeviceIPv6.Location = new System.Drawing.Point(113, 292);
+            this.txbDeviceIPv6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txbDeviceIPv6.Location = new System.Drawing.Point(113, 438);
             this.txbDeviceIPv6.Name = "txbDeviceIPv6";
             this.txbDeviceIPv6.Size = new System.Drawing.Size(254, 27);
             this.txbDeviceIPv6.TabIndex = 5;
             // 
             // txbDeviceMac
             // 
-            this.txbDeviceMac.Location = new System.Drawing.Point(113, 325);
+            this.txbDeviceMac.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txbDeviceMac.Location = new System.Drawing.Point(113, 471);
             this.txbDeviceMac.Name = "txbDeviceMac";
             this.txbDeviceMac.Size = new System.Drawing.Size(254, 27);
             this.txbDeviceMac.TabIndex = 6;
@@ -133,8 +140,9 @@
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(28, 229);
+            this.label4.Location = new System.Drawing.Point(28, 375);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 19);
             this.label4.TabIndex = 18;
@@ -142,8 +150,9 @@
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(67, 295);
+            this.label6.Location = new System.Drawing.Point(67, 441);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(40, 19);
             this.label6.TabIndex = 20;
@@ -151,8 +160,9 @@
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(67, 262);
+            this.label5.Location = new System.Drawing.Point(67, 408);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 19);
             this.label5.TabIndex = 21;
@@ -160,8 +170,9 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(62, 328);
+            this.label3.Location = new System.Drawing.Point(62, 474);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 19);
             this.label3.TabIndex = 19;
@@ -174,7 +185,7 @@
             this.btnAdd.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnAdd.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(255, 367);
+            this.btnAdd.Location = new System.Drawing.Point(255, 513);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(112, 29);
             this.btnAdd.Style.BackColor = System.Drawing.Color.DodgerBlue;
@@ -191,7 +202,7 @@
             this.btnCancel.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnCancel.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(6, 367);
+            this.btnCancel.Location = new System.Drawing.Point(6, 513);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(96, 29);
             this.btnCancel.Style.BackColor = System.Drawing.Color.DodgerBlue;
@@ -201,11 +212,24 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Calibri Light", 9F);
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label10.Location = new System.Drawing.Point(110, 355);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(124, 14);
+            this.label10.TabIndex = 22;
+            this.label10.Text = "Markdown is supported.";
+            // 
             // AddEditDevice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(373, 402);
+            this.ClientSize = new System.Drawing.Size(373, 548);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label2);
@@ -255,5 +279,6 @@
         private System.Windows.Forms.Label label3;
         private Syncfusion.WinForms.Controls.SfButton btnAdd;
         private Syncfusion.WinForms.Controls.SfButton btnCancel;
+        private System.Windows.Forms.Label label10;
     }
 }

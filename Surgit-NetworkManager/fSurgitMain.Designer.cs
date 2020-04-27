@@ -107,6 +107,8 @@
             this.ofdSurgitDataFile = new System.Windows.Forms.OpenFileDialog();
             this.toolStripTabItem4 = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
             this.bgwLoadMacVendor = new System.ComponentModel.BackgroundWorker();
+            this.webMarkdown = new System.Windows.Forms.WebBrowser();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.rbcRibbonMenu)).BeginInit();
             this.rbcRibbonMenu.SuspendLayout();
             this.toolStripTabItem1.Panel.SuspendLayout();
@@ -774,6 +776,8 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.webMarkdown);
             this.groupBox2.Controls.Add(this.btnHideDevice);
             this.groupBox2.Controls.Add(this.btnDiscardChanges);
             this.groupBox2.Controls.Add(this.btnSaveChanges);
@@ -871,8 +875,9 @@
             this.txbDeviceDescription.Multiline = true;
             this.txbDeviceDescription.Name = "txbDeviceDescription";
             this.txbDeviceDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txbDeviceDescription.Size = new System.Drawing.Size(246, 159);
+            this.txbDeviceDescription.Size = new System.Drawing.Size(246, 145);
             this.txbDeviceDescription.TabIndex = 12;
+            this.txbDeviceDescription.Visible = false;
             this.txbDeviceDescription.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbDeviceDescription_KeyDown);
             // 
             // txbDeviceLastSeen
@@ -1107,6 +1112,31 @@
             this.bgwLoadMacVendor.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwLoadMacVendor_DoWork);
             this.bgwLoadMacVendor.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwLoadMacVendor_RunWorkerCompleted);
             // 
+            // webMarkdown
+            // 
+            this.webMarkdown.AllowWebBrowserDrop = false;
+            this.webMarkdown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.webMarkdown.IsWebBrowserContextMenuEnabled = false;
+            this.webMarkdown.Location = new System.Drawing.Point(112, 92);
+            this.webMarkdown.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webMarkdown.Name = "webMarkdown";
+            this.webMarkdown.Size = new System.Drawing.Size(246, 145);
+            this.webMarkdown.TabIndex = 16;
+            this.webMarkdown.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webMarkdown_DocumentCompleted);
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Calibri Light", 9F);
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label10.Location = new System.Drawing.Point(109, 240);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(124, 14);
+            this.label10.TabIndex = 17;
+            this.label10.Text = "Markdown is supported.";
+            // 
             // SurgitMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
@@ -1246,6 +1276,8 @@
         private System.Windows.Forms.OpenFileDialog ofdSurgitDataFile;
         private Syncfusion.Windows.Forms.Tools.ToolStripTabItem toolStripTabItem4;
         private System.ComponentModel.BackgroundWorker bgwLoadMacVendor;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.WebBrowser webMarkdown;
     }
 }
 
