@@ -50,6 +50,7 @@
             this.lbxRDPFiles.ItemHeight = 19;
             this.lbxRDPFiles.Location = new System.Drawing.Point(6, 6);
             this.lbxRDPFiles.Name = "lbxRDPFiles";
+            this.lbxRDPFiles.ScrollAlwaysVisible = true;
             this.lbxRDPFiles.Size = new System.Drawing.Size(272, 232);
             this.lbxRDPFiles.TabIndex = 0;
             this.lbxRDPFiles.SelectedIndexChanged += new System.EventHandler(this.lbxRDPFiles_SelectedIndexChanged);

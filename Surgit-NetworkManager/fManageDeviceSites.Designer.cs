@@ -149,6 +149,7 @@
             this.lbxDeviceSites.ItemHeight = 19;
             this.lbxDeviceSites.Location = new System.Drawing.Point(6, 6);
             this.lbxDeviceSites.Name = "lbxDeviceSites";
+            this.lbxDeviceSites.ScrollAlwaysVisible = true;
             this.lbxDeviceSites.Size = new System.Drawing.Size(272, 232);
             this.lbxDeviceSites.TabIndex = 7;
             this.lbxDeviceSites.SelectedIndexChanged += new System.EventHandler(this.lbxDeviceSites_SelectedIndexChanged);

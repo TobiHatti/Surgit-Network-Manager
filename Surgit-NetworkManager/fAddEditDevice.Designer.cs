@@ -62,6 +62,7 @@
             this.txbDeviceDescription.Location = new System.Drawing.Point(113, 72);
             this.txbDeviceDescription.Multiline = true;
             this.txbDeviceDescription.Name = "txbDeviceDescription";
+            this.txbDeviceDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txbDeviceDescription.Size = new System.Drawing.Size(254, 280);
             this.txbDeviceDescription.TabIndex = 2;
             // 

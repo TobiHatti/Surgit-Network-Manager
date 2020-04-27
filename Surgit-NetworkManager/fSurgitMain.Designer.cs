@@ -90,7 +90,6 @@
             this.txbDeviceLastSeen = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.chbShowHiddenDevices = new System.Windows.Forms.CheckBox();
             this.lblDeviceOnlineCount = new System.Windows.Forms.Label();
             this.lblDeviceCount = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -110,6 +109,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.chbShowHiddenDevices = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.rbcRibbonMenu)).BeginInit();
             this.rbcRibbonMenu.SuspendLayout();
             this.toolStripTabItem1.Panel.SuspendLayout();
@@ -152,7 +152,7 @@
             this.rbcRibbonMenu.QuickPanelImageLayout = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.rbcRibbonMenu.RibbonHeaderImage = Syncfusion.Windows.Forms.Tools.RibbonHeaderImage.None;
             this.rbcRibbonMenu.RibbonStyle = Syncfusion.Windows.Forms.Tools.RibbonStyle.Office2016;
-            this.rbcRibbonMenu.SelectedTab = this.toolStripTabItem3;
+            this.rbcRibbonMenu.SelectedTab = this.toolStripTabItem1;
             this.rbcRibbonMenu.ShowRibbonDisplayOptionButton = true;
             this.rbcRibbonMenu.Size = new System.Drawing.Size(1022, 191);
             this.rbcRibbonMenu.SystemText.QuickAccessDialogDropDownName = "Start menu";
@@ -916,18 +916,6 @@
             this.label7.TabIndex = 5;
             this.label7.Text = "Description:";
             // 
-            // chbShowHiddenDevices
-            // 
-            this.chbShowHiddenDevices.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.chbShowHiddenDevices.AutoSize = true;
-            this.chbShowHiddenDevices.Location = new System.Drawing.Point(317, 39);
-            this.chbShowHiddenDevices.Name = "chbShowHiddenDevices";
-            this.chbShowHiddenDevices.Size = new System.Drawing.Size(162, 23);
-            this.chbShowHiddenDevices.TabIndex = 19;
-            this.chbShowHiddenDevices.Text = "Show hidden devices";
-            this.chbShowHiddenDevices.UseVisualStyleBackColor = true;
-            this.chbShowHiddenDevices.CheckedChanged += new System.EventHandler(this.chbShowHiddenDevices_CheckedChanged);
-            // 
             // lblDeviceOnlineCount
             // 
             this.lblDeviceOnlineCount.AutoSize = true;
@@ -1168,6 +1156,7 @@
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label11.Location = new System.Drawing.Point(6, 64);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(69, 23);
@@ -1199,6 +1188,18 @@
             this.label14.Size = new System.Drawing.Size(175, 23);
             this.label14.TabIndex = 20;
             this.label14.Text = "Network Information";
+            // 
+            // chbShowHiddenDevices
+            // 
+            this.chbShowHiddenDevices.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chbShowHiddenDevices.AutoSize = true;
+            this.chbShowHiddenDevices.Location = new System.Drawing.Point(317, 42);
+            this.chbShowHiddenDevices.Name = "chbShowHiddenDevices";
+            this.chbShowHiddenDevices.Size = new System.Drawing.Size(162, 23);
+            this.chbShowHiddenDevices.TabIndex = 19;
+            this.chbShowHiddenDevices.Text = "Show hidden devices";
+            this.chbShowHiddenDevices.UseVisualStyleBackColor = true;
+            this.chbShowHiddenDevices.CheckedChanged += new System.EventHandler(this.chbShowHiddenDevices_CheckedChanged);
             // 
             // SurgitMain
             // 
@@ -1313,7 +1314,6 @@
         private System.Windows.Forms.ToolStripButton btnEditDevice;
         private Syncfusion.Windows.Forms.Tools.ToolStripEx toolStripEx4;
         private System.Windows.Forms.ToolStripButton btnStartDeviceWOL;
-        private System.Windows.Forms.CheckBox chbShowHiddenDevices;
         private Syncfusion.WinForms.Controls.SfButton btnHideDevice;
         private System.Windows.Forms.ToolStripButton btnUpdatePowerState;
         private Syncfusion.Windows.Forms.Tools.ToolStripEx toolStripEx6;
@@ -1340,6 +1340,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.CheckBox chbShowHiddenDevices;
     }
 }
 

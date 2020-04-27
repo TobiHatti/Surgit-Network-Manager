@@ -57,6 +57,7 @@
             this.txbDiscoveryOutput.Multiline = true;
             this.txbDiscoveryOutput.Name = "txbDiscoveryOutput";
             this.txbDiscoveryOutput.ReadOnly = true;
+            this.txbDiscoveryOutput.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txbDiscoveryOutput.Size = new System.Drawing.Size(401, 219);
             this.txbDiscoveryOutput.TabIndex = 0;
             this.txbDiscoveryOutput.TabStop = false;
