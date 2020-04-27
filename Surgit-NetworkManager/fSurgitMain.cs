@@ -262,6 +262,7 @@ namespace Surgit_NetworkManager
                     Markdown md = new Markdown();
                     Write2WebControll(webMarkdown, md.Transform(Convert.ToString(reader["Description"])));
 
+                    Debug.Print(md.Transform(Convert.ToString(reader["Description"])));
 
                     deviceType = Convert.ToString(reader["DeviceType"]);
 
@@ -810,7 +811,7 @@ namespace Surgit_NetworkManager
         {
             web.Navigate("about:blank");
             web.Document.Write(string.Empty);
-            web.DocumentText = "<style>*{font-family: Calibri, sans-serif;font-weight: lighter;}html{margin:0;padding:0;border:1px solid #888888;}body{margin:3px;padding:0;} </style>" + content;
+            web.DocumentText = "<style>*{font-family: Calibri, sans-serif;font-weight: lighter;}html{margin:0;padding:0;border:1px solid #888888;}body{margin:3px;padding:0;}p{margin:0;}h1,h2,h3,h4,h5,h6{margin:5px 0px;color:#1E90FF;}ul{margin:1px auto;}</style>" + content;
         }
 
         private void webMarkdown_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
