@@ -13,6 +13,7 @@ using Syncfusion.WinForms.Controls;
 
 namespace Surgit_NetworkManager
 {
+#pragma warning disable IDE1006
     public partial class DiscoverLocal : SfForm
     {
         public string IPv4;
@@ -38,7 +39,6 @@ namespace Surgit_NetworkManager
             grvInterfaces.LargeImageList = ilt;
             foreach (NetworkInterface adapter in adapters)
             {
-                IPInterfaceProperties properties = adapter.GetIPProperties();
                 grvInterfaces.GroupViewItems.Add(new GroupViewItem($"{adapter.Name} - {adapter.Description}", 0));
             }
             Console.WriteLine();
@@ -99,4 +99,5 @@ namespace Surgit_NetworkManager
             this.Close();
         }
     }
+#pragma warning restore IDE1006
 }

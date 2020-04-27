@@ -12,11 +12,12 @@ using Syncfusion.WinForms.Controls;
 
 namespace Surgit_NetworkManager
 {
+#pragma warning disable IDE1006
     public partial class ManageRDPFiles : SfForm
     {
         public string MACAddress { get; set; } = "";
 
-        private CSQLite sql = new CSQLite(SurgitManager.SurgitDatabaseLocation);
+        private readonly CSQLite sql = new CSQLite(SurgitManager.SurgitDatabaseLocation);
 
         public ManageRDPFiles()
         {
@@ -123,4 +124,5 @@ namespace Surgit_NetworkManager
 
         }
     }
+#pragma warning restore IDE1006
 }

@@ -11,11 +11,12 @@ using Syncfusion.WinForms.Controls;
 
 namespace Surgit_NetworkManager
 {
+#pragma warning disable IDE1006
     public partial class ManageDeviceSites : SfForm
     {
         public string MACAddress { get; set; } = "";
 
-        private CSQLite sql = new CSQLite(SurgitManager.SurgitDatabaseLocation);
+        private readonly CSQLite sql = new CSQLite(SurgitManager.SurgitDatabaseLocation);
 
         public ManageDeviceSites()
         {
@@ -59,8 +60,7 @@ namespace Surgit_NetworkManager
         {
             if (!string.IsNullOrEmpty(txbName.Text))
             {
-                Uri uriResult;
-                if (Uri.TryCreate(txbDeviceSiteURL.Text, UriKind.Absolute, out uriResult) && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps))
+                if (Uri.TryCreate(txbDeviceSiteURL.Text, UriKind.Absolute, out Uri uriResult) && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps))
                 {
                     sql.ExecuteNonQueryA($"UPDATE DeviceSites SET Name = '{txbName.Text}', Site = '{txbDeviceSiteURL.Text}' WHERE ID = '{lbxDeviceSites.SelectedValue}'");
                     LoadEntries();
@@ -111,4 +111,5 @@ namespace Surgit_NetworkManager
             txbDeviceSiteURL.Enabled = false;
         }
     }
+#pragma warning restore IDE1006
 }

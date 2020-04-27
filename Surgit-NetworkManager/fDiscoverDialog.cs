@@ -66,7 +66,7 @@ namespace Surgit_NetworkManager
             }
         }
 
-        private Dictionary<int, Tuple<string, string>> FoundIPAtPercentage = new Dictionary<int, Tuple<string, string>>();
+        private readonly Dictionary<int, Tuple<string, string>> FoundIPAtPercentage = new Dictionary<int, Tuple<string, string>>();
         private void Discover()
         {
             DiscoveredDevices.Clear();
@@ -76,12 +76,9 @@ namespace Surgit_NetworkManager
             string[] ipEndParts = txbDiscoveryEnd.Text.Split('.');
 
             int deviceCount = 0;
-            int rangeSize = 0;
-
             int progressCounter = 0;
 
-            rangeSize = Convert.ToInt32(ipEndParts[3]) - Convert.ToInt32(ipStartParts[3]);
-
+            int rangeSize = Convert.ToInt32(ipEndParts[3]) - Convert.ToInt32(ipStartParts[3]);
             bgwDiscovery.ReportProgress(-rangeSize);
             bgwDiscovery.ReportProgress(0);
 
@@ -123,12 +120,9 @@ namespace Surgit_NetworkManager
 
                 string currentIP = ipStartParts[0] + "." + ipStartParts[1] + "." + ipStartParts[2] + "." + i.ToString();
                 string currentMAC = NetExplore.GetMacAddress(currentIP);
-                string currentHostname = string.Empty;
-
                 if (!string.IsNullOrEmpty(currentMAC))
                 {
-                    currentHostname = NetExplore.GetMachineNameFromIPAddress(currentIP);
-
+                    string currentHostname = NetExplore.GetMachineNameFromIPAddress(currentIP);
                     NetDevice ntd = new NetDevice
                     {
                         IPv4 = currentIP,

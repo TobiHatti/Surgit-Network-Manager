@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace Surgit_NetworkManager
 {
+#pragma warning disable IDE1006
     public partial class SplashScreen : Form
     {
         public SplashScreen()
@@ -22,8 +23,10 @@ namespace Surgit_NetworkManager
         System.Windows.Forms.Timer tmr;
         private void SplashScreen_Shown(object sender, EventArgs e)
         {
-            tmr = new System.Windows.Forms.Timer();
-            tmr.Interval = 500;
+            tmr = new System.Windows.Forms.Timer
+            {
+                Interval = 500
+            };
             tmr.Start();
             tmr.Tick += tmr_Tick;
         }
@@ -36,4 +39,5 @@ namespace Surgit_NetworkManager
             this.Hide();
         }
     }
+#pragma warning restore IDE1006
 }

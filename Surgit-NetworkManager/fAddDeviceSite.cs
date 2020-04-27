@@ -10,6 +10,7 @@ using Syncfusion.WinForms.Controls;
 
 namespace Surgit_NetworkManager
 {
+#pragma warning disable IDE1006
     public partial class AddDeviceSite : SfForm
     {
         public string DeviceName { get; set; } = "";
@@ -32,8 +33,7 @@ namespace Surgit_NetworkManager
 
             if (!string.IsNullOrEmpty(DeviceName))
             {
-                Uri uriResult;
-                if (Uri.TryCreate(DeviceSiteURL, UriKind.Absolute, out uriResult) && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps))
+                if (Uri.TryCreate(DeviceSiteURL, UriKind.Absolute, out Uri uriResult) && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps))
                 {
                     this.DialogResult = DialogResult.OK;
                     this.Close();
@@ -43,4 +43,5 @@ namespace Surgit_NetworkManager
             else MessageBox.Show("Please enter a Name for the site", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
+#pragma warning restore IDE1006
 }

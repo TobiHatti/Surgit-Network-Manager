@@ -11,6 +11,7 @@ using Syncfusion.WinForms.Controls;
 
 namespace Surgit_NetworkManager
 {
+#pragma warning disable IDE1006
     public partial class AddEditDevice : SfForm
     {
         public bool IsEditMode = false;
@@ -23,7 +24,7 @@ namespace Surgit_NetworkManager
         public string DeviceMac = "";
         public string OriginalDeviceMac = "";
 
-        private CSQLite sql = new CSQLite(SurgitManager.SurgitDatabaseLocation);
+        private readonly CSQLite sql = new CSQLite(SurgitManager.SurgitDatabaseLocation);
 
         public AddEditDevice()
         {
@@ -127,4 +128,5 @@ namespace Surgit_NetworkManager
             }
         }
     }
+#pragma warning restore IDE1006
 }

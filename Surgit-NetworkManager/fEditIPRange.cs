@@ -10,6 +10,7 @@ using Syncfusion.WinForms.Controls;
 
 namespace Surgit_NetworkManager
 {
+#pragma warning disable IDE1006
     public partial class EditIPRange : SfForm
     {
         public string IPStartRange = "";
@@ -62,4 +63,5 @@ namespace Surgit_NetworkManager
             }
         }
     }
+#pragma warning restore IDE1006
 }

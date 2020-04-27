@@ -381,7 +381,7 @@ namespace Surgit_NetworkManager
                 if (e.ProgressPercentage <= pgbPowerCheck.Maximum)
                     pgbPowerCheck.Value = e.ProgressPercentage;
             }
-            catch(Exception ex)
+            catch
             {
                 lblProgressReport.Text = "An error occured during the PowerState-Check. Check if the IP-Range is correct.";
                 if (bgwCheckPowerState.WorkerSupportsCancellation) bgwCheckPowerState.CancelAsync();
@@ -563,8 +563,10 @@ namespace Surgit_NetworkManager
 
         private void btnStartAutoRDP_Click(object sender, EventArgs e)
         {
-            RDPConnect rdp = new RDPConnect();
-            rdp.MachineNameOrIP = txbDeviceIPv4.Text;
+            RDPConnect rdp = new RDPConnect
+            {
+                MachineNameOrIP = txbDeviceIPv4.Text
+            };
 
             sql.connection.Open();
             rdp.MultiMonitor = Convert.ToBoolean(sql.ExecuteScalar<string>("SELECT Value FROM Settings WHERE Key = 'RDPMultiMonitor'"));
@@ -625,15 +627,16 @@ namespace Surgit_NetworkManager
 
                 while (reader.Read())
                 {
-                    
 
-                    ToolStripButton tsb = new ToolStripButton(Convert.ToString(reader["Name"]), Properties.Resources.rdpIco.ToBitmap());
 
-                    tsb.ImageScaling = ToolStripItemImageScaling.None;
-                    tsb.TextImageRelation = TextImageRelation.ImageAboveText;
-                    tsb.ImageAlign = ContentAlignment.MiddleCenter;
-                    tsb.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
-                    tsb.Tag = Convert.ToString(reader["Path"]);
+                    ToolStripButton tsb = new ToolStripButton(Convert.ToString(reader["Name"]), Properties.Resources.rdpIco.ToBitmap())
+                    {
+                        ImageScaling = ToolStripItemImageScaling.None,
+                        TextImageRelation = TextImageRelation.ImageAboveText,
+                        ImageAlign = ContentAlignment.MiddleCenter,
+                        DisplayStyle = ToolStripItemDisplayStyle.ImageAndText,
+                        Tag = Convert.ToString(reader["Path"])
+                    };
 
                     tsb.Click += new EventHandler(CallRDP);
 
@@ -656,13 +659,14 @@ namespace Surgit_NetworkManager
 
                 while (reader.Read())
                 {
-                    ToolStripButton tsb = new ToolStripButton(Convert.ToString(reader["Name"]), Properties.Resources.webIco.ToBitmap());
-
-                    tsb.ImageScaling = ToolStripItemImageScaling.None;
-                    tsb.TextImageRelation = TextImageRelation.ImageAboveText;
-                    tsb.ImageAlign = ContentAlignment.MiddleCenter;
-                    tsb.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
-                    tsb.Tag = Convert.ToString(reader["Site"]);
+                    ToolStripButton tsb = new ToolStripButton(Convert.ToString(reader["Name"]), Properties.Resources.webIco.ToBitmap())
+                    {
+                        ImageScaling = ToolStripItemImageScaling.None,
+                        TextImageRelation = TextImageRelation.ImageAboveText,
+                        ImageAlign = ContentAlignment.MiddleCenter,
+                        DisplayStyle = ToolStripItemDisplayStyle.ImageAndText,
+                        Tag = Convert.ToString(reader["Site"])
+                    };
 
                     tsb.Click += new EventHandler(CallSite);
 
@@ -715,8 +719,10 @@ namespace Surgit_NetworkManager
 
         private void btnManageRDPFiles_Click(object sender, EventArgs e)
         {
-            ManageRDPFiles manageRDP = new ManageRDPFiles();
-            manageRDP.MACAddress = txbDeviceMac.Text;
+            ManageRDPFiles manageRDP = new ManageRDPFiles
+            {
+                MACAddress = txbDeviceMac.Text
+            };
             manageRDP.ShowDialog();
 
             LoadDeviceData();
@@ -724,8 +730,10 @@ namespace Surgit_NetworkManager
 
         private void btnManageDeviceSites_Click(object sender, EventArgs e)
         {
-            ManageDeviceSites manageSites = new ManageDeviceSites();
-            manageSites.MACAddress = txbDeviceMac.Text;
+            ManageDeviceSites manageSites = new ManageDeviceSites
+            {
+                MACAddress = txbDeviceMac.Text
+            };
             manageSites.ShowDialog();
 
             LoadDeviceData();

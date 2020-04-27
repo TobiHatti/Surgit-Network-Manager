@@ -10,6 +10,7 @@ using Syncfusion.WinForms.Controls;
 
 namespace Surgit_NetworkManager
 {
+#pragma warning disable IDE1006
     public partial class RDPSettings : SfForm
     {
         public bool MultiMonitor { get; set; } = false;
@@ -75,4 +76,5 @@ namespace Surgit_NetworkManager
             }
         }
     }
+#pragma warning restore IDE1006
 }

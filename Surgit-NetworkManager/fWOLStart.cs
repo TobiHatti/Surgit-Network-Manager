@@ -13,6 +13,7 @@ using Syncfusion.WinForms.Controls;
 
 namespace Surgit_NetworkManager
 {
+#pragma warning disable IDE1006
     public partial class WOLStart : SfForm
     {
         public string MACAddress = "";
@@ -103,4 +104,5 @@ namespace Surgit_NetworkManager
             client.Send(packet, packet.Length);
         }
     }
+#pragma warning restore IDE1006
 }
