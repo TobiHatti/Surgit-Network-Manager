@@ -65,6 +65,8 @@
             this.btnAddDeviceSite = new System.Windows.Forms.ToolStripButton();
             this.btnManageDeviceSites = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripEx5 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
+            this.btnChangeDataFile = new System.Windows.Forms.ToolStripButton();
             this.txbDeviceName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -102,6 +104,8 @@
             this.pgbPowerCheck = new System.Windows.Forms.ProgressBar();
             this.lblCopyright = new System.Windows.Forms.Label();
             this.ofdOpenRDPFile = new System.Windows.Forms.OpenFileDialog();
+            this.ofdSurgitDataFile = new System.Windows.Forms.OpenFileDialog();
+            this.toolStripTabItem4 = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
             ((System.ComponentModel.ISupportInitialize)(this.rbcRibbonMenu)).BeginInit();
             this.rbcRibbonMenu.SuspendLayout();
             this.toolStripTabItem1.Panel.SuspendLayout();
@@ -114,6 +118,7 @@
             this.toolStripEx6.SuspendLayout();
             this.tseRDPLinks.SuspendLayout();
             this.tseDeviceSites.SuspendLayout();
+            this.toolStripEx5.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -142,7 +147,7 @@
             this.rbcRibbonMenu.QuickPanelImageLayout = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.rbcRibbonMenu.RibbonHeaderImage = Syncfusion.Windows.Forms.Tools.RibbonHeaderImage.None;
             this.rbcRibbonMenu.RibbonStyle = Syncfusion.Windows.Forms.Tools.RibbonStyle.Office2016;
-            this.rbcRibbonMenu.SelectedTab = this.toolStripTabItem3;
+            this.rbcRibbonMenu.SelectedTab = this.toolStripTabItem1;
             this.rbcRibbonMenu.ShowRibbonDisplayOptionButton = true;
             this.rbcRibbonMenu.Size = new System.Drawing.Size(1092, 179);
             this.rbcRibbonMenu.SystemText.QuickAccessDialogDropDownName = "Start menu";
@@ -253,7 +258,7 @@
             this.btnDiscoverSelf,
             this.btnUpdateDevices,
             this.btnRefresh});
-            this.toolStripEx1.Location = new System.Drawing.Point(0, 1);
+            this.toolStripEx1.Location = new System.Drawing.Point(342, 1);
             this.toolStripEx1.Name = "toolStripEx1";
             this.toolStripEx1.Office12Mode = false;
             this.toolStripEx1.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
@@ -321,7 +326,7 @@
             this.btnAddDevice,
             this.btnDeleteDevice,
             this.btnEditDevice});
-            this.toolStripEx3.Location = new System.Drawing.Point(0, 1);
+            this.toolStripEx3.Location = new System.Drawing.Point(673, 1);
             this.toolStripEx3.Name = "toolStripEx3";
             this.toolStripEx3.Office12Mode = false;
             this.toolStripEx3.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
@@ -604,6 +609,33 @@
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 91);
             // 
+            // toolStripEx5
+            // 
+            this.toolStripEx5.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStripEx5.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripEx5.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.toolStripEx5.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStripEx5.Image = null;
+            this.toolStripEx5.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnChangeDataFile});
+            this.toolStripEx5.Location = new System.Drawing.Point(0, 1);
+            this.toolStripEx5.Name = "toolStripEx5";
+            this.toolStripEx5.Office12Mode = false;
+            this.toolStripEx5.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.toolStripEx5.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.toolStripEx5.Size = new System.Drawing.Size(134, 110);
+            this.toolStripEx5.TabIndex = 0;
+            // 
+            // btnChangeDataFile
+            // 
+            this.btnChangeDataFile.Image = global::Surgit_NetworkManager.Properties.Resources.refreshEntries;
+            this.btnChangeDataFile.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnChangeDataFile.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnChangeDataFile.Name = "btnChangeDataFile";
+            this.btnChangeDataFile.Size = new System.Drawing.Size(125, 88);
+            this.btnChangeDataFile.Text = "Change Data-File";
+            this.btnChangeDataFile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
             // txbDeviceName
             // 
             this.txbDeviceName.Enabled = false;
@@ -749,10 +781,10 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Location = new System.Drawing.Point(10, 185);
+            this.groupBox2.Location = new System.Drawing.Point(10, 186);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(8);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(364, 370);
+            this.groupBox2.Size = new System.Drawing.Size(364, 369);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Device information";
@@ -871,10 +903,10 @@
             this.groupBox3.Controls.Add(this.cbxSortOrder);
             this.groupBox3.Controls.Add(this.cbxSortBy);
             this.groupBox3.Controls.Add(this.grvDevices);
-            this.groupBox3.Location = new System.Drawing.Point(390, 191);
+            this.groupBox3.Location = new System.Drawing.Point(390, 186);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(8);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(690, 588);
+            this.groupBox3.Size = new System.Drawing.Size(690, 593);
             this.groupBox3.TabIndex = 15;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Devices";
@@ -960,7 +992,7 @@
             this.grvDevices.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.grvDevices.BeforeTouchSize = new System.Drawing.Size(684, 500);
+            this.grvDevices.BeforeTouchSize = new System.Drawing.Size(684, 505);
             this.grvDevices.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.grvDevices.ButtonView = true;
             this.grvDevices.FlatLook = true;
@@ -971,7 +1003,7 @@
             this.grvDevices.Location = new System.Drawing.Point(3, 85);
             this.grvDevices.Name = "grvDevices";
             this.grvDevices.ShowFlowViewItemText = true;
-            this.grvDevices.Size = new System.Drawing.Size(684, 500);
+            this.grvDevices.Size = new System.Drawing.Size(684, 505);
             this.grvDevices.TabIndex = 14;
             this.grvDevices.Text = "groupView1";
             this.grvDevices.TextSpacing = 30;
@@ -1034,6 +1066,27 @@
             this.ofdOpenRDPFile.Filter = "RDP-Files|*.rdp|All Files|*.*";
             this.ofdOpenRDPFile.Title = "Select RDP-File";
             // 
+            // ofdSurgitDataFile
+            // 
+            this.ofdSurgitDataFile.FileName = "surgit.db";
+            this.ofdSurgitDataFile.Filter = "Surgit Data-File|*.db|All Files|*.*";
+            this.ofdSurgitDataFile.Title = "Select a Surgit Data-File";
+            // 
+            // toolStripTabItem4
+            // 
+            this.toolStripTabItem4.Name = "toolStripTabItem4";
+            // 
+            // 
+            // 
+            this.toolStripTabItem4.Panel.Name = "";
+            this.toolStripTabItem4.Panel.ScrollPosition = 0;
+            this.toolStripTabItem4.Panel.TabIndex = 0;
+            this.toolStripTabItem4.Panel.Text = "Settings";
+            this.toolStripTabItem4.Position = -1;
+            this.toolStripTabItem4.Size = new System.Drawing.Size(75, 30);
+            this.toolStripTabItem4.Tag = "4";
+            this.toolStripTabItem4.Text = "Settings";
+            // 
             // SurgitMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
@@ -1082,6 +1135,8 @@
             this.tseRDPLinks.PerformLayout();
             this.tseDeviceSites.ResumeLayout(false);
             this.tseDeviceSites.PerformLayout();
+            this.toolStripEx5.ResumeLayout(false);
+            this.toolStripEx5.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -1166,6 +1221,10 @@
         private System.Windows.Forms.ToolStripButton btnAddDeviceSite;
         private System.Windows.Forms.ToolStripButton btnManageDeviceSites;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private Syncfusion.Windows.Forms.Tools.ToolStripEx toolStripEx5;
+        private System.Windows.Forms.ToolStripButton btnChangeDataFile;
+        private System.Windows.Forms.OpenFileDialog ofdSurgitDataFile;
+        private Syncfusion.Windows.Forms.Tools.ToolStripTabItem toolStripTabItem4;
     }
 }
 

@@ -56,3 +56,4 @@ H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Debug\Surgit_NetworkManag
 H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Debug\Surgit_NetworkManager.ManageRDPFiles.resources
 H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Debug\Surgit_NetworkManager.ManageDeviceSites.resources
 H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Debug\Surgit_NetworkManager.SplashScreen.resources
+H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\bin\Debug\Surgit_NetworkManager.exe.config

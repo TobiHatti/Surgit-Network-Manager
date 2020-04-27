@@ -48,3 +48,12 @@ H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Release\Surgit_NetworkMan
 H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Release\Surgit_NetworkManager.DeviceTypeSelector.resources
 H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Release\Surgit_NetworkManager.UpdateEntries.resources
 H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Release\Surgit_NetworkManager.DiscoverLocal.resources
+H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Release\Surgit_NetworkManager.AddDeviceSite.resources
+H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Release\Surgit_NetworkManager.AddEditDevice.resources
+H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Release\Surgit_NetworkManager.EditIPRange.resources
+H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Release\Surgit_NetworkManager.ManageDeviceSites.resources
+H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Release\Surgit_NetworkManager.ManageRDPFiles.resources
+H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Release\Surgit_NetworkManager.RDPSettings.resources
+H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Release\Surgit_NetworkManager.SplashScreen.resources
+H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Release\Surgit_NetworkManager.WOLStart.resources
+H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\bin\Release\Surgit_NetworkManager.exe.config

@@ -22,7 +22,7 @@ namespace Surgit_NetworkManager.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Surgit_NetworkManager.Properties {
         ///   Gibt die zwischengespeicherte ResourceManager-Instanz zurück, die von dieser Klasse verwendet wird.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Surgit_NetworkManager.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace Surgit_NetworkManager.Properties {
         ///   Ressourcenzuordnungen, die diese stark typisierte Ressourcenklasse verwenden.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon AccessPoint_OFF {
+        public static System.Drawing.Icon AccessPoint_OFF {
             get {
                 object obj = ResourceManager.GetObject("AccessPoint_OFF", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -73,7 +73,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon AccessPoint_ON {
+        public static System.Drawing.Icon AccessPoint_ON {
             get {
                 object obj = ResourceManager.GetObject("AccessPoint_ON", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -83,7 +83,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon AccessPoint_RAW {
+        public static System.Drawing.Icon AccessPoint_RAW {
             get {
                 object obj = ResourceManager.GetObject("AccessPoint_RAW", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -93,7 +93,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap add {
+        public static System.Drawing.Bitmap add {
             get {
                 object obj = ResourceManager.GetObject("add", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -103,7 +103,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon AllInOnePC_OFF {
+        public static System.Drawing.Icon AllInOnePC_OFF {
             get {
                 object obj = ResourceManager.GetObject("AllInOnePC_OFF", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -113,7 +113,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon AllInOnePC_ON {
+        public static System.Drawing.Icon AllInOnePC_ON {
             get {
                 object obj = ResourceManager.GetObject("AllInOnePC_ON", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -123,7 +123,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon AllInOnePC_RAW {
+        public static System.Drawing.Icon AllInOnePC_RAW {
             get {
                 object obj = ResourceManager.GetObject("AllInOnePC_RAW", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -133,7 +133,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap delete {
+        public static System.Drawing.Bitmap delete {
             get {
                 object obj = ResourceManager.GetObject("delete", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -143,7 +143,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon DesktopPC_OFF {
+        public static System.Drawing.Icon DesktopPC_OFF {
             get {
                 object obj = ResourceManager.GetObject("DesktopPC_OFF", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -153,7 +153,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon DesktopPC_ON {
+        public static System.Drawing.Icon DesktopPC_ON {
             get {
                 object obj = ResourceManager.GetObject("DesktopPC_ON", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -163,7 +163,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon DesktopPC_RAW {
+        public static System.Drawing.Icon DesktopPC_RAW {
             get {
                 object obj = ResourceManager.GetObject("DesktopPC_RAW", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -173,7 +173,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon DevelopmentDevice_OFF {
+        public static System.Drawing.Icon DevelopmentDevice_OFF {
             get {
                 object obj = ResourceManager.GetObject("DevelopmentDevice_OFF", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -183,7 +183,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon DevelopmentDevice_ON {
+        public static System.Drawing.Icon DevelopmentDevice_ON {
             get {
                 object obj = ResourceManager.GetObject("DevelopmentDevice_ON", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -193,7 +193,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon DevelopmentDevice_RAW {
+        public static System.Drawing.Icon DevelopmentDevice_RAW {
             get {
                 object obj = ResourceManager.GetObject("DevelopmentDevice_RAW", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -203,7 +203,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap discover {
+        public static System.Drawing.Bitmap discover {
             get {
                 object obj = ResourceManager.GetObject("discover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -213,7 +213,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap edit {
+        public static System.Drawing.Bitmap edit {
             get {
                 object obj = ResourceManager.GetObject("edit", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -223,7 +223,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon Fax_OFF {
+        public static System.Drawing.Icon Fax_OFF {
             get {
                 object obj = ResourceManager.GetObject("Fax_OFF", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -233,7 +233,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon Fax_ON {
+        public static System.Drawing.Icon Fax_ON {
             get {
                 object obj = ResourceManager.GetObject("Fax_ON", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -243,7 +243,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon Fax_RAW {
+        public static System.Drawing.Icon Fax_RAW {
             get {
                 object obj = ResourceManager.GetObject("Fax_RAW", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -253,7 +253,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon GameConsole_OFF {
+        public static System.Drawing.Icon GameConsole_OFF {
             get {
                 object obj = ResourceManager.GetObject("GameConsole_OFF", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -263,7 +263,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon GameConsole_ON {
+        public static System.Drawing.Icon GameConsole_ON {
             get {
                 object obj = ResourceManager.GetObject("GameConsole_ON", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -273,7 +273,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon GameConsole_RAW {
+        public static System.Drawing.Icon GameConsole_RAW {
             get {
                 object obj = ResourceManager.GetObject("GameConsole_RAW", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -283,7 +283,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon HealthEquipment_OFF {
+        public static System.Drawing.Icon HealthEquipment_OFF {
             get {
                 object obj = ResourceManager.GetObject("HealthEquipment_OFF", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -293,7 +293,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon HealthEquipment_ON {
+        public static System.Drawing.Icon HealthEquipment_ON {
             get {
                 object obj = ResourceManager.GetObject("HealthEquipment_ON", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -303,7 +303,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon HealthEquipment_RAW {
+        public static System.Drawing.Icon HealthEquipment_RAW {
             get {
                 object obj = ResourceManager.GetObject("HealthEquipment_RAW", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -313,7 +313,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon Intercom_OFF {
+        public static System.Drawing.Icon Intercom_OFF {
             get {
                 object obj = ResourceManager.GetObject("Intercom_OFF", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -323,7 +323,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon Intercom_ON {
+        public static System.Drawing.Icon Intercom_ON {
             get {
                 object obj = ResourceManager.GetObject("Intercom_ON", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -333,7 +333,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon Intercom_RAW {
+        public static System.Drawing.Icon Intercom_RAW {
             get {
                 object obj = ResourceManager.GetObject("Intercom_RAW", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -343,7 +343,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon IoTDevice_OFF {
+        public static System.Drawing.Icon IoTDevice_OFF {
             get {
                 object obj = ResourceManager.GetObject("IoTDevice_OFF", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -353,7 +353,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon IoTDevice_ON {
+        public static System.Drawing.Icon IoTDevice_ON {
             get {
                 object obj = ResourceManager.GetObject("IoTDevice_ON", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -363,7 +363,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon IoTDevice_RAW {
+        public static System.Drawing.Icon IoTDevice_RAW {
             get {
                 object obj = ResourceManager.GetObject("IoTDevice_RAW", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -373,7 +373,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon IPCamera_OFF {
+        public static System.Drawing.Icon IPCamera_OFF {
             get {
                 object obj = ResourceManager.GetObject("IPCamera_OFF", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -383,7 +383,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon IPCamera_ON {
+        public static System.Drawing.Icon IPCamera_ON {
             get {
                 object obj = ResourceManager.GetObject("IPCamera_ON", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -393,7 +393,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon IPCamera_RAW {
+        public static System.Drawing.Icon IPCamera_RAW {
             get {
                 object obj = ResourceManager.GetObject("IPCamera_RAW", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -403,7 +403,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon IPRadio_OFF {
+        public static System.Drawing.Icon IPRadio_OFF {
             get {
                 object obj = ResourceManager.GetObject("IPRadio_OFF", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -413,7 +413,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon IPRadio_ON {
+        public static System.Drawing.Icon IPRadio_ON {
             get {
                 object obj = ResourceManager.GetObject("IPRadio_ON", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -423,7 +423,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon IPRadio_RAW {
+        public static System.Drawing.Icon IPRadio_RAW {
             get {
                 object obj = ResourceManager.GetObject("IPRadio_RAW", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -433,7 +433,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon IPSetTopBox_OFF {
+        public static System.Drawing.Icon IPSetTopBox_OFF {
             get {
                 object obj = ResourceManager.GetObject("IPSetTopBox_OFF", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -443,7 +443,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon IPSetTopBox_ON {
+        public static System.Drawing.Icon IPSetTopBox_ON {
             get {
                 object obj = ResourceManager.GetObject("IPSetTopBox_ON", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -453,7 +453,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon IPSetTopBox_RAW {
+        public static System.Drawing.Icon IPSetTopBox_RAW {
             get {
                 object obj = ResourceManager.GetObject("IPSetTopBox_RAW", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -463,7 +463,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon IPSoundSystem_OFF {
+        public static System.Drawing.Icon IPSoundSystem_OFF {
             get {
                 object obj = ResourceManager.GetObject("IPSoundSystem_OFF", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -473,7 +473,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon IPSoundSystem_ON {
+        public static System.Drawing.Icon IPSoundSystem_ON {
             get {
                 object obj = ResourceManager.GetObject("IPSoundSystem_ON", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -483,7 +483,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon IPSoundSystem_RAW {
+        public static System.Drawing.Icon IPSoundSystem_RAW {
             get {
                 object obj = ResourceManager.GetObject("IPSoundSystem_RAW", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -493,7 +493,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon IPTV_OFF {
+        public static System.Drawing.Icon IPTV_OFF {
             get {
                 object obj = ResourceManager.GetObject("IPTV_OFF", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -503,7 +503,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon IPTV_ON {
+        public static System.Drawing.Icon IPTV_ON {
             get {
                 object obj = ResourceManager.GetObject("IPTV_ON", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -513,7 +513,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon IPTV_RAW {
+        public static System.Drawing.Icon IPTV_RAW {
             get {
                 object obj = ResourceManager.GetObject("IPTV_RAW", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -523,7 +523,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap link {
+        public static System.Drawing.Bitmap link {
             get {
                 object obj = ResourceManager.GetObject("link", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -533,7 +533,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon MultiPrinter_OFF {
+        public static System.Drawing.Icon MultiPrinter_OFF {
             get {
                 object obj = ResourceManager.GetObject("MultiPrinter_OFF", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -543,7 +543,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon MultiPrinter_ON {
+        public static System.Drawing.Icon MultiPrinter_ON {
             get {
                 object obj = ResourceManager.GetObject("MultiPrinter_ON", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -553,7 +553,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon MultiPrinter_RAW {
+        public static System.Drawing.Icon MultiPrinter_RAW {
             get {
                 object obj = ResourceManager.GetObject("MultiPrinter_RAW", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -563,7 +563,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon NAS_OFF {
+        public static System.Drawing.Icon NAS_OFF {
             get {
                 object obj = ResourceManager.GetObject("NAS_OFF", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -573,7 +573,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon NAS_ON {
+        public static System.Drawing.Icon NAS_ON {
             get {
                 object obj = ResourceManager.GetObject("NAS_ON", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -583,7 +583,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon NAS_RAW {
+        public static System.Drawing.Icon NAS_RAW {
             get {
                 object obj = ResourceManager.GetObject("NAS_RAW", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -593,7 +593,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap networkCard {
+        public static System.Drawing.Bitmap networkCard {
             get {
                 object obj = ResourceManager.GetObject("networkCard", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -603,7 +603,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon Notebook_OFF {
+        public static System.Drawing.Icon Notebook_OFF {
             get {
                 object obj = ResourceManager.GetObject("Notebook_OFF", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -613,7 +613,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon Notebook_ON {
+        public static System.Drawing.Icon Notebook_ON {
             get {
                 object obj = ResourceManager.GetObject("Notebook_ON", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -623,7 +623,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon Notebook_RAW {
+        public static System.Drawing.Icon Notebook_RAW {
             get {
                 object obj = ResourceManager.GetObject("Notebook_RAW", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -633,7 +633,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon Organizer_OFF {
+        public static System.Drawing.Icon Organizer_OFF {
             get {
                 object obj = ResourceManager.GetObject("Organizer_OFF", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -643,7 +643,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon Organizer_ON {
+        public static System.Drawing.Icon Organizer_ON {
             get {
                 object obj = ResourceManager.GetObject("Organizer_ON", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -653,7 +653,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon Organizer_RAW {
+        public static System.Drawing.Icon Organizer_RAW {
             get {
                 object obj = ResourceManager.GetObject("Organizer_RAW", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -663,7 +663,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon PLC_OFF {
+        public static System.Drawing.Icon PLC_OFF {
             get {
                 object obj = ResourceManager.GetObject("PLC_OFF", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -673,7 +673,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon PLC_ON {
+        public static System.Drawing.Icon PLC_ON {
             get {
                 object obj = ResourceManager.GetObject("PLC_ON", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -683,7 +683,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon PLC_RAW {
+        public static System.Drawing.Icon PLC_RAW {
             get {
                 object obj = ResourceManager.GetObject("PLC_RAW", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -693,7 +693,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon POSTerminal_OFF {
+        public static System.Drawing.Icon POSTerminal_OFF {
             get {
                 object obj = ResourceManager.GetObject("POSTerminal_OFF", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -703,7 +703,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon POSTerminal_ON {
+        public static System.Drawing.Icon POSTerminal_ON {
             get {
                 object obj = ResourceManager.GetObject("POSTerminal_ON", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -713,7 +713,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon POSTerminal_RAW {
+        public static System.Drawing.Icon POSTerminal_RAW {
             get {
                 object obj = ResourceManager.GetObject("POSTerminal_RAW", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -723,7 +723,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon Printer_OFF {
+        public static System.Drawing.Icon Printer_OFF {
             get {
                 object obj = ResourceManager.GetObject("Printer_OFF", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -733,7 +733,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon Printer_ON {
+        public static System.Drawing.Icon Printer_ON {
             get {
                 object obj = ResourceManager.GetObject("Printer_ON", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -743,7 +743,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon Printer_RAW {
+        public static System.Drawing.Icon Printer_RAW {
             get {
                 object obj = ResourceManager.GetObject("Printer_RAW", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -753,7 +753,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon Printer3D_OFF {
+        public static System.Drawing.Icon Printer3D_OFF {
             get {
                 object obj = ResourceManager.GetObject("Printer3D_OFF", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -763,7 +763,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon Printer3D_ON {
+        public static System.Drawing.Icon Printer3D_ON {
             get {
                 object obj = ResourceManager.GetObject("Printer3D_ON", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -773,7 +773,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon Printer3D_RAW {
+        public static System.Drawing.Icon Printer3D_RAW {
             get {
                 object obj = ResourceManager.GetObject("Printer3D_RAW", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -783,7 +783,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon Projector_OFF {
+        public static System.Drawing.Icon Projector_OFF {
             get {
                 object obj = ResourceManager.GetObject("Projector_OFF", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -793,7 +793,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon Projector_ON {
+        public static System.Drawing.Icon Projector_ON {
             get {
                 object obj = ResourceManager.GetObject("Projector_ON", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -803,7 +803,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon Projector_RAW {
+        public static System.Drawing.Icon Projector_RAW {
             get {
                 object obj = ResourceManager.GetObject("Projector_RAW", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -813,7 +813,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap rdp {
+        public static System.Drawing.Bitmap rdp {
             get {
                 object obj = ResourceManager.GetObject("rdp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -823,7 +823,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon rdpIco {
+        public static System.Drawing.Icon rdpIco {
             get {
                 object obj = ResourceManager.GetObject("rdpIco", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -833,7 +833,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap refresh {
+        public static System.Drawing.Bitmap refresh {
             get {
                 object obj = ResourceManager.GetObject("refresh", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -843,7 +843,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap refreshEntries {
+        public static System.Drawing.Bitmap refreshEntries {
             get {
                 object obj = ResourceManager.GetObject("refreshEntries", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -853,7 +853,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon Router_OFF {
+        public static System.Drawing.Icon Router_OFF {
             get {
                 object obj = ResourceManager.GetObject("Router_OFF", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -863,7 +863,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon Router_ON {
+        public static System.Drawing.Icon Router_ON {
             get {
                 object obj = ResourceManager.GetObject("Router_ON", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -873,7 +873,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon Router_RAW {
+        public static System.Drawing.Icon Router_RAW {
             get {
                 object obj = ResourceManager.GetObject("Router_RAW", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -883,7 +883,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon Scanner_OFF {
+        public static System.Drawing.Icon Scanner_OFF {
             get {
                 object obj = ResourceManager.GetObject("Scanner_OFF", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -893,7 +893,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon Scanner_ON {
+        public static System.Drawing.Icon Scanner_ON {
             get {
                 object obj = ResourceManager.GetObject("Scanner_ON", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -903,7 +903,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon Scanner_RAW {
+        public static System.Drawing.Icon Scanner_RAW {
             get {
                 object obj = ResourceManager.GetObject("Scanner_RAW", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -913,7 +913,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon SecuritySystem_OFF {
+        public static System.Drawing.Icon SecuritySystem_OFF {
             get {
                 object obj = ResourceManager.GetObject("SecuritySystem_OFF", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -923,7 +923,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon SecuritySystem_ON {
+        public static System.Drawing.Icon SecuritySystem_ON {
             get {
                 object obj = ResourceManager.GetObject("SecuritySystem_ON", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -933,7 +933,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon SecuritySystem_RAW {
+        public static System.Drawing.Icon SecuritySystem_RAW {
             get {
                 object obj = ResourceManager.GetObject("SecuritySystem_RAW", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -943,7 +943,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap selfDiscover {
+        public static System.Drawing.Bitmap selfDiscover {
             get {
                 object obj = ResourceManager.GetObject("selfDiscover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -953,7 +953,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon Server_OFF {
+        public static System.Drawing.Icon Server_OFF {
             get {
                 object obj = ResourceManager.GetObject("Server_OFF", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -963,7 +963,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon Server_ON {
+        public static System.Drawing.Icon Server_ON {
             get {
                 object obj = ResourceManager.GetObject("Server_ON", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -973,7 +973,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon Server_RAW {
+        public static System.Drawing.Icon Server_RAW {
             get {
                 object obj = ResourceManager.GetObject("Server_RAW", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -983,7 +983,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap settings {
+        public static System.Drawing.Bitmap settings {
             get {
                 object obj = ResourceManager.GetObject("settings", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -993,7 +993,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon Smartphone_OFF {
+        public static System.Drawing.Icon Smartphone_OFF {
             get {
                 object obj = ResourceManager.GetObject("Smartphone_OFF", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -1003,7 +1003,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon Smartphone_ON {
+        public static System.Drawing.Icon Smartphone_ON {
             get {
                 object obj = ResourceManager.GetObject("Smartphone_ON", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -1013,7 +1013,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon Smartphone_RAW {
+        public static System.Drawing.Icon Smartphone_RAW {
             get {
                 object obj = ResourceManager.GetObject("Smartphone_RAW", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -1023,7 +1023,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap start {
+        public static System.Drawing.Bitmap start {
             get {
                 object obj = ResourceManager.GetObject("start", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1033,7 +1033,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap SurgitLogo {
+        public static System.Drawing.Bitmap SurgitLogo {
             get {
                 object obj = ResourceManager.GetObject("SurgitLogo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1043,7 +1043,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon SurgitLogo1 {
+        public static System.Drawing.Icon SurgitLogo1 {
             get {
                 object obj = ResourceManager.GetObject("SurgitLogo1", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -1053,7 +1053,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap SurgitSplash {
+        public static System.Drawing.Bitmap SurgitSplash {
             get {
                 object obj = ResourceManager.GetObject("SurgitSplash", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1063,7 +1063,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon Switch_OFF {
+        public static System.Drawing.Icon Switch_OFF {
             get {
                 object obj = ResourceManager.GetObject("Switch_OFF", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -1073,7 +1073,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon Switch_ON {
+        public static System.Drawing.Icon Switch_ON {
             get {
                 object obj = ResourceManager.GetObject("Switch_ON", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -1083,7 +1083,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon Switch_RAW {
+        public static System.Drawing.Icon Switch_RAW {
             get {
                 object obj = ResourceManager.GetObject("Switch_RAW", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -1093,7 +1093,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon Tablet_OFF {
+        public static System.Drawing.Icon Tablet_OFF {
             get {
                 object obj = ResourceManager.GetObject("Tablet_OFF", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -1103,7 +1103,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon Tablet_ON {
+        public static System.Drawing.Icon Tablet_ON {
             get {
                 object obj = ResourceManager.GetObject("Tablet_ON", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -1113,7 +1113,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon Tablet_RAW {
+        public static System.Drawing.Icon Tablet_RAW {
             get {
                 object obj = ResourceManager.GetObject("Tablet_RAW", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -1123,7 +1123,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon TabletComputer_OFF {
+        public static System.Drawing.Icon TabletComputer_OFF {
             get {
                 object obj = ResourceManager.GetObject("TabletComputer_OFF", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -1133,7 +1133,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon TabletComputer_ON {
+        public static System.Drawing.Icon TabletComputer_ON {
             get {
                 object obj = ResourceManager.GetObject("TabletComputer_ON", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -1143,7 +1143,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon TabletComputer_RAW {
+        public static System.Drawing.Icon TabletComputer_RAW {
             get {
                 object obj = ResourceManager.GetObject("TabletComputer_RAW", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -1153,7 +1153,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon UnknownDevice_OFF {
+        public static System.Drawing.Icon UnknownDevice_OFF {
             get {
                 object obj = ResourceManager.GetObject("UnknownDevice_OFF", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -1163,7 +1163,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon UnknownDevice_ON {
+        public static System.Drawing.Icon UnknownDevice_ON {
             get {
                 object obj = ResourceManager.GetObject("UnknownDevice_ON", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -1173,7 +1173,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon UnknownDevice_RAW {
+        public static System.Drawing.Icon UnknownDevice_RAW {
             get {
                 object obj = ResourceManager.GetObject("UnknownDevice_RAW", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -1183,7 +1183,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon UPS_OFF {
+        public static System.Drawing.Icon UPS_OFF {
             get {
                 object obj = ResourceManager.GetObject("UPS_OFF", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -1193,7 +1193,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon UPS_ON {
+        public static System.Drawing.Icon UPS_ON {
             get {
                 object obj = ResourceManager.GetObject("UPS_ON", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -1203,7 +1203,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon UPS_RAW {
+        public static System.Drawing.Icon UPS_RAW {
             get {
                 object obj = ResourceManager.GetObject("UPS_RAW", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -1213,7 +1213,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon VirtualMachine_OFF {
+        public static System.Drawing.Icon VirtualMachine_OFF {
             get {
                 object obj = ResourceManager.GetObject("VirtualMachine_OFF", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -1223,7 +1223,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon VirtualMachine_ON {
+        public static System.Drawing.Icon VirtualMachine_ON {
             get {
                 object obj = ResourceManager.GetObject("VirtualMachine_ON", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -1233,7 +1233,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon VirtualMachine_RAW {
+        public static System.Drawing.Icon VirtualMachine_RAW {
             get {
                 object obj = ResourceManager.GetObject("VirtualMachine_RAW", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -1243,7 +1243,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon VoIP_OFF {
+        public static System.Drawing.Icon VoIP_OFF {
             get {
                 object obj = ResourceManager.GetObject("VoIP_OFF", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -1253,7 +1253,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon VoIP_ON {
+        public static System.Drawing.Icon VoIP_ON {
             get {
                 object obj = ResourceManager.GetObject("VoIP_ON", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -1263,7 +1263,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon VoIP_RAW {
+        public static System.Drawing.Icon VoIP_RAW {
             get {
                 object obj = ResourceManager.GetObject("VoIP_RAW", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -1273,7 +1273,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon VRHeadset_OFF {
+        public static System.Drawing.Icon VRHeadset_OFF {
             get {
                 object obj = ResourceManager.GetObject("VRHeadset_OFF", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -1283,7 +1283,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon VRHeadset_ON {
+        public static System.Drawing.Icon VRHeadset_ON {
             get {
                 object obj = ResourceManager.GetObject("VRHeadset_ON", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -1293,7 +1293,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon VRHeadset_RAW {
+        public static System.Drawing.Icon VRHeadset_RAW {
             get {
                 object obj = ResourceManager.GetObject("VRHeadset_RAW", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -1303,7 +1303,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon webIco {
+        public static System.Drawing.Icon webIco {
             get {
                 object obj = ResourceManager.GetObject("webIco", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -1313,7 +1313,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon WirelessRouter_OFF {
+        public static System.Drawing.Icon WirelessRouter_OFF {
             get {
                 object obj = ResourceManager.GetObject("WirelessRouter_OFF", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -1323,7 +1323,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon WirelessRouter_ON {
+        public static System.Drawing.Icon WirelessRouter_ON {
             get {
                 object obj = ResourceManager.GetObject("WirelessRouter_ON", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -1333,7 +1333,7 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        internal static System.Drawing.Icon WirelessRouter_RAW {
+        public static System.Drawing.Icon WirelessRouter_RAW {
             get {
                 object obj = ResourceManager.GetObject("WirelessRouter_RAW", resourceCulture);
                 return ((System.Drawing.Icon)(obj));

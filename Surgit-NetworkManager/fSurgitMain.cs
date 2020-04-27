@@ -26,6 +26,12 @@ namespace Surgit_NetworkManager
         {
             InitializeComponent();
 
+            // Copy DB-File if not existent
+            if (!File.Exists(SurgitManager.SurgitDatabaseLocation))
+            {
+                File.Copy("surgitBlank.db", SurgitManager.SurgitDatabaseLocation);
+            }
+
             // Initialize DBConnection
             sql = new CSQLite(SurgitManager.SurgitDatabaseLocation);
 
@@ -52,6 +58,7 @@ namespace Surgit_NetworkManager
 
         private void SurgitMain_FormClosing(object sender, FormClosingEventArgs e)
         {
+            Properties.Settings.Default.Save();
             tmrStartPowerCheck.Stop();
             if (bgwCheckPowerState.WorkerSupportsCancellation) bgwCheckPowerState.CancelAsync();
         }
