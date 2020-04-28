@@ -62,6 +62,12 @@ namespace Surgit_NetworkManager
                 return;
             }
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
     }
 #pragma warning restore IDE1006
 }
