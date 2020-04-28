@@ -106,13 +106,13 @@ namespace Surgit_NetworkManager
                 case 0: orderBy = $"ORDER BY Name {orderDirection}"; break;
                 case 1: orderBy = $"ORDER BY IP4Address {orderDirection}"; break;
                 case 2: orderBy = $"ORDER BY MACAddress {orderDirection}"; break;
-                case 3: orderBy = $"ORDER BY DeviceType {orderDirection}"; break;
-                case 4: orderBy = $"ORDER BY LastSeen {orderDirection}"; break;
+                case 3: orderBy = $"ORDER BY DeviceType {orderDirection}, Name {orderDirection}"; break;
+                case 4: orderBy = $"ORDER BY LastSeen {orderDirection}, DeviceType {orderDirection}, Name {orderDirection}"; break;
                 case 5: orderBy = $"ORDER BY LastPowerState {orderDirectionRev}, Name {orderDirection}"; break;
                 case 6: orderBy = $"ORDER BY LastPowerState {orderDirectionRev}, IP4Address {orderDirection}"; break;
-                case 7: orderBy = $"ORDER BY LastPowerState {orderDirectionRev}, DeviceType {orderDirection}"; break;
+                case 7: orderBy = $"ORDER BY LastPowerState {orderDirectionRev}, DeviceType {orderDirection}, Name {orderDirection}"; break;
                 case 8: orderBy = $"ORDER BY LastPowerState {orderDirectionRev}, MACAddress {orderDirection}"; break;
-                case 9: orderBy = $"ORDER BY LastPowerState {orderDirectionRev}, LastSeen {orderDirection}"; break;
+                case 9: orderBy = $"ORDER BY LastPowerState {orderDirectionRev}, LastSeen {orderDirection}, DeviceType {orderDirection}, Name {orderDirection}"; break;
                 default: orderBy = ""; break;
             }
 
@@ -517,6 +517,8 @@ namespace Surgit_NetworkManager
                     IPv4 = txbDeviceIPv4.Text
                 };
                 wol.ShowDialog();
+                UpdateDeviceList();
+                DeselectItem();
             }
         }
 
