@@ -110,8 +110,8 @@ namespace Surgit_NetworkManager
                 case 4: orderBy = $"ORDER BY LastSeen {orderDirection}, DeviceType {orderDirection}, Name {orderDirection}"; break;
                 case 5: orderBy = $"ORDER BY LastPowerState {orderDirectionRev}, Name {orderDirection}"; break;
                 case 6: orderBy = $"ORDER BY LastPowerState {orderDirectionRev}, IP4Address {orderDirection}"; break;
-                case 7: orderBy = $"ORDER BY LastPowerState {orderDirectionRev}, DeviceType {orderDirection}, Name {orderDirection}"; break;
-                case 8: orderBy = $"ORDER BY LastPowerState {orderDirectionRev}, MACAddress {orderDirection}"; break;
+                case 7: orderBy = $"ORDER BY LastPowerState {orderDirectionRev}, MACAddress {orderDirection}"; break;
+                case 8: orderBy = $"ORDER BY LastPowerState {orderDirectionRev}, DeviceType {orderDirection}, Name {orderDirection}"; break;
                 case 9: orderBy = $"ORDER BY LastPowerState {orderDirectionRev}, LastSeen {orderDirection}, DeviceType {orderDirection}, Name {orderDirection}"; break;
                 default: orderBy = ""; break;
             }
