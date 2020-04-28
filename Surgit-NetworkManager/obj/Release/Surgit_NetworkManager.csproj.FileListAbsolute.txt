@@ -36,7 +36,6 @@ H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\bin\Release\Syncfusion.GridCo
 H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\bin\Release\Syncfusion.Grid.Base.xml
 H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\bin\Release\Syncfusion.SpellChecker.Base.xml
 H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\bin\Release\Syncfusion.Grid.Windows.XmlSerializers.dll
-H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Release\Surgit_NetworkManager.csprojAssemblyReference.cache
 H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Release\Surgit_NetworkManager.DiscoverDialog.resources
 H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Release\Surgit_NetworkManager.SurgitMain.resources
 H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Release\Surgit_NetworkManager.Properties.Resources.resources
