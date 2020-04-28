@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StringSplitterTest", "Strin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RDPTool", "RDPTool\RDPTool.csproj", "{391D6635-E4CD-4B7C-BDF9-32A0AE7F1984}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{4DD63F1F-84E3-4011-8C05-A1DB07609600}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SurgitSetup", "SurgitSetup\SurgitSetup.vdproj", "{0158A97C-2B23-4544-B8C4-447A52A3B24C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,8 +35,8 @@ Global
 		{391D6635-E4CD-4B7C-BDF9-32A0AE7F1984}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{391D6635-E4CD-4B7C-BDF9-32A0AE7F1984}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{391D6635-E4CD-4B7C-BDF9-32A0AE7F1984}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4DD63F1F-84E3-4011-8C05-A1DB07609600}.Debug|Any CPU.ActiveCfg = Debug
-		{4DD63F1F-84E3-4011-8C05-A1DB07609600}.Release|Any CPU.ActiveCfg = Release
+		{0158A97C-2B23-4544-B8C4-447A52A3B24C}.Debug|Any CPU.ActiveCfg = Debug
+		{0158A97C-2B23-4544-B8C4-447A52A3B24C}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

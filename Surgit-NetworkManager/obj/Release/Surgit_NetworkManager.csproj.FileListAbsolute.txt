@@ -58,3 +58,4 @@ H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Release\Surgit_NetworkMan
 H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\bin\Release\Surgit_NetworkManager.exe.config
 H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\bin\Release\MarkdownSharp.dll
 H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\bin\Release\MarkdownSharp.xml
+H:\Git\Surgit-NetworkManager\Surgit-NetworkManager\obj\Release\Surgit_NetworkManager.csprojAssemblyReference.cache
