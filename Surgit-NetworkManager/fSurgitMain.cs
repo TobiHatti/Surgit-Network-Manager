@@ -74,7 +74,7 @@ namespace Surgit_NetworkManager
             this.EnableAeroTheme = true;
             this.Borders = new Padding(-1);
 
-            this.Text = $"Surgit Network Manager  (Version {System.Reflection.Assembly.GetEntryAssembly().GetName().Version})";
+            this.Text = $"Surgit Network Manager  (Version {System.Reflection.Assembly.GetEntryAssembly().GetName().Version.ToString(3)})";
 
             this.rbcRibbonMenu.TitleFont = new Font("Calibri", 11);
 
