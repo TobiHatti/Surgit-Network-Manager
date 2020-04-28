@@ -376,7 +376,11 @@ namespace Surgit_NetworkManager
 
         private void bgwCheckPowerState_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e) => SurgitManager.PowerStateCheck(lblIPRangeStart.Text, lblIPRangeEnd.Text, bgwCheckPowerState);
         private void btnSaveChanges_Click(object sender, EventArgs e) => SaveChanges();
-        private void cbxSortBy_SelectedIndexChanged(object sender, EventArgs e) => UpdateDeviceList();
+        private void cbxSortBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateDeviceList();
+            DeselectItem();
+        }
         private void cbxSortOrder_SelectedIndexChanged(object sender, EventArgs e) => UpdateDeviceList();
         private void btnRefresh_Click(object sender, EventArgs e) => UpdateDeviceList();
 
