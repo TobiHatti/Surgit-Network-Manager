@@ -19,6 +19,8 @@ namespace Surgit_NetworkManager
         public string MACAddress = "";
         public string IPv4 = "";
 
+        private CSQLite sql = new CSQLite(SurgitManager.SurgitDatabaseLocation);
+
         private TimeSpan elapsedTime;
 
         public WOLStart()
@@ -61,7 +63,6 @@ namespace Surgit_NetworkManager
 
             if (!string.IsNullOrEmpty(IPv4))
             {
-
                 do
                 {
                     if (bgwMonitorProgress.CancellationPending) return;
@@ -79,6 +80,9 @@ namespace Surgit_NetworkManager
             tmrTimeElapsed.Stop();
             prgWOLState.Value = 100;
             prgWOLState.Style = ProgressBarStyle.Continuous;
+
+            sql.ExecuteNonQueryA($"UPDATE Devices SET LastPowerState = '1' WHERE MACAddress = '{MACAddress}'");
+
             MessageBox.Show("Device is Online!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
