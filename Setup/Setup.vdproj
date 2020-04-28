@@ -1280,15 +1280,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Surgit"
-        "ProductCode" = "8:{84EDD449-429F-4F87-8699-A6B255ED6447}"
-        "PackageCode" = "8:{5A0AB9C9-AC95-4ED9-81D1-45A5BF006EA1}"
+        "ProductCode" = "8:{9500D849-6D7E-4062-A3AB-42DBBFC1A140}"
+        "PackageCode" = "8:{96047A7F-74F9-4F0B-9595-41D32774C96C}"
         "UpgradeCode" = "8:{F3B923A1-02E2-4C96-BADC-F16587D7DCE1}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.1.2"
+        "ProductVersion" = "8:1.1.3"
         "Manufacturer" = "8:Endix Development"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:https://endev.at/support"
@@ -1830,7 +1830,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_C0E55A08A47C439AA8F64698C4ADC639"
             {
-            "SourcePath" = "8:"
+            "SourcePath" = "8:..\\Surgit-NetworkManager\\obj\\Release\\Surgit_NetworkManager.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_79ADF8E126D6422685BA3BA2C10E78CF"

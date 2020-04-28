@@ -19,7 +19,7 @@ namespace Surgit_NetworkManager
         public string MACAddress = "";
         public string IPv4 = "";
 
-        private CSQLite sql = new CSQLite(SurgitManager.SurgitDatabaseLocation);
+        private readonly CSQLite sql = new CSQLite(SurgitManager.SurgitDatabaseLocation);
 
         private TimeSpan elapsedTime;
 

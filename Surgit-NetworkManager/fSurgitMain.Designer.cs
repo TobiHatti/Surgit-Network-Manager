@@ -119,6 +119,9 @@
             this.toolStripTabItem2.Panel.SuspendLayout();
             this.toolStripEx4.SuspendLayout();
             this.toolStripTabItem3.Panel.SuspendLayout();
+            this.toolStripEx6.SuspendLayout();
+            this.tseRDPLinks.SuspendLayout();
+            this.tseDeviceSites.SuspendLayout();
             this.toolStripEx5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcSplitter)).BeginInit();
             this.spcSplitter.Panel1.SuspendLayout();
@@ -149,7 +152,7 @@
             this.rbcRibbonMenu.QuickPanelImageLayout = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.rbcRibbonMenu.RibbonHeaderImage = Syncfusion.Windows.Forms.Tools.RibbonHeaderImage.None;
             this.rbcRibbonMenu.RibbonStyle = Syncfusion.Windows.Forms.Tools.RibbonStyle.Office2016;
-            this.rbcRibbonMenu.SelectedTab = this.toolStripTabItem2;
+            this.rbcRibbonMenu.SelectedTab = this.toolStripTabItem1;
             this.rbcRibbonMenu.ShowRibbonDisplayOptionButton = true;
             this.rbcRibbonMenu.Size = new System.Drawing.Size(1022, 194);
             this.rbcRibbonMenu.SystemText.QuickAccessDialogDropDownName = "Start menu";
@@ -409,7 +412,7 @@
             this.toolStripEx4.Office12Mode = false;
             this.toolStripEx4.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.toolStripEx4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripEx4.Size = new System.Drawing.Size(226, 125);
+            this.toolStripEx4.Size = new System.Drawing.Size(195, 125);
             this.toolStripEx4.TabIndex = 0;
             // 
             // btnStartDeviceWOL
@@ -468,12 +471,15 @@
             this.toolStripEx6.ForeColor = System.Drawing.Color.MidnightBlue;
             this.toolStripEx6.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStripEx6.Image = null;
+            this.toolStripEx6.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnStartAutoRDP,
+            this.btnOpenRDPSettings});
             this.toolStripEx6.Location = new System.Drawing.Point(0, 1);
             this.toolStripEx6.Name = "toolStripEx6";
             this.toolStripEx6.Office12Mode = false;
             this.toolStripEx6.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.toolStripEx6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripEx6.Size = new System.Drawing.Size(42, 122);
+            this.toolStripEx6.Size = new System.Drawing.Size(189, 125);
             this.toolStripEx6.TabIndex = 0;
             this.toolStripEx6.Text = "RDP Connections";
             // 
@@ -510,13 +516,17 @@
             this.tseRDPLinks.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tseRDPLinks.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.tseRDPLinks.Image = null;
-            this.tseRDPLinks.Location = new System.Drawing.Point(0, 1);
+            this.tseRDPLinks.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnLinkRDP,
+            this.btnManageRDPFiles,
+            this.toolStripSeparator4});
+            this.tseRDPLinks.Location = new System.Drawing.Point(191, 1);
             this.tseRDPLinks.MinimumSize = new System.Drawing.Size(320, 104);
             this.tseRDPLinks.Name = "tseRDPLinks";
             this.tseRDPLinks.Office12Mode = false;
             this.tseRDPLinks.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.tseRDPLinks.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tseRDPLinks.Size = new System.Drawing.Size(320, 122);
+            this.tseRDPLinks.Size = new System.Drawing.Size(324, 125);
             this.tseRDPLinks.TabIndex = 1;
             this.tseRDPLinks.Text = "Saved RDP-Connections";
             // 
@@ -550,7 +560,7 @@
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 122);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 106);
             // 
             // tseDeviceSites
             // 
@@ -559,13 +569,17 @@
             this.tseDeviceSites.ForeColor = System.Drawing.Color.MidnightBlue;
             this.tseDeviceSites.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.tseDeviceSites.Image = null;
-            this.tseDeviceSites.Location = new System.Drawing.Point(0, 1);
+            this.tseDeviceSites.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnAddDeviceSite,
+            this.btnManageDeviceSites,
+            this.toolStripSeparator3});
+            this.tseDeviceSites.Location = new System.Drawing.Point(517, 1);
             this.tseDeviceSites.MinimumSize = new System.Drawing.Size(320, 104);
             this.tseDeviceSites.Name = "tseDeviceSites";
             this.tseDeviceSites.Office12Mode = false;
             this.tseDeviceSites.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.tseDeviceSites.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tseDeviceSites.Size = new System.Drawing.Size(320, 122);
+            this.tseDeviceSites.Size = new System.Drawing.Size(324, 125);
             this.tseDeviceSites.TabIndex = 2;
             this.tseDeviceSites.Text = "Device Managements Sites";
             // 
@@ -598,7 +612,7 @@
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 122);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 106);
             // 
             // toolStripEx5
             // 
@@ -1227,6 +1241,12 @@
             this.toolStripEx4.PerformLayout();
             this.toolStripTabItem3.Panel.ResumeLayout(false);
             this.toolStripTabItem3.Panel.PerformLayout();
+            this.toolStripEx6.ResumeLayout(false);
+            this.toolStripEx6.PerformLayout();
+            this.tseRDPLinks.ResumeLayout(false);
+            this.tseRDPLinks.PerformLayout();
+            this.tseDeviceSites.ResumeLayout(false);
+            this.tseDeviceSites.PerformLayout();
             this.toolStripEx5.ResumeLayout(false);
             this.toolStripEx5.PerformLayout();
             this.spcSplitter.Panel1.ResumeLayout(false);
