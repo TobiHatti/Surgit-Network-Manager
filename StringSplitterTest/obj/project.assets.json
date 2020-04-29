@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\Git\\Surgit-NetworkManager\\StringSplitterTest\\StringSplitterTest.csproj",
+      "projectUniqueName": "H:\\Git\\Surgit\\StringSplitterTest\\StringSplitterTest.csproj",
       "projectName": "StringSplitterTest",
-      "projectPath": "H:\\Git\\Surgit-NetworkManager\\StringSplitterTest\\StringSplitterTest.csproj",
+      "projectPath": "H:\\Git\\Surgit\\StringSplitterTest\\StringSplitterTest.csproj",
       "packagesPath": "C:\\Users\\Tobias\\.nuget\\packages\\",
-      "outputPath": "H:\\Git\\Surgit-NetworkManager\\StringSplitterTest\\obj\\",
+      "outputPath": "H:\\Git\\Surgit\\StringSplitterTest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
