@@ -152,7 +152,7 @@
             this.rbcRibbonMenu.QuickPanelImageLayout = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.rbcRibbonMenu.RibbonHeaderImage = Syncfusion.Windows.Forms.Tools.RibbonHeaderImage.None;
             this.rbcRibbonMenu.RibbonStyle = Syncfusion.Windows.Forms.Tools.RibbonStyle.Office2016;
-            this.rbcRibbonMenu.SelectedTab = this.toolStripTabItem3;
+            this.rbcRibbonMenu.SelectedTab = this.toolStripTabItem1;
             this.rbcRibbonMenu.ShowRibbonDisplayOptionButton = true;
             this.rbcRibbonMenu.Size = new System.Drawing.Size(1022, 180);
             this.rbcRibbonMenu.SystemText.QuickAccessDialogDropDownName = "Start menu";

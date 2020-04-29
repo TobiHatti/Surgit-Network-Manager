@@ -1,0 +1,11 @@
+H:\Git\Surgit\RDPTool\bin\Release\RDPTool.exe.config
+H:\Git\Surgit\RDPTool\bin\Release\RDPTool.exe
+H:\Git\Surgit\RDPTool\bin\Release\RDPTool.pdb
+H:\Git\Surgit\RDPTool\bin\Release\System.Management.Automation.dll
+H:\Git\Surgit\RDPTool\bin\Release\Microsoft.Management.Infrastructure.dll
+H:\Git\Surgit\RDPTool\bin\Release\System.Management.Automation.xml
+H:\Git\Surgit\RDPTool\obj\Release\RDPTool.csprojAssemblyReference.cache
+H:\Git\Surgit\RDPTool\obj\Release\RDPTool.csproj.CoreCompileInputs.cache
+H:\Git\Surgit\RDPTool\obj\Release\RDPTool.csproj.CopyComplete
+H:\Git\Surgit\RDPTool\obj\Release\RDPTool.exe
+H:\Git\Surgit\RDPTool\obj\Release\RDPTool.pdb

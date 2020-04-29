@@ -1,0 +1,7 @@
+H:\Git\Surgit\DiscoverTool\bin\Release\DiscoverTool.exe.config
+H:\Git\Surgit\DiscoverTool\bin\Release\DiscoverTool.exe
+H:\Git\Surgit\DiscoverTool\bin\Release\DiscoverTool.pdb
+H:\Git\Surgit\DiscoverTool\obj\Release\DiscoverTool.csprojAssemblyReference.cache
+H:\Git\Surgit\DiscoverTool\obj\Release\DiscoverTool.csproj.CoreCompileInputs.cache
+H:\Git\Surgit\DiscoverTool\obj\Release\DiscoverTool.exe
+H:\Git\Surgit\DiscoverTool\obj\Release\DiscoverTool.pdb

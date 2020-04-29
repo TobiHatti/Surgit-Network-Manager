@@ -100,7 +100,6 @@ H:\Git\Surgit\Surgit-NetworkManager\bin\Release\Syncfusion.GridCommon.WinForms.x
 H:\Git\Surgit\Surgit-NetworkManager\bin\Release\Syncfusion.Grid.Base.xml
 H:\Git\Surgit\Surgit-NetworkManager\bin\Release\Syncfusion.SpellChecker.Base.xml
 H:\Git\Surgit\Surgit-NetworkManager\bin\Release\Syncfusion.Grid.Windows.XmlSerializers.dll
-H:\Git\Surgit\Surgit-NetworkManager\obj\Release\Surgit_NetworkManager.csprojAssemblyReference.cache
 H:\Git\Surgit\Surgit-NetworkManager\obj\Release\Surgit_NetworkManager.AddDeviceSite.resources
 H:\Git\Surgit\Surgit-NetworkManager\obj\Release\Surgit_NetworkManager.AddEditDevice.resources
 H:\Git\Surgit\Surgit-NetworkManager\obj\Release\Surgit_NetworkManager.DeviceTypeSelector.resources

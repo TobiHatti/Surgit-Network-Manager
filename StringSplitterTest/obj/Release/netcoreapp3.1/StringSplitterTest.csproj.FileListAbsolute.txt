@@ -1,0 +1,13 @@
+H:\Git\Surgit\StringSplitterTest\bin\Release\netcoreapp3.1\StringSplitterTest.exe
+H:\Git\Surgit\StringSplitterTest\bin\Release\netcoreapp3.1\StringSplitterTest.deps.json
+H:\Git\Surgit\StringSplitterTest\bin\Release\netcoreapp3.1\StringSplitterTest.runtimeconfig.json
+H:\Git\Surgit\StringSplitterTest\bin\Release\netcoreapp3.1\StringSplitterTest.runtimeconfig.dev.json
+H:\Git\Surgit\StringSplitterTest\bin\Release\netcoreapp3.1\StringSplitterTest.dll
+H:\Git\Surgit\StringSplitterTest\bin\Release\netcoreapp3.1\StringSplitterTest.pdb
+H:\Git\Surgit\StringSplitterTest\obj\Release\netcoreapp3.1\StringSplitterTest.csprojAssemblyReference.cache
+H:\Git\Surgit\StringSplitterTest\obj\Release\netcoreapp3.1\StringSplitterTest.csproj.CoreCompileInputs.cache
+H:\Git\Surgit\StringSplitterTest\obj\Release\netcoreapp3.1\StringSplitterTest.AssemblyInfoInputs.cache
+H:\Git\Surgit\StringSplitterTest\obj\Release\netcoreapp3.1\StringSplitterTest.AssemblyInfo.cs
+H:\Git\Surgit\StringSplitterTest\obj\Release\netcoreapp3.1\StringSplitterTest.dll
+H:\Git\Surgit\StringSplitterTest\obj\Release\netcoreapp3.1\StringSplitterTest.pdb
+H:\Git\Surgit\StringSplitterTest\obj\Release\netcoreapp3.1\StringSplitterTest.genruntimeconfig.cache

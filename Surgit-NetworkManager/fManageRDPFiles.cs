@@ -5,7 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Data.SQLite;
 using System.Drawing;
-
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using Syncfusion.WinForms.Controls;
@@ -93,6 +93,7 @@ namespace Surgit_NetworkManager
 
         private void btnSelectFile_Click(object sender, EventArgs e)
         {
+            if(File.Exists(txbRDPPath.Text)) ofdOpenRDPFile.InitialDirectory = Path.GetDirectoryName(txbRDPPath.Text);
             if(ofdOpenRDPFile.ShowDialog() == DialogResult.OK)
             {
                 txbRDPPath.Text = ofdOpenRDPFile.FileName;
