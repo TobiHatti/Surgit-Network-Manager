@@ -664,7 +664,10 @@ namespace Surgit_NetworkManager
 
         private void btnLinkRDP_Click(object sender, EventArgs e)
         {
-            ofdOpenRDPFile.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            if (string.IsNullOrEmpty(ofdOpenRDPFile.FileName)) ofdOpenRDPFile.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            else ofdOpenRDPFile.InitialDirectory = Path.GetDirectoryName(ofdOpenRDPFile.FileName);
+
+            ofdOpenRDPFile.FileName = "";
 
             if(ofdOpenRDPFile.ShowDialog() == DialogResult.OK)
             {
