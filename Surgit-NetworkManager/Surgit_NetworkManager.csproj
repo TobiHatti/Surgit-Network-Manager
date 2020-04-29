@@ -622,11 +622,12 @@
     <None Include="Resources\SurgitLogo.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\SurgitSplashNew3_S.png" />
     <None Include="Resources\SurgitFavicon.ico" />
     <None Include="Resources\surgitLogo.ico" />
     <None Include="Resources\uninst.ico" />
     <None Include="Resources\SurgitLogoNew4_S.png" />
+    <None Include="Resources\SurgitSplashNew3_S.png" />
+    <None Include="Resources\SplashNewConverted.png" />
     <Content Include="SurgitLogo.ico" />
   </ItemGroup>
   <ItemGroup>

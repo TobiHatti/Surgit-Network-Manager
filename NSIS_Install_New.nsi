@@ -81,6 +81,7 @@ Section "Hauptgruppe" SEC01
   File "Surgit-NetworkManager\bin\Release\Syncfusion.XlsIO.Base.dll"
   File "Surgit-NetworkManager\bin\Release\System.Data.SQLite.dll"
   File "Surgit-NetworkManager\bin\Release\System.Data.SQLite.dll.config"
+  File "Surgit-NetworkManager\bin\Release\Splash.png"
   SetOutPath "$INSTDIR\x64"
   File "Surgit-NetworkManager\bin\Release\x64\SQLite.Interop.dll"
   File "Surgit-NetworkManager\bin\Release\x64\sqlite3.dll"
@@ -147,6 +148,7 @@ Section Uninstall
   Delete "$INSTDIR\Surgit_NetworkManager.exe"
   Delete "$INSTDIR\surgitBlank.db"
   Delete "$INSTDIR\stdole.dll"
+  Delete "$INSTDIR\Splash.png"
   Delete "$INSTDIR\MarkdownSharp.dll"
   Delete "$INSTDIR\EnvDTE.dll"
 

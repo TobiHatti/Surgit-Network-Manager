@@ -37,7 +37,7 @@ namespace Surgit_NetworkManager
         public SplashScreen()
         {
             InitializeComponent();
-            pbxSplashContent.Image = Properties.Resources.SurgitSplash;
+            pbxSplashContent.Image = Image.FromFile("Splash.png");
 
             lblSurgitVersion.Text = "Version " + System.Reflection.Assembly.GetEntryAssembly().GetName().Version.ToString(3);
         }

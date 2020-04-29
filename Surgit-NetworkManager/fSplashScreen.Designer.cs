@@ -48,10 +48,10 @@
             // lblSurgitVersion
             // 
             this.lblSurgitVersion.AutoSize = true;
-            this.lblSurgitVersion.BackColor = System.Drawing.Color.Transparent;
+            this.lblSurgitVersion.BackColor = System.Drawing.Color.DodgerBlue;
             this.lblSurgitVersion.Font = new System.Drawing.Font("Yu Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSurgitVersion.ForeColor = System.Drawing.Color.White;
-            this.lblSurgitVersion.Location = new System.Drawing.Point(512, 405);
+            this.lblSurgitVersion.Location = new System.Drawing.Point(284, 104);
             this.lblSurgitVersion.Name = "lblSurgitVersion";
             this.lblSurgitVersion.Size = new System.Drawing.Size(129, 27);
             this.lblSurgitVersion.TabIndex = 1;
@@ -61,7 +61,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(122)))), ((int)(((byte)(232)))));
+            this.BackColor = System.Drawing.Color.Magenta;
             this.ClientSize = new System.Drawing.Size(888, 500);
             this.ControlBox = false;
             this.Controls.Add(this.lblSurgitVersion);
@@ -72,7 +72,7 @@
             this.Name = "SplashScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(122)))), ((int)(((byte)(232)))));
+            this.TransparencyKey = System.Drawing.Color.Magenta;
             this.Shown += new System.EventHandler(this.SplashScreen_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.pbxSplashContent)).EndInit();
             this.ResumeLayout(false);
