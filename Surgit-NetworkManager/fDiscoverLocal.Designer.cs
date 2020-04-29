@@ -206,6 +206,8 @@
             this.MaximizeBox = false;
             this.Name = "DiscoverLocal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Style.TitleBar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.Style.TitleBar.ForeColor = System.Drawing.Color.White;
             this.Text = "Discover This Device";
             this.ResumeLayout(false);
             this.PerformLayout();

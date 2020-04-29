@@ -129,6 +129,9 @@
             this.MaximizeBox = false;
             this.Name = "AddDeviceSite";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Style.TitleBar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.Style.TitleBar.BottomBorderColor = System.Drawing.Color.White;
+            this.Style.TitleBar.ForeColor = System.Drawing.Color.White;
             this.Text = "Add Device Site";
             this.ResumeLayout(false);
             this.PerformLayout();

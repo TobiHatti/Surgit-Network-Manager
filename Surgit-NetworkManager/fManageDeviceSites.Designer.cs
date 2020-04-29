@@ -176,6 +176,8 @@
             this.MaximizeBox = false;
             this.Name = "ManageDeviceSites";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Style.TitleBar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.Style.TitleBar.ForeColor = System.Drawing.Color.White;
             this.Text = "Manage Device Sites";
             this.Load += new System.EventHandler(this.ManageDeviceSites_Load);
             this.ResumeLayout(false);

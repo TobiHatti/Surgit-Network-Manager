@@ -190,6 +190,8 @@
             this.MaximizeBox = false;
             this.Name = "DiscoverDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Style.TitleBar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.Style.TitleBar.ForeColor = System.Drawing.Color.White;
             this.Text = "Discover";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DiscoverDialog_FormClosing);
             this.Load += new System.EventHandler(this.DiscoverDialog_Load);

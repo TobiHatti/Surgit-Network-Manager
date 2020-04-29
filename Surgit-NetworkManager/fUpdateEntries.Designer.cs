@@ -106,6 +106,8 @@
             this.MaximizeBox = false;
             this.Name = "UpdateEntries";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Style.TitleBar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.Style.TitleBar.ForeColor = System.Drawing.Color.White;
             this.Text = "Update Entries";
             this.Load += new System.EventHandler(this.UpdateEntries_Load);
             this.ResumeLayout(false);

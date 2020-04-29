@@ -1031,6 +1031,16 @@ namespace Surgit_NetworkManager.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
+        /// </summary>
+        public static System.Drawing.Icon SurgitFavicon {
+            get {
+                object obj = ResourceManager.GetObject("SurgitFavicon", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap SurgitLogo {
@@ -1043,9 +1053,9 @@ namespace Surgit_NetworkManager.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
         /// </summary>
-        public static System.Drawing.Icon SurgitLogo1 {
+        public static System.Drawing.Icon surgitLogo1 {
             get {
-                object obj = ResourceManager.GetObject("SurgitLogo1", resourceCulture);
+                object obj = ResourceManager.GetObject("surgitLogo1", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
@@ -1146,6 +1156,16 @@ namespace Surgit_NetworkManager.Properties {
         public static System.Drawing.Icon TabletComputer_RAW {
             get {
                 object obj = ResourceManager.GetObject("TabletComputer_RAW", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
+        /// </summary>
+        public static System.Drawing.Icon uninst {
+            get {
+                object obj = ResourceManager.GetObject("uninst", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }

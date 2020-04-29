@@ -18,6 +18,8 @@ namespace Surgit_NetworkManager
         {
             InitializeComponent();
             pbxSplashContent.Image = Properties.Resources.SurgitSplash;
+
+            lblSurgitVersion.Text = "Version " + System.Reflection.Assembly.GetEntryAssembly().GetName().Version.ToString(3);
         }
 
         System.Windows.Forms.Timer tmr;

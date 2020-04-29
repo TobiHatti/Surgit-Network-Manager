@@ -106,6 +106,8 @@
             this.IconSize = new System.Drawing.Size(30, 30);
             this.Name = "DeviceTypeSelector";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Style.TitleBar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.Style.TitleBar.ForeColor = System.Drawing.Color.White;
             this.Text = "Select Device Type";
             this.ResumeLayout(false);
 
