@@ -149,12 +149,71 @@ namespace Surgit_NetworkManager
             int entryCtr = 0;
             int onlineCtr = 0;
 
+            
+
+            string sqlQuery = $@"
+                SELECT * FROM 
+                (
+                    SELECT
+	                    Devices.MACAddress AS MACAddress,
+	                    Devices.DeviceType AS DeviceType,
+	                    Devices.Name AS Name,
+	                    Devices.Description AS Description,
+	                    Devices.Hostname AS Hostname,
+	                    Devices.IP4Address AS IP4Address,
+	                    Devices.IP6Address AS IP6Address,
+	                    Devices.LastSeen AS LastSeen,
+	                    Devices.LastPowerState AS LastPowerState,
+	                    Devices.IsHidden AS IsHidden,
+	                    false AS IsGroup
+                    FROM Devices 
+                    LEFT JOIN GroupAssigns ON Devices.MACAddress = GroupAssigns.MACAddress 
+                    WHERE GroupAssigns.MACAddress IS NULL
+                    UNION ALL
+                    SELECT
+	                    GDevices.MACAddress AS MACAddress,
+	                    Groups.DeviceType AS DeviceType,
+	                    Groups.Name AS Name,
+	                    Groups.Description AS Description,
+	                    GDevices.Hostname AS Hostname,
+	                    GDevices.IP4Address AS IP4Address,
+	                    GDevices.IP6Address AS IP6Address,
+	                    GDevices.LastSeen AS LastSeen,
+	                    GDevices.LastPowerState AS LastPowerState,
+	                    GDevices.IsHidden AS IsHidden,
+	                    true AS IsGroup
+                    FROM Groups
+                    LEFT JOIN GroupAssigns AS GGroupAssigns
+                    ON Groups.ID = GGroupAssigns.GroupID
+                    LEFT JOIN Devices AS GDevices
+                    ON GGroupAssigns.MACAddress = GDevices.MACAddress
+                    WHERE GGroupAssigns.MACAddress IS NOT NULL
+                    AND GGroupAssigns.IsPrimary = true
+                    GROUP BY GGroupAssigns.GroupID
+                )
+                {orderBy}
+            ";
+
             // Load all devices and add then to the view
             sql.Open();
-            using (SQLiteDataReader reader = sql.ExecuteQuery($"SELECT * FROM Devices {orderBy}"))
+            using (SQLiteDataReader reader = sql.ExecuteQuery(sqlQuery))
             while(reader.Read())
             {
-                if (!Convert.ToBoolean(reader["IsHidden"]) || (Convert.ToBoolean(reader["IsHidden"]) && chbShowHiddenDevices.Checked))
+                if(Convert.ToBoolean(reader["IsGroup"]))
+                {
+                    string powerState = "_RAW";
+
+                    string devicePrefix = "";
+
+                    // Add device to view
+                    grvDevices.GroupViewItems.Add(
+                    new GroupViewItem(
+                        devicePrefix + Convert.ToString(reader["Name"]),
+                        grvDevices.LargeImageList.Images.IndexOfKey(
+                            Convert.ToString(reader["DeviceType"]) + powerState)
+                    ));
+                }
+                else if (!Convert.ToBoolean(reader["IsHidden"]) || (Convert.ToBoolean(reader["IsHidden"]) && chbShowHiddenDevices.Checked))
                 {
                     string powerState = "_ON";
 

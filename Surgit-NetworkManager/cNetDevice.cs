@@ -98,6 +98,8 @@ namespace Surgit_NetworkManager
 
                 imgList.Images.Add(device.ToString() + "_ON", (Icon)Resources.ResourceManager.GetObject($"{device}_ON"));
                 imgList.Images.Add(device.ToString() + "_OFF", (Icon)Resources.ResourceManager.GetObject($"{device}_OFF"));
+                imgList.Images.Add(device.ToString() + "_GroupON", (Icon)Resources.ResourceManager.GetObject($"{device}_GroupON"));
+                imgList.Images.Add(device.ToString() + "_GroupOFF", (Icon)Resources.ResourceManager.GetObject($"{device}_GroupOFF"));
                 imgList.Images.Add(device.ToString() + "_RAW", (Icon)Resources.ResourceManager.GetObject($"{device}_RAW"));
             }
 
