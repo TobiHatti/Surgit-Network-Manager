@@ -104,6 +104,12 @@
     <Compile Include="fAddEditDevice.Designer.cs">
       <DependentUpon>fAddEditDevice.cs</DependentUpon>
     </Compile>
+    <Compile Include="fAddEditGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fAddEditGroup.Designer.cs">
+      <DependentUpon>fAddEditGroup.cs</DependentUpon>
+    </Compile>
     <Compile Include="fDeviceTypeSelector.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fAddEditDevice.resx">
       <DependentUpon>fAddEditDevice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fAddEditGroup.resx">
+      <DependentUpon>fAddEditGroup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fDeviceTypeSelector.resx">
       <DependentUpon>fDeviceTypeSelector.cs</DependentUpon>
