@@ -84,11 +84,11 @@ namespace Surgit_NetworkManager
 
     public class NetDevice
     {
-        public static ImageList GetImageList()
+        public static ImageList GetImageList(int size = 64)
         {
             ImageList imgList = new ImageList
             {
-                ImageSize = new Size(64, 64),
+                ImageSize = new Size(size, size),
                 ColorDepth = ColorDepth.Depth32Bit
             };
 

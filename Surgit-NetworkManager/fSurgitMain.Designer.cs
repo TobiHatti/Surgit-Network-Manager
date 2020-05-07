@@ -118,7 +118,11 @@
             this.label13 = new System.Windows.Forms.Label();
             this.chbShowDevicesInGroups = new System.Windows.Forms.CheckBox();
             this.chbShowHiddenDevices = new System.Windows.Forms.CheckBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lblDeviceViewTitle = new System.Windows.Forms.Label();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbRemoveDeviceFromGroup = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbSetDeviceAsGroupPrimary = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.rbcRibbonMenu)).BeginInit();
             this.rbcRibbonMenu.SuspendLayout();
             this.tstExplore.Panel.SuspendLayout();
@@ -165,7 +169,7 @@
             this.rbcRibbonMenu.QuickPanelImageLayout = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.rbcRibbonMenu.RibbonHeaderImage = Syncfusion.Windows.Forms.Tools.RibbonHeaderImage.None;
             this.rbcRibbonMenu.RibbonStyle = Syncfusion.Windows.Forms.Tools.RibbonStyle.Office2016;
-            this.rbcRibbonMenu.SelectedTab = this.tstGroups;
+            this.rbcRibbonMenu.SelectedTab = this.tstExplore;
             this.rbcRibbonMenu.ShowRibbonDisplayOptionButton = true;
             this.rbcRibbonMenu.Size = new System.Drawing.Size(1022, 189);
             this.rbcRibbonMenu.SystemText.QuickAccessDialogDropDownName = "Start menu";
@@ -418,13 +422,17 @@
             this.toolStripEx7.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnCreateGroup,
             this.btnEditGroup,
-            this.btnDeleteGroup});
+            this.btnDeleteGroup,
+            this.toolStripSeparator5,
+            this.tsbRemoveDeviceFromGroup,
+            this.toolStripSeparator6,
+            this.tsbSetDeviceAsGroupPrimary});
             this.toolStripEx7.Location = new System.Drawing.Point(0, 1);
             this.toolStripEx7.Name = "toolStripEx7";
             this.toolStripEx7.Office12Mode = false;
             this.toolStripEx7.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.toolStripEx7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripEx7.Size = new System.Drawing.Size(309, 120);
+            this.toolStripEx7.Size = new System.Drawing.Size(571, 120);
             this.toolStripEx7.TabIndex = 0;
             this.toolStripEx7.Text = "Groups";
             // 
@@ -435,9 +443,10 @@
             this.btnCreateGroup.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnCreateGroup.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnCreateGroup.Name = "btnCreateGroup";
-            this.btnCreateGroup.Size = new System.Drawing.Size(100, 82);
+            this.btnCreateGroup.Size = new System.Drawing.Size(110, 82);
             this.btnCreateGroup.Text = "Create\r\nGroup";
             this.btnCreateGroup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCreateGroup.Click += new System.EventHandler(this.btnCreateGroup_Click);
             // 
             // btnEditGroup
             // 
@@ -447,10 +456,11 @@
             this.btnEditGroup.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnEditGroup.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditGroup.Name = "btnEditGroup";
-            this.btnEditGroup.Size = new System.Drawing.Size(100, 82);
+            this.btnEditGroup.Size = new System.Drawing.Size(110, 82);
             this.btnEditGroup.Tag = "";
             this.btnEditGroup.Text = "Edit\r\nGroup";
             this.btnEditGroup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnEditGroup.Click += new System.EventHandler(this.btnEditGroup_Click);
             // 
             // btnDeleteGroup
             // 
@@ -460,7 +470,7 @@
             this.btnDeleteGroup.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnDeleteGroup.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDeleteGroup.Name = "btnDeleteGroup";
-            this.btnDeleteGroup.Size = new System.Drawing.Size(100, 82);
+            this.btnDeleteGroup.Size = new System.Drawing.Size(110, 82);
             this.btnDeleteGroup.Text = "Delete\r\nGroup";
             this.btnDeleteGroup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnDeleteGroup.Click += new System.EventHandler(this.btnDeleteGroup_Click);
@@ -475,12 +485,12 @@
             this.toolStripEx8.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbEnterGroupview,
             this.tsbExitGroupview});
-            this.toolStripEx8.Location = new System.Drawing.Point(311, 1);
+            this.toolStripEx8.Location = new System.Drawing.Point(573, 1);
             this.toolStripEx8.Name = "toolStripEx8";
             this.toolStripEx8.Office12Mode = false;
             this.toolStripEx8.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.toolStripEx8.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripEx8.Size = new System.Drawing.Size(209, 120);
+            this.toolStripEx8.Size = new System.Drawing.Size(229, 120);
             this.toolStripEx8.TabIndex = 1;
             this.toolStripEx8.Text = "Navigation";
             // 
@@ -492,7 +502,7 @@
             this.tsbEnterGroupview.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsbEnterGroupview.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbEnterGroupview.Name = "tsbEnterGroupview";
-            this.tsbEnterGroupview.Size = new System.Drawing.Size(100, 82);
+            this.tsbEnterGroupview.Size = new System.Drawing.Size(110, 82);
             this.tsbEnterGroupview.Text = "Enter\r\nGroupview";
             this.tsbEnterGroupview.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tsbEnterGroupview.Click += new System.EventHandler(this.tsbEnterGroupview_Click);
@@ -505,7 +515,7 @@
             this.tsbExitGroupview.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsbExitGroupview.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbExitGroupview.Name = "tsbExitGroupview";
-            this.tsbExitGroupview.Size = new System.Drawing.Size(100, 82);
+            this.tsbExitGroupview.Size = new System.Drawing.Size(110, 82);
             this.tsbExitGroupview.Text = "Return to\r\nDeviceview";
             this.tsbExitGroupview.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tsbExitGroupview.Click += new System.EventHandler(this.tsbExitGroupview_Click);
@@ -1270,7 +1280,7 @@
             this.spcSplitter.Panel2.Controls.Add(this.chbShowDevicesInGroups);
             this.spcSplitter.Panel2.Controls.Add(this.chbShowHiddenDevices);
             this.spcSplitter.Panel2.Controls.Add(this.label9);
-            this.spcSplitter.Panel2.Controls.Add(this.label11);
+            this.spcSplitter.Panel2.Controls.Add(this.lblDeviceViewTitle);
             this.spcSplitter.Panel2.Controls.Add(this.lblDeviceOnlineCount);
             this.spcSplitter.Panel2.Controls.Add(this.cbxSortOrder);
             this.spcSplitter.Panel2.Controls.Add(this.cbxSortBy);
@@ -1336,17 +1346,52 @@
             this.chbShowHiddenDevices.UseVisualStyleBackColor = true;
             this.chbShowHiddenDevices.CheckedChanged += new System.EventHandler(this.chbShowHiddenDevices_CheckedChanged);
             // 
-            // label11
+            // lblDeviceViewTitle
             // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label11.Location = new System.Drawing.Point(6, 64);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(69, 23);
-            this.label11.TabIndex = 17;
-            this.label11.Text = "Devices";
+            this.lblDeviceViewTitle.AutoSize = true;
+            this.lblDeviceViewTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblDeviceViewTitle.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeviceViewTitle.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.lblDeviceViewTitle.Location = new System.Drawing.Point(6, 64);
+            this.lblDeviceViewTitle.Name = "lblDeviceViewTitle";
+            this.lblDeviceViewTitle.Size = new System.Drawing.Size(69, 23);
+            this.lblDeviceViewTitle.TabIndex = 17;
+            this.lblDeviceViewTitle.Text = "Devices";
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 101);
+            // 
+            // tsbRemoveDeviceFromGroup
+            // 
+            this.tsbRemoveDeviceFromGroup.AutoSize = false;
+            this.tsbRemoveDeviceFromGroup.Enabled = false;
+            this.tsbRemoveDeviceFromGroup.Image = global::Surgit_NetworkManager.Properties.Resources.delete;
+            this.tsbRemoveDeviceFromGroup.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbRemoveDeviceFromGroup.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbRemoveDeviceFromGroup.Name = "tsbRemoveDeviceFromGroup";
+            this.tsbRemoveDeviceFromGroup.Size = new System.Drawing.Size(110, 82);
+            this.tsbRemoveDeviceFromGroup.Text = "Remove Device\r\nfrom Group";
+            this.tsbRemoveDeviceFromGroup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 101);
+            // 
+            // tsbSetDeviceAsGroupPrimary
+            // 
+            this.tsbSetDeviceAsGroupPrimary.AutoSize = false;
+            this.tsbSetDeviceAsGroupPrimary.Enabled = false;
+            this.tsbSetDeviceAsGroupPrimary.Image = global::Surgit_NetworkManager.Properties.Resources.start;
+            this.tsbSetDeviceAsGroupPrimary.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbSetDeviceAsGroupPrimary.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbSetDeviceAsGroupPrimary.Name = "tsbSetDeviceAsGroupPrimary";
+            this.tsbSetDeviceAsGroupPrimary.Size = new System.Drawing.Size(110, 82);
+            this.tsbSetDeviceAsGroupPrimary.Text = "Set Device\r\nas Primary";
+            this.tsbSetDeviceAsGroupPrimary.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbSetDeviceAsGroupPrimary.Click += new System.EventHandler(this.tsbSetDeviceAsGroupPrimary_Click);
             // 
             // SurgitMain
             // 
@@ -1490,7 +1535,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.WebBrowser webMarkdown;
         private Syncfusion.Windows.Forms.Tools.SplitContainerAdv spcSplitter;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblDeviceViewTitle;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.CheckBox chbShowHiddenDevices;
@@ -1503,6 +1548,10 @@
         private Syncfusion.Windows.Forms.Tools.ToolStripEx toolStripEx8;
         private System.Windows.Forms.ToolStripButton tsbEnterGroupview;
         private System.Windows.Forms.ToolStripButton tsbExitGroupview;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripButton tsbRemoveDeviceFromGroup;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripButton tsbSetDeviceAsGroupPrimary;
     }
 }
 

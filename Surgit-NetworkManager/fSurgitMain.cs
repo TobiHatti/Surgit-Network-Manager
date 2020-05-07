@@ -205,7 +205,19 @@ namespace Surgit_NetworkManager
             }
             else
             {
-                sqlQuery = $"SELECT *, false AS IsGroup FROM Groups INNER JOIN GroupAssigns ON Groups.ID = GroupAssigns.GroupID INNER JOIN Devices ON GroupAssigns.MACAddress = Devices.MACAddress WHERE Groups.ID = '{selectedGroupID}'";
+                sqlQuery = $@"SELECT Devices.MACAddress AS MACAddress,
+
+                            Devices.DeviceType AS DeviceType,
+	                        Devices.Name AS Name,
+	                        Devices.Description AS Description,
+	                        Devices.Hostname AS Hostname,
+	                        Devices.IP4Address AS IP4Address,
+	                        Devices.IP6Address AS IP6Address,
+	                        Devices.LastSeen AS LastSeen,
+	                        Devices.LastPowerState AS LastPowerState,
+	                        Devices.IsHidden AS IsHidden,
+	                        false AS IsGroup,
+                            0 AS GroupID FROM Groups INNER JOIN GroupAssigns ON Groups.ID = GroupAssigns.GroupID INNER JOIN Devices ON GroupAssigns.MACAddress = Devices.MACAddress WHERE Groups.ID = '{selectedGroupID}'";
             }
 
             // Load all devices and add then to the view
@@ -402,6 +414,12 @@ namespace Surgit_NetworkManager
             else
             {
                 sqlQuery = $"SELECT *, false AS IsGroup, 0 AS GroupID FROM Devices WHERE MACAddress = '{grvDevices.GroupViewItems[grvDevices.SelectedItem].Tag}'";
+
+                if (showGroupDetails)
+                {
+                    tsbRemoveDeviceFromGroup.Enabled = true;
+                    tsbSetDeviceAsGroupPrimary.Enabled = true;
+                }
             }
 
             sql.Open();
@@ -1056,6 +1074,10 @@ namespace Surgit_NetworkManager
 
         private void ExitGroupView()
         {
+            lblDeviceViewTitle.Text = "Devices";
+
+            tsbSetDeviceAsGroupPrimary.Enabled = false;
+            tsbRemoveDeviceFromGroup.Enabled = false;
             tsbExitGroupview.Enabled = false;
             btnEditGroup.Enabled = false;
             btnCreateGroup.Enabled = true;
@@ -1068,6 +1090,8 @@ namespace Surgit_NetworkManager
 
         private void EnterGroupView()
         {
+            lblDeviceViewTitle.Text = "Devices - Group: " + sql.ExecuteScalarACon<string>($"SELECT Name FROM Groups WHERE ID = '{selectedGroupID}'");
+
             tstGroups.Checked = true;
 
             tsbEnterGroupview.Enabled = false;
@@ -1078,7 +1102,7 @@ namespace Surgit_NetworkManager
 
             showGroupDetails = true;
             UpdateDeviceList();
-            DeselectItem();
+
         }
 
         private void btnDeleteGroup_Click(object sender, EventArgs e)
@@ -1100,6 +1124,57 @@ namespace Surgit_NetworkManager
                 sql.Close();
 
                 ExitGroupView();
+            }
+        }
+
+        private void tsbSetDeviceAsGroupPrimary_Click(object sender, EventArgs e)
+        {
+            if (selectedGroupID != 0 && !string.IsNullOrEmpty(txbDeviceMac.Text))
+            {
+                sql.Open();
+                sql.TransactionBegin();
+                try
+                {
+                    sql.ExecuteNonQuery($"UPDATE GroupAssigns SET IsPrimary = '0' WHERE GroupID = '{selectedGroupID}'");
+                    sql.ExecuteNonQuery($"UPDATE GroupAssigns SET IsPrimary = '1' WHERE GroupID = '{selectedGroupID}' AND MACAddress = '{txbDeviceMac.Text}'");
+                    sql.TransactionCommit();
+                }
+                catch
+                {
+                    sql.TransactionRollback();
+                }
+
+                sql.Close();
+
+                UpdateDeviceList();
+                DeselectItem();
+                MessageBox.Show("Primary-Device for the group has been set successfully!", "Primary Device", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else MessageBox.Show("Could not set primary-device of the group.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void btnCreateGroup_Click(object sender, EventArgs e)
+        {
+            AddEditGroup addGroup = new AddEditGroup();
+            addGroup.IsEditMode = false;
+
+            if(addGroup.ShowDialog() == DialogResult.OK)
+            {
+                UpdateDeviceList();
+                DeselectItem();
+            }
+        }
+
+        private void btnEditGroup_Click(object sender, EventArgs e)
+        {
+            AddEditGroup editGroup = new AddEditGroup();
+            editGroup.IsEditMode = true;
+            editGroup.GroupID = selectedGroupID;
+
+            if (editGroup.ShowDialog() == DialogResult.OK)
+            {
+                UpdateDeviceList();
+                DeselectItem();
             }
         }
     }
