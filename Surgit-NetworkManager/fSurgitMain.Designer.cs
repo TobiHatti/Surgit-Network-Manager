@@ -116,6 +116,9 @@
             this.chbShowHiddenDevices = new System.Windows.Forms.CheckBox();
             this.label11 = new System.Windows.Forms.Label();
             this.chbShowDevicesInGroups = new System.Windows.Forms.CheckBox();
+            this.toolStripEx8 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
+            this.tsbEnterGroupview = new System.Windows.Forms.ToolStripButton();
+            this.tsbExitGroupview = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.rbcRibbonMenu)).BeginInit();
             this.rbcRibbonMenu.SuspendLayout();
             this.tstExplore.Panel.SuspendLayout();
@@ -135,6 +138,7 @@
             this.spcSplitter.Panel1.SuspendLayout();
             this.spcSplitter.Panel2.SuspendLayout();
             this.spcSplitter.SuspendLayout();
+            this.toolStripEx8.SuspendLayout();
             this.SuspendLayout();
             // 
             // rbcRibbonMenu
@@ -394,6 +398,7 @@
             // rbcRibbonMenu.ribbonPanel2
             // 
             this.tstGroups.Panel.Controls.Add(this.toolStripEx7);
+            this.tstGroups.Panel.Controls.Add(this.toolStripEx8);
             this.tstGroups.Panel.Name = "ribbonPanel2";
             this.tstGroups.Panel.ScrollPosition = 0;
             this.tstGroups.Panel.TabIndex = 5;
@@ -419,7 +424,7 @@
             this.toolStripEx7.Office12Mode = false;
             this.toolStripEx7.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.toolStripEx7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripEx7.Size = new System.Drawing.Size(249, 117);
+            this.toolStripEx7.Size = new System.Drawing.Size(309, 117);
             this.toolStripEx7.TabIndex = 0;
             this.toolStripEx7.Text = "Groups";
             // 
@@ -430,18 +435,19 @@
             this.btnCreateGroup.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnCreateGroup.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnCreateGroup.Name = "btnCreateGroup";
-            this.btnCreateGroup.Size = new System.Drawing.Size(80, 82);
+            this.btnCreateGroup.Size = new System.Drawing.Size(100, 82);
             this.btnCreateGroup.Text = "Create\r\nGroup";
             this.btnCreateGroup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // btnEditGroup
             // 
             this.btnEditGroup.AutoSize = false;
+            this.btnEditGroup.Enabled = false;
             this.btnEditGroup.Image = global::Surgit_NetworkManager.Properties.Resources.edit;
             this.btnEditGroup.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnEditGroup.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditGroup.Name = "btnEditGroup";
-            this.btnEditGroup.Size = new System.Drawing.Size(80, 82);
+            this.btnEditGroup.Size = new System.Drawing.Size(100, 82);
             this.btnEditGroup.Tag = "";
             this.btnEditGroup.Text = "Edit\r\nGroup";
             this.btnEditGroup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -449,11 +455,12 @@
             // btnDeleteGroup
             // 
             this.btnDeleteGroup.AutoSize = false;
+            this.btnDeleteGroup.Enabled = false;
             this.btnDeleteGroup.Image = global::Surgit_NetworkManager.Properties.Resources.delete;
             this.btnDeleteGroup.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnDeleteGroup.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDeleteGroup.Name = "btnDeleteGroup";
-            this.btnDeleteGroup.Size = new System.Drawing.Size(80, 82);
+            this.btnDeleteGroup.Size = new System.Drawing.Size(100, 82);
             this.btnDeleteGroup.Text = "Delete\r\nGroup";
             this.btnDeleteGroup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
@@ -491,7 +498,7 @@
             this.toolStripEx4.Office12Mode = false;
             this.toolStripEx4.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.toolStripEx4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripEx4.Size = new System.Drawing.Size(195, 117);
+            this.toolStripEx4.Size = new System.Drawing.Size(235, 117);
             this.toolStripEx4.TabIndex = 0;
             // 
             // btnStartDeviceWOL
@@ -502,7 +509,7 @@
             this.btnStartDeviceWOL.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnStartDeviceWOL.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnStartDeviceWOL.Name = "btnStartDeviceWOL";
-            this.btnStartDeviceWOL.Size = new System.Drawing.Size(90, 82);
+            this.btnStartDeviceWOL.Size = new System.Drawing.Size(110, 82);
             this.btnStartDeviceWOL.Text = "Start Device\r\nvia WOL";
             this.btnStartDeviceWOL.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnStartDeviceWOL.Click += new System.EventHandler(this.btnStartDeviceWOL_Click);
@@ -520,7 +527,7 @@
             this.btnUpdatePowerState.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnUpdatePowerState.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnUpdatePowerState.Name = "btnUpdatePowerState";
-            this.btnUpdatePowerState.Size = new System.Drawing.Size(90, 82);
+            this.btnUpdatePowerState.Size = new System.Drawing.Size(110, 82);
             this.btnUpdatePowerState.Text = "Update \r\nPower-State";
             this.btnUpdatePowerState.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnUpdatePowerState.Click += new System.EventHandler(this.btnUpdatePowerState_Click);
@@ -1295,6 +1302,50 @@
             this.chbShowDevicesInGroups.UseVisualStyleBackColor = true;
             this.chbShowDevicesInGroups.CheckedChanged += new System.EventHandler(this.chbShowDevicesInGroups_CheckedChanged);
             // 
+            // toolStripEx8
+            // 
+            this.toolStripEx8.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStripEx8.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripEx8.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.toolStripEx8.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStripEx8.Image = null;
+            this.toolStripEx8.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbEnterGroupview,
+            this.tsbExitGroupview});
+            this.toolStripEx8.Location = new System.Drawing.Point(311, 1);
+            this.toolStripEx8.Name = "toolStripEx8";
+            this.toolStripEx8.Office12Mode = false;
+            this.toolStripEx8.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.toolStripEx8.Size = new System.Drawing.Size(240, 117);
+            this.toolStripEx8.TabIndex = 1;
+            this.toolStripEx8.Text = "Navigation";
+            // 
+            // tsbEnterGroupview
+            // 
+            this.tsbEnterGroupview.AutoSize = false;
+            this.tsbEnterGroupview.Enabled = false;
+            this.tsbEnterGroupview.Image = global::Surgit_NetworkManager.Properties.Resources.newgroup;
+            this.tsbEnterGroupview.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbEnterGroupview.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbEnterGroupview.Name = "tsbEnterGroupview";
+            this.tsbEnterGroupview.Size = new System.Drawing.Size(100, 82);
+            this.tsbEnterGroupview.Text = "Enter\r\nGroupview";
+            this.tsbEnterGroupview.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbEnterGroupview.Click += new System.EventHandler(this.tsbEnterGroupview_Click);
+            // 
+            // tsbExitGroupview
+            // 
+            this.tsbExitGroupview.AutoSize = false;
+            this.tsbExitGroupview.Enabled = false;
+            this.tsbExitGroupview.Image = global::Surgit_NetworkManager.Properties.Resources.link;
+            this.tsbExitGroupview.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbExitGroupview.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbExitGroupview.Name = "tsbExitGroupview";
+            this.tsbExitGroupview.Size = new System.Drawing.Size(100, 82);
+            this.tsbExitGroupview.Text = "Return to\r\nDeviceview";
+            this.tsbExitGroupview.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbExitGroupview.Click += new System.EventHandler(this.tsbExitGroupview_Click);
+            // 
             // SurgitMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
@@ -1353,6 +1404,8 @@
             this.spcSplitter.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcSplitter)).EndInit();
             this.spcSplitter.ResumeLayout(false);
+            this.toolStripEx8.ResumeLayout(false);
+            this.toolStripEx8.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1445,6 +1498,9 @@
         private System.Windows.Forms.ToolStripButton btnEditGroup;
         private System.Windows.Forms.ToolStripButton btnDeleteGroup;
         private System.Windows.Forms.CheckBox chbShowDevicesInGroups;
+        private Syncfusion.Windows.Forms.Tools.ToolStripEx toolStripEx8;
+        private System.Windows.Forms.ToolStripButton tsbEnterGroupview;
+        private System.Windows.Forms.ToolStripButton tsbExitGroupview;
     }
 }
 

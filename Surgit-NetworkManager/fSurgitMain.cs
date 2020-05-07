@@ -416,8 +416,22 @@ namespace Surgit_NetworkManager
                         selectedGroupID = Convert.ToInt32(reader["GroupID"]);
                         btnHideDevice.Enabled = false;
 
+                        btnEditGroup.Enabled = true;
+                        btnDeleteGroup.Enabled = true;
+                        tsbEnterGroupview.Enabled = true;
+
                     }
-                    else groupSelected = false;
+                    else
+                    {
+                        groupSelected = false;
+
+                        if (!showGroupDetails)
+                        {
+                            btnEditGroup.Enabled = false;
+                            btnDeleteGroup.Enabled = false;
+                            tsbEnterGroupview.Enabled = false;
+                        }
+                    }
 
                     txbDeviceName.Text = Convert.ToString(reader["Name"]);
                     btnChangeDeviceType.Text = SurgitManager.ReadableString(Convert.ToString(reader["DeviceType"])) + " (click to change)";
@@ -978,10 +992,7 @@ namespace Surgit_NetworkManager
             LoadDeviceData();
             if (groupSelected)
             {
-                tstGroups.Checked = true;
-                showGroupDetails = true;
-                UpdateDeviceList();
-                DeselectItem();
+                EnterGroupView();
             }
         }
 
@@ -1029,6 +1040,43 @@ namespace Surgit_NetworkManager
 
         private void chbShowDevicesInGroups_CheckedChanged(object sender, EventArgs e)
         {
+            UpdateDeviceList();
+            DeselectItem();
+        }
+
+        private void tsbEnterGroupview_Click(object sender, EventArgs e)
+        {
+            EnterGroupView();
+        }
+
+        private void tsbExitGroupview_Click(object sender, EventArgs e)
+        {
+            ExitGroupView();
+        }
+
+        private void ExitGroupView()
+        {
+            tsbExitGroupview.Enabled = false;
+            btnEditGroup.Enabled = false;
+            btnCreateGroup.Enabled = true;
+            btnDeleteGroup.Enabled = false;
+
+            showGroupDetails = false;
+            UpdateDeviceList();
+            DeselectItem();
+        }
+
+        private void EnterGroupView()
+        {
+            tstGroups.Checked = true;
+
+            tsbEnterGroupview.Enabled = false;
+            tsbExitGroupview.Enabled = true;
+            btnEditGroup.Enabled = true;
+            btnCreateGroup.Enabled = false;
+            btnDeleteGroup.Enabled = true;
+
+            showGroupDetails = true;
             UpdateDeviceList();
             DeselectItem();
         }
