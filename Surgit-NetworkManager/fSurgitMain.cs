@@ -146,10 +146,6 @@ namespace Surgit_NetworkManager
                 default: orderBy = ""; break;
             }
 
-            int entryCtr = 0;
-            int onlineCtr = 0;
-
-            
 
             string sqlQuery = $@"
                 SELECT * FROM 
@@ -197,44 +193,41 @@ namespace Surgit_NetworkManager
             // Load all devices and add then to the view
             sql.Open();
             using (SQLiteDataReader reader = sql.ExecuteQuery(sqlQuery))
-            while(reader.Read())
             {
-                if(Convert.ToBoolean(reader["IsGroup"]))
+                while (reader.Read())
                 {
-                    string powerState = "_RAW";
-
+                    string powerState;
                     string devicePrefix = "";
 
-                    // Add device to view
-                    grvDevices.GroupViewItems.Add(
-                    new GroupViewItem(
-                        devicePrefix + Convert.ToString(reader["Name"]),
-                        grvDevices.LargeImageList.Images.IndexOfKey(
-                            Convert.ToString(reader["DeviceType"]) + powerState)
-                    ));
+                    if (!Convert.ToBoolean(reader["IsHidden"]) || (Convert.ToBoolean(reader["IsHidden"]) && chbShowHiddenDevices.Checked))
+                    {
+                        if (Convert.ToBoolean(reader["IsGroup"]))
+                        {
+                            powerState = "_GroupON";
+                            if (string.IsNullOrEmpty(Convert.ToString(reader["LastPowerState"])) || !Convert.ToBoolean(reader["LastPowerState"])) powerState = "_GroupOFF";
+                        }
+                        else
+                        {
+                            powerState = "_ON";
+                            if (string.IsNullOrEmpty(Convert.ToString(reader["LastPowerState"])) || !Convert.ToBoolean(reader["LastPowerState"])) powerState = "_OFF";
+                        }
+
+                        if (Convert.ToBoolean(reader["IsHidden"])) devicePrefix = "[H] ";
+
+                        // Add device to view
+                        grvDevices.GroupViewItems.Add(
+                        new GroupViewItem(
+                            devicePrefix + Convert.ToString(reader["Name"]),
+                            grvDevices.LargeImageList.Images.IndexOfKey(
+                                Convert.ToString(reader["DeviceType"]) + powerState)
+                        ));
+                    }
                 }
-                else if (!Convert.ToBoolean(reader["IsHidden"]) || (Convert.ToBoolean(reader["IsHidden"]) && chbShowHiddenDevices.Checked))
-                {
-                    string powerState = "_ON";
-
-                    // Check if the device is powered
-                    if (!string.IsNullOrEmpty(Convert.ToString(reader["LastPowerState"])) && Convert.ToBoolean(reader["LastPowerState"])) onlineCtr++;
-                    else powerState = "_OFF";
-
-                    string devicePrefix = "";
-                    if (Convert.ToBoolean(reader["IsHidden"])) devicePrefix = "[H] ";
-
-                    // Add device to view
-                    grvDevices.GroupViewItems.Add(
-                    new GroupViewItem(
-                        devicePrefix + Convert.ToString(reader["Name"]),
-                        grvDevices.LargeImageList.Images.IndexOfKey(
-                            Convert.ToString(reader["DeviceType"]) + powerState)
-                    ));
-                }
-
-                entryCtr++;
             }
+
+            int entryCtr = sql.ExecuteScalar<int>("SELECT COUNT(*) FROM Devices");
+            int onlineCtr = sql.ExecuteScalar<int>("SELECT COUNT(*) FROM Devices WHERE LastPowerState = true");
+
             sql.Close();
 
             // Update info-display
