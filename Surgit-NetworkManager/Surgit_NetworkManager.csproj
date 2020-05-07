@@ -700,6 +700,7 @@
     <None Include="Resources\VoIP_GroupON.ico" />
     <None Include="Resources\VRHeadset_GroupON.ico" />
     <None Include="Resources\WirelessRouter_GroupON.ico" />
+    <None Include="Resources\newgroup.png" />
     <Content Include="WrapSQL_SQLite.dll" />
     <None Include="Resources\SurgitFavicon.ico" />
     <None Include="Resources\surgitLogo.ico" />

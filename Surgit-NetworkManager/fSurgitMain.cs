@@ -12,6 +12,7 @@ using System.Net.Http;
 using System.Net.NetworkInformation;
 using System.Resources;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WrapSQL;
@@ -42,6 +43,7 @@ namespace Surgit_NetworkManager
     public partial class SurgitMain : RibbonForm
     {
         private readonly WrapSQLite sql = null;
+        private bool showGroupDetails = false;
 
         public SurgitMain()
         {
@@ -146,49 +148,65 @@ namespace Surgit_NetworkManager
                 default: orderBy = ""; break;
             }
 
-
-            string sqlQuery = $@"
-                SELECT * FROM 
-                (
-                    SELECT
-	                    Devices.MACAddress AS MACAddress,
-	                    Devices.DeviceType AS DeviceType,
-	                    Devices.Name AS Name,
-	                    Devices.Description AS Description,
-	                    Devices.Hostname AS Hostname,
-	                    Devices.IP4Address AS IP4Address,
-	                    Devices.IP6Address AS IP6Address,
-	                    Devices.LastSeen AS LastSeen,
-	                    Devices.LastPowerState AS LastPowerState,
-	                    Devices.IsHidden AS IsHidden,
-	                    false AS IsGroup
-                    FROM Devices 
-                    LEFT JOIN GroupAssigns ON Devices.MACAddress = GroupAssigns.MACAddress 
-                    WHERE GroupAssigns.MACAddress IS NULL
-                    UNION ALL
-                    SELECT
-	                    GDevices.MACAddress AS MACAddress,
-	                    Groups.DeviceType AS DeviceType,
-	                    Groups.Name AS Name,
-	                    Groups.Description AS Description,
-	                    GDevices.Hostname AS Hostname,
-	                    GDevices.IP4Address AS IP4Address,
-	                    GDevices.IP6Address AS IP6Address,
-	                    GDevices.LastSeen AS LastSeen,
-	                    GDevices.LastPowerState AS LastPowerState,
-	                    GDevices.IsHidden AS IsHidden,
-	                    true AS IsGroup
-                    FROM Groups
-                    LEFT JOIN GroupAssigns AS GGroupAssigns
-                    ON Groups.ID = GGroupAssigns.GroupID
-                    LEFT JOIN Devices AS GDevices
-                    ON GGroupAssigns.MACAddress = GDevices.MACAddress
-                    WHERE GGroupAssigns.MACAddress IS NOT NULL
-                    AND GGroupAssigns.IsPrimary = true
-                    GROUP BY GGroupAssigns.GroupID
-                )
-                {orderBy}
-            ";
+            string sqlQuery;
+            if (!showGroupDetails)
+            {
+                if (chbShowDevicesInGroups.Checked)
+                {
+                    sqlQuery = $@"
+                    SELECT * FROM 
+                    (
+                        SELECT
+	                        Devices.MACAddress AS MACAddress,
+	                        Devices.DeviceType AS DeviceType,
+	                        Devices.Name AS Name,
+	                        Devices.Description AS Description,
+	                        Devices.Hostname AS Hostname,
+	                        Devices.IP4Address AS IP4Address,
+	                        Devices.IP6Address AS IP6Address,
+	                        Devices.LastSeen AS LastSeen,
+	                        Devices.LastPowerState AS LastPowerState,
+	                        Devices.IsHidden AS IsHidden,
+	                        false AS IsGroup,
+                            0 AS GroupID
+                        FROM Devices 
+                        LEFT JOIN GroupAssigns ON Devices.MACAddress = GroupAssigns.MACAddress 
+                        WHERE GroupAssigns.MACAddress IS NULL
+                        UNION ALL
+                        SELECT
+	                        GDevices.MACAddress AS MACAddress,
+	                        Groups.DeviceType AS DeviceType,
+	                        Groups.Name AS Name,
+	                        Groups.Description AS Description,
+	                        GDevices.Hostname AS Hostname,
+	                        GDevices.IP4Address AS IP4Address,
+	                        GDevices.IP6Address AS IP6Address,
+	                        GDevices.LastSeen AS LastSeen,
+	                        GDevices.LastPowerState AS LastPowerState,
+	                        GDevices.IsHidden AS IsHidden,
+	                        true AS IsGroup,
+                            Groups.ID AS GroupID
+                        FROM Groups
+                        LEFT JOIN GroupAssigns AS GGroupAssigns
+                        ON Groups.ID = GGroupAssigns.GroupID
+                        LEFT JOIN Devices AS GDevices
+                        ON GGroupAssigns.MACAddress = GDevices.MACAddress
+                        WHERE GGroupAssigns.MACAddress IS NOT NULL
+                        AND GGroupAssigns.IsPrimary = true
+                        GROUP BY GGroupAssigns.GroupID
+                    )
+                    {orderBy}
+                ";
+                }
+                else
+                {
+                    sqlQuery = $"SELECT *, false AS IsGroup FROM Devices {orderBy}";
+                }
+            }
+            else
+            {
+                sqlQuery = $"SELECT *, false AS IsGroup FROM Groups INNER JOIN GroupAssigns ON Groups.ID = GroupAssigns.GroupID INNER JOIN Devices ON GroupAssigns.MACAddress = Devices.MACAddress WHERE Groups.ID = '{selectedGroupID}'";
+            }
 
             // Load all devices and add then to the view
             sql.Open();
@@ -215,12 +233,14 @@ namespace Surgit_NetworkManager
                         if (Convert.ToBoolean(reader["IsHidden"])) devicePrefix = "[H] ";
 
                         // Add device to view
-                        grvDevices.GroupViewItems.Add(
-                        new GroupViewItem(
+                        GroupViewItem gvi = new GroupViewItem(
                             devicePrefix + Convert.ToString(reader["Name"]),
                             grvDevices.LargeImageList.Images.IndexOfKey(
                                 Convert.ToString(reader["DeviceType"]) + powerState)
-                        ));
+                        );
+                        gvi.Tag = Convert.ToString(reader["MACAddress"]);
+
+                        grvDevices.GroupViewItems.Add(gvi);
                     }
                 }
             }
@@ -267,6 +287,10 @@ namespace Surgit_NetworkManager
 
         private int selectedIndex = 0;
         private bool skipNextIndexCheck = false;
+
+        private bool groupSelected = false;
+        private int selectedGroupID = 0;
+
         private void grvDevices_GroupViewItemSelected(object sender, EventArgs e)
         {
             LoadDeviceData();
@@ -324,12 +348,77 @@ namespace Surgit_NetworkManager
             webMarkdown.Visible = true;
             txbDeviceDescription.Visible = false;
 
+
+
+            string sqlQuery;
+
+            if (chbShowDevicesInGroups.Checked && !showGroupDetails)
+            {
+                sqlQuery = $@"
+                    SELECT * FROM 
+                    (
+                        SELECT
+	                        Devices.MACAddress AS MACAddress,
+	                        Devices.DeviceType AS DeviceType,
+	                        Devices.Name AS Name,
+	                        Devices.Description AS Description,
+	                        Devices.Hostname AS Hostname,
+	                        Devices.IP4Address AS IP4Address,
+	                        Devices.IP6Address AS IP6Address,
+	                        Devices.LastSeen AS LastSeen,
+	                        Devices.LastPowerState AS LastPowerState,
+	                        Devices.IsHidden AS IsHidden,
+	                        false AS IsGroup,
+                            0 AS GroupID
+                        FROM Devices 
+                        LEFT JOIN GroupAssigns ON Devices.MACAddress = GroupAssigns.MACAddress 
+                        WHERE GroupAssigns.MACAddress IS NULL
+                        UNION ALL
+                        SELECT
+	                        GDevices.MACAddress AS MACAddress,
+	                        Groups.DeviceType AS DeviceType,
+	                        Groups.Name AS Name,
+	                        Groups.Description AS Description,
+	                        GDevices.Hostname AS Hostname,
+	                        GDevices.IP4Address AS IP4Address,
+	                        GDevices.IP6Address AS IP6Address,
+	                        GDevices.LastSeen AS LastSeen,
+	                        GDevices.LastPowerState AS LastPowerState,
+	                        GDevices.IsHidden AS IsHidden,
+	                        true AS IsGroup,
+                            Groups.ID AS GroupID
+                        FROM Groups
+                        LEFT JOIN GroupAssigns AS GGroupAssigns
+                        ON Groups.ID = GGroupAssigns.GroupID
+                        LEFT JOIN Devices AS GDevices
+                        ON GGroupAssigns.MACAddress = GDevices.MACAddress
+                        WHERE GGroupAssigns.MACAddress IS NOT NULL
+                        AND GGroupAssigns.IsPrimary = true
+                        GROUP BY GGroupAssigns.GroupID
+                    )
+                    WHERE MACAddress = '{grvDevices.GroupViewItems[grvDevices.SelectedItem].Tag}'
+                ";
+            }
+            else
+            {
+                sqlQuery = $"SELECT *, false AS IsGroup, 0 AS GroupID FROM Devices WHERE MACAddress = '{grvDevices.GroupViewItems[grvDevices.SelectedItem].Tag}'";
+            }
+
             sql.Open();
 
-            using (SQLiteDataReader reader = sql.ExecuteQuery($"SELECT * FROM Devices WHERE Name = '{grvDevices.GroupViewItems[grvDevices.SelectedItem].Text.Replace("[H] ", "")}'"))
+            using (SQLiteDataReader reader = sql.ExecuteQuery(sqlQuery))
             {
                 while (reader.Read())
                 {
+                    if (Convert.ToBoolean(reader["IsGroup"]))
+                    {
+                        groupSelected = true;
+                        selectedGroupID = Convert.ToInt32(reader["GroupID"]);
+                        btnHideDevice.Enabled = false;
+
+                    }
+                    else groupSelected = false;
+
                     txbDeviceName.Text = Convert.ToString(reader["Name"]);
                     btnChangeDeviceType.Text = SurgitManager.ReadableString(Convert.ToString(reader["DeviceType"])) + " (click to change)";
                     txbDeviceDescription.Text = Convert.ToString(reader["Description"]);
@@ -403,13 +492,22 @@ namespace Surgit_NetworkManager
         private void SaveChanges()
         {
             sql.Open();
-            if (sql.ExecuteScalar<int>($"SELECT COUNT(*) FROM Devices WHERE Name = '{txbDeviceName.Text}' AND MACAddress != '{txbDeviceMac.Text}'") == 0)
+            if (groupSelected && selectedGroupID != 0)
             {
                 btnSaveChanges.Enabled = false;
                 btnDiscardChanges.Enabled = false;
-                sql.ExecuteNonQuery($"UPDATE Devices SET Name = '{txbDeviceName.Text}', Description = '{txbDeviceDescription.Text}', DeviceType = '{deviceType}' WHERE MACAddress = '{txbDeviceMac.Text}'");
+                sql.ExecuteNonQuery($"UPDATE Groups SET Name = '{txbDeviceName.Text}', Description = '{txbDeviceDescription.Text}', DeviceType = '{deviceType}' WHERE ID = '{selectedGroupID}'");
             }
-            else MessageBox.Show("The entered Device-Name already exitst. Please enter a unique name for each device!", "Name duplicate", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
+            {
+                if (sql.ExecuteScalar<int>($"SELECT COUNT(*) FROM Devices WHERE Name = '{txbDeviceName.Text}' AND MACAddress != '{txbDeviceMac.Text}'") == 0)
+                {
+                    btnSaveChanges.Enabled = false;
+                    btnDiscardChanges.Enabled = false;
+                    sql.ExecuteNonQuery($"UPDATE Devices SET Name = '{txbDeviceName.Text}', Description = '{txbDeviceDescription.Text}', DeviceType = '{deviceType}' WHERE MACAddress = '{txbDeviceMac.Text}'");
+                }
+                else MessageBox.Show("The entered Device-Name already exitst. Please enter a unique name for each device!", "Name duplicate", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             sql.Close();
             UpdateDeviceList();
             LoadDeviceData();
@@ -878,6 +976,13 @@ namespace Surgit_NetworkManager
         private void grvDevices_GroupViewItemDoubleClick(GroupView sender, GroupViewItemDoubleClickEventArgs e)
         {
             LoadDeviceData();
+            if (groupSelected)
+            {
+                tstGroups.Checked = true;
+                showGroupDetails = true;
+                UpdateDeviceList();
+                DeselectItem();
+            }
         }
 
         private string macVendor = "";
@@ -920,6 +1025,12 @@ namespace Surgit_NetworkManager
                 txbDeviceDescription.Focus();
                 txbDeviceDescription.Select();
             }
+        }
+
+        private void chbShowDevicesInGroups_CheckedChanged(object sender, EventArgs e)
+        {
+            UpdateDeviceList();
+            DeselectItem();
         }
     }
 #pragma warning restore IDE1006

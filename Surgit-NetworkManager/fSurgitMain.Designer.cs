@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SurgitMain));
             this.rbcRibbonMenu = new Syncfusion.Windows.Forms.Tools.RibbonControlAdv();
-            this.toolStripTabItem1 = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
+            this.tstExplore = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
             this.toolStripEx2 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.lblIPRangeStart = new System.Windows.Forms.ToolStripLabel();
@@ -48,17 +48,17 @@
             this.btnAddDevice = new System.Windows.Forms.ToolStripButton();
             this.btnDeleteDevice = new System.Windows.Forms.ToolStripButton();
             this.btnEditDevice = new System.Windows.Forms.ToolStripButton();
-            this.toolStripTabItem5 = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
+            this.tstGroups = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
             this.toolStripEx7 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripTabItem2 = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
+            this.btnCreateGroup = new System.Windows.Forms.ToolStripButton();
+            this.btnEditGroup = new System.Windows.Forms.ToolStripButton();
+            this.btnDeleteGroup = new System.Windows.Forms.ToolStripButton();
+            this.tstPowerManagement = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
             this.toolStripEx4 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
             this.btnStartDeviceWOL = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnUpdatePowerState = new System.Windows.Forms.ToolStripButton();
-            this.toolStripTabItem3 = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
+            this.tstRemoteManagement = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
             this.toolStripEx6 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
             this.btnStartAutoRDP = new System.Windows.Forms.ToolStripButton();
             this.btnOpenRDPSettings = new System.Windows.Forms.ToolStripButton();
@@ -115,17 +115,18 @@
             this.label13 = new System.Windows.Forms.Label();
             this.chbShowHiddenDevices = new System.Windows.Forms.CheckBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.chbShowDevicesInGroups = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.rbcRibbonMenu)).BeginInit();
             this.rbcRibbonMenu.SuspendLayout();
-            this.toolStripTabItem1.Panel.SuspendLayout();
+            this.tstExplore.Panel.SuspendLayout();
             this.toolStripEx2.SuspendLayout();
             this.toolStripEx1.SuspendLayout();
             this.toolStripEx3.SuspendLayout();
-            this.toolStripTabItem5.Panel.SuspendLayout();
+            this.tstGroups.Panel.SuspendLayout();
             this.toolStripEx7.SuspendLayout();
-            this.toolStripTabItem2.Panel.SuspendLayout();
+            this.tstPowerManagement.Panel.SuspendLayout();
             this.toolStripEx4.SuspendLayout();
-            this.toolStripTabItem3.Panel.SuspendLayout();
+            this.tstRemoteManagement.Panel.SuspendLayout();
             this.toolStripEx6.SuspendLayout();
             this.tseRDPLinks.SuspendLayout();
             this.tseDeviceSites.SuspendLayout();
@@ -139,10 +140,10 @@
             // rbcRibbonMenu
             // 
             this.rbcRibbonMenu.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbcRibbonMenu.Header.AddMainItem(toolStripTabItem1);
-            this.rbcRibbonMenu.Header.AddMainItem(toolStripTabItem5);
-            this.rbcRibbonMenu.Header.AddMainItem(toolStripTabItem2);
-            this.rbcRibbonMenu.Header.AddMainItem(toolStripTabItem3);
+            this.rbcRibbonMenu.Header.AddMainItem(tstExplore);
+            this.rbcRibbonMenu.Header.AddMainItem(tstGroups);
+            this.rbcRibbonMenu.Header.AddMainItem(tstPowerManagement);
+            this.rbcRibbonMenu.Header.AddMainItem(tstRemoteManagement);
             this.rbcRibbonMenu.Location = new System.Drawing.Point(1, 0);
             this.rbcRibbonMenu.Margin = new System.Windows.Forms.Padding(4);
             this.rbcRibbonMenu.MenuButtonFont = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -160,7 +161,7 @@
             this.rbcRibbonMenu.QuickPanelImageLayout = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.rbcRibbonMenu.RibbonHeaderImage = Syncfusion.Windows.Forms.Tools.RibbonHeaderImage.None;
             this.rbcRibbonMenu.RibbonStyle = Syncfusion.Windows.Forms.Tools.RibbonStyle.Office2016;
-            this.rbcRibbonMenu.SelectedTab = this.toolStripTabItem5;
+            this.rbcRibbonMenu.SelectedTab = this.tstGroups;
             this.rbcRibbonMenu.ShowRibbonDisplayOptionButton = true;
             this.rbcRibbonMenu.Size = new System.Drawing.Size(1022, 186);
             this.rbcRibbonMenu.SystemText.QuickAccessDialogDropDownName = "Start menu";
@@ -171,25 +172,25 @@
             this.rbcRibbonMenu.ThemeStyle.MoreCommandsStyle.PropertyGridViewBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.rbcRibbonMenu.TitleColor = System.Drawing.Color.Black;
             // 
-            // toolStripTabItem1
+            // tstExplore
             // 
-            this.toolStripTabItem1.Name = "toolStripTabItem1";
+            this.tstExplore.Name = "tstExplore";
             // 
             // rbcRibbonMenu.ribbonPanel1
             // 
-            this.toolStripTabItem1.Panel.Controls.Add(this.toolStripEx2);
-            this.toolStripTabItem1.Panel.Controls.Add(this.toolStripEx1);
-            this.toolStripTabItem1.Panel.Controls.Add(this.toolStripEx3);
-            this.toolStripTabItem1.Panel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.toolStripTabItem1.Panel.Name = "ribbonPanel1";
-            this.toolStripTabItem1.Panel.Padding = new System.Windows.Forms.Padding(0, 1, 47, 0);
-            this.toolStripTabItem1.Panel.ScrollPosition = 0;
-            this.toolStripTabItem1.Panel.TabIndex = 2;
-            this.toolStripTabItem1.Panel.Text = "Explore";
-            this.toolStripTabItem1.Position = 0;
-            this.toolStripTabItem1.Size = new System.Drawing.Size(74, 30);
-            this.toolStripTabItem1.Tag = "1";
-            this.toolStripTabItem1.Text = "Explore";
+            this.tstExplore.Panel.Controls.Add(this.toolStripEx2);
+            this.tstExplore.Panel.Controls.Add(this.toolStripEx1);
+            this.tstExplore.Panel.Controls.Add(this.toolStripEx3);
+            this.tstExplore.Panel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.tstExplore.Panel.Name = "ribbonPanel1";
+            this.tstExplore.Panel.Padding = new System.Windows.Forms.Padding(0, 1, 47, 0);
+            this.tstExplore.Panel.ScrollPosition = 0;
+            this.tstExplore.Panel.TabIndex = 2;
+            this.tstExplore.Panel.Text = "Explore";
+            this.tstExplore.Position = 0;
+            this.tstExplore.Size = new System.Drawing.Size(74, 30);
+            this.tstExplore.Tag = "1";
+            this.tstExplore.Text = "Explore";
             // 
             // toolStripEx2
             // 
@@ -386,21 +387,21 @@
             this.btnEditDevice.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnEditDevice.Click += new System.EventHandler(this.btnEditDevice_Click);
             // 
-            // toolStripTabItem5
+            // tstGroups
             // 
-            this.toolStripTabItem5.Name = "toolStripTabItem5";
+            this.tstGroups.Name = "tstGroups";
             // 
             // rbcRibbonMenu.ribbonPanel2
             // 
-            this.toolStripTabItem5.Panel.Controls.Add(this.toolStripEx7);
-            this.toolStripTabItem5.Panel.Name = "ribbonPanel2";
-            this.toolStripTabItem5.Panel.ScrollPosition = 0;
-            this.toolStripTabItem5.Panel.TabIndex = 5;
-            this.toolStripTabItem5.Panel.Text = "Groups";
-            this.toolStripTabItem5.Position = 1;
-            this.toolStripTabItem5.Size = new System.Drawing.Size(71, 30);
-            this.toolStripTabItem5.Tag = "5";
-            this.toolStripTabItem5.Text = "Groups";
+            this.tstGroups.Panel.Controls.Add(this.toolStripEx7);
+            this.tstGroups.Panel.Name = "ribbonPanel2";
+            this.tstGroups.Panel.ScrollPosition = 0;
+            this.tstGroups.Panel.TabIndex = 5;
+            this.tstGroups.Panel.Text = "Groups";
+            this.tstGroups.Position = 1;
+            this.tstGroups.Size = new System.Drawing.Size(71, 30);
+            this.tstGroups.Tag = "5";
+            this.tstGroups.Text = "Groups";
             // 
             // toolStripEx7
             // 
@@ -410,9 +411,9 @@
             this.toolStripEx7.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStripEx7.Image = null;
             this.toolStripEx7.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton2,
-            this.toolStripButton3});
+            this.btnCreateGroup,
+            this.btnEditGroup,
+            this.btnDeleteGroup});
             this.toolStripEx7.Location = new System.Drawing.Point(0, 1);
             this.toolStripEx7.Name = "toolStripEx7";
             this.toolStripEx7.Office12Mode = false;
@@ -422,57 +423,57 @@
             this.toolStripEx7.TabIndex = 0;
             this.toolStripEx7.Text = "Groups";
             // 
-            // toolStripButton1
+            // btnCreateGroup
             // 
-            this.toolStripButton1.AutoSize = false;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(80, 82);
-            this.toolStripButton1.Text = "Create\r\nGroup";
-            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCreateGroup.AutoSize = false;
+            this.btnCreateGroup.Image = global::Surgit_NetworkManager.Properties.Resources.newgroup;
+            this.btnCreateGroup.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnCreateGroup.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCreateGroup.Name = "btnCreateGroup";
+            this.btnCreateGroup.Size = new System.Drawing.Size(80, 82);
+            this.btnCreateGroup.Text = "Create\r\nGroup";
+            this.btnCreateGroup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
-            // toolStripButton2
+            // btnEditGroup
             // 
-            this.toolStripButton2.AutoSize = false;
-            this.toolStripButton2.Image = global::Surgit_NetworkManager.Properties.Resources.edit;
-            this.toolStripButton2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(80, 82);
-            this.toolStripButton2.Tag = "";
-            this.toolStripButton2.Text = "Edit\r\nGroup";
-            this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnEditGroup.AutoSize = false;
+            this.btnEditGroup.Image = global::Surgit_NetworkManager.Properties.Resources.edit;
+            this.btnEditGroup.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnEditGroup.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEditGroup.Name = "btnEditGroup";
+            this.btnEditGroup.Size = new System.Drawing.Size(80, 82);
+            this.btnEditGroup.Tag = "";
+            this.btnEditGroup.Text = "Edit\r\nGroup";
+            this.btnEditGroup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
-            // toolStripButton3
+            // btnDeleteGroup
             // 
-            this.toolStripButton3.AutoSize = false;
-            this.toolStripButton3.Image = global::Surgit_NetworkManager.Properties.Resources.delete;
-            this.toolStripButton3.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(80, 82);
-            this.toolStripButton3.Text = "Delete\r\nGroup";
-            this.toolStripButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnDeleteGroup.AutoSize = false;
+            this.btnDeleteGroup.Image = global::Surgit_NetworkManager.Properties.Resources.delete;
+            this.btnDeleteGroup.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnDeleteGroup.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnDeleteGroup.Name = "btnDeleteGroup";
+            this.btnDeleteGroup.Size = new System.Drawing.Size(80, 82);
+            this.btnDeleteGroup.Text = "Delete\r\nGroup";
+            this.btnDeleteGroup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
-            // toolStripTabItem2
+            // tstPowerManagement
             // 
-            this.toolStripTabItem2.Name = "toolStripTabItem2";
+            this.tstPowerManagement.Name = "tstPowerManagement";
             // 
             // rbcRibbonMenu.ribbonPanel3
             // 
-            this.toolStripTabItem2.Panel.Controls.Add(this.toolStripEx4);
-            this.toolStripTabItem2.Panel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.toolStripTabItem2.Panel.Name = "ribbonPanel3";
-            this.toolStripTabItem2.Panel.Padding = new System.Windows.Forms.Padding(0, 1, 47, 0);
-            this.toolStripTabItem2.Panel.ScrollPosition = 0;
-            this.toolStripTabItem2.Panel.TabIndex = 3;
-            this.toolStripTabItem2.Panel.Text = "Power Management";
-            this.toolStripTabItem2.Position = 2;
-            this.toolStripTabItem2.Size = new System.Drawing.Size(158, 30);
-            this.toolStripTabItem2.Tag = "2";
-            this.toolStripTabItem2.Text = "Power Management";
+            this.tstPowerManagement.Panel.Controls.Add(this.toolStripEx4);
+            this.tstPowerManagement.Panel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.tstPowerManagement.Panel.Name = "ribbonPanel3";
+            this.tstPowerManagement.Panel.Padding = new System.Windows.Forms.Padding(0, 1, 47, 0);
+            this.tstPowerManagement.Panel.ScrollPosition = 0;
+            this.tstPowerManagement.Panel.TabIndex = 3;
+            this.tstPowerManagement.Panel.Text = "Power Management";
+            this.tstPowerManagement.Position = 2;
+            this.tstPowerManagement.Size = new System.Drawing.Size(158, 30);
+            this.tstPowerManagement.Tag = "2";
+            this.tstPowerManagement.Text = "Power Management";
             // 
             // toolStripEx4
             // 
@@ -524,23 +525,23 @@
             this.btnUpdatePowerState.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnUpdatePowerState.Click += new System.EventHandler(this.btnUpdatePowerState_Click);
             // 
-            // toolStripTabItem3
+            // tstRemoteManagement
             // 
-            this.toolStripTabItem3.Name = "toolStripTabItem3";
+            this.tstRemoteManagement.Name = "tstRemoteManagement";
             // 
             // rbcRibbonMenu.ribbonPanel4
             // 
-            this.toolStripTabItem3.Panel.Controls.Add(this.toolStripEx6);
-            this.toolStripTabItem3.Panel.Controls.Add(this.tseRDPLinks);
-            this.toolStripTabItem3.Panel.Controls.Add(this.tseDeviceSites);
-            this.toolStripTabItem3.Panel.Name = "ribbonPanel4";
-            this.toolStripTabItem3.Panel.ScrollPosition = 0;
-            this.toolStripTabItem3.Panel.TabIndex = 4;
-            this.toolStripTabItem3.Panel.Text = "Remote Management";
-            this.toolStripTabItem3.Position = 3;
-            this.toolStripTabItem3.Size = new System.Drawing.Size(168, 30);
-            this.toolStripTabItem3.Tag = "3";
-            this.toolStripTabItem3.Text = "Remote Management";
+            this.tstRemoteManagement.Panel.Controls.Add(this.toolStripEx6);
+            this.tstRemoteManagement.Panel.Controls.Add(this.tseRDPLinks);
+            this.tstRemoteManagement.Panel.Controls.Add(this.tseDeviceSites);
+            this.tstRemoteManagement.Panel.Name = "ribbonPanel4";
+            this.tstRemoteManagement.Panel.ScrollPosition = 0;
+            this.tstRemoteManagement.Panel.TabIndex = 4;
+            this.tstRemoteManagement.Panel.Text = "Remote Management";
+            this.tstRemoteManagement.Position = 3;
+            this.tstRemoteManagement.Size = new System.Drawing.Size(168, 30);
+            this.tstRemoteManagement.Tag = "3";
+            this.tstRemoteManagement.Text = "Remote Management";
             // 
             // toolStripEx6
             // 
@@ -1213,6 +1214,7 @@
             // 
             this.spcSplitter.Panel2.BackgroundColor = new Syncfusion.Drawing.BrushInfo(System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))));
             this.spcSplitter.Panel2.Controls.Add(this.grvDevices);
+            this.spcSplitter.Panel2.Controls.Add(this.chbShowDevicesInGroups);
             this.spcSplitter.Panel2.Controls.Add(this.chbShowHiddenDevices);
             this.spcSplitter.Panel2.Controls.Add(this.label9);
             this.spcSplitter.Panel2.Controls.Add(this.label11);
@@ -1279,6 +1281,20 @@
             this.label11.TabIndex = 17;
             this.label11.Text = "Devices";
             // 
+            // chbShowDevicesInGroups
+            // 
+            this.chbShowDevicesInGroups.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chbShowDevicesInGroups.AutoSize = true;
+            this.chbShowDevicesInGroups.Checked = true;
+            this.chbShowDevicesInGroups.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chbShowDevicesInGroups.Location = new System.Drawing.Point(317, 66);
+            this.chbShowDevicesInGroups.Name = "chbShowDevicesInGroups";
+            this.chbShowDevicesInGroups.Size = new System.Drawing.Size(191, 23);
+            this.chbShowDevicesInGroups.TabIndex = 19;
+            this.chbShowDevicesInGroups.Text = "Display devices in groups";
+            this.chbShowDevicesInGroups.UseVisualStyleBackColor = true;
+            this.chbShowDevicesInGroups.CheckedChanged += new System.EventHandler(this.chbShowDevicesInGroups_CheckedChanged);
+            // 
             // SurgitMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
@@ -1305,24 +1321,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.rbcRibbonMenu)).EndInit();
             this.rbcRibbonMenu.ResumeLayout(false);
             this.rbcRibbonMenu.PerformLayout();
-            this.toolStripTabItem1.Panel.ResumeLayout(false);
-            this.toolStripTabItem1.Panel.PerformLayout();
+            this.tstExplore.Panel.ResumeLayout(false);
+            this.tstExplore.Panel.PerformLayout();
             this.toolStripEx2.ResumeLayout(false);
             this.toolStripEx2.PerformLayout();
             this.toolStripEx1.ResumeLayout(false);
             this.toolStripEx1.PerformLayout();
             this.toolStripEx3.ResumeLayout(false);
             this.toolStripEx3.PerformLayout();
-            this.toolStripTabItem5.Panel.ResumeLayout(false);
-            this.toolStripTabItem5.Panel.PerformLayout();
+            this.tstGroups.Panel.ResumeLayout(false);
+            this.tstGroups.Panel.PerformLayout();
             this.toolStripEx7.ResumeLayout(false);
             this.toolStripEx7.PerformLayout();
-            this.toolStripTabItem2.Panel.ResumeLayout(false);
-            this.toolStripTabItem2.Panel.PerformLayout();
+            this.tstPowerManagement.Panel.ResumeLayout(false);
+            this.tstPowerManagement.Panel.PerformLayout();
             this.toolStripEx4.ResumeLayout(false);
             this.toolStripEx4.PerformLayout();
-            this.toolStripTabItem3.Panel.ResumeLayout(false);
-            this.toolStripTabItem3.Panel.PerformLayout();
+            this.tstRemoteManagement.Panel.ResumeLayout(false);
+            this.tstRemoteManagement.Panel.PerformLayout();
             this.toolStripEx6.ResumeLayout(false);
             this.toolStripEx6.PerformLayout();
             this.tseRDPLinks.ResumeLayout(false);
@@ -1344,8 +1360,8 @@
 
         #endregion
         private Syncfusion.Windows.Forms.Tools.RibbonControlAdv rbcRibbonMenu;
-        private Syncfusion.Windows.Forms.Tools.ToolStripTabItem toolStripTabItem1;
-        private Syncfusion.Windows.Forms.Tools.ToolStripTabItem toolStripTabItem2;
+        private Syncfusion.Windows.Forms.Tools.ToolStripTabItem tstExplore;
+        private Syncfusion.Windows.Forms.Tools.ToolStripTabItem tstPowerManagement;
         private System.Windows.Forms.TextBox txbDeviceName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -1369,7 +1385,7 @@
         private Syncfusion.WinForms.Controls.SfButton btnChangeDeviceType;
         private Syncfusion.WinForms.Controls.SfButton btnDiscardChanges;
         private Syncfusion.WinForms.Controls.SfButton btnSaveChanges;
-        private Syncfusion.Windows.Forms.Tools.ToolStripTabItem toolStripTabItem3;
+        private Syncfusion.Windows.Forms.Tools.ToolStripTabItem tstRemoteManagement;
         private System.ComponentModel.BackgroundWorker bgwCheckPowerState;
         private System.Windows.Forms.Timer tmrStartPowerCheck;
         private Syncfusion.Windows.Forms.Tools.ToolStripEx toolStripEx2;
@@ -1423,11 +1439,12 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.CheckBox chbShowHiddenDevices;
-        private Syncfusion.Windows.Forms.Tools.ToolStripTabItem toolStripTabItem5;
+        private Syncfusion.Windows.Forms.Tools.ToolStripTabItem tstGroups;
         private Syncfusion.Windows.Forms.Tools.ToolStripEx toolStripEx7;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.ToolStripButton btnCreateGroup;
+        private System.Windows.Forms.ToolStripButton btnEditGroup;
+        private System.Windows.Forms.ToolStripButton btnDeleteGroup;
+        private System.Windows.Forms.CheckBox chbShowDevicesInGroups;
     }
 }
 
