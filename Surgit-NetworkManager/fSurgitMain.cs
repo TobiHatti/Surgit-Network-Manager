@@ -1080,6 +1080,28 @@ namespace Surgit_NetworkManager
             UpdateDeviceList();
             DeselectItem();
         }
+
+        private void btnDeleteGroup_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to delete this device group?\r\n\r\n(This action only deletes the group, not the devices.)", "Delete Group", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                sql.Open();
+                sql.TransactionBegin();
+                try
+                {
+                    sql.ExecuteNonQuery($"DELETE FROM Groups WHERE ID = '{selectedGroupID}'");
+                    sql.ExecuteNonQuery($"DELETE FROM GroupAssigns WHERE GroupID = '{selectedGroupID}'");
+                    sql.TransactionCommit();
+                }
+                catch
+                {
+                    sql.TransactionRollback();
+                }
+                sql.Close();
+
+                ExitGroupView();
+            }
+        }
     }
 #pragma warning restore IDE1006
 }

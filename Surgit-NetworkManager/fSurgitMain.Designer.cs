@@ -424,7 +424,7 @@
             this.toolStripEx7.Office12Mode = false;
             this.toolStripEx7.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.toolStripEx7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripEx7.Size = new System.Drawing.Size(309, 117);
+            this.toolStripEx7.Size = new System.Drawing.Size(340, 117);
             this.toolStripEx7.TabIndex = 0;
             this.toolStripEx7.Text = "Groups";
             // 
@@ -463,6 +463,7 @@
             this.btnDeleteGroup.Size = new System.Drawing.Size(100, 82);
             this.btnDeleteGroup.Text = "Delete\r\nGroup";
             this.btnDeleteGroup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnDeleteGroup.Click += new System.EventHandler(this.btnDeleteGroup_Click);
             // 
             // tstPowerManagement
             // 
@@ -1312,11 +1313,11 @@
             this.toolStripEx8.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbEnterGroupview,
             this.tsbExitGroupview});
-            this.toolStripEx8.Location = new System.Drawing.Point(311, 1);
+            this.toolStripEx8.Location = new System.Drawing.Point(342, 1);
             this.toolStripEx8.Name = "toolStripEx8";
             this.toolStripEx8.Office12Mode = false;
             this.toolStripEx8.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.toolStripEx8.Size = new System.Drawing.Size(240, 117);
+            this.toolStripEx8.Size = new System.Drawing.Size(209, 117);
             this.toolStripEx8.TabIndex = 1;
             this.toolStripEx8.Text = "Navigation";
             // 
