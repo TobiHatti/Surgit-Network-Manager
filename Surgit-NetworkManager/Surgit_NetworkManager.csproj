@@ -91,7 +91,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="cCSQLite.cs" />
     <Compile Include="cRDPConnect.cs" />
     <Compile Include="fAddDeviceSite.cs">
       <SubType>Form</SubType>
