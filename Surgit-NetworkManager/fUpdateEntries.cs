@@ -11,6 +11,7 @@ using System.Threading;
 using System.Windows.Forms;
 using Syncfusion.WinForms.Controls;
 using Syncfusion.XlsIO.Parser.Biff_Records;
+using WrapSQL;
 
 #region COPYRIGHT NOTICE (Surgit Network Manager - Copyright(C) 2020  Tobias Hattinger)
 
@@ -43,7 +44,7 @@ namespace Surgit_NetworkManager
         private string[] ipStartParts;
         private string[] ipEndParts;
 
-        public CSQLite sql = null;
+        public WrapSQLite sql = null;
 
         public UpdateEntries()
         {
@@ -51,7 +52,7 @@ namespace Surgit_NetworkManager
         }
         private void UpdateEntries_Load(object sender, EventArgs e)
         {
-            sql = new CSQLite(SurgitManager.SurgitDatabaseLocation);
+            sql = new WrapSQLite(SurgitManager.SurgitDatabaseLocation, true);
 
             // Ping all devices in Network Range
             ipStartParts = IPStartRange.Split('.');
@@ -72,10 +73,10 @@ namespace Surgit_NetworkManager
 
             // Get all devices, set powerstate to false
             DevicePowerState.Clear();
-            sql.connection.Open();
+            sql.Open();
             using (SQLiteDataReader reader = sql.ExecuteQuery("SELECT * FROM Devices"))
                 while (reader.Read()) DevicePowerState.Add(Convert.ToString(reader["MACAddress"]), false);
-            sql.connection.Close();
+            sql.Close();
 
             Ping ping = new Ping();
             StringBuilder sqlSB = new StringBuilder();
@@ -118,7 +119,7 @@ namespace Surgit_NetworkManager
                 if (bgwUpdateEntries.CancellationPending) return;
 
                 // Update IP and LastSeen, add new entries
-                sql.ExecuteNonQueryA(sqlSB.ToString());
+                sql.ExecuteNonQueryACon(sqlSB.ToString());
 
                 // Update last power-state
                 StringBuilder sb = new StringBuilder();
@@ -128,7 +129,7 @@ namespace Surgit_NetworkManager
                     if (entry.Value) state = 1;
                     sb.Append($"UPDATE Devices SET LastPowerState = '{state}' WHERE MACAddress = '{entry.Key}';");
                 }
-                sql.ExecuteNonQueryA(sb.ToString());
+                sql.ExecuteNonQueryACon(sb.ToString());
 
             }
         }

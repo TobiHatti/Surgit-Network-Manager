@@ -10,6 +10,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Windows.Forms;
 using Syncfusion.WinForms.Controls;
+using WrapSQL;
 
 #region COPYRIGHT NOTICE (Surgit Network Manager - Copyright(C) 2020  Tobias Hattinger)
 
@@ -39,7 +40,7 @@ namespace Surgit_NetworkManager
         public string MACAddress = "";
         public string IPv4 = "";
 
-        private readonly CSQLite sql = new CSQLite(SurgitManager.SurgitDatabaseLocation);
+        private readonly WrapSQLite sql = new WrapSQLite(SurgitManager.SurgitDatabaseLocation, true);
 
         private TimeSpan elapsedTime;
 
@@ -101,7 +102,7 @@ namespace Surgit_NetworkManager
             prgWOLState.Value = 100;
             prgWOLState.Style = ProgressBarStyle.Continuous;
 
-            sql.ExecuteNonQueryA($"UPDATE Devices SET LastPowerState = '1' WHERE MACAddress = '{MACAddress}'");
+            sql.ExecuteNonQueryACon($"UPDATE Devices SET LastPowerState = '1' WHERE MACAddress = '{MACAddress}'");
 
             MessageBox.Show("Device is Online!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }

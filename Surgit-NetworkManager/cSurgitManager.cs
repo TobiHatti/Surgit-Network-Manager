@@ -8,6 +8,7 @@ using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WrapSQL;
 
 #region COPYRIGHT NOTICE (Surgit Network Manager - Copyright(C) 2020  Tobias Hattinger)
 
@@ -60,16 +61,16 @@ namespace Surgit_NetworkManager
 
         public static void PowerStateCheck(string pIPRangeStart, string pIPRangeEnd, BackgroundWorker pProgressReplyBGW = null)
         {
-            using (CSQLite tsql = new CSQLite(SurgitManager.SurgitDatabaseLocation))
+            using (WrapSQLite tsql = new WrapSQLite(SurgitManager.SurgitDatabaseLocation, true))
             {
                 Dictionary<string, bool> DevicePowerState = new Dictionary<string, bool>();
    
                 // Get all devices, set powerstate to false
                 DevicePowerState.Clear();
-                tsql.connection.Open();
+                tsql.Open();
                 using (SQLiteDataReader reader = tsql.ExecuteQuery("SELECT * FROM Devices"))
                     while (reader.Read()) DevicePowerState.Add(Convert.ToString(reader["MACAddress"]), false);
-                tsql.connection.Close();
+                tsql.Close();
 
 
                 // Ping all devices in Network Range
@@ -115,13 +116,13 @@ namespace Surgit_NetworkManager
                     }
 
                     // Update IP and LastSeen, add new entries
-                    tsql.ExecuteNonQueryA(sqlSB.ToString());
+                    tsql.ExecuteNonQueryACon(sqlSB.ToString());
 
                     // Update last power-state
                     StringBuilder sb = new StringBuilder();
                     foreach (KeyValuePair<string, bool> entry in DevicePowerState)
                         sb.Append($"UPDATE Devices SET LastPowerState = '{(entry.Value ? 1 : 0)}' WHERE MACAddress = '{entry.Key}';");
-                    tsql.ExecuteNonQueryA(sb.ToString());
+                    tsql.ExecuteNonQueryACon(sb.ToString());
                 }
                 else
                 {

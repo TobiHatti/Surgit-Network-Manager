@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Syncfusion.WinForms.Controls;
+using WrapSQL;
 
 #region COPYRIGHT NOTICE (Surgit Network Manager - Copyright(C) 2020  Tobias Hattinger)
 
@@ -36,7 +37,7 @@ namespace Surgit_NetworkManager
     {
         public string MACAddress { get; set; } = "";
 
-        private readonly CSQLite sql = new CSQLite(SurgitManager.SurgitDatabaseLocation);
+        private readonly WrapSQLite sql = new WrapSQLite(SurgitManager.SurgitDatabaseLocation, true);
 
         public ManageDeviceSites()
         {
@@ -45,7 +46,7 @@ namespace Surgit_NetworkManager
 
         private void lbxDeviceSites_SelectedIndexChanged(object sender, EventArgs e)
         {
-            sql.connection.Open();
+            sql.Open();
             using (SQLiteDataReader reader = sql.ExecuteQuery($"SELECT * FROM DeviceSites WHERE ID = '{lbxDeviceSites.SelectedValue}'"))
             {
                 while (reader.Read())
@@ -54,14 +55,14 @@ namespace Surgit_NetworkManager
                     txbDeviceSiteURL.Text = Convert.ToString(reader["Site"]);
                 }
             }
-            sql.connection.Close();
+            sql.Close();
 
             EnableInput();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            sql.ExecuteNonQueryA($"DELETE FROM DeviceSites WHERE ID = '{lbxDeviceSites.SelectedValue}'");
+            sql.ExecuteNonQueryACon($"DELETE FROM DeviceSites WHERE ID = '{lbxDeviceSites.SelectedValue}'");
             LoadEntries();
             lbxDeviceSites.SelectedIndex = -1;
             DisableInput();
@@ -82,7 +83,7 @@ namespace Surgit_NetworkManager
             {
                 if (Uri.TryCreate(txbDeviceSiteURL.Text, UriKind.Absolute, out Uri uriResult) && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps))
                 {
-                    sql.ExecuteNonQueryA($"UPDATE DeviceSites SET Name = '{txbName.Text}', Site = '{txbDeviceSiteURL.Text}' WHERE ID = '{lbxDeviceSites.SelectedValue}'");
+                    sql.ExecuteNonQueryACon($"UPDATE DeviceSites SET Name = '{txbName.Text}', Site = '{txbDeviceSiteURL.Text}' WHERE ID = '{lbxDeviceSites.SelectedValue}'");
                     LoadEntries();
                     lbxDeviceSites.SelectedIndex = -1;
                     DisableInput();
@@ -110,7 +111,7 @@ namespace Surgit_NetworkManager
 
             lbxDeviceSites.ValueMember = "ID";
             lbxDeviceSites.DisplayMember = "DispVal";
-            lbxDeviceSites.DataSource = sql.CreateDT($"SELECT *, Name || ' - ' || Site AS DispVal FROM DeviceSites WHERE MACAddress = '{MACAddress}'");
+            lbxDeviceSites.DataSource = sql.FillDataTable($"SELECT *, Name || ' - ' || Site AS DispVal FROM DeviceSites WHERE MACAddress = '{MACAddress}'");
         }
 
         private void EnableInput()

@@ -8,6 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using Syncfusion.WinForms.Controls;
+using WrapSQL;
 
 #region COPYRIGHT NOTICE (Surgit Network Manager - Copyright(C) 2020  Tobias Hattinger)
 
@@ -44,7 +45,7 @@ namespace Surgit_NetworkManager
         public string DeviceMac = "";
         public string OriginalDeviceMac = "";
 
-        private readonly CSQLite sql = new CSQLite(SurgitManager.SurgitDatabaseLocation);
+        private readonly WrapSQLite sql = new WrapSQLite(SurgitManager.SurgitDatabaseLocation, true);
 
         public AddEditDevice()
         {
@@ -111,7 +112,7 @@ namespace Surgit_NetworkManager
             {
                 if (Regex.IsMatch(txbDeviceMac.Text, "^[A-Fa-f0-9]{2}-[A-Fa-f0-9]{2}-[A-Fa-f0-9]{2}-[A-Fa-f0-9]{2}-[A-Fa-f0-9]{2}-[A-Fa-f0-9]{2}") && txbDeviceMac.Text.Length == 17)
                 {
-                    if(sql.ExecuteScalarA<int>($"SELECT COUNT(*) FROM Devices WHERE MACAddress = '{txbDeviceMac.Text}' AND MACAddress != '{OriginalDeviceMac}'") == 0) DeviceMac = txbDeviceMac.Text;
+                    if(sql.ExecuteScalarACon<int>($"SELECT COUNT(*) FROM Devices WHERE MACAddress = '{txbDeviceMac.Text}' AND MACAddress != '{OriginalDeviceMac}'") == 0) DeviceMac = txbDeviceMac.Text;
                     else
                     {
                         MessageBox.Show("The entered MAC-Address already exists. Please enter a new MAC-Address.\r\n\r\nFormat: XX-XX-XX-XX-XX-XX", "Duplicate MAC-Address", MessageBoxButtons.OK, MessageBoxIcon.Warning);

@@ -28,6 +28,7 @@ using System.Threading.Tasks;
 
 namespace Surgit_NetworkManager
 {
+    /*
     public class CSQLite : IDisposable
     {
         private readonly string conStr = null;
@@ -217,5 +218,6 @@ namespace Surgit_NetworkManager
 
         #endregion
     }
+    */
 
 }

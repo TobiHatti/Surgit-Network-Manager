@@ -9,6 +9,7 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using Syncfusion.WinForms.Controls;
+using WrapSQL;
 
 #region COPYRIGHT NOTICE (Surgit Network Manager - Copyright(C) 2020  Tobias Hattinger)
 
@@ -37,7 +38,7 @@ namespace Surgit_NetworkManager
     {
         public string MACAddress { get; set; } = "";
 
-        private readonly CSQLite sql = new CSQLite(SurgitManager.SurgitDatabaseLocation);
+        private readonly WrapSQLite sql = new WrapSQLite(SurgitManager.SurgitDatabaseLocation, true);
 
         public ManageRDPFiles()
         {
@@ -63,12 +64,12 @@ namespace Surgit_NetworkManager
 
             lbxRDPFiles.ValueMember = "ID";
             lbxRDPFiles.DisplayMember = "DispVal";
-            lbxRDPFiles.DataSource = sql.CreateDT($"SELECT *, Name || ' - ' || Path AS DispVal FROM RDPFiles WHERE MACAddress = '{MACAddress}'");
+            lbxRDPFiles.DataSource = sql.FillDataTable($"SELECT *, Name || ' - ' || Path AS DispVal FROM RDPFiles WHERE MACAddress = '{MACAddress}'");
         }
 
         private void lbxRDPFiles_SelectedIndexChanged(object sender, EventArgs e)
         {
-            sql.connection.Open();
+            sql.Open();
             using(SQLiteDataReader reader = sql.ExecuteQuery($"SELECT * FROM RDPFiles WHERE ID = '{lbxRDPFiles.SelectedValue}'"))
             {
                 while(reader.Read())
@@ -77,7 +78,7 @@ namespace Surgit_NetworkManager
                     txbRDPPath.Text = Convert.ToString(reader["Path"]);
                 }
             }
-            sql.connection.Close();
+            sql.Close();
 
             EnableInput();
         }
@@ -102,7 +103,7 @@ namespace Surgit_NetworkManager
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            sql.ExecuteNonQueryA($"DELETE FROM RDPFiles WHERE ID = '{lbxRDPFiles.SelectedValue}'");
+            sql.ExecuteNonQueryACon($"DELETE FROM RDPFiles WHERE ID = '{lbxRDPFiles.SelectedValue}'");
             LoadEntries();
             lbxRDPFiles.SelectedIndex = -1;
             DisableInput();
@@ -134,7 +135,7 @@ namespace Surgit_NetworkManager
             {
                 if (!string.IsNullOrEmpty(txbRDPPath.Text))
                 {
-                    sql.ExecuteNonQueryA($"UPDATE RDPFiles SET Name = '{txbName.Text}', Path = '{txbRDPPath.Text}' WHERE ID = '{lbxRDPFiles.SelectedValue}'");
+                    sql.ExecuteNonQueryACon($"UPDATE RDPFiles SET Name = '{txbName.Text}', Path = '{txbRDPPath.Text}' WHERE ID = '{lbxRDPFiles.SelectedValue}'");
                     LoadEntries();
                     lbxRDPFiles.SelectedIndex = -1;
                     DisableInput();

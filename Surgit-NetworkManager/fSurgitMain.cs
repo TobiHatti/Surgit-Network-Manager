@@ -14,6 +14,7 @@ using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WrapSQL;
 
 #region COPYRIGHT NOTICE (Surgit Network Manager - Copyright(C) 2020  Tobias Hattinger)
 
@@ -40,11 +41,13 @@ namespace Surgit_NetworkManager
 #pragma warning disable IDE1006
     public partial class SurgitMain : RibbonForm
     {
-        private readonly CSQLite sql = null;
+        private readonly WrapSQLite sql = null;
 
         public SurgitMain()
         {
             InitializeComponent();
+
+            
 
             // Copy DB-File if not existent
             if (!File.Exists(SurgitManager.SurgitDatabaseLocation))
@@ -53,10 +56,18 @@ namespace Surgit_NetworkManager
             }
 
             // Initialize DBConnection
-            sql = new CSQLite(SurgitManager.SurgitDatabaseLocation);
+            sql = new WrapSQLite(SurgitManager.SurgitDatabaseLocation, true);
 
             // Test DB Connections
-            if (!sql.ConnectionTest()) throw new Exception("Could not connect to DB [SQL]");
+            try
+            {
+                sql.Open();
+                sql.Close();
+            }
+            catch
+            {
+                throw new Exception("Could not connect to DB [SQL]");
+            }
 
            // Configure and Initialize form elements
             grvDevices.LargeImageList = NetDevice.GetImageList();
@@ -67,10 +78,10 @@ namespace Surgit_NetworkManager
             ApplyFormStyle();
             UpdateDeviceList();
 
-            sql.connection.Open();
+            sql.Open();
             lblIPRangeStart.Text = sql.ExecuteScalar<string>($"SELECT Value FROM Settings WHERE Key = 'IPRangeStart'");
             lblIPRangeEnd.Text = sql.ExecuteScalar<string>($"SELECT Value FROM Settings WHERE Key = 'IPRangeEnd'");
-            sql.connection.Close();
+            sql.Close();
 
             // Start the power-state check
             if (!bgwCheckPowerState.IsBusy) bgwCheckPowerState.RunWorkerAsync();
@@ -139,7 +150,7 @@ namespace Surgit_NetworkManager
             int onlineCtr = 0;
 
             // Load all devices and add then to the view
-            sql.connection.Open();
+            sql.Open();
             using (SQLiteDataReader reader = sql.ExecuteQuery($"SELECT * FROM Devices {orderBy}"))
             while(reader.Read())
             {
@@ -165,7 +176,7 @@ namespace Surgit_NetworkManager
 
                 entryCtr++;
             }
-            sql.connection.Close();
+            sql.Close();
 
             // Update info-display
             lblDeviceCount.Text = $"{entryCtr} Devices Registered";
@@ -190,13 +201,13 @@ namespace Surgit_NetworkManager
                 MessageBox.Show("Do you want to update your device-list with the new entries? (If a device already exists, only the IP-Address and Hostname get updated.)", "Import new devices", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 // Update DB
-                sql.connection.Open();
+                sql.Open();
                 foreach (NetDevice device in discover.DiscoveredDevices)
                     if(sql.ExecuteScalar<int>("SELECT COUNT(*) FROM Devices WHERE MACAddress = ?", device.MAC) > 0)
                         sql.ExecuteNonQuery($"UPDATE Devices SET IP4Address = '{device.IPv4}', Hostname = '{device.Hostname}', LastSeen = '{DateTime.Now:yyyy-MM-dd H:mm:ss}' WHERE MACAddress = '{device.MAC}'");
                     else
                         sql.ExecuteNonQuery($"INSERT INTO Devices (MACAddress, DeviceType, Name, Hostname, IP4Address, LastSeen) VALUES ('{device.MAC}','{device.DeviceType}','{device.Name}','{device.Hostname}','{device.IPv4}','{DateTime.Now:yyyy-MM-dd H:mm:ss}')");
-                sql.connection.Close();
+                sql.Close();
             }
 
             UpdateDeviceList();
@@ -261,7 +272,7 @@ namespace Surgit_NetworkManager
             webMarkdown.Visible = true;
             txbDeviceDescription.Visible = false;
 
-            sql.connection.Open();
+            sql.Open();
 
             using (SQLiteDataReader reader = sql.ExecuteQuery($"SELECT * FROM Devices WHERE Name = '{grvDevices.GroupViewItems[grvDevices.SelectedItem].Text.Replace("[H] ", "")}'"))
             {
@@ -301,7 +312,7 @@ namespace Surgit_NetworkManager
                 }
             }
 
-            sql.connection.Close();
+            sql.Close();
 
 
             LoadRDPLinks();
@@ -339,7 +350,7 @@ namespace Surgit_NetworkManager
 
         private void SaveChanges()
         {
-            sql.connection.Open();
+            sql.Open();
             if (sql.ExecuteScalar<int>($"SELECT COUNT(*) FROM Devices WHERE Name = '{txbDeviceName.Text}' AND MACAddress != '{txbDeviceMac.Text}'") == 0)
             {
                 btnSaveChanges.Enabled = false;
@@ -347,7 +358,7 @@ namespace Surgit_NetworkManager
                 sql.ExecuteNonQuery($"UPDATE Devices SET Name = '{txbDeviceName.Text}', Description = '{txbDeviceDescription.Text}', DeviceType = '{deviceType}' WHERE MACAddress = '{txbDeviceMac.Text}'");
             }
             else MessageBox.Show("The entered Device-Name already exitst. Please enter a unique name for each device!", "Name duplicate", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            sql.connection.Close();
+            sql.Close();
             UpdateDeviceList();
             LoadDeviceData();
         }
@@ -381,13 +392,13 @@ namespace Surgit_NetworkManager
             DiscoverLocal locDiscover = new DiscoverLocal();
             if(locDiscover.ShowDialog() == DialogResult.OK)
             {
-                sql.connection.Open();
+                sql.Open();
                 if (sql.ExecuteScalar<int>($"SELECT COUNT(*) FROM Devices WHERE MACAddress = '{locDiscover.MAC}'") == 0)
                 {
                     sql.ExecuteNonQuery($"INSERT INTO Devices (MACAddress, IP4Address, IP6Address, Hostname, Name, DeviceType, LastSeen, LastPowerState) VALUES ('{locDiscover.MAC}','{locDiscover.IPv4}','{locDiscover.IPv6}','{locDiscover.Hostname}','Device-{locDiscover.MAC}','{DeviceType.UnknownDevice}','{DateTime.Now:yyyy-MM-dd H:mm:ss}','1')");
                 }
                 else MessageBox.Show("The selected Device already exists. Please select another interface.", "Duplicate MAC-Addresses", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                sql.connection.Close();
+                sql.Close();
                 UpdateDeviceList();
             }
             
@@ -450,10 +461,10 @@ namespace Surgit_NetworkManager
 
             if(ipedit.ShowDialog() == DialogResult.OK)
             {
-                sql.connection.Open();
+                sql.Open();
                 sql.ExecuteNonQuery($"UPDATE Settings SET Value = '{ipedit.IPStartRange}' WHERE Key = 'IPRangeStart'");
                 sql.ExecuteNonQuery($"UPDATE Settings SET Value = '{ipedit.IPEndRange}' WHERE Key = 'IPRangeEnd'");
-                sql.connection.Close();
+                sql.Close();
 
                 lblIPRangeStart.Text = ipedit.IPStartRange;
                 lblIPRangeEnd.Text = ipedit.IPEndRange;
@@ -467,7 +478,7 @@ namespace Surgit_NetworkManager
         {
             if (MessageBox.Show($"Are you sure you want to delete the Device \"{txbDeviceName.Text}\"?", "Delete device", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                sql.ExecuteNonQueryA($"DELETE FROM Devices WHERE MACAddress = '{txbDeviceMac.Text}'");
+                sql.ExecuteNonQueryACon($"DELETE FROM Devices WHERE MACAddress = '{txbDeviceMac.Text}'");
                 UpdateDeviceList();
 
                 DeselectItem();
@@ -497,9 +508,9 @@ namespace Surgit_NetworkManager
 
             if (addDevice.ShowDialog() == DialogResult.OK)
             {
-                sql.connection.Open();
+                sql.Open();
                 sql.ExecuteNonQuery($"INSERT INTO Devices (MACAddress, Name, DeviceType, Description, Hostname, IP4Address, IP6Address) VALUES ('{addDevice.DeviceMac}','{addDevice.DeviceName}','{addDevice.DeviceTType}','{addDevice.DeviceDescription}','{addDevice.DeviceHostname}','{addDevice.DeviceIPv4}','{addDevice.DeviceIPv6}')");
-                sql.connection.Close();
+                sql.Close();
                 UpdateDeviceList();
             }
         }
@@ -520,10 +531,10 @@ namespace Surgit_NetworkManager
 
             if (editDevice.ShowDialog() == DialogResult.OK)
             {
-                sql.connection.Open();
+                sql.Open();
                 sql.ExecuteNonQuery($"UPDATE Devices SET Name = '{editDevice.DeviceName}', Description = '{editDevice.DeviceDescription}', DeviceType = '{editDevice.DeviceTType}', Hostname = '{editDevice.DeviceHostname}', IP4Address = '{editDevice.DeviceIPv4}', IP6Address = '{editDevice.DeviceIPv6}' WHERE MACAddress = '{editDevice.OriginalDeviceMac}'");
                 if(editDevice.DeviceMac != editDevice.OriginalDeviceMac) sql.ExecuteNonQuery($"UPDATE Devices SET MACAddress = '{editDevice.DeviceMac}' WHERE MACAddress = '{editDevice.OriginalDeviceMac}'");
-                sql.connection.Close();
+                sql.Close();
 
                 UpdateDeviceList();
                 LoadDeviceData();
@@ -553,12 +564,12 @@ namespace Surgit_NetworkManager
 
         private void btnHideDevice_Click(object sender, EventArgs e)
         {
-            sql.connection.Open();
+            sql.Open();
             if (sql.ExecuteScalar<int>($"SELECT IsHidden FROM Devices WHERE MACAddress = '{txbDeviceMac.Text}'") == 1)
                 sql.ExecuteNonQuery($"UPDATE Devices SET IsHidden = 0 WHERE MACAddress = '{txbDeviceMac.Text}'");
             else
                 sql.ExecuteNonQuery($"UPDATE Devices SET IsHidden = 1 WHERE MACAddress = '{txbDeviceMac.Text}'");
-            sql.connection.Close();
+            sql.Close();
 
             UpdateDeviceList();
             DeselectItem();
@@ -614,7 +625,7 @@ namespace Surgit_NetworkManager
                 if (reply.Status == IPStatus.Success) online = 1;
             }
 
-            sql.ExecuteNonQueryA($"UPDATE Devices SET LastPowerState = '{online}' WHERE MACAddress = '{txbDeviceMac.Text}'");
+            sql.ExecuteNonQueryACon($"UPDATE Devices SET LastPowerState = '{online}' WHERE MACAddress = '{txbDeviceMac.Text}'");
 
             UpdateDeviceList();
             DeselectItem();
@@ -627,13 +638,13 @@ namespace Surgit_NetworkManager
                 MachineNameOrIP = txbDeviceIPv4.Text
             };
 
-            sql.connection.Open();
+            sql.Open();
             rdp.MultiMonitor = Convert.ToBoolean(sql.ExecuteScalar<string>("SELECT Value FROM Settings WHERE Key = 'RDPMultiMonitor'"));
             rdp.FullScreen = Convert.ToBoolean(sql.ExecuteScalar<string>("SELECT Value FROM Settings WHERE Key = 'RDPFullScreen'"));
             rdp.WindowWidth = Convert.ToInt32(sql.ExecuteScalar<string>("SELECT Value FROM Settings WHERE Key = 'RDPScreenWidth'"));
             rdp.WindowHeight = Convert.ToInt32(sql.ExecuteScalar<string>("SELECT Value FROM Settings WHERE Key = 'RDPScreenHeight'"));
             rdp.PublicMode = Convert.ToBoolean(sql.ExecuteScalar<string>("SELECT Value FROM Settings WHERE Key = 'RDPPublicMode'"));
-            sql.connection.Close();
+            sql.Close();
 
             rdp.StartRDP();
         }
@@ -642,23 +653,23 @@ namespace Surgit_NetworkManager
         {
             RDPSettings rdpSettings = new RDPSettings();
 
-            sql.connection.Open();
+            sql.Open();
             rdpSettings.MultiMonitor = Convert.ToBoolean(sql.ExecuteScalar<string>("SELECT Value FROM Settings WHERE Key = 'RDPMultiMonitor'"));
             rdpSettings.FullScreen = Convert.ToBoolean(sql.ExecuteScalar<string>("SELECT Value FROM Settings WHERE Key = 'RDPFullScreen'"));
             rdpSettings.WindowWidth = Convert.ToInt32(sql.ExecuteScalar<string>("SELECT Value FROM Settings WHERE Key = 'RDPScreenWidth'"));
             rdpSettings.WindowHeight = Convert.ToInt32(sql.ExecuteScalar<string>("SELECT Value FROM Settings WHERE Key = 'RDPScreenHeight'"));
             rdpSettings.PublicMode = Convert.ToBoolean(sql.ExecuteScalar<string>("SELECT Value FROM Settings WHERE Key = 'RDPPublicMode'"));
-            sql.connection.Close();
+            sql.Close();
 
             if(rdpSettings.ShowDialog() == DialogResult.OK)
             {
-                sql.connection.Open();
+                sql.Open();
                 sql.ExecuteNonQuery($"UPDATE Settings SET Value = '{rdpSettings.MultiMonitor}' WHERE Key = 'RDPMultiMonitor'");
                 sql.ExecuteNonQuery($"UPDATE Settings SET Value = '{rdpSettings.FullScreen}' WHERE Key = 'RDPFullScreen'");
                 sql.ExecuteNonQuery($"UPDATE Settings SET Value = '{rdpSettings.WindowWidth}' WHERE Key = 'RDPScreenWidth'");
                 sql.ExecuteNonQuery($"UPDATE Settings SET Value = '{rdpSettings.WindowHeight}' WHERE Key = 'RDPScreenHeight'");
                 sql.ExecuteNonQuery($"UPDATE Settings SET Value = '{rdpSettings.PublicMode}' WHERE Key = 'RDPPublicMode'");
-                sql.connection.Close();
+                sql.Close();
             }
         }
 
@@ -672,14 +683,14 @@ namespace Surgit_NetworkManager
             if(ofdOpenRDPFile.ShowDialog() == DialogResult.OK)
             {
                 string name = Path.GetFileNameWithoutExtension(ofdOpenRDPFile.FileName);
-                sql.ExecuteNonQueryA($"INSERT INTO RDPFiles (MACAddress, Name, Path) VALUES ('{txbDeviceMac.Text}','{name}','{ofdOpenRDPFile.FileName}')");
+                sql.ExecuteNonQueryACon($"INSERT INTO RDPFiles (MACAddress, Name, Path) VALUES ('{txbDeviceMac.Text}','{name}','{ofdOpenRDPFile.FileName}')");
                 LoadDeviceData();
             }
         }
 
         private void LoadRDPLinks()
         {
-            sql.connection.Open();
+            sql.Open();
 
 
             using (SQLiteDataReader reader = sql.ExecuteQuery($"SELECT * FROM RDPFiles WHERE MACAddress = '{txbDeviceMac.Text}'"))
@@ -706,12 +717,12 @@ namespace Surgit_NetworkManager
                 }
             }
 
-            sql.connection.Close();
+            sql.Close();
         }
 
         private void LoadDeviceLinks()
         {
-            sql.connection.Open();
+            sql.Open();
 
 
             using (SQLiteDataReader reader = sql.ExecuteQuery($"SELECT * FROM DeviceSites WHERE MACAddress = '{txbDeviceMac.Text}'"))
@@ -736,7 +747,7 @@ namespace Surgit_NetworkManager
                 }
             }
 
-            sql.connection.Close();
+            sql.Close();
         }
 
         void CallRDP(object sender, EventArgs e)
@@ -774,7 +785,7 @@ namespace Surgit_NetworkManager
             AddDeviceSite ads = new AddDeviceSite();
             if(ads.ShowDialog() == DialogResult.OK)
             {
-                sql.ExecuteNonQueryA($"INSERT INTO DeviceSites (Name, Site, MACAddress) VALUES ('{ads.DeviceName}','{ads.DeviceSiteURL}','{txbDeviceMac.Text}')");
+                sql.ExecuteNonQueryACon($"INSERT INTO DeviceSites (Name, Site, MACAddress) VALUES ('{ads.DeviceName}','{ads.DeviceSiteURL}','{txbDeviceMac.Text}')");
                 LoadDeviceData();
             }
         }
