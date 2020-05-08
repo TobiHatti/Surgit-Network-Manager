@@ -734,14 +734,18 @@ namespace Surgit_NetworkManager
         {
             if (MessageBox.Show($"Do you want to attempt to start the device \"{txbDeviceName.Text}\" via Wake-On-Lan?", "Start Device", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                WOLStart wol = new WOLStart
+                if (!string.IsNullOrEmpty(txbDeviceIPv4.Text) && !string.IsNullOrEmpty(txbDeviceMac.Text))
                 {
-                    MACAddress = txbDeviceMac.Text,
-                    IPv4 = txbDeviceIPv4.Text
-                };
-                wol.ShowDialog();
-                UpdateDeviceList();
-                DeselectItem();
+                    WOLStart wol = new WOLStart
+                    {
+                        MACAddress = txbDeviceMac.Text,
+                        IPv4 = txbDeviceIPv4.Text
+                    };
+                    wol.ShowDialog();
+                    UpdateDeviceList();
+                    DeselectItem();
+                }
+                else MessageBox.Show("Could not wake device. IPv4 and MAC address are required.", "WOL Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -805,19 +809,23 @@ namespace Surgit_NetworkManager
 
         private void btnUpdatePowerState_Click(object sender, EventArgs e)
         {
-            Ping ping = new Ping();
-            PingReply reply;
-            int online = 0;
-            for (int i = 0; i < 3; i++)
+            if (!string.IsNullOrEmpty(txbDeviceIPv4.Text))
             {
-                reply = ping.Send(txbDeviceIPv4.Text,500);
-                if (reply.Status == IPStatus.Success) online = 1;
+                Ping ping = new Ping();
+                PingReply reply;
+                int online = 0;
+                for (int i = 0; i < 3; i++)
+                {
+                    reply = ping.Send(txbDeviceIPv4.Text, 500);
+                    if (reply.Status == IPStatus.Success) online = 1;
+                }
+
+                sql.ExecuteNonQueryACon($"UPDATE Devices SET LastPowerState = '{online}' WHERE MACAddress = '{txbDeviceMac.Text}'");
+
+                UpdateDeviceList();
+                DeselectItem();
             }
-
-            sql.ExecuteNonQueryACon($"UPDATE Devices SET LastPowerState = '{online}' WHERE MACAddress = '{txbDeviceMac.Text}'");
-
-            UpdateDeviceList();
-            DeselectItem();
+            else MessageBox.Show("Could not ping the device. No IPv4-Address.", "Ping Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void btnStartAutoRDP_Click(object sender, EventArgs e)

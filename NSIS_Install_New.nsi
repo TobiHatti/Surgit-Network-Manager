@@ -2,7 +2,7 @@
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "Surgit"
-!define PRODUCT_VERSION "1.1.6"
+!define PRODUCT_VERSION "1.1.7"
 !define PRODUCT_PUBLISHER "Endix Development"
 !define PRODUCT_WEB_SITE "https://endev.at/projects/surgit"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\Surgit_NetworkManager.exe"
@@ -82,6 +82,7 @@ Section "Hauptgruppe" SEC01
   File "Surgit-NetworkManager\bin\Release\System.Data.SQLite.dll"
   File "Surgit-NetworkManager\bin\Release\System.Data.SQLite.dll.config"
   File "Surgit-NetworkManager\bin\Release\Splash.png"
+  File "Surgit-NetworkManager\bin\Release\WrapSQL_SQLite.dll"
   SetOutPath "$INSTDIR\x64"
   File "Surgit-NetworkManager\bin\Release\x64\SQLite.Interop.dll"
   File "Surgit-NetworkManager\bin\Release\x64\sqlite3.dll"
@@ -149,6 +150,7 @@ Section Uninstall
   Delete "$INSTDIR\surgitBlank.db"
   Delete "$INSTDIR\stdole.dll"
   Delete "$INSTDIR\Splash.png"
+  Delete "$INSTDIR\WrapSQL_SQLite.dll"
   Delete "$INSTDIR\MarkdownSharp.dll"
   Delete "$INSTDIR\EnvDTE.dll"
 
