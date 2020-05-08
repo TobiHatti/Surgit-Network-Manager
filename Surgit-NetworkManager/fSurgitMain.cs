@@ -217,7 +217,7 @@ namespace Surgit_NetworkManager
 	                        Devices.LastPowerState AS LastPowerState,
 	                        Devices.IsHidden AS IsHidden,
 	                        false AS IsGroup,
-                            0 AS GroupID FROM Groups INNER JOIN GroupAssigns ON Groups.ID = GroupAssigns.GroupID INNER JOIN Devices ON GroupAssigns.MACAddress = Devices.MACAddress WHERE Groups.ID = '{selectedGroupID}'";
+                            0 AS GroupID FROM Groups INNER JOIN GroupAssigns ON Groups.ID = GroupAssigns.GroupID INNER JOIN Devices ON GroupAssigns.MACAddress = Devices.MACAddress WHERE Groups.ID = '{selectedGroupID}'  {orderBy}";
             }
 
             // Load all devices and add then to the view
@@ -413,8 +413,15 @@ namespace Surgit_NetworkManager
             }
             else
             {
-                sqlQuery = $"SELECT *, false AS IsGroup, 0 AS GroupID FROM Devices WHERE MACAddress = '{grvDevices.GroupViewItems[grvDevices.SelectedItem].Tag}'";
-
+                try
+                {
+                    sqlQuery = $"SELECT *, false AS IsGroup, 0 AS GroupID FROM Devices WHERE MACAddress = '{grvDevices.GroupViewItems[grvDevices.SelectedItem].Tag}'";
+                }
+                catch 
+                {
+                    return;
+                }
+                    
                 if (showGroupDetails)
                 {
                     tsbRemoveDeviceFromGroup.Enabled = true;
@@ -1184,8 +1191,20 @@ namespace Surgit_NetworkManager
             {
                 sql.Open();
                 sql.ExecuteNonQuery($"DELETE FROM GroupAssigns WHERE MACAddress = '{txbDeviceMac.Text}' AND GroupID = '{selectedGroupID}'");
+                
+                // If the group is empty, delete it
                 int groupItemCount = sql.ExecuteScalar<int>($"SELECT COUNT(*) FROM GroupAssigns WHERE GroupID = '{selectedGroupID}'");
                 if (groupItemCount == 0) sql.ExecuteNonQuery($"DELETE FROM Groups WHERE ID = '{selectedGroupID}'");
+                else
+                {
+                    // if the primary-device gets removed, re-assign it
+                    if (sql.ExecuteScalar<int>($"SELECT COUNT(*) FROM GroupAssigns WHERE GroupID = '{selectedGroupID}' AND IsPrimary = '1'") == 0)
+                    {
+                        int newPrimaryID = sql.ExecuteScalar<int>($"SELECT ID FROM GroupAssigns WHERE GroupID = '{selectedGroupID}' LIMIT 1");
+                        sql.ExecuteNonQuery($"UPDATE GroupAssigns SET IsPrimary = '1' WHERE ID = '{newPrimaryID}'");
+                    }
+                }
+
                 sql.Close();
 
                 if(groupItemCount == 0) ExitGroupView();

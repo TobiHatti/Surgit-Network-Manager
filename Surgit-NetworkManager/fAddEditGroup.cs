@@ -41,7 +41,7 @@ namespace Surgit_NetworkManager
 
             // Load all devices and add then to the view
             sql.Open();
-            using (SQLiteDataReader reader = sql.ExecuteQuery("SELECT * FROM Devices ORDER BY Name ASC"))
+            using (SQLiteDataReader reader = sql.ExecuteQuery("SELECT * FROM Devices LEFT JOIN GroupAssigns ON Devices.MACAddress = GroupAssigns.MACAddress WHERE GroupAssigns.GroupID IS NULL ORDER BY Devices.Name ASC"))
             {
                 while (reader.Read())
                 {
@@ -102,7 +102,12 @@ namespace Surgit_NetworkManager
 
         private void AddEditGroup_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (IsEditMode) SubmitChanges();
+            if (IsEditMode && DialogResult != DialogResult.OK)
+            {
+                MessageBox.Show("Please save your changes before continuing", "Save changes", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                e.Cancel = true;
+                return;
+            }
             else
             {
 
