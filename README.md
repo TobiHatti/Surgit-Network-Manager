@@ -91,7 +91,7 @@ click on "More Info" and then on "Run anyway". Alternatively, you can just downl
 
 Get the current version [here](https://github.com/TobiHatti/Surgit-Network-Manager/releases)
 
-Version: 1.1.6
+Version: 1.1.7
 
-MD5: EA7D5694F4E8E2C998886A02473BC956
+MD5: 40F51930D3DC391BE117C645718F2F7A
 
