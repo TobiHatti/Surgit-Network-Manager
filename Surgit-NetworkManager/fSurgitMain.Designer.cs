@@ -169,7 +169,7 @@
             this.rbcRibbonMenu.QuickPanelImageLayout = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.rbcRibbonMenu.RibbonHeaderImage = Syncfusion.Windows.Forms.Tools.RibbonHeaderImage.None;
             this.rbcRibbonMenu.RibbonStyle = Syncfusion.Windows.Forms.Tools.RibbonStyle.Office2016;
-            this.rbcRibbonMenu.SelectedTab = this.tstExplore;
+            this.rbcRibbonMenu.SelectedTab = this.tstGroups;
             this.rbcRibbonMenu.ShowRibbonDisplayOptionButton = true;
             this.rbcRibbonMenu.Size = new System.Drawing.Size(1022, 189);
             this.rbcRibbonMenu.SystemText.QuickAccessDialogDropDownName = "Start menu";
@@ -432,7 +432,7 @@
             this.toolStripEx7.Office12Mode = false;
             this.toolStripEx7.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.toolStripEx7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripEx7.Size = new System.Drawing.Size(571, 120);
+            this.toolStripEx7.Size = new System.Drawing.Size(602, 120);
             this.toolStripEx7.TabIndex = 0;
             this.toolStripEx7.Text = "Groups";
             // 
@@ -485,7 +485,7 @@
             this.toolStripEx8.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbEnterGroupview,
             this.tsbExitGroupview});
-            this.toolStripEx8.Location = new System.Drawing.Point(573, 1);
+            this.toolStripEx8.Location = new System.Drawing.Point(604, 1);
             this.toolStripEx8.Name = "toolStripEx8";
             this.toolStripEx8.Office12Mode = false;
             this.toolStripEx8.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
@@ -1374,6 +1374,7 @@
             this.tsbRemoveDeviceFromGroup.Size = new System.Drawing.Size(110, 82);
             this.tsbRemoveDeviceFromGroup.Text = "Remove Device\r\nfrom Group";
             this.tsbRemoveDeviceFromGroup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbRemoveDeviceFromGroup.Click += new System.EventHandler(this.tsbRemoveDeviceFromGroup_Click);
             // 
             // toolStripSeparator6
             // 

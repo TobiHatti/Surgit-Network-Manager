@@ -68,11 +68,12 @@
             this.grvDevices.TextSpacing = 40;
             this.grvDevices.TextWrap = true;
             this.grvDevices.ThemesEnabled = true;
+            this.grvDevices.GroupViewItemDoubleClick += new Syncfusion.Windows.Forms.Tools.GroupViewItemDoubleClickEventHandler(this.grvDevices_GroupViewItemDoubleClick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Location = new System.Drawing.Point(3, 3);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(311, 19);
             this.label1.TabIndex = 2;
@@ -102,6 +103,7 @@
             this.grvDevicesInGroup.TextSpacing = 40;
             this.grvDevicesInGroup.TextWrap = true;
             this.grvDevicesInGroup.ThemesEnabled = true;
+            this.grvDevicesInGroup.GroupViewItemDoubleClick += new Syncfusion.Windows.Forms.Tools.GroupViewItemDoubleClickEventHandler(this.grvDevicesInGroup_GroupViewItemDoubleClick);
             // 
             // splitContainerAdv1
             // 
@@ -136,7 +138,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(-1, 0);
+            this.label2.Location = new System.Drawing.Point(3, 3);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(356, 19);
             this.label2.TabIndex = 2;
@@ -147,17 +149,17 @@
             this.btnSubmit.AccessibleName = "Button";
             this.btnSubmit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSubmit.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnSubmit.Enabled = false;
             this.btnSubmit.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.Color.White;
-            this.btnSubmit.Location = new System.Drawing.Point(702, 604);
+            this.btnSubmit.Location = new System.Drawing.Point(682, 604);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(96, 29);
+            this.btnSubmit.Size = new System.Drawing.Size(116, 29);
             this.btnSubmit.Style.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnSubmit.Style.ForeColor = System.Drawing.Color.White;
             this.btnSubmit.TabIndex = 4;
             this.btnSubmit.Text = "Add Group";
             this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnCancel
             // 
@@ -168,27 +170,28 @@
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Location = new System.Drawing.Point(6, 604);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(96, 29);
+            this.btnCancel.Size = new System.Drawing.Size(116, 29);
             this.btnCancel.Style.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnCancel.Style.ForeColor = System.Drawing.Color.White;
             this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // txbGroupName
             // 
             this.txbGroupName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txbGroupName.Location = new System.Drawing.Point(108, 571);
+            this.txbGroupName.Location = new System.Drawing.Point(122, 571);
             this.txbGroupName.Name = "txbGroupName";
-            this.txbGroupName.Size = new System.Drawing.Size(690, 27);
+            this.txbGroupName.Size = new System.Drawing.Size(676, 27);
             this.txbGroupName.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 574);
+            this.label3.Location = new System.Drawing.Point(20, 574);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(96, 19);
             this.label3.TabIndex = 2;
@@ -213,6 +216,7 @@
             this.Style.TitleBar.BackColor = System.Drawing.Color.DodgerBlue;
             this.Style.TitleBar.ForeColor = System.Drawing.Color.White;
             this.Text = "Add Group";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddEditGroup_FormClosing);
             this.Load += new System.EventHandler(this.AddEditGroup_Load);
             this.splitContainerAdv1.Panel1.ResumeLayout(false);
             this.splitContainerAdv1.Panel1.PerformLayout();

@@ -1177,6 +1177,22 @@ namespace Surgit_NetworkManager
                 DeselectItem();
             }
         }
+
+        private void tsbRemoveDeviceFromGroup_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to remove this device from the group?", "Remove device", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                sql.Open();
+                sql.ExecuteNonQuery($"DELETE FROM GroupAssigns WHERE MACAddress = '{txbDeviceMac.Text}' AND GroupID = '{selectedGroupID}'");
+                int groupItemCount = sql.ExecuteScalar<int>($"SELECT COUNT(*) FROM GroupAssigns WHERE GroupID = '{selectedGroupID}'");
+                if (groupItemCount == 0) sql.ExecuteNonQuery($"DELETE FROM Groups WHERE ID = '{selectedGroupID}'");
+                sql.Close();
+
+                if(groupItemCount == 0) ExitGroupView();
+                UpdateDeviceList();
+                DeselectItem();
+            }
+        }
     }
 #pragma warning restore IDE1006
 }
