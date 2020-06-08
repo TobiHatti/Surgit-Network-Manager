@@ -9,11 +9,11 @@
 [![GitHub issues](https://img.shields.io/github/issues-raw/TobiHatti/Surgit-Network-Manager)](https://github.com/TobiHatti/Surgit-Network-Manager/issues)
 [![GitHub language count](https://img.shields.io/github/languages/count/TobiHatti/Surgit-Network-Manager)](https://github.com/TobiHatti/Surgit-Network-Manager)
 
+![image](https://endev.at/content/projects/Surgit/Surgit_Splash_HD.png)
+
 The Surgit-Network-Manager allows you to discover and manage your network more efficiently.
 Using multiple features like Wake-On-Lan, Remote Desktop and Powerstate-Check, 
 it provides all the neccecary tools to keep track of yout local network.
-
-![image](https://github.com/TobiHatti/Surgit-Network-Manager/blob/master/Content/Logos/Ver2/SurgitSplashHD.png)
 
 ## Features
 - Wake-On-Lan
@@ -24,7 +24,7 @@ it provides all the neccecary tools to keep track of yout local network.
 ## Usage
 ### Explore Network and Devices
 
-![image](https://github.com/TobiHatti/Surgit-Network-Manager/blob/master/Content/SampleImages/Sample01.png)
+![image](https://endev.at/content/projects/Surgit/projectImages/Sample01.png)
 
 After installing the program, the first thing you'll want to do is to set the IP-Range of your Network, e.g. 
 - 10.0.0.1-10.0.0.254
@@ -45,7 +45,7 @@ Devices can also be added and edited manually, using the "Add Manually" and "Edi
 
 ### Power Management
 
-![image](https://github.com/TobiHatti/Surgit-Network-Manager/blob/master/Content/SampleImages/Sample02.png)
+![image](https://endev.at/content/projects/Surgit/projectImages/Sample02.png)
 
 Under the "Power-Management"-Tab, you can start the device via Wake-On-LAN ("WOL"), 
 or just check the PowerState of the selected device.
@@ -53,7 +53,7 @@ The device must support WOL and be enabled. For more information, see the FAQ be
 
 ### Remote Management
 
-![image](https://github.com/TobiHatti/Surgit-Network-Manager/blob/master/Content/SampleImages/Sample03.png)
+![image](https://endev.at/content/projects/Surgit/projectImages/Sample03.png)
 
 You can assign each device multiple Remote-Desktop connections (RDP), or add Device-Websites like management-sites.
 You can also create an automatic-RDP-connection by clicking on "Open RDP Connection".
