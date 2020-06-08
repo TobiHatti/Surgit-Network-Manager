@@ -1,4 +1,4 @@
-<img align="right" width="80" height="80" data-rmimg src="https://github.com/TobiHatti/Surgit-Network-Manager/blob/master/Content/Logos/Ver2/SurgitLogoNew4_S.png">
+<img align="right" width="80" height="80" data-rmimg src="https://endev.at/content/projects/Surgit/Surgit_Logo_128.png">
 
 # Surgit-Network-Manager
 
