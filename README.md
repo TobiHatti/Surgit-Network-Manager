@@ -9,7 +9,7 @@
 [![GitHub issues](https://img.shields.io/github/issues-raw/TobiHatti/Surgit-Network-Manager)](https://github.com/TobiHatti/Surgit-Network-Manager/issues)
 [![GitHub language count](https://img.shields.io/github/languages/count/TobiHatti/Surgit-Network-Manager)](https://github.com/TobiHatti/Surgit-Network-Manager)
 
-![image](https://endev.at/content/projects/Surgit/Surgit_Splash_HD.png)
+![image](https://endev.at/content/projects/Surgit/Surgit_Banner_300.png)
 
 The Surgit-Network-Manager allows you to discover and manage your network more efficiently.
 Using multiple features like Wake-On-Lan, Remote Desktop and Powerstate-Check, 
