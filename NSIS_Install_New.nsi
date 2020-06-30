@@ -2,9 +2,9 @@
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "Surgit"
-!define PRODUCT_VERSION "1.1.7"
-!define PRODUCT_PUBLISHER "Endix Development"
-!define PRODUCT_WEB_SITE "https://endev.at/projects/surgit"
+!define PRODUCT_VERSION "1.1.8"
+!define PRODUCT_PUBLISHER "Endev"
+!define PRODUCT_WEB_SITE "https://endev.at/p/Surgit"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\Surgit_NetworkManager.exe"
 !define PRODUCT_UNINST_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}"
 !define PRODUCT_UNINST_ROOT_KEY "HKLM"
@@ -44,7 +44,7 @@ SetCompressor lzma
 
 Name "${PRODUCT_NAME} ${PRODUCT_VERSION}"
 OutFile "Surgit_Setup.exe"
-InstallDir "$DOCUMENTS\Endix Development\Surgit"
+InstallDir "$DOCUMENTS\Endev\Surgit"
 InstallDirRegKey HKLM "${PRODUCT_DIR_REGKEY}" ""
 ShowInstDetails show
 ShowUnInstDetails show
@@ -112,11 +112,11 @@ SectionEnd
 
 Function un.onUninstSuccess
   HideWindow
-  MessageBox MB_ICONINFORMATION|MB_OK "$(^Name) wurde erfolgreich deinstalliert."
+  MessageBox MB_ICONINFORMATION|MB_OK "$(^Name) was removed from your computer successfully."
 FunctionEnd
 
 Function un.onInit
-  MessageBox MB_ICONQUESTION|MB_YESNO|MB_DEFBUTTON2 "Möchten Sie $(^Name) und alle seinen Komponenten deinstallieren?" IDYES +2
+  MessageBox MB_ICONQUESTION|MB_YESNO|MB_DEFBUTTON2 "Do you want to remove $(^Name) and all of its components?" IDYES +2
   Abort
 FunctionEnd
 

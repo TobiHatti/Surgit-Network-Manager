@@ -286,11 +286,20 @@ namespace Surgit_NetworkManager
             {
                 // Update DB
                 sql.Open();
-                foreach (NetDevice device in discover.DiscoveredDevices)
-                    if(sql.ExecuteScalar<int>("SELECT COUNT(*) FROM Devices WHERE MACAddress = ?", device.MAC) > 0)
-                        sql.ExecuteNonQuery($"UPDATE Devices SET IP4Address = '{device.IPv4}', Hostname = '{device.Hostname}', LastSeen = '{DateTime.Now:yyyy-MM-dd H:mm:ss}' WHERE MACAddress = '{device.MAC}'");
-                    else
-                        sql.ExecuteNonQuery($"INSERT INTO Devices (MACAddress, DeviceType, Name, Hostname, IP4Address, LastSeen) VALUES ('{device.MAC}','{device.DeviceType}','{device.Name}','{device.Hostname}','{device.IPv4}','{DateTime.Now:yyyy-MM-dd H:mm:ss}')");
+                try
+                {
+                    sql.TransactionBegin();
+                    foreach (NetDevice device in discover.DiscoveredDevices)
+                        if (sql.ExecuteScalar<int>("SELECT COUNT(*) FROM Devices WHERE MACAddress = ?", device.MAC) > 0)
+                            sql.ExecuteNonQuery($"UPDATE Devices SET IP4Address = '{device.IPv4}', Hostname = '{device.Hostname}', LastSeen = '{DateTime.Now:yyyy-MM-dd H:mm:ss}' WHERE MACAddress = '{device.MAC}'");
+                        else
+                            sql.ExecuteNonQuery($"INSERT INTO Devices (MACAddress, DeviceType, Name, Hostname, IP4Address, LastSeen) VALUES ('{device.MAC}','{device.DeviceType}','{device.Name}','{device.Hostname}','{device.IPv4}','{DateTime.Now:yyyy-MM-dd H:mm:ss}')");
+                    sql.TransactionCommit();
+                }
+                catch
+                {
+                    sql.TransactionRollback();
+                }
                 sql.Close();
             }
 
@@ -651,8 +660,17 @@ namespace Surgit_NetworkManager
             if(ipedit.ShowDialog() == DialogResult.OK)
             {
                 sql.Open();
-                sql.ExecuteNonQuery($"UPDATE Settings SET Value = '{ipedit.IPStartRange}' WHERE Key = 'IPRangeStart'");
-                sql.ExecuteNonQuery($"UPDATE Settings SET Value = '{ipedit.IPEndRange}' WHERE Key = 'IPRangeEnd'");
+                try
+                {
+                    sql.TransactionBegin();
+                    sql.ExecuteNonQuery($"UPDATE Settings SET Value = '{ipedit.IPStartRange}' WHERE Key = 'IPRangeStart'");
+                    sql.ExecuteNonQuery($"UPDATE Settings SET Value = '{ipedit.IPEndRange}' WHERE Key = 'IPRangeEnd'");
+                    sql.TransactionCommit();
+                }
+                catch
+                {
+                    sql.TransactionRollback();
+                }
                 sql.Close();
 
                 lblIPRangeStart.Text = ipedit.IPStartRange;
@@ -861,11 +879,20 @@ namespace Surgit_NetworkManager
             if(rdpSettings.ShowDialog() == DialogResult.OK)
             {
                 sql.Open();
-                sql.ExecuteNonQuery($"UPDATE Settings SET Value = '{rdpSettings.MultiMonitor}' WHERE Key = 'RDPMultiMonitor'");
-                sql.ExecuteNonQuery($"UPDATE Settings SET Value = '{rdpSettings.FullScreen}' WHERE Key = 'RDPFullScreen'");
-                sql.ExecuteNonQuery($"UPDATE Settings SET Value = '{rdpSettings.WindowWidth}' WHERE Key = 'RDPScreenWidth'");
-                sql.ExecuteNonQuery($"UPDATE Settings SET Value = '{rdpSettings.WindowHeight}' WHERE Key = 'RDPScreenHeight'");
-                sql.ExecuteNonQuery($"UPDATE Settings SET Value = '{rdpSettings.PublicMode}' WHERE Key = 'RDPPublicMode'");
+                try
+                {
+                    sql.TransactionBegin();
+                    sql.ExecuteNonQuery($"UPDATE Settings SET Value = '{rdpSettings.MultiMonitor}' WHERE Key = 'RDPMultiMonitor'");
+                    sql.ExecuteNonQuery($"UPDATE Settings SET Value = '{rdpSettings.FullScreen}' WHERE Key = 'RDPFullScreen'");
+                    sql.ExecuteNonQuery($"UPDATE Settings SET Value = '{rdpSettings.WindowWidth}' WHERE Key = 'RDPScreenWidth'");
+                    sql.ExecuteNonQuery($"UPDATE Settings SET Value = '{rdpSettings.WindowHeight}' WHERE Key = 'RDPScreenHeight'");
+                    sql.ExecuteNonQuery($"UPDATE Settings SET Value = '{rdpSettings.PublicMode}' WHERE Key = 'RDPPublicMode'");
+                    sql.TransactionCommit();
+                }
+                catch
+                {
+                    sql.TransactionRollback();
+                }
                 sql.Close();
             }
         }

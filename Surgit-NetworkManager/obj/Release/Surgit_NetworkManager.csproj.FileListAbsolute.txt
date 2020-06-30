@@ -121,3 +121,4 @@ H:\Git\Surgit\Surgit-NetworkManager\obj\Release\Surgit_NetworkManager.exe
 H:\Git\Surgit\Surgit-NetworkManager\obj\Release\Surgit_NetworkManager.pdb
 H:\Git\Surgit\Surgit-NetworkManager\bin\Release\WrapSQL_SQLite.dll
 H:\Git\Surgit\Surgit-NetworkManager\obj\Release\Surgit_NetworkManager.AddEditGroup.resources
+H:\Git\Surgit\Surgit-NetworkManager\obj\Release\Surgit_NetworkManager.csprojAssemblyReference.cache

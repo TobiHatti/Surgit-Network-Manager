@@ -169,9 +169,9 @@
             this.rbcRibbonMenu.QuickPanelImageLayout = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.rbcRibbonMenu.RibbonHeaderImage = Syncfusion.Windows.Forms.Tools.RibbonHeaderImage.None;
             this.rbcRibbonMenu.RibbonStyle = Syncfusion.Windows.Forms.Tools.RibbonStyle.Office2016;
-            this.rbcRibbonMenu.SelectedTab = this.tstPowerManagement;
+            this.rbcRibbonMenu.SelectedTab = this.tstExplore;
             this.rbcRibbonMenu.ShowRibbonDisplayOptionButton = true;
-            this.rbcRibbonMenu.Size = new System.Drawing.Size(1022, 192);
+            this.rbcRibbonMenu.Size = new System.Drawing.Size(1022, 195);
             this.rbcRibbonMenu.SystemText.QuickAccessDialogDropDownName = "Start menu";
             this.rbcRibbonMenu.SystemText.RenameDisplayLabelText = "&Display Name:";
             this.rbcRibbonMenu.TabIndex = 1;
@@ -219,7 +219,7 @@
             this.toolStripEx2.Office12Mode = false;
             this.toolStripEx2.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.toolStripEx2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripEx2.Size = new System.Drawing.Size(340, 123);
+            this.toolStripEx2.Size = new System.Drawing.Size(340, 126);
             this.toolStripEx2.TabIndex = 1;
             this.toolStripEx2.Text = "IP Address Range";
             // 
@@ -229,32 +229,32 @@
             this.toolStripLabel1.Font = new System.Drawing.Font("Calibri Light", 12F);
             this.toolStripLabel1.Name = "toolStripLabel1";
             this.toolStripLabel1.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.toolStripLabel1.Size = new System.Drawing.Size(85, 101);
+            this.toolStripLabel1.Size = new System.Drawing.Size(85, 104);
             this.toolStripLabel1.Text = "IP Range:";
             // 
             // lblIPRangeStart
             // 
             this.lblIPRangeStart.Name = "lblIPRangeStart";
-            this.lblIPRangeStart.Size = new System.Drawing.Size(61, 101);
+            this.lblIPRangeStart.Size = new System.Drawing.Size(61, 104);
             this.lblIPRangeStart.Text = "10.0.0.1";
             // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.Font = new System.Drawing.Font("Calibri Light", 12F);
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(22, 101);
+            this.toolStripLabel2.Size = new System.Drawing.Size(22, 104);
             this.toolStripLabel2.Text = "to";
             // 
             // lblIPRangeEnd
             // 
             this.lblIPRangeEnd.Name = "lblIPRangeEnd";
-            this.lblIPRangeEnd.Size = new System.Drawing.Size(77, 101);
+            this.lblIPRangeEnd.Size = new System.Drawing.Size(77, 104);
             this.lblIPRangeEnd.Text = "10.0.0.254";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 104);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 107);
             // 
             // btnEditIPRange
             // 
@@ -285,7 +285,7 @@
             this.toolStripEx1.Office12Mode = false;
             this.toolStripEx1.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.toolStripEx1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripEx1.Size = new System.Drawing.Size(329, 123);
+            this.toolStripEx1.Size = new System.Drawing.Size(329, 126);
             this.toolStripEx1.TabIndex = 0;
             this.toolStripEx1.Text = "Network Discovery";
             // 
@@ -353,7 +353,7 @@
             this.toolStripEx3.Office12Mode = false;
             this.toolStripEx3.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.toolStripEx3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripEx3.Size = new System.Drawing.Size(249, 123);
+            this.toolStripEx3.Size = new System.Drawing.Size(249, 126);
             this.toolStripEx3.TabIndex = 2;
             this.toolStripEx3.Text = "Manage Devices";
             // 
@@ -432,7 +432,7 @@
             this.toolStripEx7.Office12Mode = false;
             this.toolStripEx7.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.toolStripEx7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripEx7.Size = new System.Drawing.Size(571, 123);
+            this.toolStripEx7.Size = new System.Drawing.Size(571, 126);
             this.toolStripEx7.TabIndex = 0;
             this.toolStripEx7.Text = "Groups";
             // 
@@ -478,7 +478,7 @@
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 104);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 107);
             // 
             // tsbRemoveDeviceFromGroup
             // 
@@ -496,7 +496,7 @@
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 104);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 107);
             // 
             // tsbSetDeviceAsGroupPrimary
             // 
@@ -526,7 +526,7 @@
             this.toolStripEx8.Office12Mode = false;
             this.toolStripEx8.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.toolStripEx8.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripEx8.Size = new System.Drawing.Size(229, 123);
+            this.toolStripEx8.Size = new System.Drawing.Size(229, 126);
             this.toolStripEx8.TabIndex = 1;
             this.toolStripEx8.Text = "Navigation";
             // 
@@ -590,7 +590,7 @@
             this.toolStripEx4.Office12Mode = false;
             this.toolStripEx4.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.toolStripEx4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripEx4.Size = new System.Drawing.Size(266, 123);
+            this.toolStripEx4.Size = new System.Drawing.Size(235, 126);
             this.toolStripEx4.TabIndex = 0;
             // 
             // btnStartDeviceWOL
@@ -609,7 +609,7 @@
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 104);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 107);
             // 
             // btnUpdatePowerState
             // 
@@ -657,7 +657,7 @@
             this.toolStripEx6.Office12Mode = false;
             this.toolStripEx6.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.toolStripEx6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripEx6.Size = new System.Drawing.Size(189, 123);
+            this.toolStripEx6.Size = new System.Drawing.Size(189, 126);
             this.toolStripEx6.TabIndex = 0;
             this.toolStripEx6.Text = "RDP Connections";
             // 
@@ -704,7 +704,7 @@
             this.tseRDPLinks.Office12Mode = false;
             this.tseRDPLinks.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.tseRDPLinks.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tseRDPLinks.Size = new System.Drawing.Size(324, 123);
+            this.tseRDPLinks.Size = new System.Drawing.Size(324, 126);
             this.tseRDPLinks.TabIndex = 1;
             this.tseRDPLinks.Text = "Saved RDP-Connections";
             // 
@@ -738,7 +738,7 @@
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 104);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 107);
             // 
             // tseDeviceSites
             // 
@@ -757,7 +757,7 @@
             this.tseDeviceSites.Office12Mode = false;
             this.tseDeviceSites.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.tseDeviceSites.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tseDeviceSites.Size = new System.Drawing.Size(324, 123);
+            this.tseDeviceSites.Size = new System.Drawing.Size(324, 126);
             this.tseDeviceSites.TabIndex = 2;
             this.tseDeviceSites.Text = "Device Managements Sites";
             // 
@@ -790,7 +790,7 @@
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 104);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 107);
             // 
             // toolStripEx5
             // 
@@ -844,7 +844,7 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(71, 523);
+            this.label3.Location = new System.Drawing.Point(71, 520);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 19);
             this.label3.TabIndex = 6;
@@ -854,7 +854,7 @@
             // 
             this.txbDeviceMac.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txbDeviceMac.Location = new System.Drawing.Point(119, 520);
+            this.txbDeviceMac.Location = new System.Drawing.Point(119, 517);
             this.txbDeviceMac.Name = "txbDeviceMac";
             this.txbDeviceMac.ReadOnly = true;
             this.txbDeviceMac.Size = new System.Drawing.Size(284, 27);
@@ -864,7 +864,7 @@
             // 
             this.txbDeviceIPv4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txbDeviceIPv4.Location = new System.Drawing.Point(119, 454);
+            this.txbDeviceIPv4.Location = new System.Drawing.Point(119, 451);
             this.txbDeviceIPv4.Name = "txbDeviceIPv4";
             this.txbDeviceIPv4.ReadOnly = true;
             this.txbDeviceIPv4.Size = new System.Drawing.Size(284, 27);
@@ -875,7 +875,7 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(76, 457);
+            this.label5.Location = new System.Drawing.Point(76, 454);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 19);
             this.label5.TabIndex = 9;
@@ -895,7 +895,7 @@
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(76, 490);
+            this.label6.Location = new System.Drawing.Point(76, 487);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(40, 19);
             this.label6.TabIndex = 9;
@@ -905,7 +905,7 @@
             // 
             this.txbDeviceIPv6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txbDeviceIPv6.Location = new System.Drawing.Point(119, 487);
+            this.txbDeviceIPv6.Location = new System.Drawing.Point(119, 484);
             this.txbDeviceIPv6.Name = "txbDeviceIPv6";
             this.txbDeviceIPv6.ReadOnly = true;
             this.txbDeviceIPv6.Size = new System.Drawing.Size(284, 27);
@@ -916,7 +916,7 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(37, 424);
+            this.label4.Location = new System.Drawing.Point(37, 421);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 19);
             this.label4.TabIndex = 5;
@@ -926,7 +926,7 @@
             // 
             this.txbDeviceHostname.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txbDeviceHostname.Location = new System.Drawing.Point(119, 421);
+            this.txbDeviceHostname.Location = new System.Drawing.Point(119, 418);
             this.txbDeviceHostname.Name = "txbDeviceHostname";
             this.txbDeviceHostname.ReadOnly = true;
             this.txbDeviceHostname.Size = new System.Drawing.Size(284, 27);
@@ -936,7 +936,7 @@
             // 
             this.txbDeviceManufacturer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txbDeviceManufacturer.Location = new System.Drawing.Point(119, 553);
+            this.txbDeviceManufacturer.Location = new System.Drawing.Point(119, 550);
             this.txbDeviceManufacturer.Name = "txbDeviceManufacturer";
             this.txbDeviceManufacturer.ReadOnly = true;
             this.txbDeviceManufacturer.Size = new System.Drawing.Size(284, 27);
@@ -947,7 +947,7 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 556);
+            this.label1.Location = new System.Drawing.Point(12, 553);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 19);
             this.label1.TabIndex = 6;
@@ -959,7 +959,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Calibri Light", 9F);
             this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label10.Location = new System.Drawing.Point(116, 283);
+            this.label10.Location = new System.Drawing.Point(116, 280);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(124, 14);
             this.label10.TabIndex = 17;
@@ -975,7 +975,7 @@
             this.webMarkdown.Location = new System.Drawing.Point(119, 106);
             this.webMarkdown.MinimumSize = new System.Drawing.Size(20, 20);
             this.webMarkdown.Name = "webMarkdown";
-            this.webMarkdown.Size = new System.Drawing.Size(284, 174);
+            this.webMarkdown.Size = new System.Drawing.Size(284, 171);
             this.webMarkdown.TabIndex = 2;
             this.webMarkdown.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webMarkdown_DocumentCompleted);
             // 
@@ -987,7 +987,7 @@
             this.btnHideDevice.Enabled = false;
             this.btnHideDevice.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHideDevice.ForeColor = System.Drawing.Color.White;
-            this.btnHideDevice.Location = new System.Drawing.Point(7, 333);
+            this.btnHideDevice.Location = new System.Drawing.Point(7, 330);
             this.btnHideDevice.Name = "btnHideDevice";
             this.btnHideDevice.Size = new System.Drawing.Size(104, 34);
             this.btnHideDevice.Style.BackColor = System.Drawing.Color.DodgerBlue;
@@ -1005,7 +1005,7 @@
             this.btnDiscardChanges.Enabled = false;
             this.btnDiscardChanges.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDiscardChanges.ForeColor = System.Drawing.Color.White;
-            this.btnDiscardChanges.Location = new System.Drawing.Point(135, 333);
+            this.btnDiscardChanges.Location = new System.Drawing.Point(135, 330);
             this.btnDiscardChanges.Name = "btnDiscardChanges";
             this.btnDiscardChanges.Size = new System.Drawing.Size(131, 34);
             this.btnDiscardChanges.Style.BackColor = System.Drawing.Color.DodgerBlue;
@@ -1023,7 +1023,7 @@
             this.btnSaveChanges.Enabled = false;
             this.btnSaveChanges.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveChanges.ForeColor = System.Drawing.Color.White;
-            this.btnSaveChanges.Location = new System.Drawing.Point(272, 333);
+            this.btnSaveChanges.Location = new System.Drawing.Point(272, 330);
             this.btnSaveChanges.Name = "btnSaveChanges";
             this.btnSaveChanges.Size = new System.Drawing.Size(131, 34);
             this.btnSaveChanges.Style.BackColor = System.Drawing.Color.DodgerBlue;
@@ -1060,7 +1060,7 @@
             this.txbDeviceDescription.Multiline = true;
             this.txbDeviceDescription.Name = "txbDeviceDescription";
             this.txbDeviceDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txbDeviceDescription.Size = new System.Drawing.Size(284, 174);
+            this.txbDeviceDescription.Size = new System.Drawing.Size(284, 171);
             this.txbDeviceDescription.TabIndex = 3;
             this.txbDeviceDescription.Visible = false;
             this.txbDeviceDescription.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbDeviceDescription_KeyDown);
@@ -1069,7 +1069,7 @@
             // 
             this.txbDeviceLastSeen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txbDeviceLastSeen.Location = new System.Drawing.Point(119, 300);
+            this.txbDeviceLastSeen.Location = new System.Drawing.Point(119, 297);
             this.txbDeviceLastSeen.Name = "txbDeviceLastSeen";
             this.txbDeviceLastSeen.ReadOnly = true;
             this.txbDeviceLastSeen.Size = new System.Drawing.Size(284, 27);
@@ -1079,7 +1079,7 @@
             // 
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(39, 303);
+            this.label8.Location = new System.Drawing.Point(39, 300);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(74, 19);
             this.label8.TabIndex = 5;
@@ -1163,7 +1163,7 @@
             this.grvDevices.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.grvDevices.BeforeTouchSize = new System.Drawing.Size(576, 499);
+            this.grvDevices.BeforeTouchSize = new System.Drawing.Size(576, 496);
             this.grvDevices.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.grvDevices.ButtonView = true;
             this.grvDevices.FlatLook = true;
@@ -1174,7 +1174,7 @@
             this.grvDevices.Location = new System.Drawing.Point(5, 90);
             this.grvDevices.Name = "grvDevices";
             this.grvDevices.ShowFlowViewItemText = true;
-            this.grvDevices.Size = new System.Drawing.Size(576, 499);
+            this.grvDevices.Size = new System.Drawing.Size(576, 496);
             this.grvDevices.TabIndex = 12;
             this.grvDevices.Text = "groupView1";
             this.grvDevices.TextSpacing = 30;
@@ -1275,7 +1275,7 @@
             this.spcSplitter.BeforeTouchSize = 10;
             this.spcSplitter.ExpandLine = System.Drawing.Color.Gray;
             this.spcSplitter.HotExpandLine = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.spcSplitter.Location = new System.Drawing.Point(2, 191);
+            this.spcSplitter.Location = new System.Drawing.Point(2, 194);
             this.spcSplitter.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.spcSplitter.Name = "spcSplitter";
             // 
@@ -1322,7 +1322,7 @@
             this.spcSplitter.Panel2.Controls.Add(this.cbxSortBy);
             this.spcSplitter.Panel2.Controls.Add(this.lblDeviceCount);
             this.spcSplitter.Panel2MinSize = 500;
-            this.spcSplitter.Size = new System.Drawing.Size(1013, 593);
+            this.spcSplitter.Size = new System.Drawing.Size(1013, 590);
             this.spcSplitter.SplitterDistance = 410;
             this.spcSplitter.SplitterWidth = 10;
             this.spcSplitter.Style = Syncfusion.Windows.Forms.Tools.Enums.Style.Office2016Colorful;
@@ -1338,7 +1338,7 @@
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label14.Location = new System.Drawing.Point(10, 395);
+            this.label14.Location = new System.Drawing.Point(10, 392);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(175, 23);
             this.label14.TabIndex = 20;

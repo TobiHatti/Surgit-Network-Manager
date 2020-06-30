@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Surgit Network Manager")]
 [assembly: AssemblyDescription("Network Manager and Discovery Tool")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Endix Development")]
+[assembly: AssemblyCompany("Endev")]
 [assembly: AssemblyProduct("Surgit")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.1.7")]
-[assembly: AssemblyFileVersion("1.1.7")]
+[assembly: AssemblyVersion("1.1.8")]
+[assembly: AssemblyFileVersion("1.1.8")]
