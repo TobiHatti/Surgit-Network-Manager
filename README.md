@@ -3,7 +3,7 @@
 # Surgit-Network-Manager
 
 ![GitHub](https://img.shields.io/github/license/TobiHatti/Surgit-Network-Manager)
-[![GitHub Release Date](https://img.shields.io/github/release-date/TobiHatti/Surgit-Network-Manager)](https://github.com/TobiHatti/Surgit-Network-Manager/releases)
+[![GitHub Release Date](https://img.shields.io/github/release-date-pre/TobiHatti/Surgit-Network-Manager)](https://github.com/TobiHatti/Surgit-Network-Manager/releases)
 [![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/TobiHatti/Surgit-Network-Manager?include_prereleases)](https://github.com/TobiHatti/Surgit-Network-Manager/releases)
 [![GitHub last commit](https://img.shields.io/github/last-commit/TobiHatti/Surgit-Network-Manager)](https://github.com/TobiHatti/Surgit-Network-Manager/commits/master)
 [![GitHub issues](https://img.shields.io/github/issues-raw/TobiHatti/Surgit-Network-Manager)](https://github.com/TobiHatti/Surgit-Network-Manager/issues)
